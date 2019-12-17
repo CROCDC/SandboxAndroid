@@ -6,6 +6,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.platform.app.InstrumentationRegistry
+import junit.framework.TestCase.assertTrue
 import kotlinx.android.parcel.Parcelize
 import org.junit.Rule
 import org.junit.Test
@@ -20,15 +21,21 @@ class ParcelizeTest {
 
     @Test
     fun parcelizeWithAnnotation() {
-        activityTestRule.launchActivity(Intent(context, MainActivity::class.java).apply {
-            putExtra(
-                "ParcelizeClassTestWithAnnotation", ParcelizeClassTestWithAnnotation(
-                    Pair("name", Bundle().apply {
-                        putExtra("ID", "ID")
-                    })
+        var crash = false
+        try {
+            activityTestRule.launchActivity(Intent(context, MainActivity::class.java).apply {
+                putExtra(
+                    "ParcelizeClassTestWithAnnotation", ParcelizeClassTestWithAnnotation(
+                        Pair("name", Bundle().apply {
+                            putExtra("ID", "ID")
+                        })
+                    )
                 )
-            )
-        })
+            })
+        } catch (e: Exception) {
+            crash = true
+        }
+        assertTrue(crash)
     }
 
     @Test
