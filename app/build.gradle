@@ -4,7 +4,14 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'com.apollographql.android'
+
 android {
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
     androidExtensions {
         experimental = true
     }
@@ -18,7 +25,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "com.cr.o.cdc.sandboxAndroid.Runner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -56,6 +63,11 @@ dependencies {
     implementation "androidx.test.espresso:espresso-accessibility:3.2.0"
     implementation "androidx.test.espresso:espresso-intents:3.2.0"
     implementation "androidx.fragment:fragment-testing:1.1.0"
+
+    implementation 'com.apollographql.apollo:apollo-runtime:1.2.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1'
+    testImplementation "android.arch.core:core-testing:1.1.1"
+
 
     implementation 'junit:junit:4.12'
 
