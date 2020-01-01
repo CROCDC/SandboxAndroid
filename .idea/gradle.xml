@@ -9,7 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/requestbuilder" />
             <option value="$PROJECT_DIR$/requests" />
+            <option value="$PROJECT_DIR$/requestsannotations" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

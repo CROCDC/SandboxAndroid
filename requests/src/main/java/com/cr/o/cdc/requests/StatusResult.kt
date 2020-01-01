@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.network
+package com.cr.o.cdc.requests
 
 /**
  * Created by Camilo on 04/05/19.

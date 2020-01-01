@@ -2,10 +2,10 @@ package com.cr.o.cdc.sandboxAndroid
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
-import com.cr.o.cdc.sandboxAndroid.network.ApolloManager
-import com.cr.o.cdc.sandboxAndroid.network.AppExecutors
-import com.cr.o.cdc.sandboxAndroid.network.NetworkResponse
-import com.cr.o.cdc.sandboxAndroid.network.StatusResult
+import com.cr.o.cdc.requests.ApolloManager
+import com.cr.o.cdc.requests.AppExecutors
+import com.cr.o.cdc.requests.NetworkResponse
+import com.cr.o.cdc.requests.StatusResult
 import org.junit.Rule
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -20,20 +20,20 @@ abstract class EndpointTest {
     @JvmField
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    fun getApolloManager() = ApolloManager(getAppExecutors())
-    private fun getAppExecutors() = AppExecutors()
+    fun getApolloManager() = com.cr.o.cdc.requests.ApolloManager(getAppExecutors())
+    private fun getAppExecutors() = com.cr.o.cdc.requests.AppExecutors()
 
     @Throws(InterruptedException::class)
-    fun <T> getValue(liveData: LiveData<NetworkResponse<T>>): NetworkResponse<T> {
-        var data: NetworkResponse<T>? = null
+    fun <T> getValue(liveData: LiveData<com.cr.o.cdc.requests.NetworkResponse<T>>): com.cr.o.cdc.requests.NetworkResponse<T> {
+        var data: com.cr.o.cdc.requests.NetworkResponse<T>? = null
         val latch = CountDownLatch(1)
         liveData.observeForever { o ->
             when (o.result) {
-                StatusResult.SUCCESS -> {
+                com.cr.o.cdc.requests.StatusResult.SUCCESS -> {
                     data = o
                     latch.countDown()
                 }
-                StatusResult.FAILURE, StatusResult.OFFLINE -> {
+                com.cr.o.cdc.requests.StatusResult.FAILURE, com.cr.o.cdc.requests.StatusResult.OFFLINE -> {
                     throw Exception()
                 }
             }

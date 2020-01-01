@@ -1,7 +1,6 @@
-package ar.com.cdeamerica.tupi.network
+package com.cr.o.cdc.requests
 
 import androidx.lifecycle.MutableLiveData
-import com.cr.o.cdc.sandboxAndroid.network.StatusResult
 
 /**
  * Created by Camilo on 04/05/19.

@@ -1,9 +1,9 @@
-package com.cr.o.cdc.sandboxAndroid.network
+package com.cr.o.cdc.requests
 
 /**
  * Created by Camilo on 04/05/19.
  */
-class NetworkResponse<T>(val httpCode: Int, val data: T?) {
+class NetworkResponse<T>(val httpCode: Int, val body: String?) {
 
     val isSuccess: Boolean
         get() = httpCode in 200..299

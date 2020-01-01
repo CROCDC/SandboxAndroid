@@ -1,6 +1,6 @@
 package com.cr.o.cdc.sandboxAndroid.di
 
-import com.cr.o.cdc.sandboxAndroid.PokemonFragment
+import com.cr.o.cdc.sandboxAndroid.fragments.PokemonFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

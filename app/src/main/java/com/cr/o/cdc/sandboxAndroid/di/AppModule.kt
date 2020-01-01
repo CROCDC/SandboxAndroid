@@ -1,8 +1,9 @@
 package com.cr.o.cdc.sandboxAndroid.di
 
 import com.apollographql.apollo.ApolloClient
-import com.cr.o.cdc.sandboxAndroid.network.ApolloManager
-import com.cr.o.cdc.sandboxAndroid.network.AppExecutors
+import com.cr.o.cdc.sandboxAndroid.BuildConfig
+import com.cr.o.cdc.requests.Manager
+import com.cr.o.cdc.requests.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSourceProvider
 import dagger.Module
@@ -19,17 +20,17 @@ class AppModule {
     @Provides
     @Singleton
     fun provideApolloClient(): ApolloClient = ApolloClient.builder().serverUrl(
-        "https://graphql-pokemon.now.sh/graphql"
+        BuildConfig.URL_SERVER
     ).okHttpClient(OkHttpClient().newBuilder().build()).build()
 
     @Provides
     @Singleton
-    fun provideApolloManager() = ApolloManager(AppExecutors())
+    fun provideApolloManager() = Manager()
 
     @Provides
     @Singleton
     fun providePokemonDataSourceProvide(
-        apolloManager: ApolloManager,
+        apolloManager: com.cr.o.cdc.requests.Manager,
         apolloClient: ApolloClient
     ): PokemonDataSourceProvider =
         PokemonDataSource(apolloManager, apolloClient)

@@ -2,15 +2,14 @@ package com.cr.o.cdc.sandboxAndroid.repos
 
 import PokemonQuery
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.apollographql.apollo.ApolloClient
-import com.cr.o.cdc.sandboxAndroid.network.ApolloManager
-import com.cr.o.cdc.sandboxAndroid.network.NetworkResponse
 
 class PokemonDataSource(
-    private val apolloManager: ApolloManager,
+    private val apolloManager: com.cr.o.cdc.requests.Manager,
     private val client: ApolloClient
 ) : PokemonDataSourceProvider {
 
-    override fun pokemon(id: String): LiveData<NetworkResponse<PokemonQuery.Data>> =
-        apolloManager.request(client.query(PokemonQuery.builder().id(id).build()))
+    override fun pokemon(id: String): LiveData<com.cr.o.cdc.requests.NetworkResponse<PokemonQuery.Data>> =
+        MutableLiveData()
 }
