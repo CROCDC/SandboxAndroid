@@ -1,12 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid
 
-import androidx.lifecycle.LiveData
-import com.cr.o.cdc.sandboxAndroid.network.NetworkResponse
-import com.cr.o.cdc.sandboxAndroid.network.StatusResult
 import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSource
 import org.junit.Test
-import java.util.concurrent.CountDownLatch
-import java.util.concurrent.TimeUnit
 
 /**
  * Created by Camilo on 31/12/19.

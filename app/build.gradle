@@ -4,7 +4,10 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 apply plugin: 'com.apollographql.android'
+
 
 android {
 
@@ -54,21 +57,30 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:1.1.0"
 
 
-    implementation 'androidx.test.ext:junit:1.1.1'
-    implementation "androidx.test:runner:1.2.0"
-    implementation "androidx.test:rules:1.2.0"
-    implementation "androidx.test:core:1.2.0"
-    implementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation "androidx.test.espresso:espresso-contrib:3.2.0"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation "androidx.test:runner:1.2.0"
+    androidTestImplementation "androidx.test:rules:1.2.0"
+    androidTestImplementation "androidx.test:core:1.2.0"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:3.2.0"
     implementation "androidx.test.espresso:espresso-accessibility:3.2.0"
     implementation "androidx.test.espresso:espresso-intents:3.2.0"
     implementation "androidx.fragment:fragment-testing:1.1.0"
 
     implementation 'com.apollographql.apollo:apollo-runtime:1.2.2'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
     testImplementation "android.arch.core:core-testing:1.1.1"
 
+    implementation 'com.google.dagger:dagger-android:2.25.2'
+    implementation 'com.google.dagger:dagger-android-support:2.25.2'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.25.2'
 
-    implementation 'junit:junit:4.12'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.25.2'
+
+    kapt "com.google.dagger:dagger-android-processor:2.25.2"
+    kapt "com.google.dagger:dagger-compiler:2.25.2"
+
+    compileOnly "com.squareup.inject:assisted-inject-annotations-dagger2:0.5.2"
+    kapt "com.squareup.inject:assisted-inject-processor-dagger2:0.5.2"
 
 }
