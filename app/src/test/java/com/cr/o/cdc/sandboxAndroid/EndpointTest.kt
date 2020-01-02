@@ -2,10 +2,7 @@ package com.cr.o.cdc.sandboxAndroid
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
-import com.cr.o.cdc.requests.ApolloManager
-import com.cr.o.cdc.requests.AppExecutors
-import com.cr.o.cdc.requests.NetworkResponse
-import com.cr.o.cdc.requests.StatusResult
+import com.cr.o.cdc.requests.Manager
 import org.junit.Rule
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -20,7 +17,7 @@ abstract class EndpointTest {
     @JvmField
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    fun getApolloManager() = com.cr.o.cdc.requests.ApolloManager(getAppExecutors())
+    fun getApolloManager() = Manager()
     private fun getAppExecutors() = com.cr.o.cdc.requests.AppExecutors()
 
     @Throws(InterruptedException::class)
