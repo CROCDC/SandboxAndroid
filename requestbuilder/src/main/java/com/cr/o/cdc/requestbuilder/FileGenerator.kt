@@ -36,7 +36,7 @@ class FileGenerator : AbstractProcessor() {
                 val className = it.simpleName.toString()
                 val pack = processingEnv.elementUtils.getPackageOf(it).toString()
 
-                val fileName = "Generated_$className"
+                val fileName = "Query$className"
                 val fileContent = KotlinClassBuilder(
                     fileName,
                     pack,
@@ -52,17 +52,19 @@ class FileGenerator : AbstractProcessor() {
         return true
     }
 
-    companion object {
-        const val KAPT_KOTLIN_GENERATED_OPTION_NAME = "kapt.kotlin.generated"
-    }
-
     fun getCOLS(elementUtils: Elements, className: String): String =
+
         elementUtils.getAllMembers(elementUtils.getTypeElement(className)).mapNotNull {
             if (it.kind == ElementKind.FIELD) {
-                if (it.asType().toString() == "java.lang.String") {
-                    it.simpleName
-                } else {
-                    "${it.simpleName}${getCOLS(
+                when {
+                    it.asType().toString() == "java.lang.String" -> it.simpleName
+                    it.asType().toString().contains("java.util.List") -> "${it.simpleName}${
+                    getCOLS(
+                        elementUtils,
+                        it.asType().toString().replaceBeforeLast("<", "")
+                    )
+                    }"
+                    else -> "${it.simpleName}${getCOLS(
                         elementUtils,
                         it.asType().toString()
                     )}"
@@ -71,4 +73,8 @@ class FileGenerator : AbstractProcessor() {
                 null
             }
         }.toString().replace("[", "{").replace("]", "}")
+
+    companion object {
+        const val KAPT_KOTLIN_GENERATED_OPTION_NAME = "kapt.kotlin.generated"
+    }
 }
