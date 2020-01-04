@@ -61,7 +61,7 @@ class FileGenerator : AbstractProcessor() {
                     it.asType().toString().contains("java.util.List") -> "${it.simpleName}${
                     getCOLS(
                         elementUtils,
-                        it.asType().toString().replaceBeforeLast("<", "")
+                        it.asType().toString().substringAfter("<").replace(">", "")
                     )
                     }"
                     else -> "${it.simpleName}${getCOLS(

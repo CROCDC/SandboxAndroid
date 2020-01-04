@@ -12,7 +12,7 @@ class KotlinClassBuilder(
 
     private val contentTemplate = """
 package $packageName 
-class Query$fileName {
+class $fileName {
     val COLS = "$cols"
 }
     """.trimIndent()

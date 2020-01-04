@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.cr.o.cdc.requestsannotations.Request
 import com.cr.o.cdc.sandboxAndroid.databinding.ActivityMainBinding
-import com.cr.o.cdc.sandboxAndroid.model.Generated_Pokemon
 
 class MainActivity : AppCompatActivity() {
 

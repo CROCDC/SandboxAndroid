@@ -10,5 +10,6 @@ import com.cr.o.cdc.requestsannotations.Request
 data class Pokemon(
     val id: String,
     val name: String,
-    val weight: PokemonDimension
+    val weight: PokemonDimension,
+    val evolutions: List<PokemonMini>
 )
