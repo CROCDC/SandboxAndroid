@@ -9,8 +9,6 @@ import com.cr.o.cdc.sandboxAndroid.R
 
 class PokemonFragment : Fragment() {
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

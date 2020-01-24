@@ -3,8 +3,8 @@ package com.cr.o.cdc.sandboxAndroid
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.cr.o.cdc.requestsannotations.Request
 import com.cr.o.cdc.sandboxAndroid.databinding.ActivityMainBinding
+import com.cr.o.cdc.sandboxAndroid.fragments.NotificationsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,9 +14,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.btn1.setOnClickListener {
+        binding.btnTabLayout.setOnClickListener {
             supportFragmentManager.beginTransaction().add(R.id.root, TabLayoutFragment()).commit()
         }
 
+        binding.btnNotifications.setOnClickListener {
+            supportFragmentManager.beginTransaction().add(R.id.root, NotificationsFragment())
+                .commit()
+        }
     }
 }

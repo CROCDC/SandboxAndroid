@@ -10,12 +10,19 @@
         tools:context=".MainActivity">
 
         <Button
-            android:id="@+id/btn_1"
+            android:id="@+id/btn_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TabLayout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notifications"
+            app:layout_constraintTop_toBottomOf="@id/btn_tab_layout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

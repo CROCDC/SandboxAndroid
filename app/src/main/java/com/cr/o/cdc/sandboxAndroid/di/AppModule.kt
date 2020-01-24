@@ -1,14 +1,13 @@
 package com.cr.o.cdc.sandboxAndroid.di
 
-import com.apollographql.apollo.ApolloClient
-import com.cr.o.cdc.sandboxAndroid.BuildConfig
+import android.content.Context
+import android.content.SharedPreferences
 import com.cr.o.cdc.requests.Manager
-import com.cr.o.cdc.requests.AppExecutors
+import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSourceProvider
 import dagger.Module
 import dagger.Provides
-import okhttp3.OkHttpClient
 import javax.inject.Singleton
 
 /**
@@ -19,19 +18,16 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideApolloClient(): ApolloClient = ApolloClient.builder().serverUrl(
-        BuildConfig.URL_SERVER
-    ).okHttpClient(OkHttpClient().newBuilder().build()).build()
-
-    @Provides
-    @Singleton
-    fun provideApolloManager() = Manager()
+    fun provideManager() = Manager()
 
     @Provides
     @Singleton
     fun providePokemonDataSourceProvide(
-        apolloManager: com.cr.o.cdc.requests.Manager,
-        apolloClient: ApolloClient
-    ): PokemonDataSourceProvider =
-        PokemonDataSource(apolloManager, apolloClient)
+        manager: Manager
+    ): PokemonDataSourceProvider = PokemonDataSource(manager)
+
+    @Singleton
+    @Provides
+    fun provideSharedPreferences(app: SandBoxApp): SharedPreferences =
+        app.getSharedPreferences(app.packageName, Context.MODE_PRIVATE)
 }

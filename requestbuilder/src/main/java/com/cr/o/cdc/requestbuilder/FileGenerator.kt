@@ -52,8 +52,8 @@ class FileGenerator : AbstractProcessor() {
         return true
     }
 
-    fun getCOLS(elementUtils: Elements, className: String): String =
-
+    //todo harcode
+    private fun getCOLS(elementUtils: Elements, className: String): String =
         elementUtils.getAllMembers(elementUtils.getTypeElement(className)).mapNotNull {
             if (it.kind == ElementKind.FIELD) {
                 when {
