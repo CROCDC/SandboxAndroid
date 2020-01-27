@@ -115,4 +115,6 @@ dependencies {
 
     implementation group: 'com.pubnub', name: 'pubnub-gson', version: '4.20.0'
 
+    androidTestImplementation "io.mockk:mockk-android:1.9.3"
+
 }

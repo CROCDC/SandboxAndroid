@@ -32,7 +32,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
 
-        LocalBroadcastManager.getInstance(this).sendBroadcast(
+        LocalBroadcastManager.getInstance(baseContext).sendBroadcast(
             Intent(NotificationsFragment.BROADCAST_RECEIVER).apply {
                 putExtra(NotificationsFragment.EXTRA_MSG_NOTIFICATION, "message")
             })
