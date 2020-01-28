@@ -34,7 +34,7 @@ class MyFirebaseMessagingServiceTest {
         LocalBroadcastManager.getInstance(app).registerReceiver(r, IntentFilter(NotificationsFragment.BROADCAST_RECEIVER))
 
         mockk<MyFirebaseMessagingService>(relaxed = true).apply {
-            every { baseContext } returns app
+            every { application } returns app as SandBoxApp
         }.onMessageReceived(RemoteMessage(Bundle()))
 
         Thread.sleep(4000)
