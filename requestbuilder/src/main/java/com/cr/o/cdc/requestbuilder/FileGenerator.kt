@@ -2,12 +2,12 @@ package com.cr.o.cdc.requestbuilder
 
 import com.cr.o.cdc.requestsannotations.Request
 import com.google.auto.service.AutoService
+import com.squareup.kotlinpoet.FileSpec
+import com.squareup.kotlinpoet.KModifier
+import com.squareup.kotlinpoet.PropertySpec
+import com.squareup.kotlinpoet.TypeSpec
 import java.io.File
-import javax.annotation.processing.AbstractProcessor
-import javax.annotation.processing.Processor
-import javax.annotation.processing.RoundEnvironment
-import javax.annotation.processing.SupportedOptions
-import javax.annotation.processing.SupportedSourceVersion
+import javax.annotation.processing.*
 import javax.lang.model.SourceVersion
 import javax.lang.model.element.ElementKind
 import javax.lang.model.element.TypeElement
@@ -35,19 +35,28 @@ class FileGenerator : AbstractProcessor() {
             ?.forEach { it ->
                 val className = it.simpleName.toString()
                 val pack = processingEnv.elementUtils.getPackageOf(it).toString()
+                val fileName = "$pack.$className"
 
-                val fileName = "Query$className"
-                val fileContent = KotlinClassBuilder(
-                    fileName,
-                    pack,
-                    getCOLS(processingEnv.elementUtils, "$pack.$className")
-                ).getContent()
+                FileSpec.builder(
+                    pack, "Query$className"
+                )
+                    .addType(TypeSpec.classBuilder("Query$className").build())
+                    .addProperty(
+                    PropertySpec.builder(
+                        "COLS",
+                        String::class,
+                        KModifier.PRIVATE
+                    ).initializer(
+                        "%S",
+                        getCOLS(processingEnv.elementUtils, fileName)
+                    ).build()
+                ).build().writeTo(
+                    File(
+                        processingEnv.options[KAPT_KOTLIN_GENERATED_OPTION_NAME],
+                        "$fileName.kt"
+                    )
+                )
 
-                val kaptKotlinGeneratedDir =
-                    processingEnv.options[KAPT_KOTLIN_GENERATED_OPTION_NAME]
-                val file = File(kaptKotlinGeneratedDir, "$fileName.kt")
-
-                file.writeText(fileContent)
             }
         return true
     }
