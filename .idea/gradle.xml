@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/requestbuilder" />
             <option value="$PROJECT_DIR$/requests" />
             <option value="$PROJECT_DIR$/requestsannotations" />
+            <option value="$PROJECT_DIR$/sharedtest" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

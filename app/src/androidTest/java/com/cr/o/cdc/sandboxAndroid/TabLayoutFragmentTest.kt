@@ -10,7 +10,7 @@ import org.junit.Test
 class TabLayoutFragmentTest {
 
     @Test
-    fun checkIfTabLayoutHaveTabsSelected() {
+    fun assertIfTabLayoutHaveTabsIsUnSelected() {
         launchFragmentInContainer<TabLayoutFragment>(themeResId = R.style.AppTheme)
 
         onView(ViewMatchers.withId(R.id.tabLayout)).check { view, _ ->

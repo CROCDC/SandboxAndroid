@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.test.platform.app.InstrumentationRegistry
 import com.cr.o.cdc.sandboxAndroid.fragments.NotificationsFragment
@@ -24,21 +25,20 @@ class MyFirebaseMessagingServiceTest {
     fun assertSendBroadcastToNotificationsFragment() {
         var assert = false
 
-        val r: BroadcastReceiver = object : BroadcastReceiver() {
-            override fun onReceive(context: Context, intent: Intent) {
-                assert = true
-                assertTrue(intent.extras?.getString(NotificationsFragment.EXTRA_MSG_NOTIFICATION) == "message")
-            }
+        launchFragmentInContainer<NotificationsFragment>(themeResId = R.style.AppTheme).onFragment {
+            LocalBroadcastManager.getInstance(it.requireContext())
+                .registerReceiver(object : BroadcastReceiver() {
+                    override fun onReceive(context: Context, intent: Intent) {
+                        assert = true
+                        assertTrue(intent.extras?.getString(NotificationsFragment.EXTRA_MSG_NOTIFICATION) == "message")
+                    }
+                }, IntentFilter(NotificationsFragment.BROADCAST_RECEIVER))
+
+            mockk<MyFirebaseMessagingService>(relaxed = true).apply {
+                every { baseContext } returns it.requireContext()
+            }.onMessageReceived(RemoteMessage(Bundle()))
         }
 
-        LocalBroadcastManager.getInstance(app).registerReceiver(r, IntentFilter(NotificationsFragment.BROADCAST_RECEIVER))
-
-        mockk<MyFirebaseMessagingService>(relaxed = true).apply {
-            every { application } returns app as SandBoxApp
-        }.onMessageReceived(RemoteMessage(Bundle()))
-
-        Thread.sleep(4000)
         assertTrue(assert)
-
     }
 }

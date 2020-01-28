@@ -1,2 +1,2 @@
-include ':app', ':requests', ':requestbuilder', ':requestsannotations'
+include ':app', ':requests', ':requestbuilder', ':requestsannotations', ':sharedtest'
 rootProject.name='CajaDeArena'
