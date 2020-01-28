@@ -37,25 +37,23 @@ class FileGenerator : AbstractProcessor() {
                 val pack = processingEnv.elementUtils.getPackageOf(it).toString()
                 val fileName = "$pack.$className"
 
-                FileSpec.builder(
-                    pack, "Query$className"
-                )
-                    .addType(TypeSpec.classBuilder("Query$className").build())
-                    .addProperty(
-                    PropertySpec.builder(
-                        "COLS",
-                        String::class,
-                        KModifier.PRIVATE
-                    ).initializer(
-                        "%S",
-                        getCOLS(processingEnv.elementUtils, fileName)
-                    ).build()
-                ).build().writeTo(
-                    File(
-                        processingEnv.options[KAPT_KOTLIN_GENERATED_OPTION_NAME],
-                        "$fileName.kt"
+                FileSpec.builder(pack, "Query$className")
+                    .addType(
+                        TypeSpec.classBuilder("Query$className")
+                            .addProperty(
+                                PropertySpec.builder(
+                                    "COLS", String::class, KModifier.PUBLIC
+                                ).initializer(
+                                    "%S",
+                                    getCOLS(processingEnv.elementUtils, fileName)
+                                ).build()
+                            ).build()
+                    ).build().writeTo(
+                        File(
+                            processingEnv.options[KAPT_KOTLIN_GENERATED_OPTION_NAME],
+                            "$fileName.kt"
+                        )
                     )
-                )
 
             }
         return true
