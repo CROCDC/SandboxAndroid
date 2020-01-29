@@ -24,6 +24,8 @@ class PushToken @Inject constructor(private val sharedPreferences: SharedPrefere
         }
     }
 
+    val pushQuantity: Int = sharedPreferences.getInt(PROPERTY_PUSHES_QUANTITY, 0)
+
     override fun onActive() {
         super.onActive()
         sharedPreferences.registerOnSharedPreferenceChangeListener(listener)
@@ -40,7 +42,14 @@ class PushToken @Inject constructor(private val sharedPreferences: SharedPrefere
         }
     }
 
+    fun addPush() {
+        sharedPreferences.editAndApply {
+            putInt(PROPERTY_PUSHES_QUANTITY, sharedPreferences.getInt(PROPERTY_PUSHES_QUANTITY, 0).inc())
+        }
+    }
+
     companion object {
         private const val PROPERTY_PUSH_TOKEN = "push_token"
+        private const val PROPERTY_PUSHES_QUANTITY = "pushes_quantity"
     }
 }

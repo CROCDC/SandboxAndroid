@@ -1,11 +1,11 @@
 package com.cr.o.cdc.requestbuilder
 
+import com.cr.o.cdc.requestsannotations.DebugInfo
 import com.cr.o.cdc.requestsannotations.Request
+import com.cr.o.cdc.requestsannotations.RequestInfo
+import com.cr.o.cdc.requestsannotations.RequestInterface
 import com.google.auto.service.AutoService
-import com.squareup.kotlinpoet.FileSpec
-import com.squareup.kotlinpoet.KModifier
-import com.squareup.kotlinpoet.PropertySpec
-import com.squareup.kotlinpoet.TypeSpec
+import com.squareup.kotlinpoet.*
 import java.io.File
 import javax.annotation.processing.*
 import javax.lang.model.SourceVersion
@@ -13,8 +13,8 @@ import javax.lang.model.element.ElementKind
 import javax.lang.model.element.TypeElement
 import javax.lang.model.util.Elements
 
-@AutoService(Processor::class) // For registering the service
-@SupportedSourceVersion(SourceVersion.RELEASE_8) // to support Java 8
+@AutoService(Processor::class)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 @SupportedOptions(FileGenerator.KAPT_KOTLIN_GENERATED_OPTION_NAME)
 class FileGenerator : AbstractProcessor() {
 
@@ -37,9 +37,24 @@ class FileGenerator : AbstractProcessor() {
                 val pack = processingEnv.elementUtils.getPackageOf(it).toString()
                 val fileName = "$pack.$className"
 
-                FileSpec.builder(pack, "Query$className")
+                FileSpec.builder("queries", "Query$className")
                     .addType(
                         TypeSpec.classBuilder("Query$className")
+                            .addSuperinterface(RequestInterface::class)
+                            .addFunction(
+                                FunSpec.builder("getRequestInfo")
+                                    .addModifiers(KModifier.OVERRIDE)
+                                    .returns(RequestInfo::class)
+                                    .addStatement("return RequestInfo(COLS)")
+                                    .build()
+                            )
+                            .addFunction(
+                                FunSpec.builder("getDebugInfo")
+                                    .addModifiers(KModifier.OVERRIDE)
+                                    .returns(DebugInfo::class)
+                                    .addStatement("return DebugInfo(COLS)")
+                                    .build()
+                            )
                             .addProperty(
                                 PropertySpec.builder(
                                     "COLS", String::class, KModifier.PUBLIC
@@ -50,8 +65,7 @@ class FileGenerator : AbstractProcessor() {
                             ).build()
                     ).build().writeTo(
                         File(
-                            processingEnv.options[KAPT_KOTLIN_GENERATED_OPTION_NAME],
-                            "$fileName.kt"
+                            processingEnv.options[KAPT_KOTLIN_GENERATED_OPTION_NAME]
                         )
                     )
 

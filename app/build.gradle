@@ -72,6 +72,7 @@ dependencies {
     implementation project(":requestsannotations")
 
     androidTestImplementation project(':sharedtest')
+    testImplementation project(':sharedtest')
 
     kapt project(':requestbuilder')
 
