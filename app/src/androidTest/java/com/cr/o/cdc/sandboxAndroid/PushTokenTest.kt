@@ -13,6 +13,8 @@ class PushTokenTest {
 
     @Test
     fun getPushesQuantity() {
+        context.sharedPreferences().edit().clear().commit()
+
         val pushToken = PushToken(context.sharedPreferences())
 
         assertTrue(pushToken.pushQuantity == 0)
