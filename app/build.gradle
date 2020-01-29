@@ -95,6 +95,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-contrib:3.2.0"
     androidTestImplementation "io.mockk:mockk-android:1.9.3"
     androidTestImplementation "com.google.android.material:material:1.0.0"
+    androidTestImplementation "android.arch.core:core-testing:1.1.1"
 
     implementation "androidx.test.espresso:espresso-accessibility:3.2.0"
     implementation "androidx.test.espresso:espresso-intents:3.2.0"
