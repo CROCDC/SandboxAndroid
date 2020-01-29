@@ -1,8 +1,6 @@
 package com.cr.o.cdc.requestbuilder
 
-import com.cr.o.cdc.requestsannotations.DebugInfo
-import com.cr.o.cdc.requestsannotations.Request
-import com.cr.o.cdc.requestsannotations.RequestInfo
+import com.cr.o.cdc.requestsannotations.GraphQlRequest
 import com.cr.o.cdc.requestsannotations.RequestInterface
 import com.google.auto.service.AutoService
 import com.squareup.kotlinpoet.*
@@ -19,7 +17,7 @@ import javax.lang.model.util.Elements
 class FileGenerator : AbstractProcessor() {
 
     override fun getSupportedAnnotationTypes(): MutableSet<String> {
-        return mutableSetOf(Request::class.java.name)
+        return mutableSetOf(GraphQlRequest::class.java.name)
     }
 
     override fun getSupportedSourceVersion(): SourceVersion {
@@ -31,7 +29,7 @@ class FileGenerator : AbstractProcessor() {
         roundEnvironment: RoundEnvironment?
     ): Boolean {
 
-        roundEnvironment?.getElementsAnnotatedWith(Request::class.java)
+        roundEnvironment?.getElementsAnnotatedWith(GraphQlRequest::class.java)
             ?.forEach { it ->
                 val className = it.simpleName.toString()
                 val pack = processingEnv.elementUtils.getPackageOf(it).toString()
@@ -40,19 +38,20 @@ class FileGenerator : AbstractProcessor() {
                 FileSpec.builder("queries", "Query$className")
                     .addType(
                         TypeSpec.classBuilder("Query$className")
-                            .addSuperinterface(RequestInterface::class)
                             .addFunction(
-                                FunSpec.builder("getRequestInfo")
-                                    .addModifiers(KModifier.OVERRIDE)
-                                    .returns(RequestInfo::class)
-                                    .addStatement("return RequestInfo(COLS)")
-                                    .build()
-                            )
-                            .addFunction(
-                                FunSpec.builder("getDebugInfo")
-                                    .addModifiers(KModifier.OVERRIDE)
-                                    .returns(DebugInfo::class)
-                                    .addStatement("return DebugInfo(COLS)")
+                                FunSpec.builder("build")
+                                    .addModifiers(KModifier.PUBLIC)
+
+                                    .addCode(
+                                        CodeBlock.builder()
+                                            .add(
+                                                CodeBlock.builder().addStatement("return object:RequestInterface")
+                                                    .addStatement("override fun getRequestInfo() = RequestInfo()")
+                                                    .build()
+                                            )
+                                            .build()
+                                    )
+                                    .returns(RequestInterface::class)
                                     .build()
                             )
                             .addProperty(

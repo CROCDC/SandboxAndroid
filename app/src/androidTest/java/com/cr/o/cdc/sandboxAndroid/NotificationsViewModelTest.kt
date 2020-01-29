@@ -18,7 +18,7 @@ class NotificationsViewModelTest {
     private val context = InstrumentationRegistry.getInstrumentation().targetContext
 
     @Test
-    fun observeReferenceOfPushTokenAndTestLiveDataOfSharedPrefrences() {
+    fun observeReferenceOfPushTokenAndTestLiveDataOfSharedPreferences() {
         val pushToken = PushToken(context.sharedPreferences())
         val viewModel = NotificationsViewModel(pushToken)
 

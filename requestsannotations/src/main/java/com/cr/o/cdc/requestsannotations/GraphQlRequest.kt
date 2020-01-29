@@ -7,4 +7,4 @@ package com.cr.o.cdc.requestsannotations
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.SOURCE)
 @MustBeDocumented
-annotation class Request
+annotation class GraphQlRequest
