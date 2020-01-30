@@ -7,7 +7,7 @@ import okhttp3.Request
  */
 
 interface RequestInterface {
-    fun getRequestInfo(): Request
+    fun getRequest(): Request
 
     fun getDebugInfo(): DebugInfo
 }

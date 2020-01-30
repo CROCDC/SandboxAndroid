@@ -1,12 +1,13 @@
 package com.cr.o.cdc.sandboxAndroid.model
 
 import com.cr.o.cdc.requestsannotations.GraphQlRequest
+import com.cr.o.cdc.sandboxAndroid.BuildConfig
 
 /**
  * Created by Camilo on 01/01/20.
  */
 
-@GraphQlRequest
+@GraphQlRequest(BuildConfig.URL_SERVER)
 data class Pokemon(
     val id: String,
     val name: String,

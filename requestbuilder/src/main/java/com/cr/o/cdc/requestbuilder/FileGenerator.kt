@@ -4,6 +4,7 @@ import com.cr.o.cdc.requestsannotations.GraphQlRequest
 import com.cr.o.cdc.requestsannotations.RequestInterface
 import com.google.auto.service.AutoService
 import com.squareup.kotlinpoet.*
+import okhttp3.Request
 import java.io.File
 import javax.annotation.processing.*
 import javax.lang.model.SourceVersion
@@ -31,29 +32,39 @@ class FileGenerator : AbstractProcessor() {
 
         roundEnvironment?.getElementsAnnotatedWith(GraphQlRequest::class.java)
             ?.forEach { it ->
+                val url = it.getAnnotation(GraphQlRequest::class.java).url
                 val className = it.simpleName.toString()
                 val pack = processingEnv.elementUtils.getPackageOf(it).toString()
                 val fileName = "$pack.$className"
 
+                val variables = FunSpec.builder("buildVariables")
+                    .returns(String::class)
+                    .addModifiers(KModifier.PRIVATE)
+                    .build()
+
+                val request = FunSpec.builder("buildRequest")
+                    .addModifiers(KModifier.PRIVATE)
+                    .addStatement("return Request.Builder().url(\"$url\").build()")
+                    .returns(Request::class)
+                    .build()
+
+
+                val build = FunSpec.builder("build")
+                    .addModifiers(KModifier.PUBLIC)
+                    .addStatement(
+                        "return object : RequestInterface{\n" +
+                                "override fun getRequest():Request = buildRequest()" +
+                                "\n}"
+                    )
+                    .returns(RequestInterface::class)
+                    .build()
+
                 FileSpec.builder("queries", "Query$className")
                     .addType(
                         TypeSpec.classBuilder("Query$className")
-                            .addFunction(
-                                FunSpec.builder("build")
-                                    .addModifiers(KModifier.PUBLIC)
-
-                                    .addCode(
-                                        CodeBlock.builder()
-                                            .add(
-                                                CodeBlock.builder().addStatement("return object:RequestInterface")
-                                                    .addStatement("override fun getRequestInfo() = RequestInfo()")
-                                                    .build()
-                                            )
-                                            .build()
-                                    )
-                                    .returns(RequestInterface::class)
-                                    .build()
-                            )
+                            .addFunction(variables)
+                            .addFunction(build)
+                            .addFunction(request)
                             .addProperty(
                                 PropertySpec.builder(
                                     "COLS", String::class, KModifier.PUBLIC
