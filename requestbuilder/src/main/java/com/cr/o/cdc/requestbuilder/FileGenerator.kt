@@ -32,13 +32,19 @@ class FileGenerator : AbstractProcessor() {
 
         roundEnvironment?.getElementsAnnotatedWith(GraphQlRequest::class.java)
             ?.forEach { it ->
-                val url = it.getAnnotation(GraphQlRequest::class.java).url
-                val className = it.simpleName.toString()
-                val pack = processingEnv.elementUtils.getPackageOf(it).toString()
-                val fileName = "$pack.$className"
+                val annotation = it.getAnnotation(GraphQlRequest::class.java)
+                val nameRequest = annotation.name
+                val parameters = annotation.parameters
+                val url = annotation.url
 
                 val variables = FunSpec.builder("buildVariables")
                     .returns(String::class)
+                    .addParameters(parameters.map {
+                        ParameterSpec.builder(
+                            it.substringBefore(":"),
+                            Class.forName(it.substringAfter(":")).kotlin
+                        ).build()
+                    })
                     .addModifiers(KModifier.PRIVATE)
                     .build()
 
@@ -58,6 +64,10 @@ class FileGenerator : AbstractProcessor() {
                     )
                     .returns(RequestInterface::class)
                     .build()
+
+                val className = it.simpleName.toString()
+                val pack = processingEnv.elementUtils.getPackageOf(it).toString()
+                val fileName = "$pack.$className"
 
                 FileSpec.builder("queries", "Query$className")
                     .addType(

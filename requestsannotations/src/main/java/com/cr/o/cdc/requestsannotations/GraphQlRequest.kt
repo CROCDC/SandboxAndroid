@@ -6,5 +6,6 @@ package com.cr.o.cdc.requestsannotations
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.SOURCE)
+@Repeatable
 @MustBeDocumented
-annotation class GraphQlRequest(val url:String)
+annotation class GraphQlRequest(val url: String, val name: String, val parameters: Array<String>)
