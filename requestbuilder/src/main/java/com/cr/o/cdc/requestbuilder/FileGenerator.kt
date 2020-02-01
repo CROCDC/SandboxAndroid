@@ -61,7 +61,9 @@ class FileGenerator : AbstractProcessor() {
                     .addModifiers(KModifier.PRIVATE)
                     .build()
 
-                val declaration = """{$name(name:"\"$input"\")"""
+                val input = "\$input"
+
+                val declaration = """{$name(name:\"$input\")"""
 
                 val variables = FunSpec.builder("buildVariables")
                     .returns(String::class)
