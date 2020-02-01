@@ -6,8 +6,11 @@ import okhttp3.Request
  * Created by Camilo on 01/01/20.
  */
 
-interface RequestInterface {
+interface RequestInterface<T> {
+
+    fun parse(json: String): T
+
     fun getRequest(): Request
 
-    fun getDebugInfo(): DebugInfo
+    fun getDebugInto(): DebugInfo
 }
