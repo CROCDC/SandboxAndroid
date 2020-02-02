@@ -17,7 +17,11 @@ fun Context.sharedPreferences() =
     }
 
 @Throws(InterruptedException::class)
-fun <T> getValueLivedata(liveData: LiveData<T>, seconds: Long,executeFunWhenObserve: () -> Unit): T? {
+fun <T> getValueLivedata(
+    liveData: LiveData<T>,
+    seconds: Long,
+    executeFunWhenObserve: () -> Unit
+): T? {
     var data: T? = null
     val latch = CountDownLatch(1)
     val observer = object : Observer<T> {
@@ -36,3 +40,5 @@ fun <T> getValueLivedata(liveData: LiveData<T>, seconds: Long,executeFunWhenObse
 
     return data
 }
+
+fun getMessage(id: String) = "la view con el id $id no tenia el texto esperado"

@@ -26,7 +26,7 @@ class NotificationsViewModelTest {
             pushToken.savePushToken("token")
         }
 
-        Thread.sleep(4000)
+        Thread.sleep(100)
 
         assertTrue(token == "token")
     }
