@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="40dp"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/btn_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="TabLayout"
+            app:layout_constraintBottom_toTopOf="@+id/btn_notifications"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Notifications"
+            app:layout_constraintBottom_toTopOf="@+id/btn_pokedex"
+            app:layout_constraintTop_toBottomOf="@+id/btn_tab_layout" />
+
+        <Button
+            android:id="@+id/btn_pokedex"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Pokedex"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_notifications" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

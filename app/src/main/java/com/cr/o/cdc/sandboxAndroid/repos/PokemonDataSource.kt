@@ -8,5 +8,6 @@ import queries.QueryPokemon
 
 class PokemonDataSource(private val client: Client) : PokemonDataSourceProvider {
 
-    override fun pokemon(id: String): LiveData<Response<Pokemon?>> = client.request(QueryPokemon().build(id))
+    override fun pokemon(name: String): LiveData<Response<Pokemon?>> =
+        client.request(QueryPokemon().build(name))
 }

@@ -13,7 +13,7 @@ class PokemonDataSourceTest : EndpointTest() {
     fun assertPokemonNotNull() {
         assertTrue(getValue(pokemonDataSource.pokemon("Pikachu")).also {
             println(it)
-        }.data != null)
+        }.data != null)|
     }
 
     @Test

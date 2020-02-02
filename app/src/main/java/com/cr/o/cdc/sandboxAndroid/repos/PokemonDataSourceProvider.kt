@@ -8,5 +8,5 @@ import com.cr.o.cdc.sandboxAndroid.model.Pokemon
  * Created by Camilo on 31/12/19.
  */
 interface PokemonDataSourceProvider {
-    fun pokemon(id: String): LiveData<Response<Pokemon?>>
+    fun pokemon(name: String): LiveData<Response<Pokemon?>>
 }

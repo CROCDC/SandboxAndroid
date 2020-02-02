@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pokemonFragment"
+            app:destination="@id/pokemonFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tabLayoutFragment"
+            app:destination="@id/tabLayoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.fragments.PokemonFragment"
+        android:label="PokemonFragment" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.fragments.NotificationsFragment"
+        android:label="NotificationsFragment" />
+    <fragment
+        android:id="@+id/tabLayoutFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.fragments.TabLayoutFragment"
+        android:label="TabLayoutFragment" />
+</navigation>
