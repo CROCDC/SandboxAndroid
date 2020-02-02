@@ -7,7 +7,7 @@ import java.io.IOException
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicBoolean
 
-class Manager {
+class Client {
 
     private val appExecutors = AppExecutors()
 
@@ -17,33 +17,31 @@ class Manager {
         .readTimeout(30, TimeUnit.SECONDS)
         .followRedirects(false).build()
 
-    fun <T> request(request: RequestInterface<T>): LiveData<T> =
-        object : LiveData<T>() {
+    //todo handle !!
+    fun <T> request(request: RequestInterface<T>): LiveData<Response<T>> =
+        object : LiveData<Response<T>>() {
 
-            val started = AtomicBoolean(false)
+            val started = AtomicBoolean()
 
             override fun onActive() {
 
                 super.onActive()
                 if (started.compareAndSet(false, true)) {
                     appExecutors.networkIO().execute {
-
-                        var httpCode: Int?
                         var body: String?
-
+                        var httpCode: Int
                         try {
-                            val response = httpclient.newCall(request.getRequest()).execute()
-
-                            httpCode = response.code
-
-                            body = response.body?.string()
+                            with(httpclient.newCall(request.getRequest()).execute()) {
+                                body = this.body?.string()
+                                httpCode = this.code
+                            }
 
                         } catch (e: IOException) {
-                            httpCode = 408
                             body = "CONNECTION_TIMEOUT"
+                            httpCode = 408
                         }
 
-                        postValue(request.parse(body!!))
+                        postValue(Response(request.parse(body!!), httpCode))
                     }
                 }
             }

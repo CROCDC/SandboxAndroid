@@ -4,14 +4,12 @@ import com.cr.o.cdc.requestsannotations.GraphQlRequest
 import com.google.auto.service.AutoService
 import com.squareup.kotlinpoet.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.Request
 import java.io.File
 import javax.annotation.processing.*
 import javax.lang.model.SourceVersion
 import javax.lang.model.element.ElementKind
 import javax.lang.model.element.TypeElement
-import javax.lang.model.type.MirroredTypesException
-import javax.lang.model.type.TypeMirror
+import javax.lang.model.type.MirroredTypeException
 import javax.lang.model.util.Elements
 
 @AutoService(Processor::class)
@@ -40,19 +38,31 @@ class FileGenerator : AbstractProcessor() {
                 val fileName = "$pack.$className"
                 val cols = getCOLS(processingEnv.elementUtils, fileName)
                 val name = annotation.name
-                var type: List<TypeMirror> = listOf()
-                try {
-                    annotation.inputs
-                } catch (mte: MirroredTypesException) {
-                    type = mte.typeMirrors
-                }
                 val url = annotation.url
 
-                val parameter = ParameterSpec.builder(
-                    "input",
-                    Class.forName(type[0].toString()).kotlin
-                ).build()
+                val inputs = annotation.inputs.map {
+                    Pair(
+                        it.name,
+                        Class.forName(
+                            try {
+                                it.type.asTypeName()
+                            } catch (e: MirroredTypeException) {
+                                e.typeMirror.asTypeName()
+                            }.toString()
+                        ).kotlin
+                    )
+                }
 
+                val parameters = inputs.map {
+                    ParameterSpec.builder(
+                        it.first,
+                        it.second
+                    ).build()
+                }
+
+                val header = inputs.map {
+                    """${it.first}:\${'"'}${'$'}${it.first}\${'"'}"""
+                }.toString().replace("[", "(").replace("]", ")")
 
                 val queryBuilder = FunSpec.builder("queryBuilder")
                     .returns(String::class)
@@ -61,43 +71,49 @@ class FileGenerator : AbstractProcessor() {
                     .addModifiers(KModifier.PRIVATE)
                     .build()
 
-                val input = "\$input"
-
-                val declaration = """{$name(name:\"$input\")"""
-
-                val variables = FunSpec.builder("buildVariables")
-                    .returns(String::class)
-                    .addParameter(parameter)
-                    .addStatement("return \"$declaration$cols}\"")
-                    .addModifiers(KModifier.PRIVATE)
-                    .build()
-
                 val need = "application/json; charset=utf-8".toMediaTypeOrNull()
-                val request = FunSpec.builder("buildRequest")
-                    .addModifiers(KModifier.PRIVATE)
-                    .addParameter(parameter)
-                    .addStatement("return Request.Builder().url(\"$url\").post(queryBuilder(buildVariables(input)).toRequestBody(\"$need\".toMediaTypeOrNull())).build()")
-                    .returns(Request::class)
-                    .build()
 
 
-                val parse = FunSpec.builder("parseJson").returns(it.asType().asTypeName())
+                val parseMethod = if (annotation.nullable) {
+                    "val jsonObj = JsonParser.parseString(json).asJsonObject.get(\"data\").asJsonObject.get(\"${annotation.name}\") \n" +
+                            "if(jsonObj.isJsonNull){" +
+                            "return null}" +
+                            "else{" +
+                            "return Gson().fromJson(jsonObj,${className}::class.java)" +
+                            "}"
+                } else {
+                    "return Gson().fromJson(JsonParser.parseString(json).asJsonObject.get(\"data\").asJsonObject.get(\"${annotation.name}\"),${className}::class.java)"
+                }
+
+                val parse = FunSpec.builder("parseJson")
+                    .returns(it.asType().asTypeName().asNullable())
                     .addParameter("json", String::class)
-                    .addStatement("return Gson().fromJson(JsonParser.parseString(json).asJsonObject.get(\"data\").asJsonObject.get(\"${annotation.name}\"),${className}::class.java)")
+                    .addStatement(parseMethod)
                     .build()
+
+                val classReturn = "$className${
+                if (annotation.nullable) {
+                    "?"
+                } else {
+                    ""
+                }}"
+
+                val bodyRequest = "{$name$header$cols}"
 
                 val build = FunSpec.builder("build")
                     .addModifiers(KModifier.PUBLIC)
-                    .addParameter(parameter)
+                    .addParameters(parameters)
+                    .addModifiers()
                     .addStatement(
-                        "return object : RequestInterface<$className>{\n" +
-                                "override fun parse(json:String):$className = parseJson(json)\n" +
-                                "override fun getRequest():Request = buildRequest(input)\n" +
-                                "override fun getDebugInto():DebugInfo = DebugInfo(\"$cols\",buildVariables(input))\n" +
+                        "return object : RequestInterface<$classReturn>{\n" +
+                                "override fun parse(json:String):$classReturn = parseJson(json)\n" +
+                                "override fun getRequest():Request = Request.Builder().url(\"$url\").post(queryBuilder(\"$bodyRequest\").toRequestBody(\"$need\".toMediaTypeOrNull())).build() \n" +
+                                "override fun getDebugInto():DebugInfo = DebugInfo(\"$cols\",\"$bodyRequest\")\n" +
                                 "\n}"
                     )
                     .build()
 
+                @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
                 FileSpec.builder("queries", "Query$className")
                     .addStaticImport("com.google.gson", "Gson")
                     .addStaticImport("com.google.gson", "JsonParser")
@@ -106,13 +122,12 @@ class FileGenerator : AbstractProcessor() {
                     .addStaticImport("com.cr.o.cdc.requestsannotations", "DebugInfo")
                     .addStaticImport("com.cr.o.cdc.requestsannotations", "QueryBuilder")
                     .addStaticImport("com.cr.o.cdc.requestsannotations", "RequestInterface")
+                    .addStaticImport("okhttp3", "Request")
                     .addType(
                         TypeSpec.classBuilder("Query$className")
                             .addFunction(queryBuilder)
                             .addFunction(build)
                             .addFunction(parse)
-                            .addFunction(request)
-                            .addFunction(variables)
                             .build()
                     ).build()
                     .writeTo(File(processingEnv.options[KAPT_KOTLIN_GENERATED_OPTION_NAME]))

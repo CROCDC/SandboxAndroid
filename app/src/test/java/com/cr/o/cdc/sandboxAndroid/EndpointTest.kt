@@ -3,7 +3,9 @@ package com.cr.o.cdc.sandboxAndroid
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import com.cr.o.cdc.requests.AppExecutors
-import com.cr.o.cdc.requests.Manager
+import com.cr.o.cdc.requests.Client
+import com.cr.o.cdc.requests.Response
+import com.cr.o.cdc.requests.StatusResult
 import org.junit.Rule
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -18,17 +20,23 @@ abstract class EndpointTest {
     @JvmField
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    fun getManager() = Manager()
+    fun getManager() = Client()
     private fun getAppExecutors() = AppExecutors()
 
     @Throws(InterruptedException::class)
-    fun <T> getValue(liveData: LiveData<T>): T {
-        var data: T? = null
+    fun <T> getValue(liveData: LiveData<Response<T>>): Response<T> {
+        var data: Response<T>? = null
         val latch = CountDownLatch(1)
         liveData.observeForever { o ->
-            if (o != null) {
-                data = o
-                latch.countDown()
+            when (o.status) {
+                StatusResult.SUCCESS -> {
+                    data = o
+                    latch.countDown()
+                }
+                StatusResult.LOADING -> {
+                }
+                StatusResult.FAILURE -> TODO()
+                StatusResult.OFFLINE -> TODO()
             }
         }
         latch.await(40, TimeUnit.SECONDS)

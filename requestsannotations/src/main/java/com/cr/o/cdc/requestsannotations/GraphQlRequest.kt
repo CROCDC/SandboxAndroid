@@ -1,7 +1,5 @@
 package com.cr.o.cdc.requestsannotations
 
-import kotlin.reflect.KClass
-
 /**
  * Created by Camilo on 01/01/20.
  */
@@ -13,5 +11,6 @@ import kotlin.reflect.KClass
 annotation class GraphQlRequest(
     val url: String,
     val name: String,
-    val inputs: Array<KClass<*>>
+    val inputs: Array<Input>,
+    val nullable: Boolean
 )

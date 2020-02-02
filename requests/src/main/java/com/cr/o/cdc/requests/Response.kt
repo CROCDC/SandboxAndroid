@@ -1,0 +1,11 @@
+package com.cr.o.cdc.requests
+
+data class Response<T>(val data: T, private val httpCode: Int) {
+
+    val status: StatusResult
+        get() = when (httpCode) {
+            408 -> StatusResult.OFFLINE
+            200 -> StatusResult.SUCCESS
+            else -> StatusResult.LOADING
+        }
+}

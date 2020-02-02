@@ -2,7 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.di
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.cr.o.cdc.requests.Manager
+import com.cr.o.cdc.requests.Client
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSourceProvider
@@ -18,13 +18,13 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideManager() = Manager()
+    fun provideManager() = Client()
 
     @Provides
     @Singleton
     fun providePokemonDataSourceProvide(
-        manager: Manager
-    ): PokemonDataSourceProvider = PokemonDataSource(manager)
+        client: Client
+    ): PokemonDataSourceProvider = PokemonDataSource(client)
 
     @Singleton
     @Provides
