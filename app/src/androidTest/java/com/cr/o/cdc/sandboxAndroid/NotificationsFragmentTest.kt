@@ -7,6 +7,9 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
 import com.cr.o.cdc.sandboxAndroid.fragments.NotificationsFragment
+import com.cr.o.cdc.sandboxAndroid.vm.NotificationsViewModel
+import com.cr.o.cdc.sharedtest.getPrivateField
+import com.cr.o.cdc.sharedtest.postValue
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
@@ -26,4 +29,15 @@ class NotificationsFragmentTest {
         }
     }
 
+
+    @Test
+    fun assertPushTokenSetText() {
+        launchFragmentInContainer<NotificationsFragment>(themeResId = R.style.AppTheme).onFragment {
+            (it.getPrivateField("viewModel") as NotificationsViewModel).token.postValue("message")
+        }
+
+        onView(ViewMatchers.withId(R.id.txt_push_token)).check { view, _ ->
+            assertTrue((view as TextView).text == "message")
+        }
+    }
 }

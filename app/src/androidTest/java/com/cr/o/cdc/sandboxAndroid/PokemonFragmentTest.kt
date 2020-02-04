@@ -1,6 +1,8 @@
 package com.cr.o.cdc.sandboxAndroid
 
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentFactory
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
@@ -14,7 +16,15 @@ class PokemonFragmentTest {
 
     @Test
     fun assertTxtNameSetValue() {
-        launchFragmentInContainer<PokemonFragment>(themeResId = R.style.AppTheme,factory = ).onFragment {
+        launchFragmentInContainer<PokemonFragment>(themeResId = R.style.AppTheme,factory = object :
+            FragmentFactory() {
+
+            override fun instantiate(classLoader: ClassLoader, className: String): Fragment {
+                val fragment = super.instantiate(classLoader, className)
+
+                return fragment
+            }
+        }).onFragment {
             it
         }
 

@@ -42,3 +42,11 @@ fun <T> getValueLivedata(
 }
 
 fun getMessage(id: String) = "la view con el id $id no tenia el texto esperado"
+
+
+fun <T> LiveData<T>.postValue(data: T) {
+    with(javaClass.methods.find { it.name.contains("postValue") }) {
+        this?.isAccessible = true
+        this?.invoke(null, this@postValue, data)
+    }
+}
