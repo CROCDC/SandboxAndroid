@@ -2,6 +2,7 @@ package com.cr.o.cdc.sharedtest
 
 import android.content.Context
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -48,9 +49,19 @@ fun getMessage(id: String) = "la view con el id $id no tenia el texto esperado"
 
 
 fun LiveData<*>.myPostValue(data: Any?) {
-    with(javaClass.methods.find { it.name.contains("postValue") }) {
-        this?.isAccessible = true
-        this?.invoke(null, this@myPostValue, data)
+    when {
+        this::class == MutableLiveData::class -> {
+            with(javaClass.methods.find { it.name.contains("postValue") }) {
+                this?.isAccessible = true
+                this?.invoke(this@myPostValue, data)
+            }
+        }
+        this is LiveData<*> -> {
+            with(javaClass.methods.find { it.name.contains("postValue") }) {
+                this?.isAccessible = true
+                this?.invoke(null, this@myPostValue, data)
+            }
+        }
     }
 }
 

@@ -14,9 +14,12 @@ import org.junit.Test
 
 class NotificationsFragmentTest : FragmentTest() {
 
+    val vm = NotificationsViewModel(getPushToken())
+
+    val vms = listOf(vm)
     @Test
     fun assertBroadcastReceiverSetTextTxtMsgNotifications() {
-        launchFragmentInContainer<NotificationsFragment>().onFragment {
+        launchFragmentInContainer<NotificationsFragment>(vms).onFragment {
             LocalBroadcastManager.getInstance(it.requireContext()).sendBroadcast(
                 Intent(NotificationsFragment.BROADCAST_RECEIVER).apply {
                     putExtra(NotificationsFragment.EXTRA_MSG_NOTIFICATION, "message")
@@ -31,10 +34,7 @@ class NotificationsFragmentTest : FragmentTest() {
 
     @Test
     fun assertPushTokenSetText() {
-        val vm = NotificationsViewModel(getPushToken())
-        launchFragmentInContainer<NotificationsFragment>(
-            listOf(vm)
-        )
+        launchFragmentInContainer<NotificationsFragment>(vms)
 
         vm.token.myPostValue("message")
 

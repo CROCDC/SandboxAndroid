@@ -7,10 +7,11 @@ import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.test.platform.app.InstrumentationRegistry
-import com.cr.o.cdc.requests.Response
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.model.Pokemon
 import com.cr.o.cdc.sandboxAndroid.push.PushToken
+import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.repos.PokemonRepository
 import com.cr.o.cdc.sharedtest.makeRandomInstance
 import com.cr.o.cdc.sharedtest.modifyValue
 import com.cr.o.cdc.sharedtest.sharedPreferences
@@ -39,4 +40,6 @@ abstract class FragmentTest {
     fun getPushToken() = PushToken(context.sharedPreferences())
 
     fun getPokemon() = Pokemon::class.makeRandomInstance<Pokemon>()
+
+    fun getPokemonRepository(dataSource: PokemonDataSourceProvider) = PokemonRepository(dataSource)
 }
