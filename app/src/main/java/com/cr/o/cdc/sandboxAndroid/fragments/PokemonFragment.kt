@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentPokemonBinding
 import com.cr.o.cdc.sandboxAndroid.di.Injectable
@@ -18,7 +19,7 @@ class PokemonFragment : Fragment(), Injectable {
     private lateinit var binding: FragmentPokemonBinding
 
     @Inject
-    lateinit var viewModelFactory: ViewModelFactory
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

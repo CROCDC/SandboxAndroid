@@ -1,6 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.di
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.cr.o.cdc.sandboxAndroid.vm.NotificationsViewModel
 import com.cr.o.cdc.sandboxAndroid.vm.PokemonViewModel
 import dagger.Binds
@@ -23,4 +24,7 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(NotificationsViewModel::class)
     abstract fun bindNotificationsViewModel(notificationsViewModel: NotificationsViewModel): ViewModel
+
+    @Binds
+    abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 }

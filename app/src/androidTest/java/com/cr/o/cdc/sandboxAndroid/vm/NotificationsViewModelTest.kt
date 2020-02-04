@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid
+package com.cr.o.cdc.sandboxAndroid.vm
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.platform.app.InstrumentationRegistry
