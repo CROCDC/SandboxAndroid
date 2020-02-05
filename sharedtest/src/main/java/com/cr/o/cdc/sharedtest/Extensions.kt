@@ -79,19 +79,25 @@ fun Any.modifyValue(name: String, value: Any?) {
 @Throws(InterruptedException::class)
 fun <T> getCountOfChangesLiveData(
     liveData: LiveData<T>,
-    seconds: Long
+    seconds: Long,
+    executeFunWhenObserve: () -> Unit
+
 ): Int {
     var count = 0
     val latch = CountDownLatch(1)
-    liveData.observeForever { count += 1 }
+    liveData.observeForever {
+        count += 1
+    }
 
+    Thread.sleep(400)
+    executeFunWhenObserve.invoke()
     latch.await(seconds, TimeUnit.SECONDS)
     return count
 
 }
 
 fun <T> KClass<*>.makeRandomInstance(
-    parameters: List<com.cr.o.cdc.sharedtest.Parameter> = listOf()
+    parameters: List<Parameter> = listOf()
 ): T = try {
     when (this) {
         List::class -> listOf<Any>()

@@ -1,11 +1,16 @@
 package com.cr.o.cdc.sandboxAndroid.dbsandbox
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.cr.o.cdc.sharedtest.RatingBrokenOfGson
 import com.cr.o.cdc.sharedtest.getCountOfChangesLiveData
 import junit.framework.TestCase.assertTrue
+import org.junit.Rule
 import org.junit.Test
 
 class RatingBrokenOfGsonTest : DBTest() {
+
+    @get:Rule
+    val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     @Test
     fun ratingRoomTestWithValStars() {
@@ -21,15 +26,25 @@ class RatingBrokenOfGsonTest : DBTest() {
     }
 
     @Test
+    fun saveAndUpdateValueRoom() {
+        db.ratingDao().save(RatingBrokenOfGson.rate1)
+
+        val count = getCountOfChangesLiveData(db.ratingDao().load(RatingBrokenOfGson.rate1.id), 5) {
+            db.ratingDao().updateScore("FOUR", RatingBrokenOfGson.rate1.id)
+        }
+
+        assertTrue(count == 2)
+    }
+
+    @Test
     fun updateSameValueRoom() {
         db.ratingDao().save(RatingBrokenOfGson.rate1)
 
-        val count = getCountOfChangesLiveData(db.ratingDao().load(RatingBrokenOfGson.rate1.id), 5)
+        val count = getCountOfChangesLiveData(db.ratingDao().load(RatingBrokenOfGson.rate1.id), 5) {
+            db.ratingDao().updateScore(RatingBrokenOfGson.rate1.score, RatingBrokenOfGson.rate1.id)
+        }
 
-        db.ratingDao().updateScore("FOUR", RatingBrokenOfGson.rate1.id)
-
-
-        println(count)
+        assertTrue(count == 2)
     }
 }
 
