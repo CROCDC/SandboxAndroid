@@ -8,10 +8,6 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonParseException
 import java.lang.reflect.Type
 
-/**
- * Created by sirkuryaki on 9/19/17.
- */
-
 class ResponseDeserializer<T>(
     private val rootRode: String,
     private val includeElementsNode: Boolean

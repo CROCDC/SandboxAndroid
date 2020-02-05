@@ -69,7 +69,7 @@ kapt {
 
 dependencies {
     implementation project(':requests')
-    implementation project(":requestsannotations")
+    implementation project(':requestsmodel')
 
     androidTestImplementation project(':sharedtest')
     testImplementation project(':sharedtest')
