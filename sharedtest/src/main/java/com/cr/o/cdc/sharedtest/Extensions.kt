@@ -50,3 +50,16 @@ fun <T> LiveData<T>.postValue(data: T) {
         this?.invoke(null, this@postValue, data)
     }
 }
+
+@Throws(InterruptedException::class)
+fun <T> getCountOfChangesLiveData(
+    liveData: LiveData<T>,
+    seconds: Long
+): Int {
+    var count = 0
+    val latch = CountDownLatch(1)
+    liveData.observeForever { count += 1 }
+
+    latch.await(seconds, TimeUnit.SECONDS)
+    return count
+}
