@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentNotificationsBinding
@@ -31,7 +32,7 @@ class NotificationsFragment : Fragment(), Injectable {
     private lateinit var viewModel: NotificationsViewModel
 
     @Inject
-    lateinit var viewModelFactory: ViewModelFactory
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

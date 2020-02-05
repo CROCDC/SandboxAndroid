@@ -1,23 +1,25 @@
-package com.cr.o.cdc.sandboxAndroid
+package com.cr.o.cdc.sandboxAndroid.fragments
 
 import android.content.Intent
 import android.widget.TextView
-import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
-import com.cr.o.cdc.sandboxAndroid.fragments.NotificationsFragment
+import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.vm.NotificationsViewModel
-import com.cr.o.cdc.sharedtest.getPrivateField
-import com.cr.o.cdc.sharedtest.postValue
+import com.cr.o.cdc.sharedtest.getMessage
+import com.cr.o.cdc.sharedtest.myPostValue
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
-class NotificationsFragmentTest {
+class NotificationsFragmentTest : FragmentTest() {
 
+    val vm = NotificationsViewModel(getPushToken())
+
+    val vms = listOf(vm)
     @Test
     fun assertBroadcastReceiverSetTextTxtMsgNotifications() {
-        launchFragmentInContainer<NotificationsFragment>(themeResId = R.style.AppTheme).onFragment {
+        launchFragmentInContainer<NotificationsFragment>(vms).onFragment {
             LocalBroadcastManager.getInstance(it.requireContext()).sendBroadcast(
                 Intent(NotificationsFragment.BROADCAST_RECEIVER).apply {
                     putExtra(NotificationsFragment.EXTRA_MSG_NOTIFICATION, "message")
@@ -32,12 +34,12 @@ class NotificationsFragmentTest {
 
     @Test
     fun assertPushTokenSetText() {
-        launchFragmentInContainer<NotificationsFragment>(themeResId = R.style.AppTheme).onFragment {
-            (it.getPrivateField("viewModel") as NotificationsViewModel).token.postValue("message")
-        }
+        launchFragmentInContainer<NotificationsFragment>(vms)
+
+        vm.token.myPostValue("message")
 
         onView(ViewMatchers.withId(R.id.txt_push_token)).check { view, _ ->
-            assertTrue((view as TextView).text == "message")
+            assertTrue(getMessage("txt_push_token"), (view as TextView).text == "message")
         }
     }
 }

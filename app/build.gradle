@@ -27,7 +27,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.cr.o.cdc.sandboxAndroid.Runner"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath true
