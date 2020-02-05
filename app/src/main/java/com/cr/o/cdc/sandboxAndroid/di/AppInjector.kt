@@ -8,6 +8,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
+import com.cr.o.cdc.daggerutilmodel.Injectable
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import dagger.android.AndroidInjection
 import dagger.android.HasAndroidInjector
@@ -52,17 +53,21 @@ object AppInjector {
     }
 
     private fun handleActivity(activity: Activity) {
-        if (activity is HasAndroidInjector || activity is Injectable) {
+        if (activity is HasAndroidInjector || activity.javaClass.isAnnotationPresent(Injectable::class.java)) {
             AndroidInjection.inject(activity)
         }
         if (activity is FragmentActivity) {
             activity.supportFragmentManager
                 .registerFragmentLifecycleCallbacks(
                     object : FragmentManager.FragmentLifecycleCallbacks() {
-                        override fun onFragmentPreAttached(fm: FragmentManager, f: Fragment, context: Context) {
+                        override fun onFragmentPreAttached(
+                            fm: FragmentManager,
+                            f: Fragment,
+                            context: Context
+                        ) {
                             super.onFragmentPreAttached(fm, f, context)
 
-                            if (f is Injectable) {
+                            if (f.javaClass.isAnnotationPresent(Injectable::class.java)) {
                                 AndroidSupportInjection.inject(f)
                             }
                         }

@@ -8,13 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.cr.o.cdc.daggerutilmodel.Injectable
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentPokemonBinding
-import com.cr.o.cdc.sandboxAndroid.di.Injectable
-import com.cr.o.cdc.sandboxAndroid.di.ViewModelFactory
 import com.cr.o.cdc.sandboxAndroid.vm.PokemonViewModel
 import javax.inject.Inject
 
-class PokemonFragment : Fragment(), Injectable {
+@Injectable
+class PokemonFragment : Fragment() {
 
     private lateinit var binding: FragmentPokemonBinding
 

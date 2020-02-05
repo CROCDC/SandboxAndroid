@@ -70,11 +70,13 @@ kapt {
 dependencies {
     implementation project(':requests')
     implementation project(':requestsmodel')
+    implementation project(':daggerutilmodel')
 
     androidTestImplementation project(':sharedtest')
     testImplementation project(':sharedtest')
 
     kapt project(':requestbuilder')
+    kapt project(':daggerutilbuilder')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

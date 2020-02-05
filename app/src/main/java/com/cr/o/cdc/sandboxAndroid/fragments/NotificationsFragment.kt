@@ -17,13 +17,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.cr.o.cdc.daggerutilmodel.Injectable
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentNotificationsBinding
-import com.cr.o.cdc.sandboxAndroid.di.Injectable
-import com.cr.o.cdc.sandboxAndroid.di.ViewModelFactory
 import com.cr.o.cdc.sandboxAndroid.vm.NotificationsViewModel
 import javax.inject.Inject
 
-class NotificationsFragment : Fragment(), Injectable {
+@Injectable
+class NotificationsFragment : Fragment() {
 
     private lateinit var broadcastReceiver: BroadcastReceiver
 
