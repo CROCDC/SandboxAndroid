@@ -1,6 +1,6 @@
 package com.cr.o.cdc.sandboxAndroid.model
 
-import com.cr.o.cdc.requestsannotations.GraphQlRequest
+import com.cr.o.cdc.annotations.GraphQlRequest
 import com.cr.o.cdc.requestsannotations.Input
 import com.cr.o.cdc.sandboxAndroid.BuildConfig
 
