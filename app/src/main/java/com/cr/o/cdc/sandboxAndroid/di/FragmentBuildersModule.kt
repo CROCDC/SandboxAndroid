@@ -10,11 +10,4 @@ import dagger.android.ContributesAndroidInjector
  */
 
 @Module
-abstract class FragmentBuildersModule {
-
-    @ContributesAndroidInjector
-    abstract fun contributesPokemonFragment(): PokemonFragment
-
-    @ContributesAndroidInjector
-    abstract fun contributesNotificationsFragment(): NotificationsFragment
-}
+abstract class FragmentBuildersModule

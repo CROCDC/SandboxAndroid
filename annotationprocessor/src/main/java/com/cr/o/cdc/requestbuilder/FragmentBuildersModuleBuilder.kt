@@ -1,10 +1,16 @@
 package com.cr.o.cdc.requestbuilder
 
-import com.squareup.kotlinpoet.*
+import com.squareup.javapoet.JavaFile
+import com.squareup.javapoet.MethodSpec
+import com.squareup.javapoet.TypeSpec
+import com.squareup.kotlinpoet.asTypeName
 import dagger.Module
+import dagger.android.ContributesAndroidInjector
 import java.io.File
 import javax.annotation.processing.ProcessingEnvironment
 import javax.lang.model.element.Element
+import javax.lang.model.element.Modifier
+
 
 class FragmentBuildersModuleBuilder(
     elements: MutableSet<out Element>,
@@ -13,25 +19,24 @@ class FragmentBuildersModuleBuilder(
 
 
     private val methods = elements.map {
-        FunSpec.builder("contributes${it.simpleName}")
-            .addModifiers(KModifier.ABSTRACT)
-            .returns(it.asType().asTypeName())
+        MethodSpec.methodBuilder("contributes${it.simpleName}")
+            .addModifiers(Modifier.ABSTRACT)
+            .addAnnotation(ContributesAndroidInjector::class.java)
+            .returns(it::class.java)
             .build()
     }
 
     fun build() {
         if (methods.isNotEmpty()) {
-            FileSpec.builder("dagger.util", "FragmentBuildersModule").addType(
+            JavaFile.builder(
+                "com.cr.o.cdc.sandboxAndroid.di",
                 TypeSpec.classBuilder("FragmentBuildersModule")
-                    .addModifiers(KModifier.ABSTRACT)
+                    .addModifiers(Modifier.ABSTRACT)
                     .addAnnotation(Module::class.java)
-                    .addFunctions(methods).build()
+                    .addMethods(methods)
+                    .build()
             ).build()
-                .writeTo(
-                    File(
-                        processingEnv.options[FileGenerator.KAPT_KOTLIN_GENERATED_OPTION_NAME] ?: ""
-                    )
-                )
+                .writeTo(File(processingEnv.options[FileGenerator.KAPT_KOTLIN_GENERATED_OPTION_NAME] ?: ""))
         }
 
     }
