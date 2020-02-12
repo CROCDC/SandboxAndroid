@@ -1,10 +1,14 @@
 package com.cr.o.cdc.requestbuilder
 
-import com.squareup.kotlinpoet.*
+import com.squareup.javapoet.ClassName
+import com.squareup.javapoet.JavaFile
+import com.squareup.javapoet.MethodSpec
+import com.squareup.javapoet.TypeSpec
 import dagger.Module
 import java.io.File
 import javax.annotation.processing.ProcessingEnvironment
 import javax.lang.model.element.Element
+import javax.lang.model.element.Modifier
 
 class FragmentBuildersModuleBuilder(
     elements: MutableSet<out Element>,
@@ -13,25 +17,25 @@ class FragmentBuildersModuleBuilder(
 
 
     private val methods = elements.map {
-        FunSpec.builder("contributes${it.simpleName}")
-            .addModifiers(KModifier.ABSTRACT)
-            .returns(it.asType().asTypeName())
+        MethodSpec.methodBuilder("contributes${it.simpleName}")
+            .addModifiers(Modifier.ABSTRACT)
+            .returns(ClassName.get(it.asType()))
             .build()
     }
 
     fun build() {
         if (methods.isNotEmpty()) {
-            FileSpec.builder("dagger.util", "FragmentBuildersModule").addType(
-                TypeSpec.classBuilder("FragmentBuildersModule")
-                    .addModifiers(KModifier.ABSTRACT)
+            JavaFile.builder(
+                "com.cr.o.cdc.sandboxAndroid.di",
+                TypeSpec.classBuilder("FragmentBuildersModuleT")
+                    .addModifiers(Modifier.ABSTRACT, Modifier.PUBLIC)
                     .addAnnotation(Module::class.java)
-                    .addFunctions(methods).build()
-            ).build()
-                .writeTo(
-                    File(
-                        processingEnv.options[FileGenerator.KAPT_KOTLIN_GENERATED_OPTION_NAME] ?: ""
-                    )
+                    .addMethods(methods).build()
+            ).build().writeTo(
+                File(
+                    processingEnv.options[FileGenerator.KAPT_KOTLIN_GENERATED_OPTION_NAME] ?: ""
                 )
+            )
         }
 
     }

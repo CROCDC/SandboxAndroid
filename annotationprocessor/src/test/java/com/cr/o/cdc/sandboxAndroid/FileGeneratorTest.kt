@@ -11,11 +11,19 @@ class FileGeneratorTest {
 
 
     @Test
-    fun assertCompileIsSuccess() {
+    fun assertCompileIsSuccessQueryBuilder() {
         val file = JavaFileObjects.forResource("Pokemon.java")
 
         val com = javac().withProcessors(FileGenerator()).compile(file)
 
+        assertThat(com).succeeded()
+    }
+
+    @Test
+    fun assertCompileIsSuccessFragmentBuilder() {
+        val file = JavaFileObjects.forResource("Fragment.java")
+
+        val com = javac().withProcessors(FileGenerator()).compile(file)
 
         assertThat(com).succeeded()
     }

@@ -25,12 +25,13 @@ class FileGenerator : AbstractProcessor() {
         roundEnvironment: RoundEnvironment?
     ): Boolean {
 
-        FragmentBuildersModuleBuilder(
+        /*FragmentBuildersModuleBuilder(
             roundEnvironment?.getElementsAnnotatedWith(Injectable::class.java)
                 ?: mutableSetOf(),
             processingEnv
         ).build()
-
+        TODO
+*/
         QueryBuilder(
             roundEnvironment?.getElementsAnnotatedWith(GraphQlRequest::class.java)
                 ?: mutableSetOf(),

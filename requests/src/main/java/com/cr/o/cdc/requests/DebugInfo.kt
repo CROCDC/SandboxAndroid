@@ -1,4 +1,4 @@
-package com.cr.o.cdc.annotations
+package com.cr.o.cdc.requests
 
 /**
  * Created by Camilo on 01/01/20.

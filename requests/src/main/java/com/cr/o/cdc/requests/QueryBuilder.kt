@@ -1,4 +1,4 @@
-package com.cr.o.cdc.annotations
+package com.cr.o.cdc.requests
 
 data class QueryBuilder(
     val query: String,

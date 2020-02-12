@@ -1,4 +1,4 @@
-package com.cr.o.cdc.annotations
+package com.cr.o.cdc.requests
 
 import okhttp3.Request
 

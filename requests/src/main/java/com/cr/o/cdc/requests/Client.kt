@@ -1,7 +1,6 @@
 package com.cr.o.cdc.requests
 
 import androidx.lifecycle.LiveData
-import com.cr.o.cdc.annotations.RequestInterface
 import okhttp3.OkHttpClient
 import java.io.IOException
 import java.util.concurrent.TimeUnit

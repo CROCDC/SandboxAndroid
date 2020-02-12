@@ -64,6 +64,10 @@ android {
 }
 
 kapt {
+    arguments {
+        arg("argumentIncremental", 'true')
+    }
+
     correctErrorTypes true
 }
 

@@ -1,4 +1,4 @@
-package com.cr.o.cdc.requestsannotations
+package com.cr.o.cdc.annotations
 
 import kotlin.reflect.KClass
 
