@@ -1,0 +1,1 @@
+/home/camilo/StudioProjects/SandboxAndroid/daggerutilmodel/build/classes/kotlin/main/com/cr/o/cdc/daggerutilmodel/Injectable.class:/home/camilo/StudioProjects/SandboxAndroid/daggerutilmodel/build/classes/kotlin/main/com/cr/o/cdc/daggerutilmodel/InjectableClass.class
