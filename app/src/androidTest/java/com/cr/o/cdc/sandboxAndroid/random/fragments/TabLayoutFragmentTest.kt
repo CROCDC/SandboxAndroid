@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.fragments
+package com.cr.o.cdc.sandboxAndroid.random.fragments
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers

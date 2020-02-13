@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.model
+package com.cr.o.cdc.sandboxAndroid.pokemons.model
 
 import com.cr.o.cdc.annotations.GraphQlRequest
 import com.cr.o.cdc.annotations.Input

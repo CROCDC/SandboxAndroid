@@ -4,8 +4,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.cr.o.cdc.requests.Client
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
-import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSource
-import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
+import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -24,7 +24,8 @@ class AppModule {
     @Singleton
     fun providePokemonDataSourceProvide(
         client: Client
-    ): PokemonDataSourceProvider = PokemonDataSource(client)
+    ): PokemonDataSourceProvider =
+        PokemonDataSource(client)
 
     @Singleton
     @Provides

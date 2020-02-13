@@ -1,9 +1,8 @@
-package com.cr.o.cdc.sandboxAndroid.vm
+package com.cr.o.cdc.sandboxAndroid.notifications.vm
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.cr.o.cdc.sandboxAndroid.push.PushToken
+import com.cr.o.cdc.sandboxAndroid.notifications.vo.PushToken
 import javax.inject.Inject
 
 /**

@@ -2,8 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.cr.o.cdc.sandboxAndroid.vm.NotificationsViewModel
-import com.cr.o.cdc.sandboxAndroid.vm.PokemonViewModel
+import com.cr.o.cdc.sandboxAndroid.notifications.vm.NotificationsViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

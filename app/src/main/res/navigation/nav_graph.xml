@@ -20,14 +20,14 @@
     </fragment>
     <fragment
         android:id="@+id/pokemonFragment"
-        android:name="com.cr.o.cdc.sandboxAndroid.fragments.PokemonFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.pokemons.fragments.PokemonFragment"
         android:label="PokemonFragment" />
     <fragment
         android:id="@+id/notificationsFragment"
-        android:name="com.cr.o.cdc.sandboxAndroid.fragments.NotificationsFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.notifications.fragments.NotificationsFragment"
         android:label="NotificationsFragment" />
     <fragment
         android:id="@+id/tabLayoutFragment"
-        android:name="com.cr.o.cdc.sandboxAndroid.fragments.TabLayoutFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.random.fragments.TabLayoutFragment"
         android:label="TabLayoutFragment" />
 </navigation>

@@ -1,13 +1,14 @@
 package com.cr.o.cdc.sandboxAndroid
 
-import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSource
+import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
 class PokemonDataSourceTest : EndpointTest() {
 
 
-    private val pokemonDataSource = PokemonDataSource(getManager())
+    private val pokemonDataSource =
+        PokemonDataSource(getManager())
 
     @Test
     fun assertPokemonNotNull() {

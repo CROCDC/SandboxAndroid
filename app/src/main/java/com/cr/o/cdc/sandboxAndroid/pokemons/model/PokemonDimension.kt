@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.model
+package com.cr.o.cdc.sandboxAndroid.pokemons.model
 
 /**
  * Created by Camilo on 01/01/20.

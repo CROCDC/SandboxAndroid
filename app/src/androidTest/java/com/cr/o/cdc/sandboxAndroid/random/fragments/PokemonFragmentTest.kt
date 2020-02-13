@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.fragments
+package com.cr.o.cdc.sandboxAndroid.random.fragments
 
 import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
@@ -6,10 +6,9 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
 import com.cr.o.cdc.requests.Response
 import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.repos.PokemonDataSourceProvider
-import com.cr.o.cdc.sandboxAndroid.vm.PokemonViewModel
+import com.cr.o.cdc.sandboxAndroid.pokemons.fragments.PokemonFragment
+import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
 import com.cr.o.cdc.sharedtest.getMessage
-import com.cr.o.cdc.sharedtest.myPostValue
 import io.mockk.every
 import io.mockk.mockk
 import junit.framework.TestCase.assertTrue

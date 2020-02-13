@@ -1,9 +1,10 @@
-package com.cr.o.cdc.sandboxAndroid.push
+package com.cr.o.cdc.sandboxAndroid.notifications.util
 
 import android.content.Intent
 import android.util.Log
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.cr.o.cdc.sandboxAndroid.fragments.NotificationsFragment
+import com.cr.o.cdc.sandboxAndroid.notifications.vo.PushToken
+import com.cr.o.cdc.sandboxAndroid.notifications.fragments.NotificationsFragment
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.pubnub.api.PNConfiguration

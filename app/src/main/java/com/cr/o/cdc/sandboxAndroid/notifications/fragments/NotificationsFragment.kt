@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.fragments
+package com.cr.o.cdc.sandboxAndroid.notifications.fragments
 
 import android.content.BroadcastReceiver
 import android.content.ClipData
@@ -19,7 +19,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.cr.o.cdc.annotations.Injectable
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentNotificationsBinding
-import com.cr.o.cdc.sandboxAndroid.vm.NotificationsViewModel
+import com.cr.o.cdc.sandboxAndroid.notifications.vm.NotificationsViewModel
 import javax.inject.Inject
 
 @Injectable

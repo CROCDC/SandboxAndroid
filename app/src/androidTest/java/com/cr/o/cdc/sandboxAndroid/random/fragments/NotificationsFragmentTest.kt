@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.fragments
+package com.cr.o.cdc.sandboxAndroid.random.fragments
 
 import android.content.Intent
 import android.widget.TextView
@@ -6,7 +6,8 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
 import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.vm.NotificationsViewModel
+import com.cr.o.cdc.sandboxAndroid.notifications.fragments.NotificationsFragment
+import com.cr.o.cdc.sandboxAndroid.notifications.vm.NotificationsViewModel
 import com.cr.o.cdc.sharedtest.getMessage
 import com.cr.o.cdc.sharedtest.myPostValue
 import junit.framework.TestCase.assertTrue

@@ -4,8 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.cr.o.cdc.sandboxAndroid.databinding.ActivityMainBinding
-import com.cr.o.cdc.sandboxAndroid.fragments.NotificationsFragment
-import com.cr.o.cdc.sandboxAndroid.fragments.PokemonFragment
 
 class MainActivity : AppCompatActivity() {
 

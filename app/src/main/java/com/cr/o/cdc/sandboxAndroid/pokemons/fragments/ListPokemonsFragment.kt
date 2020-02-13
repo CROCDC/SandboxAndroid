@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.fragments
+package com.cr.o.cdc.sandboxAndroid.pokemons.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

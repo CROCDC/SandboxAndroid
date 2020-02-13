@@ -1,6 +1,6 @@
 package com.cr.o.cdc.sandboxAndroid.di
 
-import com.cr.o.cdc.sandboxAndroid.push.MyFirebaseMessagingService
+import com.cr.o.cdc.sandboxAndroid.notifications.util.MyFirebaseMessagingService
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.fragments
+package com.cr.o.cdc.sandboxAndroid.pokemons.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.annotations.Injectable
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentPokemonBinding
-import com.cr.o.cdc.sandboxAndroid.vm.PokemonViewModel
 import javax.inject.Inject
 
 @Injectable

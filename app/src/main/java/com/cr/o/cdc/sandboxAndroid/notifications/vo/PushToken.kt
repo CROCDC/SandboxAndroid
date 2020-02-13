@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.push
+package com.cr.o.cdc.sandboxAndroid.notifications.vo
 
 import android.content.SharedPreferences
 import androidx.lifecycle.LiveData

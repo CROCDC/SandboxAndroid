@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.repos
+package com.cr.o.cdc.sandboxAndroid.pokemons.repos
 
 import javax.inject.Inject
 
