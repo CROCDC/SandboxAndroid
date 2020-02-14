@@ -10,16 +10,16 @@ import com.cr.o.cdc.sharedtest.RatingBrokenOfGson
 @Dao
 interface RatingDao {
 
-    @Query("SELECT * FROM RatingBrokenOfGson WHERE id = :id")
+    @Query("SELECT * FROM RatingBrokenOfGson WHERE uri = :uri")
     fun loadAsync(id: String): RatingBrokenOfGson
 
-    @Query("SELECT * FROM RatingBrokenOfGson WHERE id = :id")
+    @Query("SELECT * FROM RatingBrokenOfGson WHERE uri = :uri")
     fun load(id: String): LiveData<RatingBrokenOfGson>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun save(ratingBrokenOfGson: RatingBrokenOfGson)
 
 
-    @Query("UPDATE RatingBrokenOfGson SET score =:score WHERE id = :id")
+    @Query("UPDATE RatingBrokenOfGson SET score =:score WHERE uri = :uri")
     fun updateScore(score: String, id: String)
 }

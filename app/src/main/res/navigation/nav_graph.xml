@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_homeFragment_to_tabLayoutFragment"
             app:destination="@id/tabLayoutFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
     </fragment>
     <fragment
         android:id="@+id/pokemonFragment"
@@ -28,6 +31,10 @@
         android:label="NotificationsFragment" />
     <fragment
         android:id="@+id/tabLayoutFragment"
-        android:name="com.cr.o.cdc.sandboxAndroid.random.fragments.TabLayoutFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.fragments.TabLayoutFragment"
         android:label="TabLayoutFragment" />
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.pagination.fragments.RecipesFragment"
+        android:label="RecipesFragment" />
 </navigation>

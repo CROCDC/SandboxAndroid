@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.random.fragments
+package com.cr.o.cdc.sandboxAndroid.fragments
 
 import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
@@ -29,7 +29,7 @@ class PokemonFragmentTest : FragmentTest() {
         vm.pikachu.myPostValue(Response(p, 200))
 
         onView(ViewMatchers.withId(R.id.txt_name)).check { view, _ ->
-            assertTrue(getMessage("R.id.txt_name"), (view as TextView).text == p.name)
+            assertTrue(getMessage("R.uri.txt_name"), (view as TextView).text == p.name)
         }
     }
 }

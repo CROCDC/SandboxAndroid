@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid
+package com.cr.o.cdc.sandboxAndroid.repos
 
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
 import junit.framework.TestCase.assertTrue
@@ -19,7 +19,7 @@ class PokemonDataSourceTest : EndpointTest() {
 
     @Test
     fun assertPokemonNull() {
-        assertTrue(getValue(pokemonDataSource.pokemon("id")).also {
+        assertTrue(getValue(pokemonDataSource.pokemon("uri")).also {
             println(it)
         }.data == null)
     }

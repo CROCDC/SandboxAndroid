@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.random.fragments
+package com.cr.o.cdc.sandboxAndroid.fragments
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory

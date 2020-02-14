@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.annotations.Injectable
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentPokemonBinding
+import com.cr.o.cdc.sandboxAndroid.pokemons.vm.PokemonViewModel
 import javax.inject.Inject
 
 @Injectable

@@ -29,6 +29,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_pokemonFragment)
         }
 
+        binding.btnRecipes.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_recipesFragment)
+        }
+
         return binding.root
     }
 
