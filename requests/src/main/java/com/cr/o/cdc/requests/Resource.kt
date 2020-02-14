@@ -1,10 +1,10 @@
-package com.cr.o.cdc.mlchallenge.retrofit
+package com.cr.o.cdc.requests
 
-data class RetrofitResource<T>(val data: T?, val status: StatusResponse) {
+data class Resource<T>(val data: T?, val status: StatusResult) {
 
     companion object {
-        fun <T> error() = RetrofitResource<T>(null, StatusResponse.ERROR)
-        fun <T> loading(data: T? = null) = RetrofitResource(data, StatusResponse.LOADING)
-        fun <T> success(data: T?) = RetrofitResource(data, StatusResponse.SUCCESS)
+        fun <T> error() = Resource<T>(null, StatusResult.FAILURE)
+        fun <T> loading(data: T? = null) = Resource(data, StatusResult.LOADING)
+        fun <T> success(data: T?) = Resource(data, StatusResult.SUCCESS)
     }
 }

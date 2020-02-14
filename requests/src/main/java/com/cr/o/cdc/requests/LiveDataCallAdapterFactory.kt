@@ -1,6 +1,8 @@
 package com.cr.o.cdc.mlchallenge.retrofit
 
 import androidx.lifecycle.LiveData
+import com.cr.o.cdc.requests.LiveDataCallAdapter
+import com.cr.o.cdc.requests.Response
 import com.google.gson.internal.`$Gson$Types`.getRawType
 import retrofit2.CallAdapter
 import retrofit2.CallAdapter.Factory
@@ -20,7 +22,7 @@ class LiveDataCallAdapterFactory : Factory() {
         }
         val observableType = getParameterUpperBound(0, returnType as ParameterizedType)
         val rawObservableType = getRawType(observableType)
-        if (rawObservableType != RetrofitResponse::class.java) {
+        if (rawObservableType != Response::class.java) {
             throw IllegalArgumentException("type must be a resource")
         }
         if (observableType !is ParameterizedType) {

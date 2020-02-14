@@ -1,4 +1,4 @@
-package com.cr.o.cdc.mlchallenge.retrofit
+package com.cr.o.cdc.requests
 
 import androidx.annotation.MainThread
 import androidx.annotation.WorkerThread
@@ -9,10 +9,10 @@ import androidx.lifecycle.MediatorLiveData
 abstract class NetworkBoundResource<ResultType, RequestType>
 @MainThread constructor(private val appExecutors: AppExecutors) {
 
-    private val result = MediatorLiveData<RetrofitResource<ResultType>>()
+    private val result = MediatorLiveData<Resource<ResultType>>()
 
     init {
-        result.value = RetrofitResource.loading()
+        result.value = Resource.loading()
         @Suppress("LeakingThis")
         val dbSource = loadFromDb()
         result.addSource(dbSource) { data ->
@@ -21,14 +21,14 @@ abstract class NetworkBoundResource<ResultType, RequestType>
                 fetchFromNetwork(dbSource, data)
             } else {
                 result.addSource(dbSource) { newData ->
-                    setValue(RetrofitResource.success(newData))
+                    setValue(Resource.success(newData))
                 }
             }
         }
     }
 
     @MainThread
-    private fun setValue(newValue: RetrofitResource<ResultType>) {
+    private fun setValue(newValue: Resource<ResultType>) {
         if (result.value != newValue) {
             result.value = newValue
         }
@@ -36,40 +36,42 @@ abstract class NetworkBoundResource<ResultType, RequestType>
 
     private fun fetchFromNetwork(dbSource: LiveData<ResultType>, dbData: ResultType) {
         val apiResponse = createCall()
-        setValue(RetrofitResource.loading(dbData))
+        setValue(Resource.loading(dbData))
         result.addSource(dbSource) { newData ->
-            setValue(RetrofitResource.loading(newData))
+            setValue(Resource.loading(newData))
         }
         result.addSource(apiResponse) { response ->
             result.removeSource(apiResponse)
             result.removeSource(dbSource)
-            when (response) {
-                is RetrofitSuccessResponse -> {
+            when (response.status) {
+
+                StatusResult.SUCCESS -> {
                     appExecutors.diskIO().execute {
-                        saveCallResult(processResponse(RetrofitResource.success(response.data)))
+                        saveCallResult(processResponse(Resource.success(response.data)))
                         appExecutors.mainThread().execute {
                             result.addSource(loadFromDb()) { newData ->
-                                setValue(RetrofitResource.success(newData))
+                                setValue(Resource.success(newData))
                             }
                         }
                     }
                 }
-                is RetrofitErrorResponse -> {
+                StatusResult.FAILURE, StatusResult.OFFLINE -> {
                     onFetchFailed()
-                    result.addSource(dbSource) { newData ->
-                        setValue(RetrofitResource.error())
+                    result.addSource(dbSource) {
+                        setValue(Resource.error())
                     }
                 }
             }
         }
+
     }
 
     protected open fun onFetchFailed() {}
 
-    fun asLiveData() = result as LiveData<RetrofitResource<ResultType>>
+    fun asLiveData() = result as LiveData<Resource<ResultType>>
 
     @WorkerThread
-    protected open fun processResponse(resource: RetrofitResource<RequestType>) = resource.data
+    protected open fun processResponse(resource: Resource<RequestType>) = resource.data
 
     @WorkerThread
     protected abstract fun saveCallResult(item: RequestType?)
@@ -81,5 +83,5 @@ abstract class NetworkBoundResource<ResultType, RequestType>
     protected abstract fun loadFromDb(): LiveData<ResultType>
 
     @MainThread
-    protected abstract fun createCall(): LiveData<RetrofitResponse<RequestType>>
+    protected abstract fun createCall(): LiveData<Resource<RequestType>>
 }

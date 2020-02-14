@@ -73,9 +73,9 @@ class QueryBuilder(elements: MutableSet<out Element>, private val processingEnv:
             .addStaticImport("com.google.gson", "JsonParser")
             .addStaticImport("okhttp3.RequestBody.Companion", "toRequestBody")
             .addStaticImport("okhttp3.MediaType.Companion", "toMediaTypeOrNull")
-            .addStaticImport("com.cr.o.cdc.annotations", "DebugInfo")
-            .addStaticImport("com.cr.o.cdc.annotations", "QueryBuilder")
-            .addStaticImport("com.cr.o.cdc.annotations", "RequestInterface")
+            .addStaticImport("com.cr.o.cdc.requests", "DebugInfo")
+            .addStaticImport("com.cr.o.cdc.requests", "QueryBuilder")
+            .addStaticImport("com.cr.o.cdc.requests", "RequestInterface")
             .addStaticImport("okhttp3", "Request")
             .addType(
                 TypeSpec.classBuilder("Query$className")
