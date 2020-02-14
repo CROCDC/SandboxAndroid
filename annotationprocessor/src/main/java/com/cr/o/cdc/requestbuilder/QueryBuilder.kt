@@ -1,20 +1,22 @@
 package com.cr.o.cdc.requestbuilder
 
 import com.cr.o.cdc.annotations.GraphQlRequest
-import com.cr.o.cdc.annotations.Input
 import com.cr.o.cdc.requestbuilder.FileGenerator.Companion.KAPT_KOTLIN_GENERATED_OPTION_NAME
 import com.cr.o.cdc.requestsmodule.DebugInfo
 import com.cr.o.cdc.requestsmodule.RequestInterface
 import com.google.gson.Gson
 import com.google.gson.JsonParser
 import com.squareup.kotlinpoet.*
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.File
 import javax.annotation.processing.ProcessingEnvironment
 import javax.lang.model.element.Element
 import javax.lang.model.element.ElementKind
 import javax.lang.model.type.MirroredTypeException
 import javax.lang.model.util.Elements
+import kotlin.reflect.KClass
 
 class QueryBuilder(
     elements: MutableSet<out Element>,
@@ -101,13 +103,9 @@ class QueryBuilder(
                             .addModifiers(KModifier.PUBLIC)
                             .addParameters(parameters)
                             .addModifiers()
-                            .addStatement(
-                                "return object : RequestInterface<$classReturn>{\n" +
-                                        "override fun parse(json:String):$classReturn = parseJson(json)\n" +
-                                        "override fun getRequest():Request = Request.Builder().url(\"$url\").post(queryBuilder(\"$bodyRequest\").toRequestBody(\"$need\".toMediaTypeOrNull())).build() \n" +
-                                        "override fun getDebugInto():DebugInfo = DebugInfo(\"$cols\",\"$bodyRequest\")\n" +
-                                        "\n}"
-                            )
+                            .returns(RequestInterface::class.java, CodeBlock.of(
+                                "RequestInterfaceBuilder<$1>($2)",it
+                            ))
                             .build()
                     )
                     .addFunction(
@@ -149,9 +147,12 @@ class QueryBuilder(
         }.toString().replace("[", "{").replace("]", "}")
 }
 
-class RequestInterfaceBuilder<T>(val inputClass: Element, val inputs: List<Input>) :
-    RequestInterface<T> {
-    val annotation = inputClass.getAnnotation(GraphQlRequest::class.java)
+class RequestInterfaceBuilder<T>(
+    private val inputClass: Element,
+    private val inputs: List<Pair<String, KClass<out Any>>>,
+    val cols: String
+) : RequestInterface<T> {
+    private val annotation = inputClass.getAnnotation(GraphQlRequest::class.java)
     override fun parse(json: String): T? {
         val jsonObj = JsonParser.parseString(json).asJsonObject.get("data")
             .asJsonObject.get(inputClass.simpleName.toString())
@@ -167,9 +168,14 @@ class RequestInterfaceBuilder<T>(val inputClass: Element, val inputs: List<Input
     }
 
     override fun getRequest(): Request =
-        Request.Builder().url(annotation.url).post(queryBuilder("$bodyRequest").toRequestBody("$need".toMediaTypeOrNull())).build()
+        Request.Builder().url(annotation.url).post(
+            "{${annotation.name}${inputs.map {
+                """${it.first}:\${'"'}${'$'}${it.first}\${'"'}"""
+            }.toString().replace("[", "(").replace(
+                "]",
+                ")"
+            )}${cols}}".toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
+        ).build()
 
-    override fun getDebugInto(): DebugInfo {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getDebugInto(): DebugInfo = DebugInfo(cols, annotation.url)
 }
