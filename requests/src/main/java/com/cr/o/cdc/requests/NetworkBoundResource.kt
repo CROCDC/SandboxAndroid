@@ -4,6 +4,8 @@ import androidx.annotation.MainThread
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
+import com.cr.o.cdc.requestsmodule.Resource
+import com.cr.o.cdc.requestsmodule.StatusResult
 
 //https://github.com/android/architecture-components-samples/edit/master/GithubBrowserSample/app/src/main/java/com/android/example/github/repository/NetworkBoundResource.kt
 abstract class NetworkBoundResource<ResultType, RequestType>
@@ -55,7 +57,7 @@ abstract class NetworkBoundResource<ResultType, RequestType>
                         }
                     }
                 }
-                StatusResult.FAILURE, StatusResult.OFFLINE -> {
+              StatusResult.FAILURE, StatusResult.OFFLINE -> {
                     onFetchFailed()
                     result.addSource(dbSource) {
                         setValue(Resource.error())

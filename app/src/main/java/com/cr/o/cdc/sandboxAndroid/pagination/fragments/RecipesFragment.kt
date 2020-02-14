@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.annotations.Injectable
-import com.cr.o.cdc.requests.StatusResult
+import com.cr.o.cdc.requestsmodule.StatusResult
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentRecipesBinding
 import com.cr.o.cdc.sandboxAndroid.pagination.ui.RecipeAdapter
 import com.cr.o.cdc.sandboxAndroid.pagination.vm.RecipeViewModel
@@ -45,7 +45,7 @@ class RecipesFragment : Fragment() {
         })
 
         vm.loading.observe(viewLifecycleOwner, Observer {
-            binding.progressbar.visibility = if (it != StatusResult.LOADING) {
+            binding.progressbar.visibility = if (it != com.cr.o.cdc.requestsmodule.StatusResult.LOADING) {
                 View.GONE
             } else {
                 View.VISIBLE

@@ -4,11 +4,12 @@ import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
-import com.cr.o.cdc.requests.Response
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.pokemons.fragments.PokemonFragment
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.pokemons.vm.PokemonViewModel
 import com.cr.o.cdc.sharedtest.getMessage
+import com.cr.o.cdc.sharedtest.myPostValue
 import io.mockk.every
 import io.mockk.mockk
 import junit.framework.TestCase.assertTrue
@@ -26,10 +27,10 @@ class PokemonFragmentTest : FragmentTest() {
             }))
         launchFragmentInContainer<PokemonFragment>(listOf(vm))
 
-        vm.pikachu.myPostValue(Response(p, 200))
+        vm.pikachu.myPostValue(com.cr.o.cdc.requestsmodule.Response(p, 200))
 
         onView(ViewMatchers.withId(R.id.txt_name)).check { view, _ ->
-            assertTrue(getMessage("R.uri.txt_name"), (view as TextView).text == p.name)
+            assertTrue(getMessage("R.id.txt_name"), (view as TextView).text == p.name)
         }
     }
 }

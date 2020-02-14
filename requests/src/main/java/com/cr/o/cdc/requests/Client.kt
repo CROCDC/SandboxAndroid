@@ -1,6 +1,8 @@
 package com.cr.o.cdc.requests
 
 import androidx.lifecycle.LiveData
+import com.cr.o.cdc.requestsmodule.RequestInterface
+import com.cr.o.cdc.requestsmodule.Response
 import okhttp3.OkHttpClient
 import java.io.IOException
 import java.util.concurrent.TimeUnit
@@ -17,7 +19,7 @@ class Client {
         .followRedirects(false).build()
 
     //todo handle !!
-    fun <T> request(request: RequestInterface<T>): LiveData<Response<T>> =
+    fun <T> request(request: RequestInterface) =
         object : LiveData<Response<T>>() {
 
             val started = AtomicBoolean()
@@ -40,7 +42,11 @@ class Client {
                             httpCode = 408
                         }
 
-                        postValue(Response(request.parse(body!!), httpCode))
+                        postValue(
+                            Response(
+                                null, httpCode
+                            )
+                        )
                     }
                 }
             }

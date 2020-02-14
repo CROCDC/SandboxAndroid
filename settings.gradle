@@ -1,2 +1,2 @@
-include ':app', ':requests', ':annotationprocessor', ':requestsmodel', ':sharedtest', ':daggerutilbuilder', ':daggerutilmodel', ':annotations'
+include ':app', ':requests', ':annotationprocessor', ':sharedtest', ':annotations', ':requestsmodel'
 rootProject.name='CajaDeArena'

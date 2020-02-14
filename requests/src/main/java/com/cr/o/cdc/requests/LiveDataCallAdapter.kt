@@ -1,6 +1,7 @@
 package com.cr.o.cdc.requests
 
 import androidx.lifecycle.LiveData
+import com.cr.o.cdc.requestsmodule.Response
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Callback
@@ -22,11 +23,21 @@ class LiveDataCallAdapter<R>(private val responseType: Type) :
                 if (started.compareAndSet(false, true)) {
                     call.enqueue(object : Callback<R> {
                         override fun onResponse(call: Call<R>, response: Re<R>) {
-                            postValue(Response(response.body(), response.code()))
+                            postValue(
+                                Response(
+                                    response.body(),
+                                    response.code()
+                                )
+                            )
                         }
 
                         override fun onFailure(call: Call<R>, throwable: Throwable) {
-                            postValue(Response(null, 100))
+                            postValue(
+                                Response(
+                                    null,
+                                    100
+                                )
+                            )
                         }
                     })
                 }

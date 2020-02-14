@@ -3,7 +3,7 @@ package com.cr.o.cdc.sandboxAndroid.di
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
-import com.cr.o.cdc.mlchallenge.retrofit.LiveDataCallAdapterFactory
+import com.cr.o.cdc.requests.LiveDataCallAdapterFactory
 import com.cr.o.cdc.requests.AppExecutors
 import com.cr.o.cdc.requests.Client
 import com.cr.o.cdc.sandboxAndroid.R

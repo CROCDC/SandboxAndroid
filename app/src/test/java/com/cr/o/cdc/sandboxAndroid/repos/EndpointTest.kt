@@ -4,8 +4,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import com.cr.o.cdc.requests.AppExecutors
 import com.cr.o.cdc.requests.Client
-import com.cr.o.cdc.requests.Response
-import com.cr.o.cdc.requests.StatusResult
+import com.cr.o.cdc.requestsmodule.Response
+import com.cr.o.cdc.requestsmodule.StatusResult
 import org.junit.Rule
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -24,19 +24,19 @@ abstract class EndpointTest {
     private fun getAppExecutors() = AppExecutors()
 
     @Throws(InterruptedException::class)
-    fun <T> getValue(liveData: LiveData<Response<T>>): Response<T> {
-        var data: Response<T>? = null
+    fun <T> getValue(liveData: LiveData<com.cr.o.cdc.requestsmodule.Response<T>>): com.cr.o.cdc.requestsmodule.Response<T> {
+        var data: com.cr.o.cdc.requestsmodule.Response<T>? = null
         val latch = CountDownLatch(1)
         liveData.observeForever { o ->
             when (o.status) {
-                StatusResult.SUCCESS -> {
+                com.cr.o.cdc.requestsmodule.StatusResult.SUCCESS -> {
                     data = o
                     latch.countDown()
                 }
-                StatusResult.LOADING -> {
+                com.cr.o.cdc.requestsmodule.StatusResult.LOADING -> {
                 }
-                StatusResult.FAILURE -> TODO()
-                StatusResult.OFFLINE -> TODO()
+                com.cr.o.cdc.requestsmodule.StatusResult.FAILURE -> TODO()
+                com.cr.o.cdc.requestsmodule.StatusResult.OFFLINE -> TODO()
             }
         }
         latch.await(40, TimeUnit.SECONDS)

@@ -1,8 +1,7 @@
-package com.cr.o.cdc.mlchallenge.retrofit
+package com.cr.o.cdc.requests
 
 import androidx.lifecycle.LiveData
-import com.cr.o.cdc.requests.LiveDataCallAdapter
-import com.cr.o.cdc.requests.Response
+import com.cr.o.cdc.requestsmodule.Response
 import com.google.gson.internal.`$Gson$Types`.getRawType
 import retrofit2.CallAdapter
 import retrofit2.CallAdapter.Factory
