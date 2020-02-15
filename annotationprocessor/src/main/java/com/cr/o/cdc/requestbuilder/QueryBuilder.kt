@@ -2,38 +2,28 @@ package com.cr.o.cdc.requestbuilder
 
 import com.cr.o.cdc.annotations.GraphQlRequest
 import com.cr.o.cdc.requestbuilder.FileGenerator.Companion.KAPT_KOTLIN_GENERATED_OPTION_NAME
-import com.cr.o.cdc.requestsmodule.DebugInfo
 import com.cr.o.cdc.requestsmodule.RequestInterface
-import com.google.gson.Gson
-import com.google.gson.JsonParser
 import com.squareup.kotlinpoet.*
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
+import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import java.io.File
 import javax.annotation.processing.ProcessingEnvironment
 import javax.lang.model.element.Element
 import javax.lang.model.element.ElementKind
 import javax.lang.model.type.MirroredTypeException
 import javax.lang.model.util.Elements
-import kotlin.reflect.KClass
 
 class QueryBuilder(
     elements: MutableSet<out Element>,
     private val processingEnv: ProcessingEnvironment
 ) {
 
-    private val files = elements.map {
-        val annotation = it.getAnnotation(GraphQlRequest::class.java)
-        val className = it.simpleName.toString()
-        val pack = processingEnv.elementUtils.getPackageOf(it).toString()
-        val fileName = "$pack.$className"
-        val cols = getCOLS(processingEnv.elementUtils, fileName)
-        val name = annotation.name
-        val url = annotation.url
+    private val files = elements.map { element ->
+        val annotation = element.getAnnotation(GraphQlRequest::class.java)
+        val className = element.simpleName.toString()
+        val thisClass = ClassName.bestGuess(element.toString())
 
-        val inputs = annotation.inputs.map {
-            Pair(
+        val parameters = annotation.inputs.map {
+            ParameterSpec.builder(
                 it.name,
                 Class.forName(
                     try {
@@ -42,78 +32,21 @@ class QueryBuilder(
                         e.typeMirror.asTypeName()
                     }.toString()
                 ).kotlin
-            )
-        }
-
-
-        val parameters = inputs.map {
-            ParameterSpec.builder(
-                it.first,
-                it.second
             ).build()
         }
 
-        val header = inputs.map {
-            """${it.first}:\${'"'}${'$'}${it.first}\${'"'}"""
-        }.toString().replace("[", "(").replace("]", ")")
-
-        val parseMethod = if (annotation.nullable) {
-            "val jsonObj = JsonParser.parseString(json).asJsonObject.get(\"data\").asJsonObject.get(\"${annotation.name}\") \n" +
-                    "if(jsonObj.isJsonNull){" +
-                    "return null}" +
-                    "else{" +
-                    "return Gson().fromJson(jsonObj,${className}::class.java)" +
-                    "}"
-        } else {
-            "return Gson().fromJson(JsonParser.parseString(json).asJsonObject.get(\"data\").asJsonObject.get(\"${annotation.name}\"),${className}::class.java)"
-        }
-
-        val classReturn = "$className${
-        if (annotation.nullable) {
-            "?"
-        } else {
-            ""
-        }}"
-
-        val need = "application/json; charset=utf-8"
-
-        val bodyRequest = "{$name$header$cols}"
-
         FileSpec.builder("queries", "Query$className")
-            .addImport("com.google.gson", "Gson")
-            .addImport("com.google.gson", "JsonParser")
-            .addImport("okhttp3.RequestBody.Companion", "toRequestBody")
-            .addImport("okhttp3.MediaType.Companion", "toMediaTypeOrNull")
-            .addImport("com.cr.o.cdc.requests", "DebugInfo")
-            .addImport("com.cr.o.cdc.requests", "QueryBuilder")
-            .addImport("com.cr.o.cdc.requests", "RequestInterface")
-            .addImport("okhttp3", "Request")
             .addType(
                 TypeSpec.classBuilder("Query$className")
-                    .addFunction(
-                        FunSpec.builder("queryBuilder")
-                            .returns(String::class)
-                            .addParameter(ParameterSpec.builder("query", String::class).build())
-                            .addStatement("return Gson().toJson(QueryBuilder(query,null))")
-                            .addModifiers(KModifier.PRIVATE)
-                            .build()
+                    .addSuperinterface(
+                        RequestInterface::class.asTypeName().parameterizedBy(
+                            thisClass
+                        )
                     )
-                    .addFunction(
-                        FunSpec.builder("build")
-                            .addModifiers(KModifier.PUBLIC)
+                    .primaryConstructor(
+                        FunSpec.constructorBuilder()
                             .addParameters(parameters)
-                            .addModifiers()
-                            .returns(RequestInterface::class.java, CodeBlock.of(
-                                "RequestInterfaceBuilder<$1>($2)",it
-                            ))
-                            .build()
-                    )
-                    .addFunction(
-                        FunSpec.builder("parseJson")
-                            .returns(it.asType().asTypeName())
-                            .addParameter("json", String::class)
-                            .addStatement(parseMethod)
-                            .build()
+                             .build()
                     )
                     .build()
             )
@@ -145,37 +78,4 @@ class QueryBuilder(
                 null
             }
         }.toString().replace("[", "{").replace("]", "}")
-}
-
-class RequestInterfaceBuilder<T>(
-    private val inputClass: Element,
-    private val inputs: List<Pair<String, KClass<out Any>>>,
-    val cols: String
-) : RequestInterface<T> {
-    private val annotation = inputClass.getAnnotation(GraphQlRequest::class.java)
-    override fun parse(json: String): T? {
-        val jsonObj = JsonParser.parseString(json).asJsonObject.get("data")
-            .asJsonObject.get(inputClass.simpleName.toString())
-        return if (annotation.nullable) {
-            if (jsonObj.isJsonNull) {
-                null
-            } else {
-                Gson().fromJson(jsonObj, inputClass::class.java) as T
-            }
-        } else {
-            Gson().fromJson(jsonObj, inputClass::class.java) as T
-        }
-    }
-
-    override fun getRequest(): Request =
-        Request.Builder().url(annotation.url).post(
-            "{${annotation.name}${inputs.map {
-                """${it.first}:\${'"'}${'$'}${it.first}\${'"'}"""
-            }.toString().replace("[", "(").replace(
-                "]",
-                ")"
-            )}${cols}}".toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
-        ).build()
-
-    override fun getDebugInto(): DebugInfo = DebugInfo(cols, annotation.url)
 }

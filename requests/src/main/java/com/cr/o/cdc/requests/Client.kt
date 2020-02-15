@@ -19,7 +19,7 @@ class Client {
         .followRedirects(false).build()
 
     //todo handle !!
-    fun <T> request(request: RequestInterface) =
+    fun <T> request(request: RequestInterface<T>) =
         object : LiveData<Response<T>>() {
 
             val started = AtomicBoolean()
