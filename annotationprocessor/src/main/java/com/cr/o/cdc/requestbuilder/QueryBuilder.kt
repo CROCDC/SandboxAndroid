@@ -14,6 +14,10 @@ import javax.lang.model.element.Element
 import javax.lang.model.element.ElementKind
 import javax.lang.model.type.MirroredTypeException
 import javax.lang.model.util.Elements
+import kotlin.Int
+import kotlin.String
+import java.lang.Integer as int
+import java.lang.String as string
 
 class QueryBuilder(
     elements: MutableSet<out Element>,
@@ -30,13 +34,17 @@ class QueryBuilder(
         val inputs = annotation.inputs.map {
             Pair(
                 it.name,
-                Class.forName(
-                    try {
-                        it.type.asTypeName()
-                    } catch (e: MirroredTypeException) {
-                        e.typeMirror.asTypeName()
-                    }.toString()
-                )
+                try {
+                    it.type.asTypeName()
+                } catch (e: MirroredTypeException) {
+                    val typeMirror = e.typeMirror
+                    when (typeMirror.asTypeName()) {
+                        string::class.java.asTypeName() -> String::class.asTypeName()
+                        int::class.java.asTypeName() -> Int::class.asTypeName()
+                        else -> ClassName.bestGuess(typeMirror.asTypeName().toString())
+                    }
+
+                }
             )
         }
 
@@ -66,7 +74,10 @@ class QueryBuilder(
                 append(1)
                 append(it.first)
                 append(": ")
-                append(it.second)
+                append(it.second.simpleName)
+                if (annotation.nullable) {
+                    append("!")
+                }
             }
             append(")")
             append("{")

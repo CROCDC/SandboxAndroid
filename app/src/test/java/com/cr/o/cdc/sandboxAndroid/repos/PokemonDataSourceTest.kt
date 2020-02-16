@@ -26,4 +26,12 @@ class PokemonDataSourceTest : EndpointTest() {
             println(it)
         }.data == null)
     }
+
+    @Test
+    fun assertPokemonsNotNull() {
+        assertTrue(getValue(pokemonDataSource.pokemons(0)).also {
+            println((it.debugInfo as GraphQlDebugInfo).debuUrl())
+            println(it)
+        }.data != null)
+    }
 }
