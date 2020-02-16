@@ -29,10 +29,11 @@ class Client {
                 super.onActive()
                 if (started.compareAndSet(false, true)) {
                     appExecutors.networkIO().execute {
+                        val response = httpclient.newCall(request.getRequest()).execute()
                         var body: String?
                         var httpCode: Int
                         try {
-                            with(httpclient.newCall(request.getRequest()).execute()) {
+                            with(response) {
                                 body = this.body?.string()
                                 httpCode = this.code
                             }
@@ -42,11 +43,17 @@ class Client {
                             httpCode = 408
                         }
 
-                        postValue(
-                            Response(
-                                null, httpCode
+                        if (body == null) {
+                            postValue(Response(null, httpCode, request.getDebugInfo()))
+                        } else {
+                            postValue(
+                                Response(
+                                    request.parse(body!!),
+                                    httpCode,
+                                    request.getDebugInfo()
+                                )
                             )
-                        )
+                        }
                     }
                 }
             }

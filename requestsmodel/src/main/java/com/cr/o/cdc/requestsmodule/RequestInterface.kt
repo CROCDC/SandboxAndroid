@@ -12,5 +12,5 @@ interface RequestInterface<T> {
 
     fun getRequest(): Request
 
-    fun getDebugInto(): DebugInfo
+    fun getDebugInfo(): DebugInfo
 }

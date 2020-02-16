@@ -1,6 +1,7 @@
 package com.cr.o.cdc.requests
 
 import androidx.lifecycle.LiveData
+import com.cr.o.cdc.requestsmodule.DebugInfo
 import com.cr.o.cdc.requestsmodule.Response
 import retrofit2.Call
 import retrofit2.CallAdapter
@@ -26,7 +27,8 @@ class LiveDataCallAdapter<R>(private val responseType: Type) :
                             postValue(
                                 Response(
                                     response.body(),
-                                    response.code()
+                                    response.code(),
+                                    DebugInfo(call.request().url.toString())
                                 )
                             )
                         }
@@ -35,7 +37,8 @@ class LiveDataCallAdapter<R>(private val responseType: Type) :
                             postValue(
                                 Response(
                                     null,
-                                    100
+                                    100,
+                                    DebugInfo(call.request().url.toString())
                                 )
                             )
                         }
