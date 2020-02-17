@@ -1,30 +1,24 @@
 package com.cr.o.cdc.sandboxAndroid
 
 import com.cr.o.cdc.requestbuilder.FileGenerator
-import com.google.testing.compile.CompilationSubject.assertThat
-import com.google.testing.compile.Compiler.javac
-import com.google.testing.compile.JavaFileObjects
+import com.tschuchort.compiletesting.KotlinCompilation
+import com.tschuchort.compiletesting.SourceFile
+import junit.framework.TestCase.assertTrue
 import org.junit.Test
+import java.io.File
 
 
 class FileGeneratorTest {
 
-
     @Test
-    fun assertCompileIsSuccessQueryBuilder() {
-        val file = JavaFileObjects.forResource("Pokemon.java")
-
-        val com = javac().withProcessors(FileGenerator()).compile(file)
-
-        assertThat(com).succeeded()
-    }
-
-    @Test
-    fun assertCompileIsSuccessFragmentBuilder() {
-        val file = JavaFileObjects.forResource("Fragment.java")
-
-        val com = javac().withProcessors(FileGenerator()).compile(file)
-
-        assertThat(com).succeeded()
+    fun assertCompileIsSuccessFileGenerator() {
+        KotlinCompilation().apply {
+            sources = listOf(SourceFile.fromPath(File("src/test/resources/Pokemons.kt")))
+            annotationProcessors = listOf(FileGenerator())
+            inheritClassPath = true
+            messageOutputStream = System.out
+        }.compile().let {
+            assertTrue(it.exitCode == KotlinCompilation.ExitCode.OK)
+        }
     }
 }

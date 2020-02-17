@@ -29,7 +29,11 @@ class QueryBuilder(
         val className = element.simpleName.toString()
         val typeName = element.asType().asTypeName().copy(annotation.nullable)
 
-        val cols = getCOLS(processingEnv.elementUtils, element.asType().asTypeName().toString())
+        val cols = getCOLS(
+            className,
+            processingEnv.elementUtils,
+            element.asType().asTypeName().toString()
+        )
 
         val inputs = annotation.inputs.map {
             Pair(
@@ -180,24 +184,43 @@ class QueryBuilder(
         }
     }
 
-    private fun getCOLS(elementUtils: Elements, className: String): String =
-        elementUtils.getAllMembers(elementUtils.getTypeElement(className)).mapNotNull {
-            if (it.kind == ElementKind.FIELD) {
-                when {
-                    it.asType().toString() == "java.lang.String" -> it.simpleName
-                    it.asType().toString().contains("java.util.List") -> "${it.simpleName}${
-                    getCOLS(
-                        elementUtils,
-                        it.asType().toString().substringAfter("<").replace(">", "")
-                    )
-                    }"
-                    else -> "${it.simpleName}${getCOLS(
-                        elementUtils,
-                        it.asType().toString()
-                    )}"
+    private fun getCOLS(simpleName: String?, elementUtils: Elements, className: String): String =
+        elementUtils.getAllMembers(elementUtils.getTypeElement(className)).filter { it.kind == ElementKind.FIELD }.map {
+            when {
+                it.asType().toString() == "java.lang.String" -> it.simpleName
+                it.asType().toString().contains("java.util.List") ->
+                    if (!simpleName.equals(it.simpleName.toString(), true)) {
+                        "${it.simpleName}${
+                        getCOLS(
+                            null,
+                            elementUtils,
+                            it.asType().toString().substringAfter("<").replace(">", "")
+                        )
+                        }"
+                    } else {
+                        getCOLS(
+                            null,
+                            elementUtils,
+                            it.asType().toString().substringAfter("<").replace(">", "")
+                        )
+                    }
+
+                else -> {
+                    if (simpleName != it.simpleName.toString()) {
+                        "${it.simpleName}${getCOLS(
+                            null,
+                            elementUtils,
+                            it.asType().toString()
+                        )}"
+                    } else {
+                        getCOLS(
+                            null,
+                            elementUtils,
+                            it.asType().toString()
+                        )
+                    }
                 }
-            } else {
-                null
             }
+
         }.toString().replace("[", "{").replace("]", "}")
 }

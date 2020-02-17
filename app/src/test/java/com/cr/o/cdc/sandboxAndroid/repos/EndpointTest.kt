@@ -38,6 +38,7 @@ abstract class EndpointTest {
                 }
                 StatusResult.FAILURE -> {
                     println((o.debugInfo as GraphQlDebugInfo).debuUrl())
+                    latch.countDown()
                     throw Exception()
                 }
                 StatusResult.OFFLINE -> TODO()
