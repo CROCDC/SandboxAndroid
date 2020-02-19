@@ -19,6 +19,7 @@ class FileGeneratorTest {
             messageOutputStream = System.out
         }.compile().let {
             assertTrue(it.exitCode == KotlinCompilation.ExitCode.OK)
+            it.generatedFiles
         }
     }
 }

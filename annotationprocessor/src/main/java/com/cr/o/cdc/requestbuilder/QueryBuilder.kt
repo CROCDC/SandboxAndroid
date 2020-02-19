@@ -12,6 +12,7 @@ import java.io.File
 import javax.annotation.processing.ProcessingEnvironment
 import javax.lang.model.element.Element
 import javax.lang.model.element.ElementKind
+import javax.lang.model.type.DeclaredType
 import javax.lang.model.type.MirroredTypeException
 import javax.lang.model.util.Elements
 import kotlin.Int
@@ -185,42 +186,42 @@ class QueryBuilder(
     }
 
     private fun getCOLS(simpleName: String?, elementUtils: Elements, className: String): String =
-        elementUtils.getAllMembers(elementUtils.getTypeElement(className)).filter { it.kind == ElementKind.FIELD }.map {
-            when {
-                it.asType().toString() == "java.lang.String" -> it.simpleName
-                it.asType().toString().contains("java.util.List") ->
-                    if (!simpleName.equals(it.simpleName.toString(), true)) {
-                        "${it.simpleName}${
-                        getCOLS(
-                            null,
-                            elementUtils,
-                            it.asType().toString().substringAfter("<").replace(">", "")
-                        )
-                        }"
-                    } else {
-                        getCOLS(
-                            null,
-                            elementUtils,
-                            it.asType().toString().substringAfter("<").replace(">", "")
-                        )
+        StringBuilder().apply {
+            elementUtils.getAllMembers(elementUtils.getTypeElement(className))
+                .filter { it.kind == ElementKind.FIELD }.forEach {
+                    when {
+                        it.asType().toString() == "java.lang.String" -> {
+                            if (this.isEmpty()){
+                                append("{")
+                            }
+                            append(it.simpleName)
+                            append("\n")
+                        }
+                        it.asType().toString().contains("java.util.List") -> {
+                            if (!simpleName.equals(it.simpleName.toString(), true)) {
+                                append(it.simpleName)
+                            }
+                            append(
+                                getCOLS(
+                                    null,
+                                    elementUtils,
+                                    (it.asType() as DeclaredType).typeArguments[0].toString()
+                                )
+                            )
+                        }
+                        else -> {
+                            append(it.simpleName)
+                            append(
+                                getCOLS(
+                                    null,
+                                    elementUtils,
+                                    it.asType().toString()
+                                )
+                            )
+                        }
                     }
 
-                else -> {
-                    if (simpleName != it.simpleName.toString()) {
-                        "${it.simpleName}${getCOLS(
-                            null,
-                            elementUtils,
-                            it.asType().toString()
-                        )}"
-                    } else {
-                        getCOLS(
-                            null,
-                            elementUtils,
-                            it.asType().toString()
-                        )
-                    }
                 }
-            }
-
-        }.toString().replace("[", "{").replace("]", "}")
+            append("}")
+        }.toString()
 }

@@ -6,7 +6,6 @@ import com.cr.o.cdc.annotations.Input
 @GraphQlRequest("", "pokemons", [Input("first", Int::class,false)], true)
 data class Pokemons(val pokemons: List<Pokemon>)
 
-@GraphQlRequest("", "pokemon", [Input("name", String::class, true)], true)
 data class Pokemon(
     val id: String,
     val name: String,
