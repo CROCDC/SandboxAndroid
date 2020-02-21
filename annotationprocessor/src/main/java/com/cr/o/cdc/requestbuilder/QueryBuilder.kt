@@ -193,13 +193,11 @@ class QueryBuilder(
                             add(it.simpleName.toString())
                         }
                         it.asType().toString().contains("java.util.List") -> {
-                            StringBuilder().apply {
-                                if (!simpleName.equals(it.simpleName.toString(), true)) {
-                                    add(
-                                        it.simpleName.toString()
-                                    )
-                                }
-
+                            if (!simpleName.equals(it.simpleName.toString(), true)) {
+                                add(
+                                    it.simpleName.toString()
+                                )
+                                add(elementUtils.getAllMembers(elementUtils.getTypeElement(it.enclosedElements[0].simpleName)).toString())
                             }
                         }
                     }
