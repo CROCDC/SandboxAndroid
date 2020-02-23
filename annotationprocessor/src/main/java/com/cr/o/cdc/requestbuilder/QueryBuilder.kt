@@ -12,6 +12,7 @@ import java.io.File
 import javax.annotation.processing.ProcessingEnvironment
 import javax.lang.model.element.Element
 import javax.lang.model.element.ElementKind
+import javax.lang.model.type.DeclaredType
 import javax.lang.model.type.MirroredTypeException
 import javax.lang.model.util.Elements
 import kotlin.Int
@@ -194,9 +195,7 @@ class QueryBuilder(
                         }
                         it.asType().toString().contains("java.util.List") -> {
                             if (!simpleName.equals(it.simpleName.toString(), true)) {
-                                add(
-                                    it.simpleName.toString()
-                                )
+                                add(it.simpleName.toString())
                                 add(elementUtils.getAllMembers(elementUtils.getTypeElement(it.enclosedElements[0].simpleName)).toString())
                             }
                         }
