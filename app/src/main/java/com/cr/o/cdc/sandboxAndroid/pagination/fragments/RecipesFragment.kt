@@ -2,6 +2,8 @@ package com.cr.o.cdc.sandboxAndroid.pagination.fragments
 
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +45,19 @@ class RecipesFragment : Fragment() {
         vm.recipes.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
+        binding.input.addTextChangedListener(object :TextWatcher{
+            override fun afterTextChanged(s: Editable?) {}
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                vm.setSearch(s.toString())
+            }
+
+        })
+        binding.btnRefresh.setOnClickListener {
+            vm.refresh()
+        }
 
         vm.loading.observe(viewLifecycleOwner, Observer {
             binding.progressbar.visibility = if (it != StatusResult.LOADING) {

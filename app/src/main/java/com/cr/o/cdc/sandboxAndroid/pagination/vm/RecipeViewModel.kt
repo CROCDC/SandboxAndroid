@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class RecipeViewModel @Inject constructor(private val repository: RecipeRepository) : ViewModel() {
 
-    private val search = MutableLiveData<String>("fish")
+    private val search = MutableLiveData<String>()
 
     private val recipeResource = search.map {
         repository.search(it)

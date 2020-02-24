@@ -5,4 +5,5 @@
     <string name="btn_go_to_notifications">Notifications</string>
     <string name="btn_go_to_pokedex">Pokedex</string>
     <string name="btn_go_to_recipes">Recipes</string>
+    <string name="refresh">Refresh</string>
 </resources>
