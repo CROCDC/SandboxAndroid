@@ -185,6 +185,7 @@ class QueryBuilder(
         }
     }
 
+    //todo
     private fun getCOLS(simpleName: String?, elementUtils: Elements, className: String): String =
         ArrayList<String>().apply {
             elementUtils.getAllMembers(elementUtils.getTypeElement(className))
@@ -196,11 +197,11 @@ class QueryBuilder(
                         it.asType().toString().contains("java.util.List") -> {
                             if (!simpleName.equals(it.simpleName.toString(), true)) {
                                 add(it.simpleName.toString())
-                                add(elementUtils.getAllMembers(elementUtils.getTypeElement(it.enclosedElements[0].simpleName)).toString())
                             }
+                            add(elementUtils.getAllMembers(elementUtils.getTypeElement((it.asType() as DeclaredType).typeArguments[0].toString())).filter { it.kind == ElementKind.FIELD }.toString())
                         }
                     }
 
                 }
-        }.toString().replace("[", "{").replace("]", "}")
+        }.toString().replace("[","{").replace("]","}")
 }
