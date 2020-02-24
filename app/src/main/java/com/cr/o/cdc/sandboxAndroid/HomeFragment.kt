@@ -33,6 +33,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_recipesFragment)
         }
 
+        binding.btnCustomViews.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_customViewsFragment)
+        }
+
         return binding.root
     }
 

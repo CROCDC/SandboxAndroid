@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
@@ -20,6 +21,9 @@
         <action
             android:id="@+id/action_homeFragment_to_recipesFragment"
             app:destination="@id/recipesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_customViewsFragment"
+            app:destination="@id/customViewsFragment" />
     </fragment>
     <fragment
         android:id="@+id/pokemonFragment"
@@ -37,4 +41,18 @@
         android:id="@+id/recipesFragment"
         android:name="com.cr.o.cdc.sandboxAndroid.pagination.fragments.RecipesFragment"
         android:label="RecipesFragment" />
+    <fragment
+        android:id="@+id/customViewsFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.customviews.fragments.CustomViewsFragment"
+        android:label="fragment_custom_views"
+        tools:layout="@layout/fragment_custom_views" >
+        <action
+            android:id="@+id/action_customViewsFragment_to_smilesFragment"
+            app:destination="@id/smilesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/smilesFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.customviews.fragments.SmilesFragment"
+        android:label="fragment_smiles"
+        tools:layout="@layout/fragment_smiles" />
 </navigation>

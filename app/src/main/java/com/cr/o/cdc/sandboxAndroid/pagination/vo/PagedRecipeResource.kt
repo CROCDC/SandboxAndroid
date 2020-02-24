@@ -6,7 +6,7 @@ import com.cr.o.cdc.requestsmodule.StatusResult
 import com.cr.o.cdc.sandboxAndroid.pagination.model.PagedRecipe
 
 data class PagedRecipeResource(
-    val status: LiveData<com.cr.o.cdc.requestsmodule.StatusResult>,
+    val status: LiveData<StatusResult>,
     val data: LiveData<PagedList<PagedRecipe>>,
     val refresh: () -> Unit
 ) {
