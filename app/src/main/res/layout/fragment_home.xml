@@ -14,7 +14,7 @@
             android:id="@+id/btn_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="TabLayout"
+            android:text="@string/btn_go_to_TabLayout"
             app:layout_constraintBottom_toTopOf="@+id/btn_notifications"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
             android:id="@+id/btn_notifications"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="Notifications"
+            android:text="@string/btn_go_to_notifications"
             app:layout_constraintBottom_toTopOf="@+id/btn_pokedex"
             app:layout_constraintTop_toBottomOf="@+id/btn_tab_layout" />
 
@@ -30,7 +30,7 @@
             android:id="@+id/btn_pokedex"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="Pokedex"
+            android:text="@string/btn_go_to_pokedex"
             app:layout_constraintBottom_toTopOf="@+id/btn_recipes"
             app:layout_constraintTop_toBottomOf="@+id/btn_notifications" />
 
@@ -38,7 +38,7 @@
             android:id="@+id/btn_recipes"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="Recetas"
+            android:text="@string/btn_go_to_recipes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_pokedex" />
 

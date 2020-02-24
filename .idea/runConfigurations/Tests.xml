@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Tests" type="CompoundRunConfigurationType">
+    <toRun name="Android JUnit" type="AndroidJUnit" />
+    <toRun name="Android Instrumented Tests" type="AndroidTestRunConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>

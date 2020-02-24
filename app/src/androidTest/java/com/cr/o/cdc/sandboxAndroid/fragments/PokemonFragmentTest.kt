@@ -4,6 +4,8 @@ import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
+import com.cr.o.cdc.requestsmodule.DebugInfo
+import com.cr.o.cdc.requestsmodule.Response
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.pokemons.fragments.PokemonFragment
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
@@ -27,7 +29,7 @@ class PokemonFragmentTest : FragmentTest() {
             }))
         launchFragmentInContainer<PokemonFragment>(listOf(vm))
 
-        vm.pikachu.myPostValue(com.cr.o.cdc.requestsmodule.Response(p, 200))
+        vm.pikachu.myPostValue(Response(p, 200, DebugInfo("")))
 
         onView(ViewMatchers.withId(R.id.txt_name)).check { view, _ ->
             assertTrue(getMessage("R.id.txt_name"), (view as TextView).text == p.name)
