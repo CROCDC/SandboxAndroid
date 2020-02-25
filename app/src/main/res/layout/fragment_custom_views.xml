@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -9,10 +10,20 @@
         tools:context=".customviews.fragments.CustomViewsFragment">
 
         <Button
-            android:text="@string/btn_go_to_smiles"
             android:id="@+id/btn_smiles"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            android:text="@string/btn_go_to_smiles"
+            app:layout_constraintBottom_toTopOf="@id/btn_curve"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_curve"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/btn_go_to_curves"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_smiles" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

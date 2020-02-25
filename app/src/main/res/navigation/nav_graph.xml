@@ -49,10 +49,18 @@
         <action
             android:id="@+id/action_customViewsFragment_to_smilesFragment"
             app:destination="@id/smilesFragment" />
+        <action
+            android:id="@+id/action_customViewsFragment_to_curveFragment"
+            app:destination="@id/curveFragment" />
     </fragment>
     <fragment
         android:id="@+id/smilesFragment"
         android:name="com.cr.o.cdc.sandboxAndroid.customviews.fragments.SmilesFragment"
         android:label="fragment_smiles"
         tools:layout="@layout/fragment_smiles" />
+    <fragment
+        android:id="@+id/curveFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.customviews.fragments.CurveFragment"
+        android:label="fragment_curve"
+        tools:layout="@layout/fragment_curve" />
 </navigation>

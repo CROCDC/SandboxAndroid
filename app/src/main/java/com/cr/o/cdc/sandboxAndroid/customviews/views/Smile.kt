@@ -17,7 +17,7 @@ class Smile @JvmOverloads constructor(
     private val mouthColor = Color.RED
     private val borderColor = Color.RED
     private val borderWidth = 16.0f
-    private var size = 320
+    private var size = 0
 
 
     override fun onDraw(canvas: Canvas) {
