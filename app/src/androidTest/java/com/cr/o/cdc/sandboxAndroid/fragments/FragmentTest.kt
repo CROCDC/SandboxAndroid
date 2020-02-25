@@ -22,19 +22,7 @@ abstract class FragmentTest {
     private val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
 
     inline fun <reified F : Fragment> launchFragmentInContainer(vms: List<ViewModel> = listOf()) =
-        launchFragmentInContainer<F>(
-            themeResId = R.style.AppTheme,
-            factory = object :
-                FragmentFactory() {
-                override fun instantiate(classLoader: ClassLoader, className: String): Fragment {
-                    return super.instantiate(classLoader, className).also {
-                        it.modifyValue("viewModelFactory", object : ViewModelProvider.Factory {
-                            override fun <T : ViewModel> create(modelClass: Class<T>) =
-                                vms.find { it.javaClass.name == modelClass.name } as T
-                        })
-                    }
-                }
-            })
+        launchFragmentInContainer<F>(themeResId = R.style.AppTheme)
 
 
     fun getPushToken() =

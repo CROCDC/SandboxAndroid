@@ -4,6 +4,7 @@ import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.cr.o.cdc.requestsmodule.DebugInfo
 import com.cr.o.cdc.requestsmodule.Response
 import com.cr.o.cdc.sandboxAndroid.R
@@ -16,7 +17,9 @@ import io.mockk.every
 import io.mockk.mockk
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
+import org.junit.runner.RunWith
 
+@RunWith(AndroidJUnit4::class)
 class PokemonFragmentTest : FragmentTest() {
 
 
