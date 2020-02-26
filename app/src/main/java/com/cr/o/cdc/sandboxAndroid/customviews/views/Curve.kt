@@ -24,7 +24,7 @@ class Curve @JvmOverloads constructor(
         val paint = Paint()
         paint.isAntiAlias = true
         paint.style = Paint.Style.STROKE
-        paint.strokeWidth = 20F
+        paint.strokeWidth = 40F
         paint.color = Color.MAGENTA
 
         val path = Path()

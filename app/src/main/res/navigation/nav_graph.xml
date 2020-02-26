@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_homeFragment_to_customViewsFragment"
             app:destination="@id/customViewsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_whatsappMesaggesFragment"
+            app:destination="@id/whatsappMesaggesFragment" />
     </fragment>
     <fragment
         android:id="@+id/pokemonFragment"
@@ -63,4 +66,8 @@
         android:name="com.cr.o.cdc.sandboxAndroid.customviews.fragments.CurveFragment"
         android:label="fragment_curve"
         tools:layout="@layout/fragment_curve" />
+    <fragment
+        android:id="@+id/whatsappMesaggesFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.whatsapputils.fragments.WhatsappMesaggesFragment"
+        android:label="WhatsappMesaggesFragment" />
 </navigation>

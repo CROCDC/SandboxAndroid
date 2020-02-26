@@ -13,6 +13,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
+        android:visibility="gone"
         android:layout_width="5dp"
         android:layout_height="0dp"
         android:background="@color/white"

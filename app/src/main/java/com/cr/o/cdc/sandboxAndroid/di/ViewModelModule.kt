@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.cr.o.cdc.sandboxAndroid.notifications.vm.NotificationsViewModel
 import com.cr.o.cdc.sandboxAndroid.pagination.vm.RecipeViewModel
 import com.cr.o.cdc.sandboxAndroid.pokemons.vm.PokemonViewModel
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.vm.WhatsappMesaggesViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -30,6 +31,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(RecipeViewModel::class)
     abstract fun bindRecipeViewModel(notificationsViewModel: RecipeViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(WhatsappMesaggesViewModel::class)
+    abstract fun bindWhatsappMesaggesViewModel(whatsappMesaggesViewModel: WhatsappMesaggesViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
