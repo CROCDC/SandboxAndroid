@@ -32,7 +32,7 @@ class WhatsappMessageAdapter :
 
     object CallBack : DiffUtil.ItemCallback<WhatsappMessage>() {
         override fun areItemsTheSame(oldItem: WhatsappMessage, newItem: WhatsappMessage): Boolean =
-            oldItem.id == newItem.id
+            oldItem.message == newItem.message
 
         override fun areContentsTheSame(
             oldItem: WhatsappMessage,

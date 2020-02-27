@@ -20,13 +20,14 @@ class MyNotificationListenerService : NotificationListenerService() {
     override fun onNotificationPosted(sbn: StatusBarNotification) {
         super.onNotificationPosted(sbn)
         if (sbn.key.contains("com.whatsapp")) {
-            repository.saveWhatsappMesagge(
-                WhatsappMessage(
-                    0,
-                    sbn.notification.extras.getString("android.text"),
-                    sbn.notification.extras.getString("android.title")
+            sbn.notification.extras.getString("android.text")?.let {
+                repository.saveWhatsappMesagge(
+                    WhatsappMessage(
+                        it,
+                        sbn.notification.extras.getString("android.title")
+                    )
                 )
-            )
+            }
         }
     }
 }
