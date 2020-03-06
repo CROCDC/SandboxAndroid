@@ -1,6 +1,7 @@
 package com.cr.o.cdc.sharedtest
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -15,8 +16,8 @@ fun Any.getPrivateField(fieldName: String): Any? = javaClass.getDeclaredField(fi
     return@let it.get(this)
 }
 
-fun Context.sharedPreferences() =
-    getSharedPreferences("${this.packageName}_test", Context.MODE_PRIVATE).also {
+fun Context.sharedPreferences(): SharedPreferences =
+    getSharedPreferences(packageName, Context.MODE_PRIVATE).also {
         it.edit().clear().apply()
     }
 
