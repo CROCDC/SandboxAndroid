@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.utils
+package com.cr.o.cdc.sandboxAndroid.pokemons.fakes
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

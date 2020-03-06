@@ -25,7 +25,7 @@ fun Context.sharedPreferences(): SharedPreferences =
 fun <T> getValueLivedata(
     liveData: LiveData<T>,
     seconds: Long,
-    executeFunWhenObserve: () -> Unit
+    executeFunWhenObserve: () -> Unit? = {}
 ): T? {
     var data: T? = null
     val latch = CountDownLatch(1)

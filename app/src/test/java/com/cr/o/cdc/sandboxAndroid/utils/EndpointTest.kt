@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.repos
+package com.cr.o.cdc.sandboxAndroid.utils
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData

@@ -1,7 +1,8 @@
-package com.cr.o.cdc.sandboxAndroid.repos
+package com.cr.o.cdc.sandboxAndroid.pokemon.repos
 
 import com.cr.o.cdc.requestsmodule.GraphQlDebugInfo
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
+import com.cr.o.cdc.sandboxAndroid.utils.EndpointTest
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 

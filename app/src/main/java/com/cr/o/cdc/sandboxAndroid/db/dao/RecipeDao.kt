@@ -17,7 +17,7 @@ interface RecipeDao {
     fun saveAll(list: List<Recipe>)
 
     @Query("SELECT * FROM Recipe WHERE uri =:uri")
-    fun loadProduct(uri: String): LiveData<Recipe>
+    fun loadRecipe(uri: String): LiveData<Recipe?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun save(product: Recipe)
