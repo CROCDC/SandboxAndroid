@@ -8,9 +8,7 @@
     <string name="refresh">Refresh</string>
     <string name="btn_go_to_custom_views">Custom Views</string>
     <string name="btn_go_to_smiles">Smiles</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_go_to_curves">Curves</string>
     <string name="btn_go_to_whatsap_messages">Whatsapp Messages</string>
+    <string name="btn_go_to_map">RNC</string>
 </resources>

@@ -11,12 +11,20 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/btn_map"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/btn_go_to_map"
+            app:layout_constraintBottom_toTopOf="@id/btn_tab_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
             android:id="@+id/btn_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="@string/btn_go_to_TabLayout"
             app:layout_constraintBottom_toTopOf="@+id/btn_notifications"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/btn_map" />
 
         <Button
             android:id="@+id/btn_notifications"

@@ -17,6 +17,9 @@ class HomeFragment : Fragment() {
     ): View? {
         val binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        binding.btnMap.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
+        }
         binding.btnTabLayout.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_tabLayoutFragment)
         }
