@@ -8,7 +8,7 @@ import com.cr.o.cdc.sandboxAndroid.pagination.model.InfoSearchRecipe
 import com.cr.o.cdc.sandboxAndroid.pagination.model.Recipe
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessage
 
-@Database(entities = [Recipe::class, InfoSearchRecipe::class, WhatsappMessage::class], version = 1)
+@Database(entities = [Recipe::class, InfoSearchRecipe::class, WhatsappMessage::class], version = 2)
 abstract class SandBoxDB : RoomDatabase() {
 
     abstract fun recipeDao(): RecipeDao

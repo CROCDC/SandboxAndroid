@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCVYsyabkjjmsUrSl7a3DCpuRxV4lflHNE" />
         <service
             android:name=".notifications.util.MyFirebaseMessagingService"
             android:exported="false">
