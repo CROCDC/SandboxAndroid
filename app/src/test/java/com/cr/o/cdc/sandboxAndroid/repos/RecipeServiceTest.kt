@@ -1,22 +1,19 @@
 package com.cr.o.cdc.sandboxAndroid.repos
 
-import android.content.res.Resources
-import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.SandBoxApp
-import com.cr.o.cdc.sandboxAndroid.di.AppModule
+import com.cr.o.cdc.requests.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
-import io.mockk.every
-import io.mockk.mockk
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class RecipeServiceTest : EndpointTest() {
 
-    val recipeService = AppModule().provideRetrofit(mockk<SandBoxApp>().apply {
-        every { resources } returns mockk<Resources>().apply {
-            every { getString(R.string.recipes_url) } returns "https://api.edamam.com/search/"
-        }
-    }).create(RecipeService::class.java)
+    val recipeService = Retrofit.Builder()
+        .baseUrl("https://api.edamam.com/search/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(LiveDataCallAdapterFactory())
+        .build().create(RecipeService::class.java)
 
 
     @Test

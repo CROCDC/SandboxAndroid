@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid
+package com.cr.o.cdc.sandboxAndroid.dbsandbox
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.platform.app.InstrumentationRegistry
+import com.cr.o.cdc.sandboxAndroid.MainActivity
 import junit.framework.TestCase.assertTrue
 import kotlinx.android.parcel.Parcelize
 import org.junit.Rule
