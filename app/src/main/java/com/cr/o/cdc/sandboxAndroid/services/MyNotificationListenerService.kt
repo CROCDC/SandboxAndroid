@@ -1,11 +1,14 @@
 package com.cr.o.cdc.sandboxAndroid.services
 
 import android.app.PendingIntent
+import android.content.Intent
+import android.os.Bundle
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
-import com.cr.o.cdc.sandboxAndroid.services.utils.NotificationUtils
+import androidx.core.app.RemoteInput
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessage
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.repos.WhatsappMessagesRepository
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.vo.WhatsappConfig
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -13,6 +16,9 @@ class MyNotificationListenerService : NotificationListenerService() {
 
     @Inject
     lateinit var repository: WhatsappMessagesRepository
+
+    @Inject
+    lateinit var whatsappConfig: WhatsappConfig
 
     override fun onCreate() {
         super.onCreate()
@@ -32,17 +38,36 @@ class MyNotificationListenerService : NotificationListenerService() {
                         )
                     )
                 }
-                //todo logic
-                if (false) {
-                    val action = NotificationUtils.getQuickReplyAction(sbn.notification)
+                if (whatsappConfig.enable) {
+                    val msg = "H"
+                    val intent = Intent()
+                    val bundle = Bundle()
 
-                    try {
-                        action.sendReply(applicationContext, "H")
-                    } catch (e: PendingIntent.CanceledException) {
+                    sbn.notification.actions.find { filtering ->
+                        filtering.remoteInputs.find {
+                            it.resultKey.contains(
+                                "reply",
+                                false
+                            ) || it.resultKey.contains("android.intent.extra.text", false)
+                        } != null
+                    }?.let { action ->
+                        val pendingIntent = action.actionIntent
+                        try {
+                            RemoteInput.addResultsToIntent(action.remoteInputs?.map {
+                                bundle.putCharSequence(it.resultKey, msg)
+                                RemoteInput.Builder(it.resultKey).apply {
+                                    setLabel(it.label)
+                                    setChoices(it.choices)
+                                    setAllowFreeFormInput(it.allowFreeFormInput)
+                                    addExtras(it.extras)
+                                }.build()
+                            }?.toTypedArray(), intent, bundle)
+                            pendingIntent.send(applicationContext, 0, intent)
+                        } catch (e: PendingIntent.CanceledException) {
+                        }
                     }
                 }
             }
         }
-
     }
 }
