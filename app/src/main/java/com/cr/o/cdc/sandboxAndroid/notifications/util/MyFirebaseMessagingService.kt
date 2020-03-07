@@ -1,24 +1,16 @@
 package com.cr.o.cdc.sandboxAndroid.notifications.util
 
 import android.content.Intent
-import android.util.Log
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.cr.o.cdc.sandboxAndroid.notifications.vo.PushToken
 import com.cr.o.cdc.sandboxAndroid.notifications.fragments.NotificationsFragment
+import com.cr.o.cdc.sandboxAndroid.notifications.vo.PushToken
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.pubnub.api.PNConfiguration
 import com.pubnub.api.PubNub
-import com.pubnub.api.callbacks.PNCallback
 import com.pubnub.api.enums.PNPushType
-import com.pubnub.api.models.consumer.PNStatus
-import com.pubnub.api.models.consumer.push.PNPushAddChannelResult
 import dagger.android.AndroidInjection
 import javax.inject.Inject
-
-/**
- * Created by Camilo on 22/01/20.
- */
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
@@ -51,10 +43,5 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             .pushType(PNPushType.GCM)
             .channels(listOf("Notifications"))
             .deviceId(token)
-            .async(object : PNCallback<PNPushAddChannelResult>() {
-                override fun onResponse(result: PNPushAddChannelResult, status: PNStatus) {
-                    Log.d("PUBNUB", "-->PNStatus.getStatusCode = " + status.statusCode)
-                }
-            })
     }
 }

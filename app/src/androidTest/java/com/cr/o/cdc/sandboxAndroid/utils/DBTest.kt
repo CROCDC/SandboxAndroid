@@ -12,11 +12,10 @@ abstract class DBTest {
     @JvmField
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    val db: SandBoxDB = Room
-        .inMemoryDatabaseBuilder(
-            InstrumentationRegistry.getInstrumentation().context,
-            SandBoxDB::class.java
-        ).fallbackToDestructiveMigration()
+    val db: SandBoxDB = Room.inMemoryDatabaseBuilder(
+        InstrumentationRegistry.getInstrumentation().context,
+        SandBoxDB::class.java
+    ).fallbackToDestructiveMigration()
         .allowMainThreadQueries()
         .build()
 }

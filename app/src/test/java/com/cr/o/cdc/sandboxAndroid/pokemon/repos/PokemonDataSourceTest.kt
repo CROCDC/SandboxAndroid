@@ -10,12 +10,12 @@ class PokemonDataSourceTest : EndpointTest() {
 
 
     private val pokemonDataSource =
-        PokemonDataSource(getManager())
+        PokemonDataSource()
 
     @Test
     fun assertPokemonNotNull() {
         assertTrue(getValue(pokemonDataSource.pokemon("Pikachu")).also {
-            println((it.debugInfo as GraphQlDebugInfo).debuUrl())
+            println((it.debugInfo as GraphQlDebugInfo))
             println(it)
         }.data != null)
     }
@@ -23,24 +23,9 @@ class PokemonDataSourceTest : EndpointTest() {
     @Test
     fun assertPokemonNull() {
         assertTrue(getValue(pokemonDataSource.pokemon("uri")).also {
-            println((it.debugInfo as GraphQlDebugInfo).debuUrl())
+            println((it.debugInfo as GraphQlDebugInfo))
             println(it)
         }.data == null)
     }
 
-    @Test
-    fun assertPokemonsNotEmpty() {
-        assertTrue(getValue(pokemonDataSource.pokemons(1)).also {
-            println((it.debugInfo as GraphQlDebugInfo).debuUrl())
-            println(it)
-        }.data != null)
-    }
-
-    @Test
-    fun assertPokemonsEmpty() {
-        assertTrue(getValue(pokemonDataSource.pokemons(0)).also {
-            println((it.debugInfo as GraphQlDebugInfo).debuUrl())
-            println(it)
-        }.data != null)
-    }
 }

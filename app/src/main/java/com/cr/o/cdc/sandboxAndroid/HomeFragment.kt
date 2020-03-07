@@ -20,30 +20,21 @@ class HomeFragment : Fragment() {
         binding.btnMap.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
         }
-        binding.btnTabLayout.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_tabLayoutFragment)
-        }
-
         binding.btnNotifications.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_notificationsFragment)
         }
-
         binding.btnPokedex.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_pokemonFragment)
         }
-
         binding.btnRecipes.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_recipesFragment)
         }
-
         binding.btnCustomViews.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_customViewsFragment)
         }
-
         binding.btnWhatsappMessages.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_whatsappMesaggesFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_whatsappMessagesFragment)
         }
-
         return binding.root
     }
 

@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="recipes_url">https://api.edamam.com/search/</string>
-    <string name="app_id">41ce6696</string>
-    <string name="app_key">416e06f4fa1b46dacd17ca14a1d563c9</string>
-
 </resources>

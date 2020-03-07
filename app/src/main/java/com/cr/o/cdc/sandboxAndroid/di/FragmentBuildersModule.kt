@@ -4,7 +4,7 @@ import com.cr.o.cdc.sandboxAndroid.notifications.fragments.NotificationsFragment
 import com.cr.o.cdc.sandboxAndroid.pagination.fragments.RecipesFragment
 import com.cr.o.cdc.sandboxAndroid.pokemons.fragments.PokemonFragment
 import com.cr.o.cdc.sandboxAndroid.rnc.fragments.MapFragment
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.fragments.WhatsappMesaggesFragment
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.fragments.WhatsappMessagesFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -21,7 +21,7 @@ abstract class FragmentBuildersModule {
     abstract fun contributesRecipesFragment(): RecipesFragment
 
     @ContributesAndroidInjector
-    abstract fun contributesWhatsappMesaggesFragment(): WhatsappMesaggesFragment
+    abstract fun contributesWhatsappMessagesFragment(): WhatsappMessagesFragment
 
     @ContributesAndroidInjector
     abstract fun contributesMapFragment(): MapFragment

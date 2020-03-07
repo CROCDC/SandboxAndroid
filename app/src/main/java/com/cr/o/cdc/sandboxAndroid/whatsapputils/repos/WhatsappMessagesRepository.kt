@@ -8,14 +8,14 @@ import javax.inject.Inject
 
 class WhatsappMessagesRepository @Inject constructor(
     val db: SandBoxDB,
-    val appExecutors: AppExecutors
+    private val appExecutors: AppExecutors
 ) {
 
-    fun saveWhatsappMesagge(whatsappMessage: WhatsappMessage) {
+    fun saveWhatsappMessage(whatsappMessage: WhatsappMessage) {
         appExecutors.diskIO().execute {
             db.whatsappMessageDao().save(whatsappMessage)
         }
     }
 
-    fun loadWhatsappMessagges(): LiveData<List<WhatsappMessage>> = db.whatsappMessageDao().loadAll()
+    fun loadWhatsappMessages(): LiveData<List<WhatsappMessage>> = db.whatsappMessageDao().loadAll()
 }

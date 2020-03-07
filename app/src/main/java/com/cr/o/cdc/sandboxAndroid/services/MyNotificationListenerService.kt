@@ -25,7 +25,7 @@ class MyNotificationListenerService : NotificationListenerService() {
             val notification = sbn.notification
             if (notification.category != "msg") {
                 notification.extras.getString("android.text")?.let {
-                    repository.saveWhatsappMesagge(
+                    repository.saveWhatsappMessage(
                         WhatsappMessage(
                             it,
                             sbn.notification.extras.getString("android.title")
@@ -34,11 +34,10 @@ class MyNotificationListenerService : NotificationListenerService() {
                 }
                 //todo logic
                 if (false) {
-                    val action =
-                        NotificationUtils.getQuickReplyAction(sbn.notification, packageName)
+                    val action = NotificationUtils.getQuickReplyAction(sbn.notification)
 
                     try {
-                        action.sendReply(applicationContext, "HOLA")
+                        action.sendReply(applicationContext, "H")
                     } catch (e: PendingIntent.CanceledException) {
                     }
                 }

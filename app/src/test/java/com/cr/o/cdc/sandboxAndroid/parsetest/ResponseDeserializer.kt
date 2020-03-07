@@ -15,9 +15,6 @@ class ResponseDeserializer<T>(
 
     private val adapters: MutableList<TypeAdapter> = mutableListOf()
 
-    fun registerTypeAdapter(type: Type, typeAdapter: JsonDeserializer<out Any>) =
-        adapters.add(TypeAdapter(type, typeAdapter))
-
     fun registerTypeAdapters(adapters: List<TypeAdapter>) = this.adapters.addAll(adapters)
 
     @Throws(JsonParseException::class)

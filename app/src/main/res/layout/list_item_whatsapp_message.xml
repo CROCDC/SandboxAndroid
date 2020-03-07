@@ -16,7 +16,7 @@
             android:layout_marginBottom="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Palabras" />
+            tools:text="Name" />
 
         <TextView
             android:id="@+id/txt_message"
@@ -27,7 +27,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/txt_contact"
             app:layout_constraintTop_toTopOf="@id/txt_contact"
-            tools:text="hola" />
+            tools:text="Message" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

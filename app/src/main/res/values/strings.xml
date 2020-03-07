@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">CajaDeArena</string>
-    <string name="title_pokemons">Pokemons</string>
     <string name="btn_go_to_TabLayout">TabLayout</string>
     <string name="btn_go_to_notifications">Notifications</string>
     <string name="btn_go_to_pokedex">Pokedex</string>
@@ -9,6 +8,8 @@
     <string name="btn_go_to_custom_views">Custom Views</string>
     <string name="btn_go_to_smiles">Smiles</string>
     <string name="btn_go_to_curves">Curves</string>
-    <string name="btn_go_to_whatsap_messages">Whatsapp Messages</string>
+    <string name="btn_go_to_whatsapp_messages">Whatsapp Messages</string>
     <string name="btn_go_to_map">RNC</string>
+    <string name="copy">Copy</string>
+    <string name="recipes">recipes</string>
 </resources>

@@ -3,7 +3,6 @@ package com.cr.o.cdc.sharedtest
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -11,18 +10,13 @@ import kotlin.random.Random
 import kotlin.reflect.KClass
 import kotlin.reflect.KFunction
 
-fun Any.getPrivateField(fieldName: String): Any? = javaClass.getDeclaredField(fieldName).let {
-    it.isAccessible = true
-    return@let it.get(this)
-}
-
 fun Context.sharedPreferences(): SharedPreferences =
     getSharedPreferences(packageName, Context.MODE_PRIVATE).also {
         it.edit().clear().apply()
     }
 
 @Throws(InterruptedException::class)
-fun <T> getValueLivedata(
+fun <T> getValueLiveData(
     liveData: LiveData<T>,
     seconds: Long,
     executeFunWhenObserve: () -> Unit? = {}
@@ -48,34 +42,6 @@ fun <T> getValueLivedata(
 
 fun getMessage(id: String) = "la view con el id $id no tenia el texto esperado"
 
-
-fun LiveData<*>.myPostValue(data: Any?) {
-    when {
-        this::class == MutableLiveData::class -> {
-            with(javaClass.methods.find { it.name.contains("postValue") }) {
-                this?.isAccessible = true
-                this?.invoke(this@myPostValue, data)
-            }
-        }
-        this is LiveData<*> -> {
-            with(javaClass.methods.find { it.name.contains("postValue") }) {
-                this?.isAccessible = true
-                this?.invoke(null, this@myPostValue, data)
-            }
-        }
-    }
-}
-
-fun Any.modifyValue(name: String, value: Any?) {
-    try {
-        javaClass.getDeclaredField(name).apply {
-            this.isAccessible = true
-            this.set(this@modifyValue, value)
-            this.isAccessible = false
-        }
-    } catch (e: Exception) {
-    }
-}
 
 @Throws(InterruptedException::class)
 fun <T> getCountOfChangesLiveData(
