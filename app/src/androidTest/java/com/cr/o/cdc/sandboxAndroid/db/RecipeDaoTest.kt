@@ -34,15 +34,7 @@ class RecipeDaoTest : DBTest() {
 
     @Test
     fun delete() {
-        dao.saveOffSet(
-            recipes.map {
-                InfoSearchRecipe(
-                    it.uri,
-                    0,
-                    "search"
-                )
-            }
-        )
+        dao.saveOffSet(recipes.map { InfoSearchRecipe(it.uri, 0, "search") })
         dao.saveAll(recipes)
 
         assertTrue(getValueLivedata(dao.loadPaged("search").toLiveData(5), 2)?.size == 4)
@@ -50,20 +42,11 @@ class RecipeDaoTest : DBTest() {
         dao.delete("search")
 
         assertTrue(getValueLivedata(dao.loadPaged("search").toLiveData(5), 2)?.isEmpty() == true)
-
     }
 
     @Test
     fun saveOffSet() {
-        dao.saveOffSet(
-            recipes.map {
-                InfoSearchRecipe(
-                    it.uri,
-                    0,
-                    "search"
-                )
-            }
-        )
+        dao.saveOffSet(recipes.map { InfoSearchRecipe(it.uri, 0, "search") })
     }
 
     @Test

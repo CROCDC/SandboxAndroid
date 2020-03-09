@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.cr.o.cdc.requestsmodule.Resource
 import com.cr.o.cdc.requestsmodule.StatusResult
+import com.cr.o.cdc.requestsmodule.StatusResult.*
 
 //https://github.com/android/architecture-components-samples/edit/master/GithubBrowserSample/app/src/main/java/com/android/example/github/repository/NetworkBoundResource.kt
 abstract class NetworkBoundResource<ResultType, RequestType>
@@ -46,8 +47,7 @@ abstract class NetworkBoundResource<ResultType, RequestType>
             result.removeSource(apiResponse)
             result.removeSource(dbSource)
             when (response.status) {
-
-                StatusResult.SUCCESS -> {
+                SUCCESS -> {
                     appExecutors.diskIO().execute {
                         saveCallResult(processResponse(Resource.success(response.data)))
                         appExecutors.mainThread().execute {
@@ -57,12 +57,13 @@ abstract class NetworkBoundResource<ResultType, RequestType>
                         }
                     }
                 }
-              StatusResult.FAILURE, StatusResult.OFFLINE -> {
+              FAILURE, OFFLINE -> {
                     onFetchFailed()
                     result.addSource(dbSource) {
                         setValue(Resource.error())
                     }
                 }
+                LOADING -> {}
             }
         }
 
