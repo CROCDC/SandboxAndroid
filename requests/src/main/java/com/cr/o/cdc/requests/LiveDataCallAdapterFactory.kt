@@ -2,7 +2,6 @@ package com.cr.o.cdc.requests
 
 import androidx.lifecycle.LiveData
 import com.cr.o.cdc.requestsmodule.Response
-import com.google.gson.internal.`$Gson$Types`.getRawType
 import retrofit2.CallAdapter
 import retrofit2.CallAdapter.Factory
 import retrofit2.Retrofit
@@ -21,12 +20,8 @@ class LiveDataCallAdapterFactory : Factory() {
         }
         val observableType = getParameterUpperBound(0, returnType as ParameterizedType)
         val rawObservableType = getRawType(observableType)
-        if (rawObservableType != Response::class.java) {
-            throw IllegalArgumentException("type must be a resource")
-        }
-        if (observableType !is ParameterizedType) {
-            throw IllegalArgumentException("resource must be parameterized")
-        }
+        require(rawObservableType == Response::class.java) { "type must be a resource" }
+        require(observableType is ParameterizedType) { "resource must be parameterized" }
         val bodyType = getParameterUpperBound(0, observableType)
         return LiveDataCallAdapter<Any>(bodyType)
     }

@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
 import com.cr.o.cdc.requests.AppExecutors
-import com.cr.o.cdc.requests.Client
 import com.cr.o.cdc.requests.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
@@ -19,15 +18,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-/**
- * Created by Camilo on 31/12/19.
- */
 @Module(includes = [ViewModelModule::class])
 class AppModule {
-
-    @Provides
-    @Singleton
-    fun provideManager() = Client()
 
     @Provides
     @Singleton
@@ -47,10 +39,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun providePokemonDataSourceProvide(
-        client: Client
-    ): PokemonDataSourceProvider =
-        PokemonDataSource(client)
+    fun providePokemonDataSourceProvide(): PokemonDataSourceProvider = PokemonDataSource()
 
     @Singleton
     @Provides

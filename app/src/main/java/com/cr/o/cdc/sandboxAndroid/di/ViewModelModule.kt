@@ -6,14 +6,10 @@ import com.cr.o.cdc.sandboxAndroid.notifications.vm.NotificationsViewModel
 import com.cr.o.cdc.sandboxAndroid.pagination.vm.RecipeViewModel
 import com.cr.o.cdc.sandboxAndroid.pokemons.vm.PokemonViewModel
 import com.cr.o.cdc.sandboxAndroid.rnc.vm.MapViewModel
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.vm.WhatsappMesaggesViewModel
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.vm.WhatsappMessagesViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-
-/**
- * Created by Camilo on 31/12/19.
- */
 
 @Module
 abstract class ViewModelModule {
@@ -35,8 +31,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(WhatsappMesaggesViewModel::class)
-    abstract fun bindWhatsappMesaggesViewModel(whatsappMesaggesViewModel: WhatsappMesaggesViewModel): ViewModel
+    @ViewModelKey(WhatsappMessagesViewModel::class)
+    abstract fun bindWhatsappMessagesViewModel(whatsappMessagesViewModel: WhatsappMessagesViewModel): ViewModel
 
     @Binds
     @IntoMap

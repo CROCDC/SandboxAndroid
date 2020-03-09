@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
 import com.cr.o.cdc.requests.AppExecutors
-import com.cr.o.cdc.requests.Client
 import com.cr.o.cdc.requests.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
@@ -13,17 +12,12 @@ import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
 import dagger.Module
 import dagger.Provides
-import io.mockk.mockk
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module(includes = [ViewModelModule::class])
 class AppModule {
-
-    @Provides
-    @Singleton
-    fun provideManager(): Client = mockk(relaxed = true)
 
     @Provides
     @Singleton
@@ -43,9 +37,8 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun providePokemonDataSourceProvide(
-        client: Client
-    ): PokemonDataSourceProvider = fakePokemonDataSource ?: PokemonDataSource(client)
+    fun providePokemonDataSourceProvide(): PokemonDataSourceProvider =
+        fakePokemonDataSource ?: PokemonDataSource()
 
     @Singleton
     @Provides

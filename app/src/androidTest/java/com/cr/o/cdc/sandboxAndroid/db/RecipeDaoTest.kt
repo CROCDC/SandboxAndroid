@@ -4,7 +4,7 @@ import androidx.paging.toLiveData
 import com.cr.o.cdc.sandboxAndroid.pagination.model.InfoSearchRecipe
 import com.cr.o.cdc.sandboxAndroid.pagination.model.Recipe
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
-import com.cr.o.cdc.sharedtest.getValueLivedata
+import com.cr.o.cdc.sharedtest.getValueLiveData
 import com.cr.o.cdc.sharedtest.makeRandomInstance
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
@@ -29,7 +29,7 @@ class RecipeDaoTest : DBTest() {
     fun loadRecipe() {
         dao.saveAll(recipes)
 
-        assertTrue(getValueLivedata(dao.loadRecipe(recipes[0].uri), 2) != null)
+        assertTrue(getValueLiveData(dao.loadRecipe(recipes[0].uri), 2) != null)
     }
 
     @Test
@@ -37,11 +37,11 @@ class RecipeDaoTest : DBTest() {
         dao.saveOffSet(recipes.map { InfoSearchRecipe(it.uri, 0, "search") })
         dao.saveAll(recipes)
 
-        assertTrue(getValueLivedata(dao.loadPaged("search").toLiveData(5), 2)?.size == 4)
+        assertTrue(getValueLiveData(dao.loadPaged("search").toLiveData(5), 2)?.size == 4)
 
         dao.delete("search")
 
-        assertTrue(getValueLivedata(dao.loadPaged("search").toLiveData(5), 2)?.isEmpty() == true)
+        assertTrue(getValueLiveData(dao.loadPaged("search").toLiveData(5), 2)?.isEmpty() == true)
     }
 
     @Test
@@ -62,7 +62,7 @@ class RecipeDaoTest : DBTest() {
         )
         dao.saveAll(recipes)
 
-        assertTrue(getValueLivedata(dao.loadPaged("search").toLiveData(5), 2)?.size == 4)
+        assertTrue(getValueLiveData(dao.loadPaged("search").toLiveData(5), 2)?.size == 4)
     }
 
 }

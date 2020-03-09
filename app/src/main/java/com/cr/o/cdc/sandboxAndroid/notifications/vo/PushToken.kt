@@ -5,10 +5,6 @@ import androidx.lifecycle.LiveData
 import com.cr.o.cdc.sandboxAndroid.editAndApply
 import javax.inject.Inject
 
-/**
- * Created by Camilo on 22/01/20.
- */
-
 class PushToken @Inject constructor(private val sharedPreferences: SharedPreferences) :
     LiveData<String>() {
 

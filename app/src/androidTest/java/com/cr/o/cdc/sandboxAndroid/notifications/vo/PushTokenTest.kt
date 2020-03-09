@@ -1,14 +1,14 @@
 package com.cr.o.cdc.sandboxAndroid.notifications.vo
 
+import android.content.Context
 import androidx.test.platform.app.InstrumentationRegistry
-import com.cr.o.cdc.sandboxAndroid.notifications.vo.PushToken
 import com.cr.o.cdc.sharedtest.sharedPreferences
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
 class PushTokenTest {
 
-    val context = InstrumentationRegistry.getInstrumentation().context
+    private val context: Context = InstrumentationRegistry.getInstrumentation().context
 
     @Test
     fun getPushesQuantity() {

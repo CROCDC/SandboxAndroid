@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RecipeServiceTest : EndpointTest() {
 
-    val recipeService = Retrofit.Builder()
+    private val recipeService: RecipeService = Retrofit.Builder()
         .baseUrl("https://api.edamam.com/search/")
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(LiveDataCallAdapterFactory())

@@ -1,7 +1,5 @@
 package com.cr.o.cdc.sandboxAndroid.parsetest;
 
-public interface WSParser<T> {
+public interface WSParser {
 
-    T parserResponse(String response);
-    String getRootNode();
 }

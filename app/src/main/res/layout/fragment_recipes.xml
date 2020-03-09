@@ -9,10 +9,13 @@
         android:background="@color/white">
 
         <EditText
-            android:background="@color/colorAccent"
+            android:hint="@string/recipes"
             android:id="@+id/input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:importantForAutofill="no"
+            android:inputType="text"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -22,9 +25,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/input"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/list_item_recipe" />
 
         <ProgressBar

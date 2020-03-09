@@ -1,10 +1,6 @@
 package com.cr.o.cdc.sharedtest
 
-data class Rating(val score: String) {
-    companion object {
-        const val COLS = "{score}"
-    }
-}
+data class Rating(val score: String)
 
 fun Rating.getStars(): Float = when (score) {
     "ONE" -> 1f
