@@ -56,14 +56,14 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="@string/btn_go_to_custom_views"
-            app:layout_constraintBottom_toTopOf="@id/btn_whatsapp_messages"
+            app:layout_constraintBottom_toTopOf="@id/btn_whatsapp_utils"
             app:layout_constraintTop_toBottomOf="@+id/btn_recipes" />
 
         <Button
-            android:id="@+id/btn_whatsapp_messages"
+            android:id="@+id/btn_whatsapp_utils"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/btn_go_to_whatsapp_messages"
+            android:text="@string/btn_go_to_whatsapp_utils"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_custom_views" />
 

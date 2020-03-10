@@ -4,14 +4,17 @@
       <w>accessibilityservice</w>
       <w>actio</w>
       <w>appspot</w>
+      <w>bien</w>
       <w>caja</w>
       <w>crocdc</w>
       <w>customviews</w>
       <w>esperado</w>
+      <w>estas</w>
       <w>firebase</w>
       <w>googleusercontent</w>
       <w>gson</w>
       <w>kapt</w>
+      <w>palabras</w>
       <w>pikachu</w>
       <w>pokedex</w>
       <w>pokemons</w>
@@ -23,6 +26,7 @@
       <w>texto</w>
       <w>whatsapp</w>
       <w>whatsappmessage</w>
+      <w>whatsappmessagebot</w>
       <w>whatsapputils</w>
       <w>ysyabkjjms</w>
     </words>

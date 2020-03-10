@@ -6,6 +6,8 @@ import com.cr.o.cdc.sandboxAndroid.notifications.vm.NotificationsViewModel
 import com.cr.o.cdc.sandboxAndroid.pagination.vm.RecipeViewModel
 import com.cr.o.cdc.sandboxAndroid.pokemons.vm.PokemonViewModel
 import com.cr.o.cdc.sandboxAndroid.rnc.vm.MapViewModel
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.vm.AddWhatsappMessageBotViewModel
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.vm.WhatsappBotViewModel
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.vm.WhatsappMessagesViewModel
 import dagger.Binds
 import dagger.Module
@@ -38,6 +40,16 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MapViewModel::class)
     abstract fun bindMapViewModel(mapViewModel: MapViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(WhatsappBotViewModel::class)
+    abstract fun bindWhatsappBotViewModel(whatsappBotViewModel: WhatsappBotViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AddWhatsappMessageBotViewModel::class)
+    abstract fun bindAddWhatsappMessageBotViewModel(addWhatsappMessageBotViewModel: AddWhatsappMessageBotViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

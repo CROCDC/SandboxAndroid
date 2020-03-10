@@ -34,6 +34,7 @@ class AppModule {
     @Provides
     fun provideDB(app: SandBoxApp): SandBoxDB = Room
         .databaseBuilder(app, SandBoxDB::class.java, SandBoxDB.DATABASE_NAME)
+        .allowMainThreadQueries()
         .fallbackToDestructiveMigration()
         .build()
 

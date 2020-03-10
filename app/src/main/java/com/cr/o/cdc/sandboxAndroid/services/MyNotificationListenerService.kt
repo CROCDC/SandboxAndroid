@@ -29,41 +29,38 @@ class MyNotificationListenerService : NotificationListenerService() {
         super.onNotificationPosted(sbn)
         if (sbn.key.contains("com.whatsapp")) {
             val notification = sbn.notification
-            if (notification.category != "msg") {
-                notification.extras.getString("android.text")?.let {
-                    repository.saveWhatsappMessage(
-                        WhatsappMessage(
-                            it,
-                            sbn.notification.extras.getString("android.title")
-                        )
-                    )
-                }
-                if (whatsappConfig.enable) {
-                    val msg = "H"
-                    val intent = Intent()
-                    val bundle = Bundle()
+            val contact = sbn.notification.extras.getString("android.title")
+            val message = notification.extras.getString("android.text")
 
-                    sbn.notification.actions.find { filtering ->
-                        filtering.remoteInputs.find {
-                            it.resultKey.contains(
-                                "reply",
-                                false
-                            ) || it.resultKey.contains("android.intent.extra.text", false)
-                        } != null
-                    }?.let { action ->
-                        val pendingIntent = action.actionIntent
-                        try {
-                            RemoteInput.addResultsToIntent(action.remoteInputs?.map {
-                                bundle.putCharSequence(it.resultKey, msg)
-                                RemoteInput.Builder(it.resultKey).apply {
-                                    setLabel(it.label)
-                                    setChoices(it.choices)
-                                    setAllowFreeFormInput(it.allowFreeFormInput)
-                                    addExtras(it.extras)
-                                }.build()
-                            }?.toTypedArray(), intent, bundle)
-                            pendingIntent.send(applicationContext, 0, intent)
-                        } catch (e: PendingIntent.CanceledException) {
+            if (message != null && contact != null) {
+                repository.saveWhatsappMessage(WhatsappMessage(message, contact))
+                if (whatsappConfig.enable) {
+                    repository.findWhatsappMessagesBot(contact, message).forEach { bot ->
+                        val intent = Intent()
+                        val bundle = Bundle()
+
+                        sbn.notification.actions.find { filtering ->
+                            filtering.remoteInputs.find {
+                                it.resultKey.contains(
+                                    "reply",
+                                    false
+                                ) || it.resultKey.contains("android.intent.extra.text", false)
+                            } != null
+                        }?.let { action ->
+                            val pendingIntent = action.actionIntent
+                            try {
+                                RemoteInput.addResultsToIntent(action.remoteInputs?.map {
+                                    bundle.putCharSequence(it.resultKey, bot.message)
+                                    RemoteInput.Builder(it.resultKey).apply {
+                                        setLabel(it.label)
+                                        setChoices(it.choices)
+                                        setAllowFreeFormInput(it.allowFreeFormInput)
+                                        addExtras(it.extras)
+                                    }.build()
+                                }?.toTypedArray(), intent, bundle)
+                                pendingIntent.send(applicationContext, 0, intent)
+                            } catch (e: PendingIntent.CanceledException) {
+                            }
                         }
                     }
                 }

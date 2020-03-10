@@ -22,11 +22,11 @@
             android:id="@+id/action_homeFragment_to_customViewsFragment"
             app:destination="@id/customViewsFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_whatsappMessagesFragment"
-            app:destination="@id/whatsappMessagesFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_mapFragment"
             app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_whatsappUtilsFragment"
+            app:destination="@id/whatsappUtilsFragment" />
     </fragment>
     <fragment
         android:id="@+id/pokemonFragment"
@@ -68,4 +68,27 @@
         android:id="@+id/mapFragment"
         android:name="com.cr.o.cdc.sandboxAndroid.rnc.fragments.MapFragment"
         tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/whatsappUtilsFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.whatsapputils.fragments.WhatsappUtilsFragment"
+        tools:layout="@layout/fragment_whatsapp_utils">
+        <action
+            android:id="@+id/action_whatsappUtilsFragment_to_whatsappMessagesFragment"
+            app:destination="@id/whatsappMessagesFragment" />
+        <action
+            android:id="@+id/action_whatsappUtilsFragment_to_whatsappBotFragment"
+            app:destination="@id/whatsappBotFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whatsappBotFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.whatsapputils.fragments.WhatsappBotFragment"
+        tools:layout="@layout/fragment_whatsapp_bot">
+        <action
+            android:id="@+id/action_whatsappBotFragment_to_addWhatsappMessageBotFragment"
+            app:destination="@id/addWhatsappMessageBotFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addWhatsappMessageBotFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.whatsapputils.fragments.AddWhatsappMessageBotFragment"
+        android:label="AddWhatsappMessageBotFragment" />
 </navigation>

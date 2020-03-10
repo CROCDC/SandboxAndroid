@@ -32,8 +32,8 @@ class HomeFragment : Fragment() {
         binding.btnCustomViews.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_customViewsFragment)
         }
-        binding.btnWhatsappMessages.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_whatsappMessagesFragment)
+        binding.btnWhatsappUtils.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_whatsappUtilsFragment)
         }
         return binding.root
     }

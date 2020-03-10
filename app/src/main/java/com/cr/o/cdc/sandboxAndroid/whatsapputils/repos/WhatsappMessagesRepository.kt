@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import com.cr.o.cdc.requests.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessage
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessageBot
 import javax.inject.Inject
 
 class WhatsappMessagesRepository @Inject constructor(
@@ -18,4 +19,16 @@ class WhatsappMessagesRepository @Inject constructor(
     }
 
     fun loadWhatsappMessages(): LiveData<List<WhatsappMessage>> = db.whatsappMessageDao().loadAll()
+
+    fun saveWhatsappMessageBot(whatsappMessageBot: WhatsappMessageBot) {
+        appExecutors.diskIO().execute {
+            db.whatsappMessageBotDao().save(whatsappMessageBot)
+        }
+    }
+
+    fun findWhatsappMessagesBot(contact: String, message: String): List<WhatsappMessageBot> =
+        db.whatsappMessageBotDao().find(contact, message)
+
+    fun findAllWhatsappMessagesBot(): LiveData<List<WhatsappMessageBot>> =
+        db.whatsappMessageBotDao().loadAll()
 }

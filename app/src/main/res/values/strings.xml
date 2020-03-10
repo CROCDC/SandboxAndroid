@@ -8,8 +8,19 @@
     <string name="btn_go_to_custom_views">Custom Views</string>
     <string name="btn_go_to_smiles">Smiles</string>
     <string name="btn_go_to_curves">Curves</string>
-    <string name="btn_go_to_whatsapp_messages">Whatsapp Messages</string>
+    <string name="btn_go_to_whatsapp_utils">Whatsapp Utils</string>
     <string name="btn_go_to_map">RNC</string>
     <string name="copy">Copy</string>
     <string name="recipes">recipes</string>
+    <string name="btn_go_to_whatsapp_messages">Whatsapp Messages</string>
+    <string name="btn_go_to_whatsapp_bot">Whatsapp Bot</string>
+    <string name="whatsapp_bot_enable">Whatsapp bot enable:</string>
+    <string name="active">Active</string>
+    <string name="inactive">Inactive</string>
+    <string name="contact">Contact</string>
+    <string name="message">Message</string>
+    <string name="response">Response</string>
+    <string name="add">Add</string>
+    <string name="whatsapp_bot_messages">Whatsapp bot messages</string>
+    <string name="whatsapp_auto_reply">Whatsapp auto reply enable:</string>
 </resources>
