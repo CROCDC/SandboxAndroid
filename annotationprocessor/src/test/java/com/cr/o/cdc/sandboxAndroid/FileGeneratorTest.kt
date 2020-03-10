@@ -10,7 +10,6 @@ import java.io.File
 
 class FileGeneratorTest {
 
-    @Test
     fun assertCompileIsSuccessFileGenerator() {
         KotlinCompilation().apply {
             sources = listOf(SourceFile.fromPath(File("src/test/resources/Pokemons.kt")))

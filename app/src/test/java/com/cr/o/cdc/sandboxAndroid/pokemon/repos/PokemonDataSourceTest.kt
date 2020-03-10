@@ -27,5 +27,4 @@ class PokemonDataSourceTest : EndpointTest() {
             println(it)
         }.data == null)
     }
-
 }
