@@ -4,4 +4,4 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class WhatsappAutoReply(@PrimaryKey val message: String)
+data class WhatsappMessageAutoReply(@PrimaryKey val message: String, val active: Boolean)
