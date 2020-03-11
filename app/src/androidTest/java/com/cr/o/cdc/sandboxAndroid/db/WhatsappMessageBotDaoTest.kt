@@ -2,6 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.db
 
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessageBot
+import com.cr.o.cdc.sharedtest.getValueLiveData
 import com.cr.o.cdc.sharedtest.makeRandomInstance
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
@@ -18,6 +19,19 @@ class WhatsappMessageBotDaoTest : DBTest() {
         dao.save(whatsappMessageBot)
 
         assertTrue(dao.find(whatsappMessageBot.contact, whatsappMessageBot.message).isNotEmpty())
+
+    }
+
+    @Test
+    fun save() {
+        dao.save(whatsappMessageBot)
+    }
+
+    @Test
+    fun loadAll() {
+        dao.save(whatsappMessageBot)
+
+        assertTrue(getValueLiveData(dao.loadAll(), 2)?.isNotEmpty() == true)
 
     }
 }
