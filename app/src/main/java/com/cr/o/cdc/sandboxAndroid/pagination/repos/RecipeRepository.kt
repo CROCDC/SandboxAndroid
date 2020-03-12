@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class RecipeRepository @Inject constructor(
     val db: SandBoxDB,
-    val retrofit: Retrofit,
+    private val retrofit: Retrofit,
     private val appExecutors: AppExecutors
 ) {
 

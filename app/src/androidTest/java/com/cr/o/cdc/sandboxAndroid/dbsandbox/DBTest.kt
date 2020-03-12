@@ -9,7 +9,7 @@ abstract class DBTest {
     private val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
 
     val db = Room
-        .databaseBuilder(context, DBSandBoxTest::class.java, "TEST")
+        .inMemoryDatabaseBuilder(context, DBSandBoxTest::class.java)
         .allowMainThreadQueries()
         .fallbackToDestructiveMigration()
         .build()

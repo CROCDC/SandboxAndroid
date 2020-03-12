@@ -35,7 +35,6 @@ fun <T> getValueLiveData(
         }
     }
     liveData.observeForever(observer)
-    Thread.sleep(400)
     executeFunWhenObserve.invoke()
     latch.await(seconds, TimeUnit.SECONDS)
 

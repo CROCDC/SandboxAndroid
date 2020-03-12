@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Tests" type="CompoundRunConfigurationType">
-    <toRun name="Tests in 'com.cr.o.cdc.sandboxAndroid'" type="AndroidTestRunConfigurationType" />
-    <toRun name="com in app" type="AndroidJUnit" />
+    <toRun name="Android Instrumented Tests" type="AndroidTestRunConfigurationType" />
+    <toRun name="Unit Tests" type="AndroidJUnit" />
     <method v="2" />
   </configuration>
 </component>

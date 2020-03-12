@@ -11,8 +11,11 @@ import com.cr.o.cdc.requestsmodule.Response
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.di.AppModule
 import com.cr.o.cdc.sandboxAndroid.pokemons.fakes.FakePokemonDataSource
+import com.cr.o.cdc.sandboxAndroid.pokemons.model.Pokemon
+import com.cr.o.cdc.sandboxAndroid.pokemons.model.PokemonDimension
 import com.cr.o.cdc.sandboxAndroid.utils.FragmentTest
 import com.cr.o.cdc.sharedtest.getMessage
+import com.cr.o.cdc.sharedtest.makeRandomInstance
 import junit.framework.TestCase.assertTrue
 import org.junit.Before
 import org.junit.Test
@@ -21,7 +24,8 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class PokemonFragmentTest : FragmentTest() {
 
-    private val pokemon = MutableLiveData(Response(getPokemon(), 200, DebugInfo("")))
+    private val pokemon =
+        MutableLiveData(Response<Pokemon>(Pokemon::class.makeRandomInstance(), 200, DebugInfo("")))
 
     private val dataSource =
         FakePokemonDataSource(

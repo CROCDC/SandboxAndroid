@@ -20,7 +20,7 @@ android {
     dataBinding.enabled = true
 
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.cr.o.cdc.sandboxAndroid"
         minSdkVersion 21
@@ -153,8 +153,8 @@ dependencies {
     kapt "androidx.room:room-compiler:2.2.4"
     kaptAndroidTest "androidx.room:room-compiler:2.2.4"
 
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
 
     implementation "androidx.paging:paging-runtime-ktx:2.1.1"
 

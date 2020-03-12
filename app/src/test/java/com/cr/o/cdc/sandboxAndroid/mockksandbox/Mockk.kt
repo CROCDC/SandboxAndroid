@@ -1,8 +1,9 @@
 package com.cr.o.cdc.sandboxAndroid.mockksandbox
 
+import io.mockk.MockKException
 import io.mockk.every
 import io.mockk.mockk
-import io.mockk.mockkClass
+import io.mockk.spyk
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
@@ -19,9 +20,9 @@ class Mockk {
         assertTrue(dog.name == mockName)
     }
 
-    @Test
+    @Test(expected = MockKException::class)
     fun mockkVariableJava() {
-        val dog = mockkClass(DogJava::class).apply {
+        val dog = spyk<DogJava>().apply {
             every { name } returns mockName
 
         }
