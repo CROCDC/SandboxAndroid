@@ -1,4 +1,4 @@
-package com.cr.o.cdc.customviews.fragments
+package com.cr.o.cdc.sandboxAndroid.customviews.fragments
 
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.navigation.NavController
@@ -8,7 +8,6 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.customviews.fragments.CustomViewsFragment
 import io.mockk.mockk
 import io.mockk.verify
 import org.junit.Test
