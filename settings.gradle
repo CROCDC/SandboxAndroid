@@ -1,4 +1,3 @@
-include ':app', ':annotationprocessor', ':sharedtest', ':annotations'
+include ':app', ':annotationprocessor', ':sharedtest', ':annotations',':networking'
 rootProject.name='CajaDeArena'
-include ':coronavirus'
-include ':networking'
+

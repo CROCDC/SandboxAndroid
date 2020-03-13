@@ -1,0 +1,2 @@
+com.cr.o.cdc.requests
+string app_name
