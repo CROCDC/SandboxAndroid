@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.utils
+package com.cr.o.cdc.networking
 
 import androidx.lifecycle.LiveData
 import retrofit2.CallAdapter
@@ -22,6 +22,6 @@ class LiveDataCallAdapterFactory : Factory() {
         require(rawObservableType == Response::class.java) { "type must be a resource" }
         require(observableType is ParameterizedType) { "resource must be parameterized" }
         val bodyType = getParameterUpperBound(0, observableType)
-        return LiveDataCallAdapter<Any>(bodyType)
+        return com.cr.o.cdc.networking.LiveDataCallAdapter<Any>(bodyType)
     }
 }

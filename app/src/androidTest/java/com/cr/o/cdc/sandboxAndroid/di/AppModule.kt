@@ -8,8 +8,8 @@ import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
-import com.cr.o.cdc.sandboxAndroid.utils.AppExecutors
-import com.cr.o.cdc.sandboxAndroid.utils.LiveDataCallAdapterFactory
+import com.cr.o.cdc.networking.AppExecutors
+import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -24,7 +24,7 @@ class AppModule {
     fun provideRetrofit(app: SandBoxApp): Retrofit = Retrofit.Builder()
         .baseUrl(app.resources.getString(R.string.recipes_url))
         .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(LiveDataCallAdapterFactory())
+        .addCallAdapterFactory(com.cr.o.cdc.networking.LiveDataCallAdapterFactory())
         .build()
 
 
@@ -47,7 +47,7 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideAppExecutors() = AppExecutors()
+    fun provideAppExecutors() = com.cr.o.cdc.networking.AppExecutors()
 
     companion object {
         private var fakePokemonDataSource: PokemonDataSourceProvider? = null

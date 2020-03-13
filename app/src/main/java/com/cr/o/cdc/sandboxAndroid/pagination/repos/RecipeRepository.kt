@@ -1,7 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.pagination.repos
 
 import androidx.paging.toLiveData
-import com.cr.o.cdc.sandboxAndroid.utils.AppExecutors
+import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeBoundaryCallback
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeResource
@@ -11,7 +11,7 @@ import javax.inject.Inject
 class RecipeRepository @Inject constructor(
     val db: SandBoxDB,
     private val retrofit: Retrofit,
-    private val appExecutors: AppExecutors
+    private val appExecutors: com.cr.o.cdc.networking.AppExecutors
 ) {
 
     fun search(search: String): PagedRecipeResource {

@@ -13,7 +13,9 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
-
+configurations.all {
+    resolutionStrategy.force "junit:junit:4.13"
+}
 allprojects {
     repositories {
         google()

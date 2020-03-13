@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.utils
+package com.cr.o.cdc.networking
 
 import androidx.lifecycle.LiveData
 import retrofit2.Call
@@ -26,7 +26,7 @@ class LiveDataCallAdapter<R>(private val responseType: Type) :
                                 Response(
                                     response.body(),
                                     response.code(),
-                                    DebugInfo(call.request().url.toString())
+                                    DebugInfo(call.request().url().toString())
                                 )
                             )
                         }
@@ -36,7 +36,7 @@ class LiveDataCallAdapter<R>(private val responseType: Type) :
                                 Response(
                                     null,
                                     100,
-                                    DebugInfo(call.request().url.toString())
+                                    DebugInfo(call.request().url().toString())
                                 )
                             )
                         }

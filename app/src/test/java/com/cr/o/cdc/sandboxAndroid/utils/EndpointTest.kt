@@ -14,22 +14,22 @@ abstract class EndpointTest {
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
     @Throws(InterruptedException::class)
-    fun <T> getValue(liveData: LiveData<Response<T>>): Response<T> {
-        var data: Response<T>? = null
+    fun <T> getValue(liveData: LiveData<com.cr.o.cdc.networking.Response<T>>): com.cr.o.cdc.networking.Response<T> {
+        var data: com.cr.o.cdc.networking.Response<T>? = null
         val latch = CountDownLatch(1)
-        val ob = Observer<Response<T>> {
+        val ob = Observer<com.cr.o.cdc.networking.Response<T>> {
             when (it.status) {
-                StatusResult.SUCCESS -> {
+                com.cr.o.cdc.networking.StatusResult.SUCCESS -> {
                     data = it
                     latch.countDown()
                 }
-                StatusResult.LOADING -> {
+                com.cr.o.cdc.networking.StatusResult.LOADING -> {
                 }
-                StatusResult.FAILURE -> {
+                com.cr.o.cdc.networking.StatusResult.FAILURE -> {
                     latch.countDown()
                     throw Exception()
                 }
-                StatusResult.OFFLINE -> TODO()
+                com.cr.o.cdc.networking.StatusResult.OFFLINE -> TODO()
             }
         }
 

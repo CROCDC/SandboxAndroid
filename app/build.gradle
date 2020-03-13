@@ -22,6 +22,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     defaultConfig {
+        baseFeature true
         applicationId "com.cr.o.cdc.sandboxAndroid"
         minSdkVersion 21
         targetSdkVersion 29
@@ -62,6 +63,7 @@ android {
 
     }
 
+    dynamicFeatures = [":coronavirus"]
 }
 
 kapt {
@@ -72,12 +74,9 @@ kapt {
     correctErrorTypes true
 }
 
-configurations.all {
-    resolutionStrategy.force "junit:junit:4.13"
-}
-
 dependencies {
     implementation project(':annotations')
+    implementation project(':networking')
 
     androidTestImplementation project(':sharedtest')
     testImplementation project(':sharedtest')

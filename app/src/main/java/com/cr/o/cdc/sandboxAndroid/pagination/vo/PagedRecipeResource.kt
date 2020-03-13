@@ -3,10 +3,10 @@ package com.cr.o.cdc.sandboxAndroid.pagination.vo
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList
 import com.cr.o.cdc.sandboxAndroid.pagination.model.PagedRecipe
-import com.cr.o.cdc.sandboxAndroid.utils.StatusResult
+import com.cr.o.cdc.networking.StatusResult
 
 data class PagedRecipeResource(
-    val status: LiveData<StatusResult>,
+    val status: LiveData<com.cr.o.cdc.networking.StatusResult>,
     val data: LiveData<PagedList<PagedRecipe>>,
     val refresh: () -> Unit
 ) {

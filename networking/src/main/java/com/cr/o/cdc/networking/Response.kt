@@ -1,6 +1,10 @@
-package com.cr.o.cdc.sandboxAndroid.utils
+package com.cr.o.cdc.networking
 
-data class Response<T>(val data: T?, private val httpCode: Int, val debugInfo: DebugInfo) {
+data class Response<T>(
+    val data: T?,
+    private val httpCode: Int,
+    val debugInfo: com.cr.o.cdc.networking.DebugInfo
+) {
 
     val status: StatusResult
         get() = when (httpCode) {

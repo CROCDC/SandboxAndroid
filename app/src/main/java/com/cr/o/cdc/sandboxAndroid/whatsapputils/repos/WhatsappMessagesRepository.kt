@@ -1,7 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.whatsapputils.repos
 
 import androidx.lifecycle.LiveData
-import com.cr.o.cdc.sandboxAndroid.utils.AppExecutors
+import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessage
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessageBot
@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class WhatsappMessagesRepository @Inject constructor(
     val db: SandBoxDB,
-    private val appExecutors: AppExecutors
+    private val appExecutors: com.cr.o.cdc.networking.AppExecutors
 ) {
 
     fun saveWhatsappMessage(whatsappMessage: WhatsappMessage) {

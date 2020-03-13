@@ -1,2 +1,4 @@
 include ':app', ':annotationprocessor', ':sharedtest', ':annotations'
 rootProject.name='CajaDeArena'
+include ':coronavirus'
+include ':networking'
