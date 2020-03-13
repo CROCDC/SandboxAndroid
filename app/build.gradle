@@ -77,8 +77,6 @@ configurations.all {
 }
 
 dependencies {
-    implementation project(':requests')
-    implementation project(':requestsmodel')
     implementation project(':annotations')
 
     androidTestImplementation project(':sharedtest')

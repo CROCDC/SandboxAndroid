@@ -6,13 +6,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.cr.o.cdc.requestsmodule.DebugInfo
-import com.cr.o.cdc.requestsmodule.Response
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.di.AppModule
 import com.cr.o.cdc.sandboxAndroid.pokemons.fakes.FakePokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokemons.model.Pokemon
+import com.cr.o.cdc.sandboxAndroid.utils.DebugInfo
 import com.cr.o.cdc.sandboxAndroid.utils.FragmentTest
+import com.cr.o.cdc.sandboxAndroid.utils.Response
 import com.cr.o.cdc.sharedtest.getMessage
 import com.cr.o.cdc.sharedtest.makeRandomInstance
 import junit.framework.TestCase.assertTrue

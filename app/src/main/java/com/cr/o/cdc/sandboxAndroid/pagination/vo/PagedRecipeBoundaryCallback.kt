@@ -3,11 +3,11 @@ package com.cr.o.cdc.sandboxAndroid.pagination.vo
 import androidx.annotation.MainThread
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PagedList
-import com.cr.o.cdc.requestsmodule.StatusResult
 import com.cr.o.cdc.sandboxAndroid.db.dao.RecipeDao
 import com.cr.o.cdc.sandboxAndroid.pagination.model.InfoSearchRecipe
 import com.cr.o.cdc.sandboxAndroid.pagination.model.PagedRecipe
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
+import com.cr.o.cdc.sandboxAndroid.utils.StatusResult
 import retrofit2.Retrofit
 import java.util.concurrent.Executor
 

@@ -1,8 +1,8 @@
 package com.cr.o.cdc.sandboxAndroid.recipes.repos
 
-import com.cr.o.cdc.requests.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
 import com.cr.o.cdc.sandboxAndroid.utils.EndpointTest
+import com.cr.o.cdc.sandboxAndroid.utils.LiveDataCallAdapterFactory
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 import retrofit2.Retrofit

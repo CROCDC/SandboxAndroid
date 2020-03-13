@@ -3,8 +3,6 @@ package com.cr.o.cdc.sandboxAndroid.di
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
-import com.cr.o.cdc.requests.AppExecutors
-import com.cr.o.cdc.requests.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
@@ -12,6 +10,8 @@ import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.MapDataSource
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.MapDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.utils.AppExecutors
+import com.cr.o.cdc.sandboxAndroid.utils.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -40,7 +40,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun providePokemonDataSourceProvide(): PokemonDataSourceProvider = PokemonDataSource()
+    fun providePokemonDataSource(): PokemonDataSourceProvider = PokemonDataSource()
 
     @Singleton
     @Provides

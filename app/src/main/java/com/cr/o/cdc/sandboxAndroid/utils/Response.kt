@@ -1,4 +1,4 @@
-package com.cr.o.cdc.requestsmodule
+package com.cr.o.cdc.sandboxAndroid.utils
 
 data class Response<T>(val data: T?, private val httpCode: Int, val debugInfo: DebugInfo) {
 

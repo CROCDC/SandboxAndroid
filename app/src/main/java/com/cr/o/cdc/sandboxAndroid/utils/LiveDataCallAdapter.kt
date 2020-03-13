@@ -1,8 +1,6 @@
-package com.cr.o.cdc.requests
+package com.cr.o.cdc.sandboxAndroid.utils
 
 import androidx.lifecycle.LiveData
-import com.cr.o.cdc.requestsmodule.DebugInfo
-import com.cr.o.cdc.requestsmodule.Response
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Callback

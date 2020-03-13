@@ -1,4 +1,4 @@
-package com.cr.o.cdc.requestsmodule
+package com.cr.o.cdc.sandboxAndroid.utils
 
 enum class StatusResult {
     SUCCESS,

@@ -1,7 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.whatsapputils.repos
 
 import androidx.lifecycle.LiveData
-import com.cr.o.cdc.requests.AppExecutors
+import com.cr.o.cdc.sandboxAndroid.utils.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessage
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessageBot

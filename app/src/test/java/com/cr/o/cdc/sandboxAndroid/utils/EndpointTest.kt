@@ -3,9 +3,6 @@ package com.cr.o.cdc.sandboxAndroid.utils
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import com.cr.o.cdc.requestsmodule.GraphQlDebugInfo
-import com.cr.o.cdc.requestsmodule.Response
-import com.cr.o.cdc.requestsmodule.StatusResult
 import org.junit.Rule
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -29,7 +26,6 @@ abstract class EndpointTest {
                 StatusResult.LOADING -> {
                 }
                 StatusResult.FAILURE -> {
-                    println((it.debugInfo as GraphQlDebugInfo))
                     latch.countDown()
                     throw Exception()
                 }

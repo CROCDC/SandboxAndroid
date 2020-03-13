@@ -13,8 +13,6 @@
             <option value="$PROJECT_DIR$/annotationprocessor" />
             <option value="$PROJECT_DIR$/annotations" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/requests" />
-            <option value="$PROJECT_DIR$/requestsmodel" />
             <option value="$PROJECT_DIR$/sharedtest" />
           </set>
         </option>

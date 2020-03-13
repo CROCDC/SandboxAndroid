@@ -24,9 +24,6 @@ dependencies {
     kapt project(':annotations')
     compileOnly project(':annotations')
 
-    kapt project(':requestsmodel')
-    compileOnly project(':requestsmodel')
-
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection DifferentStdlibGradleVersion
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.70"
