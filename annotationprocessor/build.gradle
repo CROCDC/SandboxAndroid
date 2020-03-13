@@ -33,11 +33,11 @@ dependencies {
     implementation 'com.squareup:kotlinpoet:1.4.4'
     implementation 'com.squareup:javapoet:1.12.1'
     implementation "junit:junit:4.13"
-    implementation "com.squareup.okhttp3:okhttp:4.4.0"
+    implementation "com.squareup.okhttp3:okhttp:4.4.1"
     implementation "com.google.code.gson:gson:2.8.6"
 
-    kapt "com.google.auto.service:auto-service:1.0-rc4"
-    kapt "com.google.auto.service:auto-service:1.0-rc4"
+    //noinspection AnnotationProcessorOnCompilePath
+    implementation "com.google.auto.service:auto-service:1.0-rc4"
 
     implementation 'com.github.tschuchortdev:kotlin-compile-testing:1.2.6'
 

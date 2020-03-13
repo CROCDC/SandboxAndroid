@@ -12,7 +12,6 @@ import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.di.AppModule
 import com.cr.o.cdc.sandboxAndroid.pokemons.fakes.FakePokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokemons.model.Pokemon
-import com.cr.o.cdc.sandboxAndroid.pokemons.model.PokemonDimension
 import com.cr.o.cdc.sandboxAndroid.utils.FragmentTest
 import com.cr.o.cdc.sharedtest.getMessage
 import com.cr.o.cdc.sharedtest.makeRandomInstance
@@ -27,12 +26,7 @@ class PokemonFragmentTest : FragmentTest() {
     private val pokemon =
         MutableLiveData(Response<Pokemon>(Pokemon::class.makeRandomInstance(), 200, DebugInfo("")))
 
-    private val dataSource =
-        FakePokemonDataSource(
-            listOf(
-                pokemon
-            )
-        )
+    private val dataSource = FakePokemonDataSource(listOf(pokemon))
 
     @Before
     fun initDataSource() {

@@ -2,6 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.utils
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import com.cr.o.cdc.requestsmodule.GraphQlDebugInfo
 import com.cr.o.cdc.requestsmodule.Response
 import com.cr.o.cdc.requestsmodule.StatusResult
@@ -19,23 +20,26 @@ abstract class EndpointTest {
     fun <T> getValue(liveData: LiveData<Response<T>>): Response<T> {
         var data: Response<T>? = null
         val latch = CountDownLatch(1)
-        liveData.observeForever { o ->
-            when (o.status) {
+        val ob = Observer<Response<T>> {
+            when (it.status) {
                 StatusResult.SUCCESS -> {
-                    data = o
+                    data = it
                     latch.countDown()
                 }
                 StatusResult.LOADING -> {
                 }
                 StatusResult.FAILURE -> {
-                    println((o.debugInfo as GraphQlDebugInfo))
+                    println((it.debugInfo as GraphQlDebugInfo))
                     latch.countDown()
                     throw Exception()
                 }
                 StatusResult.OFFLINE -> TODO()
             }
         }
+
+        liveData.observeForever(ob)
         latch.await(40, TimeUnit.SECONDS)
+        liveData.removeObserver(ob)
 
         return data!!
     }
