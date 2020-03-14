@@ -20,7 +20,7 @@ class PagedRecipeBoundaryCallback(
 ) : PagedList.BoundaryCallback<PagedRecipe>() {
 
     private val mlApi = retrofit.create(RecipeService::class.java)
-    val networkStatus = MutableLiveData<com.cr.o.cdc.networking.StatusResult>()
+    val networkStatus = MutableLiveData<StatusResult>()
 
     @MainThread
     override fun onZeroItemsLoaded() {
@@ -33,11 +33,11 @@ class PagedRecipeBoundaryCallback(
     }
 
     private fun fetch(to: Int, from: Int) {
-        if (networkStatus.value == com.cr.o.cdc.networking.StatusResult.LOADING) {
+        if (networkStatus.value == StatusResult.LOADING) {
             return
         }
 
-        networkStatus.value = com.cr.o.cdc.networking.StatusResult.LOADING
+        networkStatus.value = StatusResult.LOADING
 
         networkIO.execute {
             //todo
@@ -50,9 +50,9 @@ class PagedRecipeBoundaryCallback(
                 dao.saveAll(recipes)
                 dao.saveOffSet(recipes.map { InfoSearchRecipe(it.uri, from, search) })
 
-                networkStatus.postValue(com.cr.o.cdc.networking.StatusResult.SUCCESS)
+                networkStatus.postValue(StatusResult.SUCCESS)
             } else {
-                networkStatus.postValue(com.cr.o.cdc.networking.StatusResult.FAILURE)
+                networkStatus.postValue(StatusResult.FAILURE)
             }
         }
     }

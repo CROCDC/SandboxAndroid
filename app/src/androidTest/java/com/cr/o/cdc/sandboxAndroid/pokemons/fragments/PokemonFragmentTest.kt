@@ -5,7 +5,6 @@ import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.MutableLiveData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.di.AppModule
 import com.cr.o.cdc.sandboxAndroid.pokemons.fakes.FakePokemonDataSource
@@ -18,16 +17,14 @@ import com.cr.o.cdc.sharedtest.makeRandomInstance
 import junit.framework.TestCase.assertTrue
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
 
-@RunWith(AndroidJUnit4::class)
 class PokemonFragmentTest : FragmentTest() {
 
     private val pokemon =
         MutableLiveData(
-            com.cr.o.cdc.networking.Response<Pokemon>(
+            Response<Pokemon>(
                 Pokemon::class.makeRandomInstance(), 200,
-                com.cr.o.cdc.networking.DebugInfo("")
+                DebugInfo("")
             )
         )
 

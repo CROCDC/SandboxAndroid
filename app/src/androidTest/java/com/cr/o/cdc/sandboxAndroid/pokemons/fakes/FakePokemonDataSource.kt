@@ -10,10 +10,10 @@ import com.cr.o.cdc.networking.Response
 @Suppress("UNCHECKED_CAST")
 class FakePokemonDataSource(private val list: List<MutableLiveData<*>>) :
     PokemonDataSourceProvider {
-    override fun pokemon(name: String): LiveData<com.cr.o.cdc.networking.Response<Pokemon?>> =
-        list[0] as LiveData<com.cr.o.cdc.networking.Response<Pokemon?>>
+    override fun pokemon(name: String): LiveData<Response<Pokemon?>> =
+        list[0] as LiveData<Response<Pokemon?>>
 
-    override fun pokemons(first: Int): LiveData<com.cr.o.cdc.networking.Response<Pokemons?>> =
-        list[1] as LiveData<com.cr.o.cdc.networking.Response<Pokemons?>>
+    override fun pokemons(first: Int): LiveData<Response<Pokemons?>> =
+        list[1] as LiveData<Response<Pokemons?>>
 
 }

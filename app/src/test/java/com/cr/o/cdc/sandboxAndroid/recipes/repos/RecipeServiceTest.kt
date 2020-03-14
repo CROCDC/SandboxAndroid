@@ -13,7 +13,7 @@ class RecipeServiceTest : EndpointTest() {
     private val recipeService: RecipeService = Retrofit.Builder()
         .baseUrl("https://api.edamam.com/search/")
         .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(com.cr.o.cdc.networking.LiveDataCallAdapterFactory())
+        .addCallAdapterFactory(LiveDataCallAdapterFactory())
         .build().create(RecipeService::class.java)
 
 

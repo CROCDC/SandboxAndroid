@@ -22,6 +22,6 @@ class LiveDataCallAdapterFactory : Factory() {
         require(rawObservableType == Response::class.java) { "type must be a resource" }
         require(observableType is ParameterizedType) { "resource must be parameterized" }
         val bodyType = getParameterUpperBound(0, observableType)
-        return com.cr.o.cdc.networking.LiveDataCallAdapter<Any>(bodyType)
+        return LiveDataCallAdapter<Any>(bodyType)
     }
 }

@@ -9,6 +9,6 @@ import javax.inject.Inject
 
 class PokemonViewModel @Inject constructor(repository: PokemonRepository) : ViewModel() {
 
-    val pikachu: LiveData<com.cr.o.cdc.networking.Response<Pokemon?>> =
+    val pikachu: LiveData<Response<Pokemon?>> =
         repository.pokemon("Pikachu")
 }

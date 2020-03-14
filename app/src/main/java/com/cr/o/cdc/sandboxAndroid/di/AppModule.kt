@@ -26,7 +26,7 @@ class AppModule {
     fun provideRetrofit(app: SandBoxApp): Retrofit = Retrofit.Builder()
         .baseUrl(app.resources.getString(R.string.recipes_url))
         .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(com.cr.o.cdc.networking.LiveDataCallAdapterFactory())
+        .addCallAdapterFactory(LiveDataCallAdapterFactory())
         .build()
 
 
@@ -49,7 +49,7 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideAppExecutors() = com.cr.o.cdc.networking.AppExecutors()
+    fun provideAppExecutors() = AppExecutors()
 
     @Singleton
     @Provides

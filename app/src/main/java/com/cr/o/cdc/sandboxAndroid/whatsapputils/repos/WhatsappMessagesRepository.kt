@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class WhatsappMessagesRepository @Inject constructor(
     val db: SandBoxDB,
-    private val appExecutors: com.cr.o.cdc.networking.AppExecutors
+    private val appExecutors: AppExecutors
 ) {
 
     fun saveWhatsappMessage(whatsappMessage: WhatsappMessage) {

@@ -8,10 +8,10 @@ import com.cr.o.cdc.networking.Response
 
 class PokemonDataSource : PokemonDataSourceProvider {
 
-    override fun pokemon(name: String): LiveData<com.cr.o.cdc.networking.Response<Pokemon?>> =
+    override fun pokemon(name: String): LiveData<Response<Pokemon?>> =
         MutableLiveData()
 
-    override fun pokemons(first: Int): LiveData<com.cr.o.cdc.networking.Response<Pokemons?>> =
+    override fun pokemons(first: Int): LiveData<Response<Pokemons?>> =
         MutableLiveData()
 
 }

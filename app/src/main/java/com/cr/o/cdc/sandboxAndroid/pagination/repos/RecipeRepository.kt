@@ -11,7 +11,7 @@ import javax.inject.Inject
 class RecipeRepository @Inject constructor(
     val db: SandBoxDB,
     private val retrofit: Retrofit,
-    private val appExecutors: com.cr.o.cdc.networking.AppExecutors
+    private val appExecutors: AppExecutors
 ) {
 
     fun search(search: String): PagedRecipeResource {

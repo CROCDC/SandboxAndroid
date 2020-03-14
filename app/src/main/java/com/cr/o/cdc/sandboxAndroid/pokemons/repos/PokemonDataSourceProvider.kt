@@ -6,6 +6,6 @@ import com.cr.o.cdc.sandboxAndroid.pokemons.model.Pokemons
 import com.cr.o.cdc.networking.Response
 
 interface PokemonDataSourceProvider {
-    fun pokemon(name: String): LiveData<com.cr.o.cdc.networking.Response<Pokemon?>>
-    fun pokemons(first: Int): LiveData<com.cr.o.cdc.networking.Response<Pokemons?>>
+    fun pokemon(name: String): LiveData<Response<Pokemon?>>
+    fun pokemons(first: Int): LiveData<Response<Pokemons?>>
 }

@@ -61,7 +61,7 @@ class RecipesFragment : Fragment() {
 
         vm.loading.observe(viewLifecycleOwner, Observer {
             binding.progressbar.visibility =
-                if (it != com.cr.o.cdc.networking.StatusResult.LOADING) {
+                if (it != StatusResult.LOADING) {
                 View.GONE
             } else {
                 View.VISIBLE
