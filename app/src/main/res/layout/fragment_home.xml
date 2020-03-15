@@ -11,21 +11,22 @@
         tools:context=".MainActivity">
 
         <Button
-            android:id="@+id/btn_map"
+            android:id="@+id/btn_coronavirus"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/btn_go_to_map"
-            android:background="@color/colorPrimaryDark"
-            app:layout_constraintBottom_toTopOf="@id/btn_tab_layout"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/coronavirus_stats"
+            app:layout_constraintBottom_toTopOf="@id/btn_map"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_tab_layout"
+            android:id="@+id/btn_map"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/btn_go_to_TabLayout"
-            app:layout_constraintBottom_toTopOf="@+id/btn_notifications"
-            app:layout_constraintTop_toBottomOf="@id/btn_map" />
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/btn_go_to_map"
+            app:layout_constraintBottom_toTopOf="@id/btn_notifications"
+            app:layout_constraintTop_toBottomOf="@id/btn_coronavirus" />
 
         <Button
             android:id="@+id/btn_notifications"
@@ -33,7 +34,7 @@
             android:layout_height="0dp"
             android:text="@string/btn_go_to_notifications"
             app:layout_constraintBottom_toTopOf="@+id/btn_pokedex"
-            app:layout_constraintTop_toBottomOf="@+id/btn_tab_layout" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_map" />
 
         <Button
             android:id="@+id/btn_pokedex"

@@ -2,6 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.cr.o.cdc.sandboxAndroid.coronavirus.vm.CoronavirusViewModel
 import com.cr.o.cdc.sandboxAndroid.notifications.vm.NotificationsViewModel
 import com.cr.o.cdc.sandboxAndroid.pagination.vm.RecipeViewModel
 import com.cr.o.cdc.sandboxAndroid.pokemons.vm.PokemonViewModel
@@ -50,6 +51,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(AddWhatsappMessageBotViewModel::class)
     abstract fun bindAddWhatsappMessageBotViewModel(addWhatsappMessageBotViewModel: AddWhatsappMessageBotViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CoronavirusViewModel::class)
+    abstract fun bindCoronavirusViewModel(coronavirusViewModel: CoronavirusViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

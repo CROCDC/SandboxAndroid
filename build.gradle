@@ -36,6 +36,7 @@ buildscript {
     ext.uiautomator = "2.2.0"
     ext.threetenabp = "1.2.2"
     ext.mockk_unit = "mockk.kotlin12"
+    ext.instant_task = "2.1.0"
 
     repositories {
         google()
@@ -48,9 +49,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
-configurations.all {
-    resolutionStrategy.force "junit:junit:$junit"
-}
+
 allprojects {
     repositories {
         google()

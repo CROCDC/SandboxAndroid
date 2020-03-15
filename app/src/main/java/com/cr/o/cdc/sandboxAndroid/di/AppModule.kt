@@ -3,15 +3,17 @@ package com.cr.o.cdc.sandboxAndroid.di
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
+import com.cr.o.cdc.networking.AppExecutors
+import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
+import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
+import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.MapDataSource
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.MapDataSourceProvider
-import com.cr.o.cdc.networking.AppExecutors
-import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -23,12 +25,27 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(app: SandBoxApp): Retrofit = Retrofit.Builder()
-        .baseUrl(app.resources.getString(R.string.recipes_url))
+    fun provideRetrofit(): Retrofit.Builder = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(LiveDataCallAdapterFactory())
-        .build()
 
+    @Provides
+    @Singleton
+    fun provideCoronavirusService(
+        retrofitBuilder: Retrofit.Builder,
+        app: SandBoxApp
+    ): CoronavirusService =
+        retrofitBuilder.baseUrl(app.resources.getString(R.string.coronavirus_api)).build()
+            .create(CoronavirusService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideRecipeService(
+        retrofitBuilder: Retrofit.Builder,
+        app: SandBoxApp
+    ): RecipeService =
+        retrofitBuilder.baseUrl(app.resources.getString(R.string.recipes_api)).build()
+            .create(RecipeService::class.java)
 
     @Singleton
     @Provides

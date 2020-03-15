@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.utils
+package com.cr.o.cdc.sharedtest
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.UiDevice

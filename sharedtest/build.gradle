@@ -26,6 +26,8 @@ android {
 }
 
 dependencies {
+    implementation project(':networking')
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
@@ -33,4 +35,10 @@ dependencies {
     kapt "androidx.room:room-compiler:$room"
     kaptAndroidTest "androidx.room:room-compiler:$room"
     implementation "android.arch.lifecycle:extensions:$lifecycle_extensions"
+
+    implementation "androidx.test.uiautomator:uiautomator:$uiautomator"
+    implementation "junit:junit:$junit"
+    implementation "android.arch.core:core-testing:$arch_core_testing"
+    implementation "androidx.test:core:$androidx_test"
+
 }

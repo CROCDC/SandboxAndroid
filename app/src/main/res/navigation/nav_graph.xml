@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_homeFragment_to_whatsappUtilsFragment"
             app:destination="@id/whatsappUtilsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_coronavirusFragment"
+            app:destination="@id/coronavirusFragment" />
     </fragment>
     <fragment
         android:id="@+id/pokemonFragment"
@@ -90,5 +93,9 @@
     <fragment
         android:id="@+id/addWhatsappMessageBotFragment"
         android:name="com.cr.o.cdc.sandboxAndroid.whatsapputils.fragments.AddWhatsappMessageBotFragment"
-        android:label="AddWhatsappMessageBotFragment" />
+        tools:layout="@layout/fragment_add_whatsapp_message_bot" />
+    <fragment
+        android:id="@+id/coronavirusFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.coronavirus.fragments.CoronavirusFragment"
+        tools:layout="@layout/fragment_coronavirus" />
 </navigation>

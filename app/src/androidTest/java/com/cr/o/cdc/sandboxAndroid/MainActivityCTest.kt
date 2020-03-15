@@ -1,12 +1,17 @@
-package com.cr.o.cdc.sandboxAndroid.utils
+package com.cr.o.cdc.sandboxAndroid
 
 import com.cr.o.cdc.sharedtest.DisableAnimationsRule
 import org.junit.Rule
+import org.junit.Test
 
-@Suppress("UNCHECKED_CAST")
-abstract class FragmentTest {
+class MainActivityCTest {
 
     @Rule
     @JvmField
     var disableAnimationsRule = DisableAnimationsRule()
+
+    @Test
+    fun assertNavigateToRNCFragment() {
+
+    }
 }

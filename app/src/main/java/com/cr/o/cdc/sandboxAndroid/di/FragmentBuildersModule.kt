@@ -1,5 +1,6 @@
 package com.cr.o.cdc.sandboxAndroid.di
 
+import com.cr.o.cdc.sandboxAndroid.coronavirus.fragments.CoronavirusFragment
 import com.cr.o.cdc.sandboxAndroid.notifications.fragments.NotificationsFragment
 import com.cr.o.cdc.sandboxAndroid.pagination.fragments.RecipesFragment
 import com.cr.o.cdc.sandboxAndroid.pokemons.fragments.PokemonFragment
@@ -33,4 +34,7 @@ abstract class FragmentBuildersModule {
 
     @ContributesAndroidInjector
     abstract fun contributesAddWhatsappMessageBotFragment(): AddWhatsappMessageBotFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributesCoronavirusFragment(): CoronavirusFragment
 }

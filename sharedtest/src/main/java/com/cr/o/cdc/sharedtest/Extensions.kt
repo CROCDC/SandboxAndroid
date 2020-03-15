@@ -6,6 +6,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
+import com.cr.o.cdc.networking.RetrofitErrorResponse
+import com.cr.o.cdc.networking.RetrofitResponse
+import com.cr.o.cdc.networking.RetrofitSuccessResponse
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
@@ -80,9 +83,10 @@ fun <T> KClass<*>.makeRandomInstance(
             kFunction.call(
                 *kFunction.parameters.map { kParameter ->
                     val key = parameters.find { parameter ->
-                        parameter.name == kParameter.name && parameter.place.qualifiedName == kParameter.toString().split(
-                            ":"
-                        )[1].replace(" ", "")
+                        parameter.name == kParameter.name && parameter.place.qualifiedName == kParameter.toString()
+                            .split(
+                                ":"
+                            )[1].replace(" ", "")
                     }
                     return@map key?.value
                         ?: (kParameter.type.classifier as KClass<*>).makeRandomInstance(parameters)
@@ -108,4 +112,23 @@ private fun makeRandomString(): String {
         .map { Random.nextInt(0, charPool.size) }
         .map(charPool::get)
         .joinToString("")
+}
+
+fun <T> getValue(liveData: LiveData<RetrofitResponse<T>>): RetrofitResponse<T>? {
+    var response: RetrofitResponse<T>? = null
+    val latch = CountDownLatch(1)
+    liveData.observeForever {
+        when (it) {
+            is RetrofitSuccessResponse -> {
+                response = it
+                latch.countDown()
+            }
+            is RetrofitErrorResponse -> {
+                latch.countDown()
+                throw Exception("Error in request")
+            }
+        }
+    }
+    latch.await(20, TimeUnit.SECONDS)
+    return response
 }

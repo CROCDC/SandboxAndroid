@@ -22,7 +22,7 @@ class AppModule {
     @Provides
     @Singleton
     fun provideRetrofit(app: SandBoxApp): Retrofit = Retrofit.Builder()
-        .baseUrl(app.resources.getString(R.string.recipes_url))
+        .baseUrl(app.resources.getString(R.string.recipes_api))
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(LiveDataCallAdapterFactory())
         .build()

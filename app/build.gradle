@@ -19,7 +19,6 @@ android {
     dataBinding.enabled = true
 
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion "29.0.3"
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -78,6 +77,10 @@ kapt {
     correctErrorTypes true
 }
 
+configurations.all {
+    resolutionStrategy.force "junit:junit:$junit"
+}
+
 dependencies {
     implementation project(':annotations')
     implementation project(':networking')
@@ -123,7 +126,6 @@ dependencies {
     implementation "com.apollographql.apollo:apollo-runtime:$apollo"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
 
-    //testImplementation "android.arch.core:core-testing:1.1.1"
     testImplementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     implementation "com.google.firebase:firebase-messaging:$firebase"
@@ -159,7 +161,6 @@ dependencies {
 
     implementation "com.google.android.gms:play-services-maps:$maps_utils"
 
-    androidTestImplementation "androidx.test.uiautomator:uiautomator:$uiautomator"
 
     implementation "com.jakewharton.threetenabp:threetenabp:$threetenabp"
 

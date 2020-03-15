@@ -28,9 +28,7 @@ class RecipeServiceTest : EndpointTest() {
                 "416e06f4fa1b46dacd17ca14a1d563c9"
             ).execute()
 
-        assertTrue(
-            response.body() != null
-        )
+        assertTrue(response.body() != null)
         print(response.body())
     }
 
