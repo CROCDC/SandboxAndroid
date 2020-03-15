@@ -3,22 +3,24 @@ package com.cr.o.cdc.sandboxAndroid.di
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
-import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.SandBoxApp
-import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
-import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
-import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
+import com.cr.o.cdc.sandboxAndroid.R
+import com.cr.o.cdc.sandboxAndroid.SandBoxApp
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.ViewModelModuleCoronavirus
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
+import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
+import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
+import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.di.ViewModelModuleWhatsappUtils
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@Module(includes = [ViewModelModule::class])
+@Module(includes = [ViewModelModule::class, ViewModelModuleCoronavirus::class, ViewModelModuleWhatsappUtils::class])
 class AppModule {
 
     @Provides
@@ -33,8 +35,9 @@ class AppModule {
         retrofitBuilder: Retrofit.Builder,
         app: SandBoxApp
     ): CoronavirusService =
-        retrofitBuilder.baseUrl(app.resources.getString(R.string.coronavirus_api)).build()
-            .create(CoronavirusService::class.java)
+        fakeCoronavirusService
+            ?: retrofitBuilder.baseUrl(app.resources.getString(R.string.coronavirus_api))
+                .build().create(CoronavirusService::class.java)
 
     @Provides
     @Singleton
@@ -69,8 +72,13 @@ class AppModule {
 
     companion object {
         private var fakePokemonDataSource: PokemonDataSourceProvider? = null
+        private var fakeCoronavirusService: CoronavirusService? = null
         fun setPokemonDataSourceProvider(dataSource: PokemonDataSourceProvider) {
             fakePokemonDataSource = dataSource
+        }
+
+        fun setCoronavirusService(coronavirusService: CoronavirusService) {
+            fakeCoronavirusService = coronavirusService
         }
     }
 }

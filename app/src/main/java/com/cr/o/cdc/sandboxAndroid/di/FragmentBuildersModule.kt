@@ -34,7 +34,4 @@ abstract class FragmentBuildersModule {
 
     @ContributesAndroidInjector
     abstract fun contributesAddWhatsappMessageBotFragment(): AddWhatsappMessageBotFragment
-
-    @ContributesAndroidInjector
-    abstract fun contributesCoronavirusFragment(): CoronavirusFragment
 }

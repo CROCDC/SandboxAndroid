@@ -34,28 +34,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(WhatsappMessagesViewModel::class)
-    abstract fun bindWhatsappMessagesViewModel(whatsappMessagesViewModel: WhatsappMessagesViewModel): ViewModel
-
-    @Binds
-    @IntoMap
     @ViewModelKey(MapViewModel::class)
     abstract fun bindMapViewModel(mapViewModel: MapViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(WhatsappBotViewModel::class)
-    abstract fun bindWhatsappBotViewModel(whatsappBotViewModel: WhatsappBotViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(AddWhatsappMessageBotViewModel::class)
-    abstract fun bindAddWhatsappMessageBotViewModel(addWhatsappMessageBotViewModel: AddWhatsappMessageBotViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(CoronavirusViewModel::class)
-    abstract fun bindCoronavirusViewModel(coronavirusViewModel: CoronavirusViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

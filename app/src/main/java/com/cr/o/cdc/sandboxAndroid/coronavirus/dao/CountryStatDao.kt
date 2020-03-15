@@ -18,4 +18,7 @@ interface CountryStatDao {
 
     @Query("DELETE FROM CountryStat")
     fun deleteAll()
+
+    @Query("SELECT * FROM CountryStat WHERE country_name =:country")
+    fun search(country: String): LiveData<List<CountryStat>>
 }

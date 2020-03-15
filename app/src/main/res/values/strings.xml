@@ -27,4 +27,8 @@
     <string name="cases_by_country">Countrys</string>
     <string name="cases">cases :%1$s</string>
     <string name="deaths">deaths :%1$s</string>
+    <string name="search">Search</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

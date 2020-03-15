@@ -7,6 +7,7 @@ import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.ViewModelModuleCoronavirus
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
@@ -14,13 +15,14 @@ import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.MapDataSource
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.MapDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.di.ViewModelModuleWhatsappUtils
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@Module(includes = [ViewModelModule::class])
+@Module(includes = [ViewModelModule::class, ViewModelModuleCoronavirus::class, ViewModelModuleWhatsappUtils::class])
 class AppModule {
 
     @Provides

@@ -19,6 +19,7 @@ class CoronavirusRepository @Inject constructor(
     fun getCasesByCountry(): LiveData<RetrofitResource<List<CountryStat>>> =
         object : NetworkBoundResource<List<CountryStat>, CasesByCountry>(appExecutors) {
             override fun saveCallResult(item: CasesByCountry?) {
+                db.countryStatDao().deleteAll()
                 item?.countries_stat?.let { db.countryStatDao().saveAll(it) }
             }
 
@@ -30,4 +31,6 @@ class CoronavirusRepository @Inject constructor(
                 service.getCasesByCountry()
 
         }.asLiveData()
+
+    fun search(country: String): LiveData<List<CountryStat>> = db.countryStatDao().search(country)
 }
