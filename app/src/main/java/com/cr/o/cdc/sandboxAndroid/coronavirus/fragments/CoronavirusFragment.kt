@@ -9,7 +9,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.annotations.Injectable
-import com.cr.o.cdc.networking.RetrofitSuccessResponse
 import com.cr.o.cdc.sandboxAndroid.coronavirus.ui.CountryStatsAdapter
 import com.cr.o.cdc.sandboxAndroid.coronavirus.vm.CoronavirusViewModel
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentCoronavirusBinding
@@ -43,7 +42,7 @@ class CoronavirusFragment : Fragment() {
         binding.recycler.adapter = adapter
 
         vm.getCasesByCountry().observe(viewLifecycleOwner, Observer {
-            adapter.submitList((it as? RetrofitSuccessResponse)?.data?.countries_stat)
+            adapter.submitList(it.data)
         })
     }
 }

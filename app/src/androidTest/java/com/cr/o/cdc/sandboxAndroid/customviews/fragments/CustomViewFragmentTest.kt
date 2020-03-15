@@ -24,6 +24,7 @@ class CustomViewFragmentTest {
         Espresso.onView(ViewMatchers.withId(R.id.btn_curve))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed())).perform(click())
 
+        Thread.sleep(100)
         verify { navController.navigate(R.id.action_customViewsFragment_to_curveFragment) }
     }
 

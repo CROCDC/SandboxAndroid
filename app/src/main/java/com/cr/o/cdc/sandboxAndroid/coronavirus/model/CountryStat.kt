@@ -1,3 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.coronavirus.model
 
-data class CountryStat(val country_name: String, val cases: String, val deaths: String)
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class CountryStat(@PrimaryKey val country_name: String, val cases: String, val deaths: String)
