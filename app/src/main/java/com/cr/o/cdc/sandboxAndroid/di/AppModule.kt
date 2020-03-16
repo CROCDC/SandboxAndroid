@@ -10,11 +10,15 @@ import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import com.cr.o.cdc.sandboxAndroid.coronavirus.di.ViewModelModuleCoronavirus
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
+import com.cr.o.cdc.sandboxAndroid.notifications.di.ViewModelModuleNotifications
+import com.cr.o.cdc.sandboxAndroid.pagination.di.ViewModelModulePagination
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
+import com.cr.o.cdc.sandboxAndroid.pokemons.di.ViewModelModulePokemons
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
-import com.cr.o.cdc.sandboxAndroid.rnc.repos.MapDataSource
-import com.cr.o.cdc.sandboxAndroid.rnc.repos.MapDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.rnc.di.ViewModelModuleRNC
+import com.cr.o.cdc.sandboxAndroid.rnc.repos.RNCDataSource
+import com.cr.o.cdc.sandboxAndroid.rnc.repos.RNCDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.di.ViewModelModuleWhatsappUtils
 import dagger.Module
 import dagger.Provides
@@ -22,7 +26,13 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@Module(includes = [ViewModelModule::class, ViewModelModuleCoronavirus::class, ViewModelModuleWhatsappUtils::class])
+@Module(
+    includes = [ViewModelModule::class, ViewModelModuleCoronavirus::class,
+        ViewModelModuleWhatsappUtils::class, ViewModelModuleNotifications::class,
+        ViewModelModulePagination::class, ViewModelModulePokemons::class,
+        ViewModelModuleRNC::class
+    ]
+)
 class AppModule {
 
     @Provides
@@ -72,5 +82,5 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideMapDataSourceProvider(): MapDataSourceProvider = MapDataSource()
+    fun provideMapDataSourceProvider(): RNCDataSourceProvider = RNCDataSource()
 }

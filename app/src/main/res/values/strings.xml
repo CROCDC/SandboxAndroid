@@ -23,12 +23,8 @@
     <string name="add">Add</string>
     <string name="whatsapp_bot_messages">Whatsapp bot messages</string>
     <string name="coronavirus_stats">Coronavirus stats</string>
-    <string name="title_rnc">RNC</string>
-    <string name="cases_by_country">Countrys</string>
+    <string name="cases_by_country">Countries</string>
     <string name="cases">cases :%1$s</string>
     <string name="deaths">deaths :%1$s</string>
     <string name="search">Search</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

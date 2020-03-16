@@ -3,7 +3,7 @@ package com.cr.o.cdc.sandboxAndroid.rnc.repos
 import com.cr.o.cdc.sandboxAndroid.rnc.model.Coordinates
 import com.cr.o.cdc.sandboxAndroid.rnc.model.Place
 
-class MapDataSource : MapDataSourceProvider {
+class RNCDataSource : RNCDataSourceProvider {
 
 
     override fun getPlaces(): List<Place> = listOf(
