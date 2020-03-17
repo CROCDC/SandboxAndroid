@@ -22,8 +22,8 @@
             android:id="@+id/action_homeFragment_to_customViewsFragment"
             app:destination="@id/customViewsFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
+            android:id="@+id/action_homeFragment_to_RNCFragment"
+            app:destination="@id/RNCFragment" />
         <action
             android:id="@+id/action_homeFragment_to_whatsappUtilsFragment"
             app:destination="@id/whatsappUtilsFragment" />
@@ -68,9 +68,9 @@
         android:name="com.cr.o.cdc.sandboxAndroid.whatsapputils.fragments.WhatsappMessagesFragment"
         tools:layout="@layout/fragment_whatsapp_messages" />
     <fragment
-        android:id="@+id/mapFragment"
+        android:id="@+id/RNCFragment"
         android:name="com.cr.o.cdc.sandboxAndroid.rnc.fragments.RNCFragment"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_rnc" />
     <fragment
         android:id="@+id/whatsappUtilsFragment"
         android:name="com.cr.o.cdc.sandboxAndroid.whatsapputils.fragments.WhatsappUtilsFragment"

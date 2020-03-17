@@ -1,7 +1,6 @@
 package com.cr.o.cdc.sandboxAndroid
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,8 +20,8 @@ class HomeFragment : Fragment() {
         binding.btnCoronavirus.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_coronavirusFragment)
         }
-        binding.btnMap.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
+        binding.btnRnc.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_RNCFragment)
         }
         binding.btnNotifications.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_notificationsFragment)

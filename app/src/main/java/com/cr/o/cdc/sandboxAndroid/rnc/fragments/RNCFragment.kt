@@ -43,7 +43,7 @@ class RNCFragment : Fragment(), OnMapReadyCallback {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_map, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_rnc, container, false)
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

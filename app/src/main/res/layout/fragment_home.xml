@@ -16,11 +16,11 @@
             android:layout_height="0dp"
             android:backgroundTint="@color/colorPrimary"
             android:text="@string/coronavirus_stats"
-            app:layout_constraintBottom_toTopOf="@id/btn_map"
+            app:layout_constraintBottom_toTopOf="@id/btn_rnc"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_map"
+            android:id="@+id/btn_rnc"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:backgroundTint="@color/colorPrimaryDark"
@@ -34,7 +34,7 @@
             android:layout_height="0dp"
             android:text="@string/btn_go_to_notifications"
             app:layout_constraintBottom_toTopOf="@+id/btn_pokedex"
-            app:layout_constraintTop_toBottomOf="@+id/btn_map" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_rnc" />
 
         <Button
             android:id="@+id/btn_pokedex"
