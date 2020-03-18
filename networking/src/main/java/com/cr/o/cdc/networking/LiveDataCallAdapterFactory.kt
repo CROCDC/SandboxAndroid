@@ -19,7 +19,7 @@ class LiveDataCallAdapterFactory : Factory() {
         }
         val observableType = getParameterUpperBound(0, returnType as ParameterizedType)
         val rawObservableType = getRawType(observableType)
-        require(rawObservableType == RetrofitResponse::class.java) { "type must be a resource" }
+        require(rawObservableType == NetworkResponse::class.java) { "type must be a resource" }
         require(observableType is ParameterizedType) { "resource must be parameterized" }
         val bodyType = getParameterUpperBound(0, observableType)
         return LiveDataCallAdapter<Any>(bodyType)

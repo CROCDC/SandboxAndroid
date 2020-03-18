@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import com.cr.o.cdc.networking.RetrofitResponse
+import com.cr.o.cdc.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
 import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CountryStat
@@ -23,9 +23,9 @@ class CoronavirusFragmentTest {
     @Before
     fun init() {
         AppModule.setCoronavirusService(object : CoronavirusService {
-            override fun getCasesByCountry(): LiveData<RetrofitResponse<CasesByCountry>> =
+            override fun getCasesByCountry(): LiveData<NetworkResponse<CasesByCountry>> =
                 MutableLiveData(
-                    RetrofitResponse.create(
+                    NetworkResponse.create(
                         Response.success(
                             CasesByCountry(
                                 listOf(

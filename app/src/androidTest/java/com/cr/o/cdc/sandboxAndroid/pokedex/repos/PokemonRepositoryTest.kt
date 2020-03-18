@@ -3,7 +3,7 @@ package com.cr.o.cdc.sandboxAndroid.pokedex.repos
 import PokemonsQuery
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.cr.o.cdc.networking.RetrofitResponse
+import com.cr.o.cdc.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.di.AppModule
 import com.cr.o.cdc.sandboxAndroid.utils.RepositoryTest
 import com.cr.o.cdc.sharedtest.getValueOfList
@@ -25,9 +25,9 @@ class PokemonRepositoryTest : RepositoryTest() {
 
     private val repository = PokemonRepository(
         object : PokemonDataSourceProvider {
-            override fun pokemons(first: Int): LiveData<RetrofitResponse<PokemonsQuery.Data>> =
+            override fun pokemons(first: Int): LiveData<NetworkResponse<PokemonsQuery.Data>> =
                 MutableLiveData(
-                    RetrofitResponse.create(
+                    NetworkResponse.create(
                         Response.success(PokemonsQuery.Data(pokemonsData))
                     )
                 )

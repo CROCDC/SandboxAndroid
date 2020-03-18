@@ -3,8 +3,8 @@ package com.cr.o.cdc.sandboxAndroid.coronavirus.repos
 import androidx.lifecycle.LiveData
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.NetworkBoundResource
-import com.cr.o.cdc.networking.RetrofitResource
-import com.cr.o.cdc.networking.RetrofitResponse
+import com.cr.o.cdc.networking.NetworkResource
+import com.cr.o.cdc.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
 import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CountryStat
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
@@ -16,7 +16,7 @@ class CoronavirusRepository @Inject constructor(
     private val appExecutors: AppExecutors
 ) {
 
-    fun getCasesByCountry(): LiveData<RetrofitResource<List<CountryStat>>> =
+    fun getCasesByCountry(): LiveData<NetworkResource<List<CountryStat>>> =
         object : NetworkBoundResource<List<CountryStat>, CasesByCountry>(appExecutors) {
             override fun saveCallResult(item: CasesByCountry?) {
                 db.countryStatDao().deleteAll()
@@ -27,7 +27,7 @@ class CoronavirusRepository @Inject constructor(
 
             override fun loadFromDb(): LiveData<List<CountryStat>> = db.countryStatDao().loadAll()
 
-            override fun createCall(): LiveData<RetrofitResponse<CasesByCountry>> =
+            override fun createCall(): LiveData<NetworkResponse<CasesByCountry>> =
                 service.getCasesByCountry()
 
         }.asLiveData()

@@ -4,8 +4,8 @@ import PokemonsQuery
 import androidx.lifecycle.LiveData
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.NetworkBoundResource
-import com.cr.o.cdc.networking.RetrofitResource
-import com.cr.o.cdc.networking.RetrofitResponse
+import com.cr.o.cdc.networking.NetworkResource
+import com.cr.o.cdc.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.Pokemon
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.PokemonMini
@@ -17,7 +17,7 @@ class PokemonRepository @Inject constructor(
     val appExecutors: AppExecutors
 ) {
 
-    fun pokemons(first: Int): LiveData<RetrofitResource<List<Pokemon>>> =
+    fun pokemons(first: Int): LiveData<NetworkResource<List<Pokemon>>> =
         object : NetworkBoundResource<List<Pokemon>, PokemonsQuery.Data>(appExecutors) {
             override fun saveCallResult(item: PokemonsQuery.Data?) {
                 db.pokemonDao().saveAll(item?.pokemons?.mapNotNull { pokemon ->
@@ -44,7 +44,7 @@ class PokemonRepository @Inject constructor(
 
             override fun loadFromDb(): LiveData<List<Pokemon>> = db.pokemonDao().loadAll()
 
-            override fun createCall(): LiveData<RetrofitResponse<PokemonsQuery.Data>> =
+            override fun createCall(): LiveData<NetworkResponse<PokemonsQuery.Data>> =
                 dataSource.pokemons(first)
 
         }.asLiveData()

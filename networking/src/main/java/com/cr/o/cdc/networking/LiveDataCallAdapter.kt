@@ -10,23 +10,23 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 //https://github.com/android/architecture-components-samples/blob/master/GithubBrowserSample/app/src/main/java/com/android/example/github/util/LiveDataCallAdapter.kt
 class LiveDataCallAdapter<R>(private val responseType: Type) :
-    CallAdapter<R, LiveData<RetrofitResponse<R>>> {
+    CallAdapter<R, LiveData<NetworkResponse<R>>> {
 
     override fun responseType() = responseType
 
-    override fun adapt(call: Call<R>): LiveData<RetrofitResponse<R>> {
-        return object : LiveData<RetrofitResponse<R>>() {
+    override fun adapt(call: Call<R>): LiveData<NetworkResponse<R>> {
+        return object : LiveData<NetworkResponse<R>>() {
             private var started = AtomicBoolean()
             override fun onActive() {
                 super.onActive()
                 if (started.compareAndSet(false, true)) {
                     call.enqueue(object : Callback<R> {
                         override fun onResponse(call: Call<R>, response: Response<R>) {
-                            postValue(RetrofitResponse.create(response))
+                            postValue(NetworkResponse.create(response))
                         }
 
                         override fun onFailure(call: Call<R>, throwable: Throwable) {
-                            postValue(RetrofitResponse.create(throwable))
+                            postValue(NetworkResponse.create(throwable))
                         }
                     })
                 }

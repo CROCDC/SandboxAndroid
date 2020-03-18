@@ -7,7 +7,7 @@ import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import com.cr.o.cdc.networking.ErrorResponse
-import com.cr.o.cdc.networking.RetrofitResponse
+import com.cr.o.cdc.networking.NetworkResponse
 import com.cr.o.cdc.networking.SuccessResponse
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -138,8 +138,8 @@ private fun makeRandomString(): String {
         .joinToString("")
 }
 
-fun <T> getValue(liveData: LiveData<RetrofitResponse<T>>): RetrofitResponse<T>? {
-    var response: RetrofitResponse<T>? = null
+fun <T> getValue(liveData: LiveData<NetworkResponse<T>>): NetworkResponse<T>? {
+    var response: NetworkResponse<T>? = null
     val latch = CountDownLatch(1)
     liveData.observeForever {
         when (it) {
