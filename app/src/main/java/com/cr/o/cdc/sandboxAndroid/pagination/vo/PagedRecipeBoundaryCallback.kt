@@ -14,7 +14,9 @@ class PagedRecipeBoundaryCallback(
     private val search: String,
     private val recipeService: RecipeService,
     private val networkIO: Executor,
-    private val dao: RecipeDao
+    private val dao: RecipeDao,
+    private val appId: String,
+    private val apiKey: String
 
 ) : PagedList.BoundaryCallback<PagedRecipe>() {
 
@@ -38,13 +40,12 @@ class PagedRecipeBoundaryCallback(
         networkStatus.value = StatusResult.LOADING
 
         networkIO.execute {
-            //todo
             val response = recipeService.search(
                 search,
                 to,
                 from,
-                "41ce6696",
-                "416e06f4fa1b46dacd17ca14a1d563c9"
+                appId,
+                apiKey
             ).execute().body()
 
             if (response != null) {
