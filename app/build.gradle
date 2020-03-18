@@ -26,8 +26,6 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        multiDexEnabled true
-
 
         applicationId "com.cr.o.cdc.sandboxAndroid"
 
@@ -90,15 +88,12 @@ dependencies {
     implementation project(':annotations')
     implementation project(':networking')
 
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     androidTestImplementation project(':sharedtest')
     testImplementation project(':sharedtest')
 
     kapt project(':annotationprocessor')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation 'com.android.support:multidex:1.0.3'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$app_compat"
@@ -140,8 +135,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle"
 
-    //TODO
-    implementation group: 'com.pubnub', name: 'pubnub-gson', version: '4.20.0'
+    implementation "com.pubnub:pubnub-gson:$pubnub"
 
     implementation "com.google.dagger:dagger-android:$dagger"
     implementation "com.google.dagger:dagger-android-support:$dagger"
@@ -169,8 +163,8 @@ dependencies {
 
     implementation "com.jakewharton.threetenabp:threetenabp:$threetenabp"
 
-    implementation "com.apollographql.apollo:apollo-runtime:1.2.2"
-    implementation "com.apollographql.apollo:apollo-android-support:1.0.0"
+    implementation "com.apollographql.apollo:apollo-runtime:$apollo_runtime"
+    implementation "com.apollographql.apollo:apollo-android-support:$apollo_support"
 
     implementation "com.squareup.picasso:picasso:$picasso"
 
