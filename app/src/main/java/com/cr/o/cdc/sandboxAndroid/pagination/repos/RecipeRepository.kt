@@ -5,7 +5,6 @@ import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeBoundaryCallback
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeResource
-import retrofit2.Retrofit
 import javax.inject.Inject
 
 class RecipeRepository @Inject constructor(

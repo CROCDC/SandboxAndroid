@@ -1,7 +1,0 @@
-query Pokemon($id:String!){
-    pokemon(id:$id){
-        id
-        name
-        image
-    }
-}

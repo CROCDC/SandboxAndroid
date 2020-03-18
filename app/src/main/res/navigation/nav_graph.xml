@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
     <fragment
@@ -33,8 +32,8 @@
     </fragment>
     <fragment
         android:id="@+id/pokemonFragment"
-        android:name="com.cr.o.cdc.sandboxAndroid.pokemons.fragments.PokemonFragment"
-        tools:layout="@layout/fragment_pokemon" />
+        android:name="com.cr.o.cdc.sandboxAndroid.pokedex.fragments.PokedexFragment"
+        tools:layout="@layout/fragment_pokedex" />
     <fragment
         android:id="@+id/notificationsFragment"
         android:name="com.cr.o.cdc.sandboxAndroid.notifications.fragments.NotificationsFragment"

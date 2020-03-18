@@ -8,6 +8,6 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentBuildersModuleRNC {
 
     @ContributesAndroidInjector
-    abstract fun contributesMapFragment(): RNCFragment
+    abstract fun contributesRNCFragment(): RNCFragment
 
 }

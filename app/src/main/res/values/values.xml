@@ -2,4 +2,5 @@
 <resources>
     <string name="recipes_api">https://api.edamam.com/search/</string>
     <string name="coronavirus_api">https://coronavirus-monitor.p.rapidapi.com/coronavirus/</string>
+    <string name="pokemon_api">https://graphql-pokemon.now.sh/</string>
 </resources>

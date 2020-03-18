@@ -7,6 +7,3 @@ dependencies {
     //noinspection DifferentStdlibGradleVersion
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
-
-sourceCompatibility = "8"
-targetCompatibility = "8"

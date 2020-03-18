@@ -7,8 +7,8 @@ import com.cr.o.cdc.sandboxAndroid.notifications.di.FragmentBuildersModuleNotifi
 import com.cr.o.cdc.sandboxAndroid.notifications.di.ViewModelModuleNotifications
 import com.cr.o.cdc.sandboxAndroid.pagination.di.FragmentBuildersModulePagination
 import com.cr.o.cdc.sandboxAndroid.pagination.di.ViewModelModulePagination
-import com.cr.o.cdc.sandboxAndroid.pokemons.di.FragmentBuildersModulePokemons
-import com.cr.o.cdc.sandboxAndroid.pokemons.di.ViewModelModulePokemons
+import com.cr.o.cdc.sandboxAndroid.pokedex.di.FragmentBuildersModulePokemons
+import com.cr.o.cdc.sandboxAndroid.pokedex.di.ViewModelModulePokemons
 import com.cr.o.cdc.sandboxAndroid.rnc.di.FragmentBuildersModuleRNC
 import com.cr.o.cdc.sandboxAndroid.rnc.di.ViewModelModuleRNC
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.di.FragmentBuildersModuleWhatsappUtils

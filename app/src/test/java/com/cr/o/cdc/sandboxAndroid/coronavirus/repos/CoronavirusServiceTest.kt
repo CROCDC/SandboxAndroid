@@ -1,7 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.coronavirus.repos
 
 import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
-import com.cr.o.cdc.networking.RetrofitSuccessResponse
+import com.cr.o.cdc.networking.SuccessResponse
 import com.cr.o.cdc.sandboxAndroid.utils.EndpointTest
 import com.cr.o.cdc.sharedtest.getValue
 import junit.framework.TestCase.assertTrue
@@ -20,6 +20,6 @@ class CoronavirusServiceTest : EndpointTest() {
     @Test
     fun getCasesByCountry() {
         val response = getValue(service.getCasesByCountry())
-        assertTrue((response as? RetrofitSuccessResponse)?.data != null)
+        assertTrue((response as? SuccessResponse)?.data != null)
     }
 }

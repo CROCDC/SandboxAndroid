@@ -3,6 +3,7 @@ package com.cr.o.cdc.sandboxAndroid.di
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
+import com.apollographql.apollo.ApolloClient
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
@@ -13,15 +14,16 @@ import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.notifications.di.ViewModelModuleNotifications
 import com.cr.o.cdc.sandboxAndroid.pagination.di.ViewModelModulePagination
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
-import com.cr.o.cdc.sandboxAndroid.pokemons.di.ViewModelModulePokemons
-import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
-import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.pokedex.di.ViewModelModulePokemons
+import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSource
+import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.rnc.di.ViewModelModuleRNC
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.RNCDataSource
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.RNCDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.di.ViewModelModuleWhatsappUtils
 import dagger.Module
 import dagger.Provides
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -69,7 +71,8 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun providePokemonDataSource(): PokemonDataSourceProvider = PokemonDataSource()
+    fun providePokemonDataSource(apolloClient: ApolloClient): PokemonDataSourceProvider =
+        PokemonDataSource(apolloClient)
 
     @Singleton
     @Provides
@@ -78,9 +81,15 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideAppExecutors() = AppExecutors()
+    fun provideAppExecutors(): AppExecutors = AppExecutors()
 
     @Singleton
     @Provides
     fun provideMapDataSourceProvider(): RNCDataSourceProvider = RNCDataSource()
+
+    @Singleton
+    @Provides
+    fun provideApolloClient(app: SandBoxApp): ApolloClient =
+        ApolloClient.builder().serverUrl(app.resources.getString(R.string.pokemon_api))
+            .okHttpClient(OkHttpClient.Builder().build()).build()
 }

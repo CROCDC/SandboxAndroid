@@ -4,5 +4,4 @@ enum class StatusResult {
     SUCCESS,
     LOADING,
     FAILURE,
-    OFFLINE
 }

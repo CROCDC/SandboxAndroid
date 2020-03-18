@@ -3,6 +3,7 @@ package com.cr.o.cdc.sandboxAndroid.di
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
+import com.apollographql.apollo.ApolloClient
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
@@ -11,11 +12,12 @@ import com.cr.o.cdc.sandboxAndroid.coronavirus.di.ViewModelModuleCoronavirus
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
 import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
-import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSource
-import com.cr.o.cdc.sandboxAndroid.pokemons.repos.PokemonDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSource
+import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.di.ViewModelModuleWhatsappUtils
 import dagger.Module
 import dagger.Provides
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -34,10 +36,7 @@ class AppModule {
     fun provideCoronavirusService(
         retrofitBuilder: Retrofit.Builder,
         app: SandBoxApp
-    ): CoronavirusService =
-        fakeCoronavirusService
-            ?: retrofitBuilder.baseUrl(app.resources.getString(R.string.coronavirus_api))
-                .build().create(CoronavirusService::class.java)
+    ): CoronavirusService = fakeCoronavirusService
 
     @Provides
     @Singleton
@@ -58,8 +57,8 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun providePokemonDataSource(): PokemonDataSourceProvider =
-        fakePokemonDataSource ?: PokemonDataSource()
+    fun providePokemonDataSource(apolloClient: ApolloClient): PokemonDataSourceProvider =
+        fakePokemonDataSource ?: PokemonDataSource(apolloClient)
 
     @Singleton
     @Provides
@@ -70,12 +69,15 @@ class AppModule {
     @Provides
     fun provideAppExecutors() = AppExecutors()
 
+    @Singleton
+    @Provides
+    fun provideApolloClient(app: SandBoxApp): ApolloClient =
+        ApolloClient.builder().serverUrl(app.resources.getString(R.string.pokemon_api))
+            .okHttpClient(OkHttpClient.Builder().build()).build()
+
     companion object {
         private var fakePokemonDataSource: PokemonDataSourceProvider? = null
-        private var fakeCoronavirusService: CoronavirusService? = null
-        fun setPokemonDataSourceProvider(dataSource: PokemonDataSourceProvider) {
-            fakePokemonDataSource = dataSource
-        }
+        private lateinit var fakeCoronavirusService: CoronavirusService
 
         fun setCoronavirusService(coronavirusService: CoronavirusService) {
             fakeCoronavirusService = coronavirusService

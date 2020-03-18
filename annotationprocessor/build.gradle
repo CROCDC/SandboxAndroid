@@ -31,7 +31,3 @@ dependencies {
     //noinspection AnnotationProcessorOnCompilePath
     implementation "com.google.auto.service:auto-service:$google_auto_service"
 }
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
-

@@ -6,9 +6,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import com.cr.o.cdc.networking.RetrofitErrorResponse
+import com.cr.o.cdc.networking.ErrorResponse
 import com.cr.o.cdc.networking.RetrofitResponse
-import com.cr.o.cdc.networking.RetrofitSuccessResponse
+import com.cr.o.cdc.networking.SuccessResponse
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
@@ -31,6 +31,30 @@ fun <T> getValueLiveData(
     val observer = object : Observer<T> {
         override fun onChanged(o: T?) {
             if (o != null) {
+                data = o
+                latch.countDown()
+                liveData.removeObserver(this)
+            }
+        }
+    }
+    liveData.observeForever(observer)
+    executeFunWhenObserve.invoke()
+    latch.await(seconds, TimeUnit.SECONDS)
+
+    return data
+}
+
+@Throws(InterruptedException::class)
+fun <T> getValueOfList(
+    liveData: LiveData<T>,
+    seconds: Long,
+    executeFunWhenObserve: () -> Unit? = {}
+): T? {
+    var data: T? = null
+    val latch = CountDownLatch(1)
+    val observer = object : Observer<T> {
+        override fun onChanged(o: T?) {
+            if ((o as? List<*>)?.isNullOrEmpty() == false) {
                 data = o
                 latch.countDown()
                 liveData.removeObserver(this)
@@ -103,7 +127,7 @@ fun <T> KClass<*>.makeRandomInstance(
 data class Parameter(
     val name: String,
     val place: KClass<*>,
-    val value: Any
+    val value: Any?
 )
 
 private fun makeRandomString(): String {
@@ -119,11 +143,11 @@ fun <T> getValue(liveData: LiveData<RetrofitResponse<T>>): RetrofitResponse<T>? 
     val latch = CountDownLatch(1)
     liveData.observeForever {
         when (it) {
-            is RetrofitSuccessResponse -> {
+            is SuccessResponse -> {
                 response = it
                 latch.countDown()
             }
-            is RetrofitErrorResponse -> {
+            is ErrorResponse -> {
                 latch.countDown()
                 throw Exception("Error in request")
             }

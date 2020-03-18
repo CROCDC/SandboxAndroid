@@ -21,7 +21,9 @@ class CountryStatDaoTest : DBTest() {
 
         countryStatDao.deleteAll()
 
-        assertTrue(getValueLiveData(countryStatDao.loadAll(), 2)?.isEmpty() == true)
+        Thread.sleep(200)
+
+        assertTrue(getValueLiveData(countryStatDao.loadAll(), 2)?.isNullOrEmpty() == true)
     }
 
 }
