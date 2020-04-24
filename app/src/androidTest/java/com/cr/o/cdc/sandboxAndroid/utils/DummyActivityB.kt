@@ -1,0 +1,12 @@
+package com.cr.o.cdc.sandboxAndroid.utils
+
+import android.app.Activity
+import android.os.Bundle
+import android.widget.Button
+
+class DummyActivityB : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(Button(this))
+    }
+}
