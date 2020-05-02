@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.db.dao
+package com.cr.o.cdc.sandboxAndroid.pagination.db.dao
 
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
@@ -6,9 +6,9 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.cr.o.cdc.sandboxAndroid.pagination.model.InfoSearchRecipe
-import com.cr.o.cdc.sandboxAndroid.pagination.model.PagedRecipe
-import com.cr.o.cdc.sandboxAndroid.pagination.model.Recipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.InfoSearchRecipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.PagedRecipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.Recipe
 
 @Dao
 interface RecipeDao {

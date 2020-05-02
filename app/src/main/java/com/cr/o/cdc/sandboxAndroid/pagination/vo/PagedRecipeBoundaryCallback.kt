@@ -4,9 +4,9 @@ import androidx.annotation.MainThread
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PagedList
 import com.cr.o.cdc.networking.StatusResult
-import com.cr.o.cdc.sandboxAndroid.db.dao.RecipeDao
-import com.cr.o.cdc.sandboxAndroid.pagination.model.InfoSearchRecipe
-import com.cr.o.cdc.sandboxAndroid.pagination.model.PagedRecipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.dao.RecipeDao
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.InfoSearchRecipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.PagedRecipe
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
 import java.util.concurrent.Executor
 
@@ -51,7 +51,13 @@ class PagedRecipeBoundaryCallback(
             if (response != null) {
                 val recipes = response.hits.map { it.recipe }
                 dao.saveAll(recipes)
-                dao.saveOffSet(recipes.map { InfoSearchRecipe(it.uri, from, search) })
+                dao.saveOffSet(recipes.map {
+                    InfoSearchRecipe(
+                        it.uri,
+                        from,
+                        search
+                    )
+                })
 
                 networkStatus.postValue(StatusResult.SUCCESS)
             } else {

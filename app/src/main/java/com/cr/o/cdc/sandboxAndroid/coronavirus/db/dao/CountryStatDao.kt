@@ -1,11 +1,11 @@
-package com.cr.o.cdc.sandboxAndroid.coronavirus.dao
+package com.cr.o.cdc.sandboxAndroid.coronavirus.db.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CountryStat
+import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
 
 @Dao
 interface CountryStatDao {

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
-import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CountryStat
+import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusRepository
 import javax.inject.Inject
 

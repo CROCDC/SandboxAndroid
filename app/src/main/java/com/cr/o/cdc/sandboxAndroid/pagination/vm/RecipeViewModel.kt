@@ -2,7 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.pagination.vm
 
 import androidx.lifecycle.*
 import androidx.paging.PagedList
-import com.cr.o.cdc.sandboxAndroid.pagination.model.PagedRecipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.PagedRecipe
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeRepository
 import javax.inject.Inject
 

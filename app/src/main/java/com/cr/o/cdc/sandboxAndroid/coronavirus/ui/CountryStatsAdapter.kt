@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CountryStat
+import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
 import com.cr.o.cdc.sandboxAndroid.databinding.ListItemCountryStatBinding
 
 class CountryStatsAdapter : ListAdapter<CountryStat, CountryStatsAdapter.ViewHolder>(DiffCallback) {
@@ -30,7 +30,6 @@ class CountryStatsAdapter : ListAdapter<CountryStat, CountryStatsAdapter.ViewHol
                 itemView.context.getString(R.string.deaths, countryStat.deaths)
         }
     }
-
 
     object DiffCallback : DiffUtil.ItemCallback<CountryStat>() {
         override fun areItemsTheSame(oldItem: CountryStat, newItem: CountryStat): Boolean =

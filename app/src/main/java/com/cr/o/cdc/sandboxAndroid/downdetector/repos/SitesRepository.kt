@@ -1,7 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.downdetector.repos
 
 import androidx.lifecycle.LiveData
-import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import javax.inject.Inject
 

@@ -4,7 +4,7 @@ import androidx.paging.toLiveData
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
-import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeBoundaryCallback
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeResource
 import javax.inject.Inject

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.cr.o.cdc.sandboxAndroid.databinding.ListItemWhatsappMessageBinding
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessage
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessage
 
 class WhatsappMessageAdapter :
     ListAdapter<WhatsappMessage, WhatsappMessageAdapter.ViewHolder>(CallBack) {

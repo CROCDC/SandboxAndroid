@@ -1,24 +1,24 @@
-package com.cr.o.cdc.sandboxAndroid.db
+package com.cr.o.cdc.sandboxAndroid.whatsapputils.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.cr.o.cdc.sandboxAndroid.coronavirus.dao.CountryStatDao
-import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CountryStat
-import com.cr.o.cdc.sandboxAndroid.db.dao.RecipeDao
-import com.cr.o.cdc.sandboxAndroid.db.dao.WhatsappMessageAutoReplyDao
-import com.cr.o.cdc.sandboxAndroid.db.dao.WhatsappMessageBotDao
-import com.cr.o.cdc.sandboxAndroid.db.dao.WhatsappMessageDao
+import com.cr.o.cdc.sandboxAndroid.coronavirus.db.dao.CountryStatDao
+import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
+import com.cr.o.cdc.sandboxAndroid.pagination.db.dao.RecipeDao
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao.WhatsappMessageAutoReplyDao
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao.WhatsappMessageBotDao
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao.WhatsappMessageDao
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.dao.SiteDao
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
-import com.cr.o.cdc.sandboxAndroid.pagination.model.InfoSearchRecipe
-import com.cr.o.cdc.sandboxAndroid.pagination.model.Recipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.InfoSearchRecipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.Recipe
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.converters.ConverterPokedex
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.dao.PokemonDao
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.Pokemon
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessage
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessageAutoReply
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessageBot
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessage
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageAutoReply
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageBot
 
 @Database(
     entities = [

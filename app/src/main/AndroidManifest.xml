@@ -31,7 +31,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".services.MyAccessibilityService"
+            android:name="com.cr.o.cdc.sandboxAndroid.whatsapputils.services.MyAccessibilityService"
             android:enabled="true"
             android:exported="true"
             android:label="@string/app_name"
@@ -45,7 +45,7 @@
                 android:resource="@xml/serviceconfig" />
         </service>
         <service
-            android:name=".services.MyNotificationListenerService"
+            android:name="com.cr.o.cdc.sandboxAndroid.whatsapputils.services.MyNotificationListenerService"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>

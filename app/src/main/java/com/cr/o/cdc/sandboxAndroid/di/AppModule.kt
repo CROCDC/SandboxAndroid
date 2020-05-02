@@ -10,7 +10,7 @@ import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import com.cr.o.cdc.sandboxAndroid.coronavirus.di.ViewModelModuleCoronavirus
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
-import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.notifications.di.ViewModelModuleNotifications
 import com.cr.o.cdc.sandboxAndroid.pagination.di.ViewModelModulePagination
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService

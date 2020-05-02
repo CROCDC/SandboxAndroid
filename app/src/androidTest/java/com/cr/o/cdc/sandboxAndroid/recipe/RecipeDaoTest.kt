@@ -1,8 +1,8 @@
-package com.cr.o.cdc.sandboxAndroid.db
+package com.cr.o.cdc.sandboxAndroid.recipe
 
 import androidx.paging.toLiveData
-import com.cr.o.cdc.sandboxAndroid.pagination.model.InfoSearchRecipe
-import com.cr.o.cdc.sandboxAndroid.pagination.model.Recipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.InfoSearchRecipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.Recipe
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
 import com.cr.o.cdc.sharedtest.getValueLiveData
 import junit.framework.TestCase.assertEquals
@@ -14,7 +14,8 @@ class RecipeDaoTest : DBTest() {
     private val dao = db.recipeDao()
 
     private val recipes = listOf(
-        Recipe("1", "label"), Recipe("2", "label")
+        Recipe("1", "label"),
+        Recipe("2", "label")
     )
 
     @Test
@@ -34,7 +35,13 @@ class RecipeDaoTest : DBTest() {
 
     @Test
     fun delete() {
-        dao.saveOffSet(recipes.map { InfoSearchRecipe(it.uri, 0, "search") })
+        dao.saveOffSet(recipes.map {
+            InfoSearchRecipe(
+                it.uri,
+                0,
+                "search"
+            )
+        })
         dao.saveAll(recipes)
 
         assertTrue(getValueLiveData(dao.loadPaged("search").toLiveData(5), 2)?.size == 2)
@@ -46,7 +53,13 @@ class RecipeDaoTest : DBTest() {
 
     @Test
     fun saveOffSet() {
-        dao.saveOffSet(recipes.map { InfoSearchRecipe(it.uri, 0, "search") })
+        dao.saveOffSet(recipes.map {
+            InfoSearchRecipe(
+                it.uri,
+                0,
+                "search"
+            )
+        })
     }
 
     @Test

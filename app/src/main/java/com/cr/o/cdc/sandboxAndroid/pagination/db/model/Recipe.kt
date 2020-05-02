@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.pagination.model
+package com.cr.o.cdc.sandboxAndroid.pagination.db.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

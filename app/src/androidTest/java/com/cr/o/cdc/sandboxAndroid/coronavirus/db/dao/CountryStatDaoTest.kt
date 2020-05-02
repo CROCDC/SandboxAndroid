@@ -1,6 +1,6 @@
-package com.cr.o.cdc.sandboxAndroid.coronavirus.dao
+package com.cr.o.cdc.sandboxAndroid.coronavirus.db.dao
 
-import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CountryStat
+import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
 import com.cr.o.cdc.sharedtest.getValueLiveData
 import com.cr.o.cdc.sharedtest.makeRandomInstance

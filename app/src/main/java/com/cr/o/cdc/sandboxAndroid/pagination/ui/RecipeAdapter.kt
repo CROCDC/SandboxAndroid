@@ -8,8 +8,8 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.pagination.model.PagedRecipe
-import com.cr.o.cdc.sandboxAndroid.pagination.model.Recipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.PagedRecipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.Recipe
 
 class RecipeAdapter : PagedListAdapter<PagedRecipe, RecipeAdapter.ViewHolder>(RecipeDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(

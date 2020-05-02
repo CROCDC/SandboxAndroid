@@ -2,7 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.pagination.vo
 
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList
-import com.cr.o.cdc.sandboxAndroid.pagination.model.PagedRecipe
+import com.cr.o.cdc.sandboxAndroid.pagination.db.model.PagedRecipe
 import com.cr.o.cdc.networking.StatusResult
 
 data class PagedRecipeResource(

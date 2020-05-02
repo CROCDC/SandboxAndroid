@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.coronavirus.model
+package com.cr.o.cdc.sandboxAndroid.coronavirus.db.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

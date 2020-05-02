@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.annotations.Injectable
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentAddWhatsappMessageBotBinding
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessageBot
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageBot
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.vm.AddWhatsappMessageBotViewModel
 import javax.inject.Inject
 

@@ -1,11 +1,11 @@
-package com.cr.o.cdc.sandboxAndroid.db.dao
+package com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessageAutoReply
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageAutoReply
 
 @Dao
 interface WhatsappMessageAutoReplyDao {

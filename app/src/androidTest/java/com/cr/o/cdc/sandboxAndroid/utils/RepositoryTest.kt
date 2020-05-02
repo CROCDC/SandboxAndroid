@@ -3,7 +3,7 @@ package com.cr.o.cdc.sandboxAndroid.utils
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
-import com.cr.o.cdc.sandboxAndroid.db.SandBoxDB
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import org.junit.Rule
 
 abstract class RepositoryTest {

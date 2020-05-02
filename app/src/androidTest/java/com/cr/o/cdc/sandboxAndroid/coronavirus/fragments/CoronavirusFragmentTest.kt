@@ -9,7 +9,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.cr.o.cdc.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
-import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CountryStat
+import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
 import com.cr.o.cdc.sandboxAndroid.di.AppModule
 import junit.framework.TestCase.assertTrue
@@ -30,8 +30,16 @@ class CoronavirusFragmentTest {
                         Response.success(
                             CasesByCountry(
                                 listOf(
-                                    CountryStat("country1", "100", "100"),
-                                    CountryStat("country2", "100", "100")
+                                    CountryStat(
+                                        "country1",
+                                        "100",
+                                        "100"
+                                    ),
+                                    CountryStat(
+                                        "country2",
+                                        "100",
+                                        "100"
+                                    )
                                 )
                             )
                         )

@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.services
+package com.cr.o.cdc.sandboxAndroid.whatsapputils.services
 
 import android.app.PendingIntent
 import android.content.Intent
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import androidx.core.app.RemoteInput
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessage
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessage
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.repos.WhatsappMessagesRepository
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.vo.WhatsappConfig
 import dagger.android.AndroidInjection

@@ -1,7 +1,7 @@
-package com.cr.o.cdc.sandboxAndroid.db
+package com.cr.o.cdc.sandboxAndroid.whatsapputils.db
 
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessageBot
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageBot
 import com.cr.o.cdc.sharedtest.getValueLiveData
 import com.cr.o.cdc.sharedtest.makeRandomInstance
 import junit.framework.TestCase.assertTrue

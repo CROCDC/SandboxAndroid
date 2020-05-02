@@ -1,7 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.di
 
 import com.cr.o.cdc.sandboxAndroid.notifications.util.MyFirebaseMessagingService
-import com.cr.o.cdc.sandboxAndroid.services.MyNotificationListenerService
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.services.MyNotificationListenerService
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
