@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.whatsapputils.db
+package com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao
 
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessage

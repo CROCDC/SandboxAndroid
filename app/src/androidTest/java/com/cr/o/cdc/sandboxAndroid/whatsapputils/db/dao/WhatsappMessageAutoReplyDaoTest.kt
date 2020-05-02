@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.whatsapputils.db
+package com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao
 
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageAutoReply
@@ -7,7 +7,7 @@ import com.cr.o.cdc.sharedtest.makeRandomInstance
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
-class WhatsappMessageAutoReplyDao : DBTest() {
+class WhatsappMessageAutoReplyDaoTest : DBTest() {
 
     private val dao = db.whatsappAutoReplyDao()
 
