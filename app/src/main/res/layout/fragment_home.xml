@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:text="@string/btn_go_to_map"
+            android:text="@string/rnc"
             app:layout_constraintBottom_toTopOf="@id/btn_notifications"
             app:layout_constraintTop_toBottomOf="@id/btn_coronavirus" />
 
@@ -32,7 +32,7 @@
             android:id="@+id/btn_notifications"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/btn_go_to_notifications"
+            android:text="@string/notifications"
             app:layout_constraintBottom_toTopOf="@+id/btn_pokedex"
             app:layout_constraintTop_toBottomOf="@+id/btn_rnc" />
 
@@ -40,7 +40,7 @@
             android:id="@+id/btn_pokedex"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/btn_go_to_pokedex"
+            android:text="@string/pokedex"
             app:layout_constraintBottom_toTopOf="@+id/btn_recipes"
             app:layout_constraintTop_toBottomOf="@+id/btn_notifications" />
 
@@ -48,7 +48,7 @@
             android:id="@+id/btn_recipes"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/btn_go_to_recipes"
+            android:text="@string/recipes"
             app:layout_constraintBottom_toTopOf="@+id/btn_custom_views"
             app:layout_constraintTop_toBottomOf="@+id/btn_pokedex" />
 
@@ -56,7 +56,7 @@
             android:id="@+id/btn_custom_views"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/btn_go_to_custom_views"
+            android:text="@string/custom_views"
             app:layout_constraintBottom_toTopOf="@id/btn_whatsapp_utils"
             app:layout_constraintTop_toBottomOf="@+id/btn_recipes" />
 
@@ -64,9 +64,17 @@
             android:id="@+id/btn_whatsapp_utils"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="@string/btn_go_to_whatsapp_utils"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/whatsapp_utils"
+            app:layout_constraintBottom_toTopOf="@id/btn_down_detector"
             app:layout_constraintTop_toBottomOf="@id/btn_custom_views" />
+
+        <Button
+            android:id="@+id/btn_down_detector"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/down_detector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_whatsapp_utils" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -20,6 +20,7 @@ import retrofit2.Response
 class CoronavirusFragmentTest {
 
 
+    //todo problem with repository
     @Before
     fun init() {
         AppModule.setCoronavirusService(object : CoronavirusService {

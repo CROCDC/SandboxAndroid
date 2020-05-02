@@ -9,6 +9,8 @@ import com.cr.o.cdc.sandboxAndroid.db.dao.RecipeDao
 import com.cr.o.cdc.sandboxAndroid.db.dao.WhatsappMessageAutoReplyDao
 import com.cr.o.cdc.sandboxAndroid.db.dao.WhatsappMessageBotDao
 import com.cr.o.cdc.sandboxAndroid.db.dao.WhatsappMessageDao
+import com.cr.o.cdc.sandboxAndroid.downdetector.db.dao.SiteDao
+import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.pagination.model.InfoSearchRecipe
 import com.cr.o.cdc.sandboxAndroid.pagination.model.Recipe
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.converters.ConverterPokedex
@@ -21,8 +23,8 @@ import com.cr.o.cdc.sandboxAndroid.whatsapputils.model.WhatsappMessageBot
 @Database(
     entities = [
         Recipe::class, InfoSearchRecipe::class, WhatsappMessage::class, WhatsappMessageBot::class,
-        WhatsappMessageAutoReply::class, CountryStat::class, Pokemon::class],
-    version = 6
+        WhatsappMessageAutoReply::class, CountryStat::class, Pokemon::class, Site::class],
+    version = 7
 )
 @TypeConverters(ConverterPokedex::class)
 abstract class SandBoxDB : RoomDatabase() {
@@ -38,6 +40,8 @@ abstract class SandBoxDB : RoomDatabase() {
     abstract fun countryStatDao(): CountryStatDao
 
     abstract fun pokemonDao(): PokemonDao
+
+    abstract fun siteDao(): SiteDao
 
     companion object {
         const val DATABASE_NAME = "sandbox"

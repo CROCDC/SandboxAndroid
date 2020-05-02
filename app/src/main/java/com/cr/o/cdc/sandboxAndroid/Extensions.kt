@@ -2,6 +2,7 @@ package com.cr.o.cdc.sandboxAndroid
 
 import android.content.SharedPreferences
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -42,3 +43,5 @@ fun ImageView.loadFromUrl(
         visibility = View.GONE
     }
 }
+
+fun EditText.getInput(): String = this.text.toString()

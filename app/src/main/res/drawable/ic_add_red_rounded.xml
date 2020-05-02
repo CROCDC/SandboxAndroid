@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/bkg_circle_colorprimary" />
+    <item android:drawable="@drawable/ic_add_ff0009_24dp" />
+
+</layer-list>

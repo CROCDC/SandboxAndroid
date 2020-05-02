@@ -1,16 +1,15 @@
 <resources>
     <string name="app_name">CajaDeArena</string>
-    <string name="btn_go_to_notifications">Notifications</string>
-    <string name="btn_go_to_pokedex">Pokedex</string>
-    <string name="btn_go_to_recipes">Recipes</string>
+    <string name="notifications">Notifications</string>
+    <string name="pokedex">Pokedex</string>
     <string name="refresh">Refresh</string>
-    <string name="btn_go_to_custom_views">Custom Views</string>
-    <string name="btn_go_to_smiles">Smiles</string>
-    <string name="btn_go_to_curves">Curves</string>
-    <string name="btn_go_to_whatsapp_utils">Whatsapp Utils</string>
-    <string name="btn_go_to_map">RNC</string>
+    <string name="custom_views">Custom Views</string>
+    <string name="smiles">Smiles</string>
+    <string name="curves">Curves</string>
+    <string name="whatsapp_utils">Whatsapp Utils</string>
+    <string name="rnc">RNC</string>
     <string name="copy">Copy</string>
-    <string name="recipes">recipes</string>
+    <string name="recipes">Recipes</string>
     <string name="btn_go_to_whatsapp_messages">Whatsapp Messages</string>
     <string name="btn_go_to_whatsapp_bot">Whatsapp Bot</string>
     <string name="whatsapp_bot_enable">Whatsapp bot enable:</string>
@@ -26,4 +25,9 @@
     <string name="cases">cases :%1$s</string>
     <string name="deaths">deaths :%1$s</string>
     <string name="search">Search</string>
+    <string name="name_site">Name of Site</string>
+    <string name="add_site">Add Site</string>
+    <string name="address_of_site">Address of Site</string>
+    <string name="interval_of_check_in_minutes">Interval of check in minutes</string>
+    <string name="down_detector">Down Detector</string>
 </resources>

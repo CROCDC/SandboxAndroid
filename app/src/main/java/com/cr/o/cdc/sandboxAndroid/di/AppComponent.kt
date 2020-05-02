@@ -3,6 +3,8 @@ package com.cr.o.cdc.sandboxAndroid.di
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import com.cr.o.cdc.sandboxAndroid.coronavirus.di.FragmentBuildersModuleCoronavirus
 import com.cr.o.cdc.sandboxAndroid.coronavirus.di.ViewModelModuleCoronavirus
+import com.cr.o.cdc.sandboxAndroid.downdetector.di.FragmentBuildersModuleDownDetector
+import com.cr.o.cdc.sandboxAndroid.downdetector.di.ViewModelModuleDownDetector
 import com.cr.o.cdc.sandboxAndroid.notifications.di.FragmentBuildersModuleNotifications
 import com.cr.o.cdc.sandboxAndroid.notifications.di.ViewModelModuleNotifications
 import com.cr.o.cdc.sandboxAndroid.pagination.di.FragmentBuildersModulePagination
@@ -21,6 +23,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
+        ActivityModule::class,
         AndroidSupportInjectionModule::class,
         AppModule::class,
         ServiceModule::class,
@@ -31,13 +34,14 @@ import javax.inject.Singleton
         ViewModelModulePagination::class,
         ViewModelModulePokemons::class,
         ViewModelModuleRNC::class,
-        ActivityModule::class,
+        ViewModelModuleDownDetector::class,
         FragmentBuildersModuleCoronavirus::class,
         FragmentBuildersModuleWhatsappUtils::class,
         FragmentBuildersModuleNotifications::class,
         FragmentBuildersModulePagination::class,
         FragmentBuildersModulePokemons::class,
-        FragmentBuildersModuleRNC::class]
+        FragmentBuildersModuleRNC::class,
+        FragmentBuildersModuleDownDetector::class]
 )
 interface AppComponent {
 

@@ -38,6 +38,9 @@ class HomeFragment : Fragment() {
         binding.btnWhatsappUtils.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_whatsappUtilsFragment)
         }
+        binding.btnDownDetector.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_sitesListFragment)
+        }
         return binding.root
     }
 

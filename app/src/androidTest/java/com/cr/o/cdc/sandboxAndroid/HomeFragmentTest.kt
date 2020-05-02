@@ -52,4 +52,17 @@ class HomeFragmentTest {
 
         verify { navController.navigate(R.id.action_homeFragment_to_notificationsFragment) }
     }
+
+    @Test
+    fun assertNavigationToSitesListFragment() {
+        val navController = mockk<NavController>(relaxed = true)
+        launchFragmentInContainer<HomeFragment>().onFragment {
+            Navigation.setViewNavController(it.view!!, navController)
+        }
+
+        Espresso.onView(ViewMatchers.withId(R.id.btn_down_detector))
+            .check(ViewAssertions.matches(ViewMatchers.isDisplayed())).perform(ViewActions.click())
+
+        verify { navController.navigate(R.id.action_homeFragment_to_sitesListFragment) }
+    }
 }
