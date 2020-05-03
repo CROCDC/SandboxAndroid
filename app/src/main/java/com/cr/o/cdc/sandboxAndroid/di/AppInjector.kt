@@ -8,7 +8,6 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
-import com.cr.o.cdc.annotations.Injectable
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import dagger.android.AndroidInjection
 import dagger.android.HasAndroidInjector

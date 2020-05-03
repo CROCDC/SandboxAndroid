@@ -10,9 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
-import com.cr.o.cdc.annotations.Injectable
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentWhatsappBotBinding
+import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.ui.WhatsappMessagesBotAdapter
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.vm.WhatsappBotViewModel
 import javax.inject.Inject

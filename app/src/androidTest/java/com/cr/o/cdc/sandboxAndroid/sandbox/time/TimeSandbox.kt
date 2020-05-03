@@ -37,7 +37,7 @@ class TimeSandbox {
         assertTrue(calendar.get(Calendar.DAY_OF_MONTH) == 11)
     }
 
-    //hacer esto esta mal ya que en US el formato deberia ser meses/dias
+    //this code is bad,why not support the format of other countries
     @Test
     fun simpleDateFormat() {
         val badFormat = SimpleDateFormat("dd/MM/yy", Locale.US).format(Date(milliseconds))

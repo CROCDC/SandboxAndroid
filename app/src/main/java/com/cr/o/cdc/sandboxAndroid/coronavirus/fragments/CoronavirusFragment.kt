@@ -9,11 +9,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
-import com.cr.o.cdc.annotations.Injectable
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.coronavirus.ui.CountryStatsAdapter
 import com.cr.o.cdc.sandboxAndroid.coronavirus.vm.CoronavirusViewModel
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentCoronavirusBinding
+import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import javax.inject.Inject
 
 @Injectable

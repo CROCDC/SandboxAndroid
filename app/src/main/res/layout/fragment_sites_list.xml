@@ -23,7 +23,8 @@
             android:layout_marginBottom="20dp"
             android:src="@drawable/ic_add_red_rounded"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

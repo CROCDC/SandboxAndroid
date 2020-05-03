@@ -10,10 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.cr.o.cdc.annotations.Injectable
 import com.cr.o.cdc.sandboxAndroid.coronavirus.ui.CountryStatsAdapter
 import com.cr.o.cdc.sandboxAndroid.coronavirus.vm.SearchViewModel
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentSearchBinding
+import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import javax.inject.Inject
 
 @Injectable

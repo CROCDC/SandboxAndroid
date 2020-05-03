@@ -1,7 +1,6 @@
 package com.cr.o.cdc.sandboxAndroid.downdetector.repos
 
 import com.cr.o.cdc.sandboxAndroid.downdetector.model.PingResponse
-import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSource
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 

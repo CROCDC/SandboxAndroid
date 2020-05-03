@@ -27,7 +27,7 @@ class DownDetectorWorker(context: Context, workerParams: WorkerParameters) :
 
         when (repository.pingSite(address)) {
             !is PingResponse.PingSuccess -> {
-                //TODO notificacion
+                //TODO notification
             }
 
         }

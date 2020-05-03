@@ -2,7 +2,6 @@ package com.cr.o.cdc.sandboxAndroid.downdetector.di
 
 import com.cr.o.cdc.sandboxAndroid.downdetector.fragments.AddSiteBottomDialog
 import com.cr.o.cdc.sandboxAndroid.downdetector.fragments.SitesListFragment
-import com.cr.o.cdc.sandboxAndroid.notifications.fragments.NotificationsFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

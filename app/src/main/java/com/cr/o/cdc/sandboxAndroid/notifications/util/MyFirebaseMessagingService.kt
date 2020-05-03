@@ -40,7 +40,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             subscribeKey = "sub-c-8e816636-3e51-11ea-afe9-722fee0ed680"
             isSecure = true
         }).addPushNotificationsOnChannels()
-            .pushType(PNPushType.GCM)
+            .pushType(PNPushType.FCM)
             .channels(listOf("Notifications"))
             .deviceId(token)
     }

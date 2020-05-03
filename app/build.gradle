@@ -85,14 +85,11 @@ configurations.all {
 }
 
 dependencies {
-    implementation project(':annotations')
     implementation project(':networking')
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     androidTestImplementation project(':sharedtest')
     testImplementation project(':sharedtest')
-
-    kapt project(':annotationprocessor')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 

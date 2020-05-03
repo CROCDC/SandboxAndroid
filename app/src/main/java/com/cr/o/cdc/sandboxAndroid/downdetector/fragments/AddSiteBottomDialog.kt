@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.cr.o.cdc.annotations.Injectable
 import com.cr.o.cdc.sandboxAndroid.databinding.BottomDialogAddSiteBinding
+import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
+import com.cr.o.cdc.sandboxAndroid.downdetector.utils.formatToString
 import com.cr.o.cdc.sandboxAndroid.downdetector.vm.AddSiteViewModel
 import com.cr.o.cdc.sandboxAndroid.getInput
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -42,7 +43,7 @@ class AddSiteBottomDialog : BottomSheetDialogFragment() {
         binding.inputIntervalCheck.setOnFocusChangeListener { _, _ ->
 
             binding.inputIntervalCheck.getInput().toIntOrNull()?.takeIf { it < 15 }?.let {
-                binding.inputIntervalCheck.setText("15")
+                binding.inputIntervalCheck.setText(15.formatToString())
             }
 
         }
