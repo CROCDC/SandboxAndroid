@@ -16,7 +16,6 @@ interface WhatsappMessageBotDao {
     @Query("SELECT * FROM whatsappmessagebot WHERE contact== :contact and message == :message")
     fun find(contact: String, message: String): List<WhatsappMessageBot>
 
-
     @Query("SELECT * FROM whatsappmessagebot")
     fun loadAll(): LiveData<List<WhatsappMessageBot>>
 }

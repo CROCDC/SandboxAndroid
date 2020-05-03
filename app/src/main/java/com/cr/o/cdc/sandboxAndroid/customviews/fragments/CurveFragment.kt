@@ -1,6 +1,5 @@
 package com.cr.o.cdc.sandboxAndroid.customviews.fragments
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,8 +10,8 @@ import com.cr.o.cdc.sandboxAndroid.R
 class CurveFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(R.layout.fragment_curve, container, false)
-
 }

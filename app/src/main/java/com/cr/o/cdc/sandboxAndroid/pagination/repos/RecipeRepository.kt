@@ -4,9 +4,9 @@ import androidx.paging.toLiveData
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeBoundaryCallback
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeResource
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import javax.inject.Inject
 
 class RecipeRepository @Inject constructor(
@@ -38,6 +38,5 @@ class RecipeRepository @Inject constructor(
                 db.recipeDao().delete(search)
             }
         }
-
     }
 }

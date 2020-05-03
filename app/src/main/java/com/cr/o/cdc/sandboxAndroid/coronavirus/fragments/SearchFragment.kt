@@ -52,6 +52,5 @@ class SearchFragment : Fragment() {
                 vm.setSearch(s.toString())
             }
         })
-
     }
 }

@@ -24,5 +24,4 @@ class WhatsappMessageDaoTest : DBTest() {
 
         assertTrue(getValueLiveData(dao.loadAll(), 2)?.isNotEmpty() == true)
     }
-
 }

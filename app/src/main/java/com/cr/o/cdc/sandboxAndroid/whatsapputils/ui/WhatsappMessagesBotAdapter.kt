@@ -20,7 +20,6 @@ class WhatsappMessagesBotAdapter :
         holder.bind(getItem(position))
     }
 
-
     class ViewHolder(private val binding: ListItemWhatsappMessageBotBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -42,6 +41,5 @@ class WhatsappMessagesBotAdapter :
             oldItem: WhatsappMessageBot,
             newItem: WhatsappMessageBot
         ): Boolean = oldItem == newItem
-
     }
 }

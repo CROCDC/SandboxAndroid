@@ -12,7 +12,6 @@ class ToString {
 
         assertTrue((dateInput1.toString() + dateInput2.toString()).contains("="))
     }
-
 }
 
 data class DateInput(val year: Int, val month: Int, val day: Int)

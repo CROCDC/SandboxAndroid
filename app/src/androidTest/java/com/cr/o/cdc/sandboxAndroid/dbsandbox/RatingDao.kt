@@ -19,7 +19,6 @@ interface RatingDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun save(ratingBrokenOfGson: RatingBrokenOfGson)
 
-
     @Query("UPDATE RatingBrokenOfGson SET score =:score WHERE id = :id")
     fun updateScore(score: String, id: String)
 }

@@ -1,6 +1,5 @@
 package com.cr.o.cdc.sandboxAndroid.pagination.fragments
 
-
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,16 +10,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.cr.o.cdc.networking.StatusResult
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentRecipesBinding
+import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import com.cr.o.cdc.sandboxAndroid.pagination.ui.RecipeAdapter
 import com.cr.o.cdc.sandboxAndroid.pagination.vm.RecipeViewModel
-import com.cr.o.cdc.networking.StatusResult
-import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import javax.inject.Inject
 
 @Injectable
 class RecipesFragment : Fragment() {
-
 
     private lateinit var binding: FragmentRecipesBinding
 
@@ -28,7 +26,8 @@ class RecipesFragment : Fragment() {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentRecipesBinding.inflate(inflater, container, false)
@@ -45,7 +44,7 @@ class RecipesFragment : Fragment() {
         vm.recipes.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
-        binding.input.addTextChangedListener(object :TextWatcher{
+        binding.input.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -53,7 +52,6 @@ class RecipesFragment : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 vm.setSearch(s.toString())
             }
-
         })
         binding.btnRefresh.setOnClickListener {
             vm.refresh()
@@ -62,10 +60,10 @@ class RecipesFragment : Fragment() {
         vm.loading.observe(viewLifecycleOwner, Observer {
             binding.progressbar.visibility =
                 if (it != StatusResult.LOADING) {
-                View.GONE
-            } else {
-                View.VISIBLE
-            }
+                    View.GONE
+                } else {
+                    View.VISIBLE
+                }
         })
     }
 }

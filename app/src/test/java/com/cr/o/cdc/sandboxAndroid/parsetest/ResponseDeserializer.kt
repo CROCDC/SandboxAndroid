@@ -30,7 +30,8 @@ class ResponseDeserializer<T>(
                 else -> null
             }?.takeIf { !it.isJsonNull }?.let {
                 when {
-                    !includeElementsNode && it.isJsonObject && it.asJsonObject.has("elements") -> it.asJsonObject.get(
+                    !includeElementsNode && it.isJsonObject &&
+                            it.asJsonObject.has("elements") -> it.asJsonObject.get(
                         "elements"
                     )
                     else -> it

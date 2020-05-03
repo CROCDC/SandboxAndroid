@@ -1,6 +1,5 @@
 package com.cr.o.cdc.sandboxAndroid.whatsapputils.fragments
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,7 +48,6 @@ class WhatsappBotFragment : Fragment() {
             )
         })
 
-
         val adapter = WhatsappMessagesBotAdapter()
         binding.recyclerWhatsappBotMessages.adapter = adapter
         vm.whatsappBotMessages.observe(viewLifecycleOwner, Observer {
@@ -61,9 +59,9 @@ class WhatsappBotFragment : Fragment() {
         }
 
         binding.btnAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_whatsappBotFragment_to_addWhatsappMessageBotFragment)
+            findNavController().navigate(
+                R.id.action_whatsappBotFragment_to_addWhatsappMessageBotFragment
+            )
         }
-
-
     }
 }

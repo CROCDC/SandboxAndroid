@@ -10,5 +10,4 @@ class PokemonDataSource(private val apolloClient: ApolloClient) : PokemonDataSou
 
     override fun pokemons(first: Int): LiveData<NetworkResponse<PokemonsQuery.Data>> =
         apolloClient.query(PokemonsQuery(first)).execute()
-
 }

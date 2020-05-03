@@ -15,7 +15,6 @@ class PokemonDataSourceTest : EndpointTest() {
             .okHttpClient(OkHttpClient.Builder().build()).build()
     )
 
-
     @Test
     fun pokemons() {
         val response = getValue(pokemonDataSource.pokemons(20))

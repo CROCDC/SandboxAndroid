@@ -5,6 +5,5 @@ import javax.inject.Inject
 
 class RNCRepository @Inject constructor(private val dataSource: RNCDataSourceProvider) {
 
-
     fun getPlaces(): List<Place> = dataSource.getPlaces()
 }

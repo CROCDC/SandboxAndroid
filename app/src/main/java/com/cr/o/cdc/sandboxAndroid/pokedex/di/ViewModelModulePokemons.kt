@@ -14,5 +14,4 @@ abstract class ViewModelModulePokemons {
     @IntoMap
     @ViewModelKey(PokemonViewModel::class)
     abstract fun bindPokemonViewModel(pokemonViewModel: PokemonViewModel): ViewModel
-
 }

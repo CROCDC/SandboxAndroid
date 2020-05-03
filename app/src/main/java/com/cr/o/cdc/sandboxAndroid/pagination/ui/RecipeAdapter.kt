@@ -22,7 +22,6 @@ class RecipeAdapter : PagedListAdapter<PagedRecipe, RecipeAdapter.ViewHolder>(Re
         getItem(position)?.let { holder.bind(it.recipe) }
     }
 
-
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         private val txt = view.findViewById<TextView>(R.id.txt)
@@ -38,6 +37,5 @@ class RecipeAdapter : PagedListAdapter<PagedRecipe, RecipeAdapter.ViewHolder>(Re
 
         override fun areContentsTheSame(oldItem: PagedRecipe, newItem: PagedRecipe): Boolean =
             oldItem == newItem
-
     }
 }

@@ -13,5 +13,4 @@ class SimpleWSParser<T>(classOfT: Class<T>, private val rootNode: String) : WSPa
         .registerTypeAdapter(type, ResponseDeserializer<Any>(rootNode, includeElementsNode).apply {
             registerTypeAdapters(adapters)
         }).create().fromJson<T>(response, type)
-
 }

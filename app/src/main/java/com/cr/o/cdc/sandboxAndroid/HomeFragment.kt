@@ -1,6 +1,5 @@
 package com.cr.o.cdc.sandboxAndroid
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,8 @@ import com.cr.o.cdc.sandboxAndroid.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -43,6 +43,4 @@ class HomeFragment : Fragment() {
         }
         return binding.root
     }
-
-
 }

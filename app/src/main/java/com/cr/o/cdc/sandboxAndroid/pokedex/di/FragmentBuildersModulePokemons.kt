@@ -9,5 +9,4 @@ abstract class FragmentBuildersModulePokemons {
 
     @ContributesAndroidInjector
     abstract fun contributesPokemonFragment(): PokedexFragment
-
 }

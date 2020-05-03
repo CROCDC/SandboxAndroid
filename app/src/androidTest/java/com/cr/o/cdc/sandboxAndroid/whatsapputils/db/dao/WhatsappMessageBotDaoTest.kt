@@ -19,7 +19,6 @@ class WhatsappMessageBotDaoTest : DBTest() {
         dao.save(whatsappMessageBot)
 
         assertTrue(dao.find(whatsappMessageBot.contact, whatsappMessageBot.message).isNotEmpty())
-
     }
 
     @Test
@@ -32,6 +31,5 @@ class WhatsappMessageBotDaoTest : DBTest() {
         dao.save(whatsappMessageBot)
 
         assertTrue(getValueLiveData(dao.loadAll(), 2)?.isNotEmpty() == true)
-
     }
 }

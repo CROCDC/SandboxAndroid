@@ -14,5 +14,4 @@ abstract class ViewModelModulePagination {
     @IntoMap
     @ViewModelKey(RecipeViewModel::class)
     abstract fun bindRecipeViewModel(notificationsViewModel: RecipeViewModel): ViewModel
-
 }

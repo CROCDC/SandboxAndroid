@@ -5,7 +5,6 @@ import com.cr.o.cdc.sandboxAndroid.rnc.model.Place
 
 class RNCDataSource : RNCDataSourceProvider {
 
-
     override fun getPlaces(): List<Place> = listOf(
         Place(
             Coordinates(
@@ -48,5 +47,4 @@ class RNCDataSource : RNCDataSourceProvider {
             "Basílica de Nuestra Señora del Socorro"
         )
     )
-
 }

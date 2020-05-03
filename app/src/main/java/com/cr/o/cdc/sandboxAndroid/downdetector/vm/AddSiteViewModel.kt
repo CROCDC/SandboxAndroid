@@ -26,5 +26,4 @@ data class AddSiteViewModel @Inject constructor(
 
         workManager.enqueue(request)
     }
-
 }

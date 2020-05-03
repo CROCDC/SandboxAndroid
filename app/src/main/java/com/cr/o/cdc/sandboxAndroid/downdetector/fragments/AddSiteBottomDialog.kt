@@ -45,11 +45,10 @@ class AddSiteBottomDialog : BottomSheetDialogFragment() {
             binding.inputIntervalCheck.getInput().toIntOrNull()?.takeIf { it < 15 }?.let {
                 binding.inputIntervalCheck.setText(15.formatToString())
             }
-
         }
 
         binding.add.setOnClickListener {
-            //TODO CHECKS
+            // TODO CHECKS
             viewModel.saveSite(
                 Site(
                     binding.inputAddress.getInput(),

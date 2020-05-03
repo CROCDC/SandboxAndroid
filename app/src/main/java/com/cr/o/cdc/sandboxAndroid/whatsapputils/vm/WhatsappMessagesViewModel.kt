@@ -7,6 +7,5 @@ import javax.inject.Inject
 class WhatsappMessagesViewModel @Inject constructor(repository: WhatsappMessagesRepository) :
     ViewModel() {
 
-
     val whatsappMessages = repository.loadWhatsappMessages()
 }

@@ -37,7 +37,5 @@ class CountryStatsAdapter : ListAdapter<CountryStat, CountryStatsAdapter.ViewHol
 
         override fun areContentsTheSame(oldItem: CountryStat, newItem: CountryStat): Boolean =
             oldItem == newItem
-
     }
-
 }

@@ -77,5 +77,4 @@ class RecipeDaoTest : DBTest() {
 
         assertTrue(getValueLiveData(dao.loadPaged("search").toLiveData(5), 2)?.size == 2)
     }
-
 }

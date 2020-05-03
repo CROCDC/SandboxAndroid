@@ -36,7 +36,6 @@ class SitesRepository @Inject constructor(
                         (site.numberOfRetriesOfError ?: 0).inc()
                     )
                 }
-
             }
         }
 

@@ -20,7 +20,6 @@ class RatingBrokenOfGsonTest : DBTest() {
         val rating2 = db.ratingDao().loadAsync("2")
         val rating1 = db.ratingDao().loadAsync("1")
 
-
         assertTrue(rating2.stars == 4F)
         assertTrue(rating1.stars == 5F)
     }
@@ -47,4 +46,3 @@ class RatingBrokenOfGsonTest : DBTest() {
         assertTrue(count == 2)
     }
 }
-

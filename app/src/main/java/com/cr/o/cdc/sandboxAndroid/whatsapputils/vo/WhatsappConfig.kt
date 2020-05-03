@@ -48,5 +48,4 @@ class WhatsappConfig @Inject constructor(private val sharedPreferences: SharedPr
     }
 }
 
-
 data class WhatsappConfigInfo(val enable: Boolean)

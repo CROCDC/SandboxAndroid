@@ -31,7 +31,6 @@ class PokemonRepositoryTest : RepositoryTest() {
                         Response.success(PokemonsQuery.Data(pokemonsData))
                     )
                 )
-
         },
         db,
         AppModule().provideAppExecutors()
@@ -42,7 +41,6 @@ class PokemonRepositoryTest : RepositoryTest() {
         getValueOfList(repository.pokemons(100), 10)
 
         val pokemons = getValueOfList(db.pokemonDao().loadAll(), 10)
-
 
         assertTrue(pokemons?.find { it.id == pokemonsData[0].id } != null)
     }

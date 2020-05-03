@@ -37,22 +37,20 @@ class RNCFragment : Fragment(), OnMapReadyCallback {
         map.setOnCameraIdleListener(clusterManager)
 
         clusterManager.addItems(viewModel.getPlaces())
-
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(R.layout.fragment_rnc, container, false)
-
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(RNCViewModel::class.java)
 
-        (childFragmentManager.fragments.find { it::class.java == SupportMapFragment::class.java } as SupportMapFragment).getMapAsync(
-            this
-        )
-
+        (childFragmentManager.fragments.find {
+            it::class.java == SupportMapFragment::class.java
+        } as SupportMapFragment).getMapAsync(this)
     }
 }

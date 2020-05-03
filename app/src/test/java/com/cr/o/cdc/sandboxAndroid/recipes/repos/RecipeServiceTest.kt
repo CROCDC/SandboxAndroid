@@ -1,8 +1,8 @@
 package com.cr.o.cdc.sandboxAndroid.recipes.repos
 
+import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
 import com.cr.o.cdc.sandboxAndroid.utils.EndpointTest
-import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 import retrofit2.Retrofit
@@ -15,7 +15,6 @@ class RecipeServiceTest : EndpointTest() {
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(LiveDataCallAdapterFactory())
         .build().create(RecipeService::class.java)
-
 
     @Test
     fun search() {
@@ -31,5 +30,4 @@ class RecipeServiceTest : EndpointTest() {
         assertTrue(response.body() != null)
         print(response.body())
     }
-
 }

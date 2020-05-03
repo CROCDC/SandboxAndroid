@@ -9,5 +9,4 @@ abstract class FragmentBuildersModulePagination {
 
     @ContributesAndroidInjector
     abstract fun contributesRecipesFragment(): RecipesFragment
-
 }

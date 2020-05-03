@@ -24,10 +24,8 @@ class Mockk {
     fun mockkVariableJava() {
         val dog = spyk<DogJava>().apply {
             every { name } returns mockName
-
         }
 
         assertTrue(dog.name == mockName)
     }
 }
-

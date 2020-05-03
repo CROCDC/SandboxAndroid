@@ -13,7 +13,6 @@ import org.junit.Test
 
 class HomeFragmentTest {
 
-
     @Test
     fun assertNavigateToCoronavirusFragment() {
         val navController = mockk<NavController>(relaxed = true)

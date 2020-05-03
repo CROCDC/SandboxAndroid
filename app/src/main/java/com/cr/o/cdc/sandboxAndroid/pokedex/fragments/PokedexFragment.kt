@@ -25,7 +25,8 @@ class PokedexFragment : Fragment() {
     private lateinit var adapter: PokemonsAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPokedexBinding.inflate(inflater, container, false)
@@ -43,6 +44,5 @@ class PokedexFragment : Fragment() {
         vm.pokemons.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it.data)
         })
-
     }
 }

@@ -5,8 +5,8 @@ import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.NetworkBoundResource
 import com.cr.o.cdc.networking.NetworkResource
 import com.cr.o.cdc.networking.NetworkResponse
-import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
 import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
+import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import javax.inject.Inject
 
@@ -29,7 +29,6 @@ class CoronavirusRepository @Inject constructor(
 
             override fun createCall(): LiveData<NetworkResponse<CasesByCountry>> =
                 service.getCasesByCountry()
-
         }.asLiveData()
 
     fun search(country: String): LiveData<List<CountryStat>> = db.countryStatDao().search(country)

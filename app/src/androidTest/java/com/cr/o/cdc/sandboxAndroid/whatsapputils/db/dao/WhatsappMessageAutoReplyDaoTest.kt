@@ -14,7 +14,6 @@ class WhatsappMessageAutoReplyDaoTest : DBTest() {
     private val whatsappMessageAutoReply: WhatsappMessageAutoReply =
         WhatsappMessageAutoReply::class.makeRandomInstance()
 
-
     @Test
     fun save() {
         dao.save(whatsappMessageAutoReply)

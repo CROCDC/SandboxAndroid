@@ -35,7 +35,8 @@ class NotificationsFragment : Fragment() {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentNotificationsBinding.inflate(inflater, container, false)
@@ -78,7 +79,6 @@ class NotificationsFragment : Fragment() {
             LocalBroadcastManager.getInstance(requireContext())
                 .unregisterReceiver(broadcastReceiver)
         } catch (ignored: Exception) {
-
         }
     }
 

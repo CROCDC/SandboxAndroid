@@ -1,6 +1,5 @@
 package com.cr.o.cdc.sandboxAndroid.customviews.fragments
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +28,4 @@ class CustomViewsFragment : Fragment() {
 
         return binding.root
     }
-
-
 }

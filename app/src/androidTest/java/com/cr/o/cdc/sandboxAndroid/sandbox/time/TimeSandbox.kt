@@ -6,11 +6,14 @@ import junit.framework.TestCase.assertTrue
 import org.junit.Test
 import org.threeten.bp.LocalDate
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Calendar
+import java.util.Date
+import java.util.GregorianCalendar
+import java.util.Locale
 
 class TimeSandbox {
 
-    //11 Mar 2020
+    // 11 Mar 2020
     private val milliseconds = 1583938374827
 
     @Test
@@ -37,7 +40,7 @@ class TimeSandbox {
         assertTrue(calendar.get(Calendar.DAY_OF_MONTH) == 11)
     }
 
-    //this code is bad,why not support the format of other countries
+    // this code is bad,why not support the format of other countries
     @Test
     fun simpleDateFormat() {
         val badFormat = SimpleDateFormat("dd/MM/yy", Locale.US).format(Date(milliseconds))
@@ -54,7 +57,6 @@ class TimeSandbox {
     @Test
     fun dateFormat_US() {
         assertEquals(DateFormat.getBestDateTimePattern(Locale.US, "dd/MM/yy"), "MM/dd/yy")
-
     }
 
     @Test

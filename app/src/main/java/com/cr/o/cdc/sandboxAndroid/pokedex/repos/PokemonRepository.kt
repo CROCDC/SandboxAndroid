@@ -6,9 +6,9 @@ import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.NetworkBoundResource
 import com.cr.o.cdc.networking.NetworkResource
 import com.cr.o.cdc.networking.NetworkResponse
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.Pokemon
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.PokemonMini
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import javax.inject.Inject
 
 class PokemonRepository @Inject constructor(
@@ -36,7 +36,6 @@ class PokemonRepository @Inject constructor(
                             }
                         )
                     }
-
                 } ?: listOf())
             }
 
@@ -46,6 +45,5 @@ class PokemonRepository @Inject constructor(
 
             override fun createCall(): LiveData<NetworkResponse<PokemonsQuery.Data>> =
                 dataSource.pokemons(first)
-
         }.asLiveData()
 }

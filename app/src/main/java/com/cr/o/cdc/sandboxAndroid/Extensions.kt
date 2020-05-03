@@ -13,7 +13,9 @@ import com.apollographql.apollo.exception.ApolloException
 import com.cr.o.cdc.networking.NetworkResponse
 import com.squareup.picasso.Picasso
 
-inline fun SharedPreferences.editAndApply(values: SharedPreferences.Editor.() -> SharedPreferences.Editor) {
+inline fun SharedPreferences.editAndApply(
+    values: SharedPreferences.Editor.() -> SharedPreferences.Editor
+) {
     edit().values().apply()
 }
 
@@ -27,7 +29,6 @@ fun <T> ApolloQueryCall<T>.execute(): LiveData<NetworkResponse<T>> {
         override fun onResponse(response: Response<T>) {
             result.postValue(NetworkResponse.create(response))
         }
-
     })
 
     return result

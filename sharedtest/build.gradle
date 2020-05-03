@@ -36,7 +36,6 @@ dependencies {
     kaptAndroidTest "androidx.room:room-compiler:$room"
     implementation "android.arch.lifecycle:extensions:$lifecycle_extensions"
 
-    implementation "androidx.test.uiautomator:uiautomator:$uiautomator"
     implementation "junit:junit:$junit"
     implementation "android.arch.core:core-testing:$arch_core_testing"
     implementation "androidx.test:core:$androidx_test"

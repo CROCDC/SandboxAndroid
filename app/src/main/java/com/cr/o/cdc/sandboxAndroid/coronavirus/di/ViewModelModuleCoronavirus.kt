@@ -20,5 +20,4 @@ abstract class ViewModelModuleCoronavirus {
     @IntoMap
     @ViewModelKey(SearchViewModel::class)
     abstract fun bindSearchViewModel(searchViewModel: SearchViewModel): ViewModel
-
 }

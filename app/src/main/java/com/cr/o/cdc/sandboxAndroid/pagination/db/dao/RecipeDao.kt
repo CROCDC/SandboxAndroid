@@ -29,7 +29,8 @@ interface RecipeDao {
     fun saveOffSet(items: List<InfoSearchRecipe>)
 
     @Query(
-        "SELECT * FROM info_search_recipe LEFT JOIN recipe ON recipe_uri == uri WHERE search == :search"
+        "SELECT * FROM info_search_recipe LEFT JOIN " +
+                "recipe ON recipe_uri == uri WHERE search == :search"
     )
     fun loadPaged(search: String): DataSource.Factory<Int, PagedRecipe>
 }

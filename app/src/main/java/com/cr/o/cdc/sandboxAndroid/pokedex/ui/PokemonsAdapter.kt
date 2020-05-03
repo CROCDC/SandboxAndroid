@@ -25,7 +25,6 @@ class PokemonsAdapter : ListAdapter<Pokemon, PokemonsAdapter.ViewHolder>(Pokemon
             binding.txtName.text = pokemon.name
             binding.img.loadFromUrl(pokemon.image)
         }
-
     }
 }
 

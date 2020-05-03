@@ -29,5 +29,4 @@ class SitesDataSource : SitesDataSourceProvider {
             else -> PingResponse.PingUnknownError(e.message)
         }
     }
-
 }

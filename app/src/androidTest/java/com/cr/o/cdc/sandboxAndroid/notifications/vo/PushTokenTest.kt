@@ -19,6 +19,5 @@ class PushTokenTest {
         pushToken.addPush()
 
         assertTrue(pushToken.pushQuantity == 1)
-
     }
 }

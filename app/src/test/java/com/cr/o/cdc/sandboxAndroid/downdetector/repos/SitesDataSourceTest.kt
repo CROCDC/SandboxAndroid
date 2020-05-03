@@ -6,9 +6,7 @@ import org.junit.Test
 
 class SitesDataSourceTest {
 
-    private val dataSource =
-        SitesDataSource()
-
+    private val dataSource = SitesDataSource()
 
     @Test
     fun `assertPingReturnPingResponsePingMalformedURLExceptionWith www palabras com ar`() {
@@ -41,5 +39,4 @@ class SitesDataSourceTest {
             PingResponse.PingError::class
         )
     }
-
 }

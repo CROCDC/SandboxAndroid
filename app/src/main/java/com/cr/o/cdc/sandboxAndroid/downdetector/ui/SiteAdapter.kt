@@ -55,7 +55,6 @@ class SiteAdapter(val listener: SiteAdapterListener) :
                     site.intervalCheck.toString()
                 )
 
-
             binding.txtRetriesQuantity.visibility = if (site.numberOfRetriesOfError != null) {
                 binding.txtRetriesQuantity.text = itemView.context.getString(
                     R.string.retries_quantity,
@@ -65,7 +64,6 @@ class SiteAdapter(val listener: SiteAdapterListener) :
             } else {
                 View.GONE
             }
-
 
             binding.txtIsWorking.setText(
                 when (site.isWorking) {
@@ -83,7 +81,6 @@ class SiteAdapter(val listener: SiteAdapterListener) :
                 }
             )
         }
-
     }
 
     object CallBack : DiffUtil.ItemCallback<Site>() {
@@ -91,6 +88,5 @@ class SiteAdapter(val listener: SiteAdapterListener) :
             oldItem.address == newItem.address
 
         override fun areContentsTheSame(oldItem: Site, newItem: Site): Boolean = oldItem == newItem
-
     }
 }

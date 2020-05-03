@@ -14,5 +14,4 @@ abstract class ViewModelModuleRNC {
     @IntoMap
     @ViewModelKey(RNCViewModel::class)
     abstract fun bindRNCViewModel(RNCViewModel: RNCViewModel): ViewModel
-
 }

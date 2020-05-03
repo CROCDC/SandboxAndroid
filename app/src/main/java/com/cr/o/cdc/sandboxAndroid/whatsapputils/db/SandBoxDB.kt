@@ -5,17 +5,17 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.cr.o.cdc.sandboxAndroid.coronavirus.db.dao.CountryStatDao
 import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
-import com.cr.o.cdc.sandboxAndroid.pagination.db.dao.RecipeDao
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao.WhatsappMessageAutoReplyDao
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao.WhatsappMessageBotDao
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao.WhatsappMessageDao
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.dao.SiteDao
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
+import com.cr.o.cdc.sandboxAndroid.pagination.db.dao.RecipeDao
 import com.cr.o.cdc.sandboxAndroid.pagination.db.model.InfoSearchRecipe
 import com.cr.o.cdc.sandboxAndroid.pagination.db.model.Recipe
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.converters.ConverterPokedex
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.dao.PokemonDao
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.Pokemon
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao.WhatsappMessageAutoReplyDao
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao.WhatsappMessageBotDao
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.dao.WhatsappMessageDao
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessage
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageAutoReply
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageBot
@@ -46,5 +46,4 @@ abstract class SandBoxDB : RoomDatabase() {
     companion object {
         const val DATABASE_NAME = "sandbox"
     }
-
 }

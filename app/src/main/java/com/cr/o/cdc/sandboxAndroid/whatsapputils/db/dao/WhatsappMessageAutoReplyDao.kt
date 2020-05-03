@@ -13,7 +13,6 @@ interface WhatsappMessageAutoReplyDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun save(whatsappMessageAutoReply: WhatsappMessageAutoReply)
 
-
     @Query("SELECT * FROM whatsappmessageautoreply")
     fun loadAll(): LiveData<List<WhatsappMessageAutoReply>>
 }

@@ -8,13 +8,11 @@ import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
-import com.cr.o.cdc.sandboxAndroid.coronavirus.di.ViewModelModuleCoronavirus
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
 import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSourceProvider
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.di.ViewModelModuleWhatsappUtils
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -22,7 +20,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@Module(includes = [ViewModelModule::class, ViewModelModuleCoronavirus::class, ViewModelModuleWhatsappUtils::class])
+@Module(includes = [ViewModelModule::class])
 class AppModule {
 
     @Provides
@@ -46,7 +44,6 @@ class AppModule {
     ): RecipeService =
         retrofitBuilder.baseUrl(app.resources.getString(R.string.recipes_api)).build()
             .create(RecipeService::class.java)
-
 
     @Singleton
     @Provides

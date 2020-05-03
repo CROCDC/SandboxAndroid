@@ -31,7 +31,6 @@ class SiteDaoTest : DBTest() {
             getValueLiveData(dao.getAll(), 5)?.get(0),
             site.copy(enable = false, workRequestId = "work")
         )
-
     }
 
     @Test
@@ -53,7 +52,5 @@ class SiteDaoTest : DBTest() {
         dao.setNumberOfRetriesOfError(site.address, 1)
 
         assertEquals(dao.find(site.address), site.copy(numberOfRetriesOfError = 1))
-
     }
-
 }

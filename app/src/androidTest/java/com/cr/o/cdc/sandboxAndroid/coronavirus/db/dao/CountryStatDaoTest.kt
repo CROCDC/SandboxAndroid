@@ -10,7 +10,6 @@ import org.junit.Test
 class CountryStatDaoTest : DBTest() {
     private val countryStatDao = db.countryStatDao()
 
-
     private val list = listOf<CountryStat>(
         CountryStat::class.makeRandomInstance(), CountryStat::class.makeRandomInstance()
     )
@@ -25,5 +24,4 @@ class CountryStatDaoTest : DBTest() {
 
         assertTrue(getValueLiveData(countryStatDao.loadAll(), 2)?.isNullOrEmpty() == true)
     }
-
 }

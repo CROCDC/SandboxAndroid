@@ -20,7 +20,6 @@ class WhatsappMessageAdapter :
         holder.bind(getItem(position))
     }
 
-
     class ViewHolder(private val binding: ListItemWhatsappMessageBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -38,6 +37,5 @@ class WhatsappMessageAdapter :
             oldItem: WhatsappMessage,
             newItem: WhatsappMessage
         ): Boolean = oldItem == newItem
-
     }
 }

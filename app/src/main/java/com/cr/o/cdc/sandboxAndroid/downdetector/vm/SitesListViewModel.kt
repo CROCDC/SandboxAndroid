@@ -8,7 +8,7 @@ import androidx.work.workDataOf
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesRepository
 import com.cr.o.cdc.sandboxAndroid.downdetector.vo.DownDetectorWorker
-import java.util.*
+import java.util.UUID
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -31,7 +31,6 @@ class SitesListViewModel @Inject constructor(
             workManager.enqueue(request)
 
             request.id.toString()
-
         } else {
             workManager.cancelWorkById(UUID.fromString(site.workRequestId))
             null
@@ -39,5 +38,4 @@ class SitesListViewModel @Inject constructor(
 
         sitesRepository.modifyEnable(site.address, !site.enable, workRequestId)
     }
-
 }

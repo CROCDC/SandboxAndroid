@@ -9,5 +9,4 @@ abstract class FragmentBuildersModuleRNC {
 
     @ContributesAndroidInjector
     abstract fun contributesRNCFragment(): RNCFragment
-
 }

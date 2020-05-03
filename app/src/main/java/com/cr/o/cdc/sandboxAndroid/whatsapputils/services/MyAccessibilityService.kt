@@ -12,5 +12,4 @@ class MyAccessibilityService : AccessibilityService() {
             Log.e("CROCDC", event.toString())
         }
     }
-
 }

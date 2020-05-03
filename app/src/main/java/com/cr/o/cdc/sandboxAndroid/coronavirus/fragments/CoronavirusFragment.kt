@@ -37,7 +37,6 @@ class CoronavirusFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val vm = ViewModelProviders.of(this, viewModelFactory).get(CoronavirusViewModel::class.java)

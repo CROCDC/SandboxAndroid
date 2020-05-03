@@ -26,5 +26,4 @@ class CustomViewFragmentTest {
 
         verify { navController.navigate(R.id.action_customViewsFragment_to_curveFragment) }
     }
-
 }

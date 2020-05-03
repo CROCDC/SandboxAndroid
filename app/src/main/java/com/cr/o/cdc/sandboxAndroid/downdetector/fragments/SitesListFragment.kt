@@ -26,7 +26,8 @@ class SitesListFragment : Fragment(), SiteAdapter.SiteAdapterListener {
     private lateinit var viewModel: SitesListViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSitesListBinding.inflate(inflater, container, false)
@@ -51,11 +52,9 @@ class SitesListFragment : Fragment(), SiteAdapter.SiteAdapterListener {
         viewModel.sites.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
-
     }
 
     override fun modifyEnable(site: Site) {
         viewModel.modifyEnable(site)
     }
-
 }

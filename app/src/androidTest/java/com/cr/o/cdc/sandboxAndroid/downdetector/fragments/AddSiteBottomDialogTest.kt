@@ -20,7 +20,5 @@ class AddSiteBottomDialogTest {
         onView(withId(R.id.input_address)).perform(typeText("www.palabras.com.ar"))
 
         inputInterval.check(matches(withText("15")))
-
     }
-
 }

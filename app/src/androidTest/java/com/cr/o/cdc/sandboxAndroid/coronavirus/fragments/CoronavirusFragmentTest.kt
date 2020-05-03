@@ -8,8 +8,8 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.cr.o.cdc.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
 import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
+import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
 import com.cr.o.cdc.sandboxAndroid.di.AppModule
 import junit.framework.TestCase.assertTrue
@@ -19,8 +19,7 @@ import retrofit2.Response
 
 class CoronavirusFragmentTest {
 
-
-    //todo problem with repository
+    // todo problem with repository
     @Before
     fun init() {
         AppModule.setCoronavirusService(object : CoronavirusService {
@@ -45,7 +44,6 @@ class CoronavirusFragmentTest {
                         )
                     )
                 )
-
         })
     }
 
@@ -58,6 +56,5 @@ class CoronavirusFragmentTest {
         onView(withId(R.id.recycler)).check { view, _ ->
             assertTrue((view as RecyclerView).adapter?.itemCount != 0)
         }
-
     }
 }

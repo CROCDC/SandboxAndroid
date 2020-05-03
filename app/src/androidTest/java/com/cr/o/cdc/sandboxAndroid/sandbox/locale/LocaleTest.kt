@@ -3,10 +3,10 @@ package com.cr.o.cdc.sandboxAndroid.sandbox.locale
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 import java.text.NumberFormat
-import java.util.*
+import java.util.Currency
+import java.util.Locale
 
 class LocaleTest {
-
 
     @Test
     fun `ARS_en-CA`() {

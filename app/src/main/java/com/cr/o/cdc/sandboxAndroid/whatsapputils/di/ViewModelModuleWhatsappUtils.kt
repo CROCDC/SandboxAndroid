@@ -20,10 +20,14 @@ abstract class ViewModelModuleWhatsappUtils {
     @Binds
     @IntoMap
     @ViewModelKey(AddWhatsappMessageBotViewModel::class)
-    abstract fun bindAddWhatsappMessageBotViewModel(addWhatsappMessageBotViewModel: AddWhatsappMessageBotViewModel): ViewModel
+    abstract fun bindAddWhatsappMessageBotViewModel(
+        addWhatsappMessageBotViewModel: AddWhatsappMessageBotViewModel
+    ): ViewModel
 
     @Binds
     @IntoMap
     @ViewModelKey(WhatsappMessagesViewModel::class)
-    abstract fun bindWhatsappMessagesViewModel(whatsappMessagesViewModel: WhatsappMessagesViewModel): ViewModel
+    abstract fun bindWhatsappMessagesViewModel(
+        whatsappMessagesViewModel: WhatsappMessagesViewModel
+    ): ViewModel
 }

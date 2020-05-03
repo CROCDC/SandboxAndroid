@@ -14,5 +14,4 @@ data class Place(
     override fun getTitle(): String = name
 
     override fun getPosition(): LatLng = LatLng(coordinates.lat, coordinates.long)
-
 }

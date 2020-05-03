@@ -1,7 +1,11 @@
 package com.cr.o.cdc.sandboxAndroid.customviews.views
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.Path
+import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 
@@ -19,7 +23,6 @@ class Smile @JvmOverloads constructor(
     private val borderWidth = 16.0f
     private var size = 0
 
-
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         drawCircle(canvas)
@@ -31,7 +34,6 @@ class Smile @JvmOverloads constructor(
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         size = measuredWidth.coerceAtMost(measuredHeight)
         setMeasuredDimension(size, size)
-
     }
 
     private fun drawCircle(canvas: Canvas) {
@@ -52,7 +54,6 @@ class Smile @JvmOverloads constructor(
         canvas.drawOval(leftEyeRect, paint)
         val rightEyeRect = RectF(size * 0.57f, size * 0.13f, size * 0.68f, size * 0.30f)
         canvas.drawOval(rightEyeRect, paint)
-
     }
 
     private fun drawMouth(canvas: Canvas) {
@@ -63,7 +64,5 @@ class Smile @JvmOverloads constructor(
         paint.color = mouthColor
         paint.style = Paint.Style.FILL
         canvas.drawPath(mouthPath, paint)
-
-
     }
 }

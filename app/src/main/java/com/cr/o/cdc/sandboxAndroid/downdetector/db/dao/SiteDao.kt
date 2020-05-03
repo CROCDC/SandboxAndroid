@@ -13,11 +13,13 @@ interface SiteDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun save(site: Site)
 
-
     @Query("SELECT * FROM Site")
     fun getAll(): LiveData<List<Site>>
 
-    @Query("UPDATE Site SET workRequestId =:workRequestId, enable =:enable WHERE address =:address")
+    @Query(
+        "UPDATE Site SET workRequestId =:workRequestId," +
+                " enable =:enable WHERE address =:address"
+    )
     fun modifyEnable(address: String, enable: Boolean, workRequestId: String?)
 
     @Query("UPDATE Site SET cantErrors =:cantErrors, isWorking = 0 WHERE address =:address")
@@ -26,9 +28,15 @@ interface SiteDao {
     @Query("SELECT * FROM Site WHERE address =:address")
     fun find(address: String): Site
 
-    @Query("UPDATE Site SET numberOfRetriesOfError = null, isWorking = 1 WHERE address =:address")
+    @Query(
+        "UPDATE Site SET numberOfRetriesOfError = null" +
+                ", isWorking = 1 WHERE address =:address"
+    )
     fun siteIsWorking(address: String)
 
-    @Query("UPDATE Site SET numberOfRetriesOfError =:numberOfRetriesOfError WHERE address =:address")
+    @Query(
+        "UPDATE Site SET numberOfRetriesOfError" +
+                " =:numberOfRetriesOfError WHERE address =:address"
+    )
     fun setNumberOfRetriesOfError(address: String, numberOfRetriesOfError: Int?)
 }

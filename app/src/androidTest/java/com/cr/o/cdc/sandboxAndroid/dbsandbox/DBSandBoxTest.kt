@@ -12,5 +12,4 @@ import com.cr.o.cdc.sharedtest.RatingBrokenOfGson
 abstract class DBSandBoxTest : RoomDatabase() {
 
     abstract fun ratingDao(): RatingDao
-
 }
