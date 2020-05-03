@@ -1,6 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.downdetector.ui
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -13,7 +14,7 @@ class SiteAdapter(val listener: SiteAdapterListener) :
     ListAdapter<Site, SiteAdapter.ViewHolder>(CallBack) {
 
     interface SiteAdapterListener {
-        fun modifyEnable(address: String, enable: Boolean)
+        fun modifyEnable(site: Site)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
@@ -42,8 +43,45 @@ class SiteAdapter(val listener: SiteAdapterListener) :
             )
 
             binding.checkbox.setOnClickListener {
-                listener.modifyEnable(site.address, !site.enable)
+                listener.modifyEnable(site)
             }
+
+            binding.txtErrorsQuantity.text =
+                itemView.context.getString(R.string.errors_quantity, site.cantErrors.toString())
+
+            binding.txtInterval.text =
+                itemView.context.getString(
+                    R.string.interval_of_check,
+                    site.intervalCheck.toString()
+                )
+
+
+            binding.txtRetriesQuantity.visibility = if (site.numberOfRetriesOfError != null) {
+                binding.txtRetriesQuantity.text = itemView.context.getString(
+                    R.string.retries_quantity,
+                    site.numberOfRetriesOfError.toString()
+                )
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+
+
+            binding.txtIsWorking.setText(
+                when (site.isWorking) {
+                    true -> R.string.good
+                    false -> R.string.bad
+                    null -> R.string.unknown
+                }
+            )
+
+            binding.txtIsWorking.setBackgroundResource(
+                when (site.isWorking) {
+                    true -> R.color.green_00C803
+                    false -> R.color.red_FF0000
+                    null -> R.color.gray_A56C6C
+                }
+            )
         }
 
     }

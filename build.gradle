@@ -42,6 +42,7 @@ buildscript {
     ext.pubnub = "4.31.0"
     ext.apollo_runtime = "1.2.2"
     ext.apollo_support = "1.0.0"
+    ext.work = "2.3.0"
 
     repositories {
         google()

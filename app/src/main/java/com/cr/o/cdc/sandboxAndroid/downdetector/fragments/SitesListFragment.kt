@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.annotations.Injectable
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentSitesListBinding
+import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.downdetector.ui.SiteAdapter
 import com.cr.o.cdc.sandboxAndroid.downdetector.vm.SitesListViewModel
 import javax.inject.Inject
@@ -53,8 +54,8 @@ class SitesListFragment : Fragment(), SiteAdapter.SiteAdapterListener {
 
     }
 
-    override fun modifyEnable(address: String, enable: Boolean) {
-        viewModel.modifyEnable(address, enable)
+    override fun modifyEnable(site: Site) {
+        viewModel.modifyEnable(site)
     }
 
 }

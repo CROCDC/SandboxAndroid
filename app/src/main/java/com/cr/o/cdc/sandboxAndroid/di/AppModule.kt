@@ -3,6 +3,7 @@ package com.cr.o.cdc.sandboxAndroid.di
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
+import androidx.work.WorkManager
 import com.apollographql.apollo.ApolloClient
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
@@ -10,7 +11,9 @@ import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import com.cr.o.cdc.sandboxAndroid.coronavirus.di.ViewModelModuleCoronavirus
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
+import com.cr.o.cdc.sandboxAndroid.downdetector.di.ViewModelModuleDownDetector
+import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSource
+import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.notifications.di.ViewModelModuleNotifications
 import com.cr.o.cdc.sandboxAndroid.pagination.di.ViewModelModulePagination
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
@@ -20,6 +23,7 @@ import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.rnc.di.ViewModelModuleRNC
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.RNCDataSource
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.RNCDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.di.ViewModelModuleWhatsappUtils
 import dagger.Module
 import dagger.Provides
@@ -32,7 +36,7 @@ import javax.inject.Singleton
     includes = [ViewModelModule::class, ViewModelModuleCoronavirus::class,
         ViewModelModuleWhatsappUtils::class, ViewModelModuleNotifications::class,
         ViewModelModulePagination::class, ViewModelModulePokemons::class,
-        ViewModelModuleRNC::class
+        ViewModelModuleRNC::class, ViewModelModuleDownDetector::class
     ]
 )
 class AppModule {
@@ -92,4 +96,12 @@ class AppModule {
     fun provideApolloClient(app: SandBoxApp): ApolloClient =
         ApolloClient.builder().serverUrl(app.resources.getString(R.string.pokemon_api))
             .okHttpClient(OkHttpClient.Builder().build()).build()
+
+    @Singleton
+    @Provides
+    fun provideSitesDataSourceProvider(): SitesDataSourceProvider = SitesDataSource()
+
+    @Singleton
+    @Provides
+    fun provideWorkManager(app: SandBoxApp): WorkManager = WorkManager.getInstance(app)
 }

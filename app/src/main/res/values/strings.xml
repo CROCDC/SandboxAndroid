@@ -22,12 +22,18 @@
     <string name="whatsapp_bot_messages">Whatsapp bot messages</string>
     <string name="coronavirus_stats">Coronavirus stats</string>
     <string name="cases_by_country">Countries</string>
-    <string name="cases">cases :%1$s</string>
-    <string name="deaths">deaths :%1$s</string>
+    <string name="cases">cases: %1$s</string>
+    <string name="deaths">deaths: %1$s</string>
     <string name="search">Search</string>
     <string name="name_site">Name of Site</string>
     <string name="add_site">Add Site</string>
     <string name="address_of_site">Address of Site</string>
-    <string name="interval_of_check_in_minutes">Interval of check in minutes</string>
+    <string name="interval_of_check_in_minutes_minimum_15_minutes">Interval of check in minutes (15 is minimum)</string>
     <string name="down_detector">Down Detector</string>
+    <string name="good">Good</string>
+    <string name="bad">Bad</string>
+    <string name="unknown">Unknown</string>
+    <string name="errors_quantity">Error quantity: %1$s</string>
+    <string name="interval_of_check">Interval of check: %1$s minutes</string>
+    <string name="retries_quantity">Retries quantity:  %1$s</string>
 </resources>

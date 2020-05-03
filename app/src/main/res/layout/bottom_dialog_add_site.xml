@@ -46,7 +46,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="@string/interval_of_check_in_minutes"
+            android:hint="@string/interval_of_check_in_minutes_minimum_15_minutes"
             app:layout_constraintEnd_toEndOf="@id/input_name"
             app:layout_constraintStart_toStartOf="@id/input_name"
             app:layout_constraintTop_toBottomOf="@id/input_address" />

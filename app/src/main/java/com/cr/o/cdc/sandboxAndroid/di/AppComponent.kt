@@ -27,6 +27,7 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         AppModule::class,
         ServiceModule::class,
+        WorkerModule::class,
         ViewModelModule::class,
         ViewModelModuleCoronavirus::class,
         ViewModelModuleWhatsappUtils::class,

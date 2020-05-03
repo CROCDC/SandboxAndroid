@@ -8,5 +8,9 @@ data class Site(
     @PrimaryKey val address: String,
     val name: String,
     val enable: Boolean,
-    val time: Int
+    val intervalCheck: Int,
+    val cantErrors: Int,
+    val isWorking: Boolean?,
+    val workRequestId: String?,
+    val numberOfRetriesOfError: Int?
 )

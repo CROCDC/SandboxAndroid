@@ -39,6 +39,14 @@ class AddSiteBottomDialog : BottomSheetDialogFragment() {
 
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(AddSiteViewModel::class.java)
 
+        binding.inputIntervalCheck.setOnFocusChangeListener { _, _ ->
+
+            binding.inputIntervalCheck.getInput().toIntOrNull()?.takeIf { it < 15 }?.let {
+                binding.inputIntervalCheck.setText("15")
+            }
+
+        }
+
         binding.add.setOnClickListener {
             //TODO CHECKS
             viewModel.saveSite(
@@ -46,9 +54,14 @@ class AddSiteBottomDialog : BottomSheetDialogFragment() {
                     binding.inputAddress.getInput(),
                     binding.inputName.getInput(),
                     true,
-                    binding.inputIntervalCheck.getInput().toInt()
+                    binding.inputIntervalCheck.getInput().toInt(),
+                    0,
+                    null,
+                    null,
+                    null
                 )
             )
+
             dismiss()
         }
     }
