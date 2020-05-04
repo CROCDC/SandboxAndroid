@@ -2,6 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import androidx.room.Room
 import com.apollographql.apollo.ApolloClient
 import com.cr.o.cdc.networking.AppExecutors
@@ -34,7 +35,11 @@ class AppModule {
     fun provideCoronavirusService(
         retrofitBuilder: Retrofit.Builder,
         app: SandBoxApp
-    ): CoronavirusService = fakeCoronavirusService
+    ): CoronavirusService {
+        Log.e("CROCDC", retrofitBuilder.toString())
+        Log.e("CROCDC", app.toString())
+        return fakeCoronavirusService
+    }
 
     @Provides
     @Singleton

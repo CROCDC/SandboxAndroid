@@ -2,6 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.core.app.NotificationManagerCompat
 import androidx.room.Room
 import androidx.work.WorkManager
 import com.apollographql.apollo.ApolloClient
@@ -91,4 +92,9 @@ class AppModule {
     @Singleton
     @Provides
     fun provideWorkManager(app: SandBoxApp): WorkManager = WorkManager.getInstance(app)
+
+    @Singleton
+    @Provides
+    fun provideNotificationManagerCompat(app: SandBoxApp): NotificationManagerCompat =
+        NotificationManagerCompat.from(app)
 }
