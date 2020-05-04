@@ -38,4 +38,8 @@ class SitesListViewModel @Inject constructor(
 
         sitesRepository.modifyEnable(site.address, !site.enable, workRequestId)
     }
+
+    fun deleteSite(address: String) {
+        sitesRepository.deleteSite(address)
+    }
 }

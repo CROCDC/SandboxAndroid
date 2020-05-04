@@ -39,4 +39,7 @@ interface SiteDao {
                 " =:numberOfRetriesOfError WHERE address =:address"
     )
     fun setNumberOfRetriesOfError(address: String, numberOfRetriesOfError: Int?)
+
+    @Query("DELETE FROM Site WHERE address=:address")
+    fun delete(address: String)
 }

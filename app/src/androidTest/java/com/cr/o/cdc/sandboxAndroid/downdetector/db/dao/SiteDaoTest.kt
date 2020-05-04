@@ -53,4 +53,11 @@ class SiteDaoTest : DBTest() {
 
         assertEquals(dao.find(site.address), site.copy(numberOfRetriesOfError = 1))
     }
+
+    @Test
+    fun delete() {
+        dao.delete(site.address)
+
+        assertEquals(dao.find(site.address), null)
+    }
 }

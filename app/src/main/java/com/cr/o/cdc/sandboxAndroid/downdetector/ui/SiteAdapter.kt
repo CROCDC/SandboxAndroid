@@ -15,6 +15,7 @@ class SiteAdapter(val listener: SiteAdapterListener) :
 
     interface SiteAdapterListener {
         fun modifyEnable(site: Site)
+        fun deleteSite(address: String)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
@@ -34,7 +35,7 @@ class SiteAdapter(val listener: SiteAdapterListener) :
         fun bind(site: Site) {
             binding.txtName.text = site.name
             binding.txtAddress.text = site.address
-            binding.checkbox.setImageResource(
+            binding.imgCheckbox.setImageResource(
                 if (site.enable) {
                     R.drawable.ic_check_black_24dp
                 } else {
@@ -42,8 +43,12 @@ class SiteAdapter(val listener: SiteAdapterListener) :
                 }
             )
 
-            binding.checkbox.setOnClickListener {
+            binding.imgCheckbox.setOnClickListener {
                 listener.modifyEnable(site)
+            }
+
+            binding.imgDelete.setOnClickListener {
+                listener.deleteSite(site.address)
             }
 
             binding.txtErrorsQuantity.text =

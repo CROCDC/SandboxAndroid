@@ -57,4 +57,8 @@ class SitesListFragment : Fragment(), SiteAdapter.SiteAdapterListener {
     override fun modifyEnable(site: Site) {
         viewModel.modifyEnable(site)
     }
+
+    override fun deleteSite(address: String) {
+        viewModel.deleteSite(address)
+    }
 }

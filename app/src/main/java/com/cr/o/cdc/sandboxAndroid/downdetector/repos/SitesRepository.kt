@@ -41,4 +41,8 @@ class SitesRepository @Inject constructor(
 
         return response
     }
+
+    fun deleteSite(address: String) {
+        db.siteDao().delete(address)
+    }
 }
