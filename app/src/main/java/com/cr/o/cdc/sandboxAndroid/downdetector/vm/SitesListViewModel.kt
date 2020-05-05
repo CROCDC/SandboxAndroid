@@ -1,11 +1,13 @@
 package com.cr.o.cdc.sandboxAndroid.downdetector.vm
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.workDataOf
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
+import com.cr.o.cdc.sandboxAndroid.downdetector.model.PingResponse
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesRepository
 import com.cr.o.cdc.sandboxAndroid.downdetector.vo.DownDetectorWorker
 import java.util.UUID
@@ -42,4 +44,7 @@ class SitesListViewModel @Inject constructor(
     fun deleteSite(address: String) {
         sitesRepository.deleteSite(address)
     }
+
+    fun testSite(address: String): MutableLiveData<PingResponse> =
+        sitesRepository.asyncPing(address)
 }

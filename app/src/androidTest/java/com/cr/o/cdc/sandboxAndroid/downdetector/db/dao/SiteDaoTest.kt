@@ -11,7 +11,7 @@ class SiteDaoTest : DBTest() {
 
     private val dao = db.siteDao()
 
-    private val site = Site("address", "name", true, 20, 0, null, null, null)
+    private val site = Site("address", "name", true, 20, 0, null, null, null, null)
 
     @Before
     fun saveSite() {
@@ -35,7 +35,7 @@ class SiteDaoTest : DBTest() {
 
     @Test
     fun setErrorOfSite() {
-        dao.siteNotWorking(1, site.address)
+        dao.siteNotWorking(1, site.address, "error")
 
         assertEquals(dao.find(site.address), site.copy(cantErrors = 1, isWorking = false))
     }

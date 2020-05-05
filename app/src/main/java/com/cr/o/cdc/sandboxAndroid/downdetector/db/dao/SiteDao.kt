@@ -22,8 +22,11 @@ interface SiteDao {
     )
     fun modifyEnable(address: String, enable: Boolean, workRequestId: String?)
 
-    @Query("UPDATE Site SET cantErrors =:cantErrors, isWorking = 0 WHERE address =:address")
-    fun siteNotWorking(cantErrors: Int, address: String)
+    @Query(
+        "UPDATE Site SET cantErrors =:cantErrors, lastErrorMessage =:errorMessage," +
+                " isWorking = 0 WHERE address =:address"
+    )
+    fun siteNotWorking(cantErrors: Int, address: String, errorMessage: String?)
 
     @Query("SELECT * FROM Site WHERE address =:address")
     fun find(address: String): Site

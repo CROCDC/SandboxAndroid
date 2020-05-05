@@ -37,4 +37,7 @@
     <string name="interval_of_check">Interval of check: %1$s minutes</string>
     <string name="retries_quantity">Retries quantity:  %1$s</string>
     <string name="o_no_site_down">O no site is down: %1$s</string>
+    <string name="test_site">Test Site</string>
+    <string name="success_in_test_of">Success in test of %1$s</string>
+    <string name="error_in_test_with_code">Success in test of %1$d</string>
 </resources>

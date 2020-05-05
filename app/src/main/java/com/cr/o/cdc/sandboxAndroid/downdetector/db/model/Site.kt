@@ -12,5 +12,6 @@ data class Site(
     val cantErrors: Int,
     val isWorking: Boolean?,
     val workRequestId: String?,
-    val numberOfRetriesOfError: Int?
+    val numberOfRetriesOfError: Int?,
+    val lastErrorMessage: String?
 )

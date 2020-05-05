@@ -3,6 +3,7 @@ package com.cr.o.cdc.sandboxAndroid.downdetector.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +17,7 @@ class SiteAdapter(val listener: SiteAdapterListener) :
     interface SiteAdapterListener {
         fun modifyEnable(site: Site)
         fun deleteSite(address: String)
+        fun testSite(address: String)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
@@ -85,6 +87,16 @@ class SiteAdapter(val listener: SiteAdapterListener) :
                     null -> R.color.gray_A56C6C
                 }
             )
+
+            binding.txtIsWorking.setOnClickListener {
+                site.lastErrorMessage?.let { error ->
+                    Toast.makeText(it.context, error, Toast.LENGTH_LONG).show()
+                }
+            }
+
+            binding.btnTest.setOnClickListener {
+                listener.testSite(site.address)
+            }
         }
     }
 

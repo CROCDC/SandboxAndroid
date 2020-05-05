@@ -20,6 +20,7 @@ data class AddSiteViewModel @Inject constructor(
             site.intervalCheck.toLong(),
             TimeUnit.MINUTES
         ).setInputData(workDataOf(Pair(DownDetectorWorker.ARG_ADDRESS_SITE, site.address)))
+            .setInitialDelay(15, TimeUnit.MINUTES)
             .build()
 
         repository.saveSite(site.copy(workRequestId = request.id.toString()))

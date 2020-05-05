@@ -1,9 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.downdetector.repos
 
 import com.cr.o.cdc.sandboxAndroid.downdetector.model.PingResponse
-import java.io.IOException
 import java.net.HttpURLConnection
-import java.net.MalformedURLException
 import java.net.URL
 
 class SitesDataSource : SitesDataSourceProvider {
@@ -22,11 +20,6 @@ class SitesDataSource : SitesDataSourceProvider {
             PingResponse.PingError(response)
         }
     } catch (e: Exception) {
-        when (e) {
-            is MalformedURLException -> PingResponse.PingMalformedURLException(e.message)
-            is IOException -> PingResponse.PingIOException(e.message)
-            is SecurityException -> PingResponse.PingSecurityException(e.message)
-            else -> PingResponse.PingUnknownError(e.message)
-        }
+        PingResponse.PingException(e.message)
     }
 }

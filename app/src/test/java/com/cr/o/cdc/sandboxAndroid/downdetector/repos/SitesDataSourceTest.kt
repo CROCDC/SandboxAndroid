@@ -12,7 +12,7 @@ class SitesDataSourceTest {
     fun `assertPingReturnPingResponsePingMalformedURLExceptionWith www palabras com ar`() {
         assertEquals(
             dataSource.ping("www.palabras.com.ar")::class,
-            PingResponse.PingMalformedURLException::class
+            PingResponse.PingError::class
         )
     }
 
@@ -20,7 +20,7 @@ class SitesDataSourceTest {
     fun `assertPingReturnPingResponsePingIOException https www sdsdsdsd com ar`() {
         assertEquals(
             dataSource.ping("https://www.sdsdsdsd.com.ar")::class,
-            PingResponse.PingIOException::class
+            PingResponse.PingError::class
         )
     }
 
