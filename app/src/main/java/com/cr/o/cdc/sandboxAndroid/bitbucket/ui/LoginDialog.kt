@@ -5,18 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.cr.o.cdc.sandboxAndroid.databinding.DialogOAuthInputDialogBinding
+import com.cr.o.cdc.sandboxAndroid.databinding.LoginDialogBinding
 
-class OAuthInputDialog : Fragment() {
+class LoginDialog : Fragment() {
 
-    private lateinit var binding: DialogOAuthInputDialogBinding
+    private lateinit var binding: LoginDialogBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DialogOAuthInputDialogBinding.inflate(layoutInflater, container, false)
-
+        binding = LoginDialogBinding.inflate(inflater, container, false)
 
         return binding.root
     }
