@@ -2,6 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.di
 
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import com.cr.o.cdc.sandboxAndroid.bitbucket.di.AppModuleBitbucket
+import com.cr.o.cdc.sandboxAndroid.bitbucket.di.FragmentBuildersModuleBitbucket
 import com.cr.o.cdc.sandboxAndroid.coronavirus.di.FragmentBuildersModuleCoronavirus
 import com.cr.o.cdc.sandboxAndroid.downdetector.di.FragmentBuildersModuleDownDetector
 import com.cr.o.cdc.sandboxAndroid.notifications.di.FragmentBuildersModuleNotifications
@@ -24,6 +25,7 @@ import javax.inject.Singleton
         ServiceModule::class,
         WorkerModule::class,
         ViewModelModule::class,
+        FragmentBuildersModuleBitbucket::class,
         FragmentBuildersModuleCoronavirus::class,
         FragmentBuildersModuleWhatsappUtils::class,
         FragmentBuildersModuleNotifications::class,

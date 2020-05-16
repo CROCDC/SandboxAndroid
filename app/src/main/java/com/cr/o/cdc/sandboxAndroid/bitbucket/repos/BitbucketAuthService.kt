@@ -16,4 +16,8 @@ interface BitbucketAuthService {
         @Body requestBody: RequestBody
     ): LiveData<NetworkResponse<LoginResponse>>
 
+
+    companion object {
+        const val ACCESS_TOKEN = "access_token"
+    }
 }

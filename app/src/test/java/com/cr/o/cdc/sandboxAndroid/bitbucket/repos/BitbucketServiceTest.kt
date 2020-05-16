@@ -2,35 +2,55 @@ package com.cr.o.cdc.sandboxAndroid.bitbucket.repos
 
 import com.cr.o.cdc.networking.SuccessResponse
 import com.cr.o.cdc.sandboxAndroid.bitbucket.di.AppModuleBitbucket
-import com.cr.o.cdc.sandboxAndroid.bitbucket.model.LoginResponse
-import okhttp3.MultipartBody
+import com.cr.o.cdc.sandboxAndroid.bitbucket.model.PaginatedRepositoriesResponse
+import com.cr.o.cdc.sandboxAndroid.bitbucket.model.PaginatedWorkspaceResponse
+import com.cr.o.cdc.sandboxAndroid.utils.DummySharedPreferences
+import com.cr.o.cdc.sandboxAndroid.utils.EndpointTest
+import com.cr.o.cdc.sharedtest.getValue
+import junit.framework.TestCase.assertTrue
+import org.junit.Before
 import org.junit.Test
 import retrofit2.Retrofit
-import java.util.Base64
 
-class BitbucketServiceTest {
+class BitbucketServiceTest : EndpointTest() {
 
-    private val service: BitbucketAuthService =
-        AppModuleBitbucket().provideBitbucketAuthService(Retrofit.Builder())
+    private lateinit var service: BitbucketService
 
-    private lateinit var accessToken: String
-
-
-    init {
-        accessToken = (AppModuleBitbucket().provideBitbucketAuthService(Retrofit.Builder()).login(
-            "Basic ${Base64.getEncoder()
-                .encodeToString("HsRFzLz7NGbaYg2YRs:AccxNmY67CApPPYQ3zV7SF46vU6bYN6J".toByteArray())}",
-            MultipartBody.Builder().setType(MultipartBody.FORM)
-                .addFormDataPart("username", "CajaDeArenaTests")
-                .addFormDataPart("password", "Monroe4500")
-                .addFormDataPart("grant_type", "password")
-                .build()
-        ) as SuccessResponse<LoginResponse>).data?.access_token!!
+    @Before
+    fun initService() {
+        service = AppModuleBitbucket().provideBitbucketService(
+            Retrofit.Builder(),
+            DummySharedPreferences(getAccessTokenBitbucket())
+        )
     }
 
 
     @Test
-    fun repositories() {
+    fun user() {
+        val response = getValue(service.user())
 
+        assertTrue(response is SuccessResponse)
     }
+
+    @Test
+    fun workspaces() {
+        val response = getValue(service.workspaces())
+
+        assertTrue(response is SuccessResponse)
+
+        print(response as SuccessResponse<PaginatedWorkspaceResponse>)
+    }
+
+    @Test
+    fun repositories() {
+        val uuid =
+            (getValue(service.workspaces()) as SuccessResponse<PaginatedWorkspaceResponse>)
+                .data!!.values[0].slug
+        val response = getValue(service.repositories(uuid))
+
+        assertTrue(response is SuccessResponse)
+
+        print(response as SuccessResponse<PaginatedRepositoriesResponse>)
+    }
+
 }

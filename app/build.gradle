@@ -61,11 +61,13 @@ android {
             testCoverageEnabled true
             buildConfigField("String", "URL_GRAPHQL_POKEMON", "\"https://graphql-pokemon.now.sh/graphql\"")
             buildConfigField("String", "URL_BITBUCKET_AUTH", "\"https://bitbucket.org/site/oauth2/\"")
+            buildConfigField("String", "URL_BITBUCKET_API", "\"https://api.bitbucket.org/2.0/\"")
 
         }
         release {
             buildConfigField("String", "URL_GRAPHQL_POKEMON", "\"https://bitbucket.org/site/oauth2/\"")
             buildConfigField("String", "URL_BITBUCKET_AUTH", "\"https://bitbucket.org/site/oauth2/\"")
+            buildConfigField("String", "URL_BITBUCKET_API", "\"https://api.bitbucket.org/2.0/\"")
         }
 
     }
