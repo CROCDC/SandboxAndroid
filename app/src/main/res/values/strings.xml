@@ -40,4 +40,11 @@
     <string name="test_site">Test Site</string>
     <string name="success_in_test_of">Success in test of %1$s</string>
     <string name="error_in_test_with_code">Success in test of %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save">Save</string>
+    <string name="save_key_and_secret_of_bitbucket">Save key and secret of bitbucket</string>
+    <string name="key">Key</string>
+    <string name="secret">Secret</string>
 </resources>

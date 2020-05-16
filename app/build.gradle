@@ -59,11 +59,12 @@ android {
     buildTypes {
         debug {
             testCoverageEnabled true
-            buildConfigField("String", "URL_SERVER", "\"https://graphql-pokemon.now.sh/graphql\"")
+            buildConfigField("String", "URL_GRAPHQL_POKEMON", "\"https://graphql-pokemon.now.sh/graphql\"")
+            buildConfigField("String", "URL_BITBUCKET", "\"https://bitbucket.org/site/\"")
 
         }
         release {
-            buildConfigField("String", "URL_SERVER", "\"https://graphql-pokemon.now.sh/graphql\"")
+            buildConfigField("String", "URL_GRAPHQL_POKEMON", "\"https://bitbucket.org/site/\"")
         }
 
     }

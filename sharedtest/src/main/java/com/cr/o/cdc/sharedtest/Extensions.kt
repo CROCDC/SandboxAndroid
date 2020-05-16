@@ -149,7 +149,7 @@ fun <T> getValue(liveData: LiveData<NetworkResponse<T>>): NetworkResponse<T>? {
             }
             is ErrorResponse -> {
                 latch.countDown()
-                throw Exception("Error in request")
+                throw Exception("Error in request", it.error)
             }
         }
     }
