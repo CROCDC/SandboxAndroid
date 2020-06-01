@@ -162,4 +162,6 @@ dependencies {
 
     implementation "androidx.test.uiautomator:uiautomator:$uiautomator"
 
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta6'
+
 }

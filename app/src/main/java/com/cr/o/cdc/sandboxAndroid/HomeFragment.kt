@@ -41,6 +41,9 @@ class HomeFragment : Fragment() {
         binding.btnDownDetector.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_sitesListFragment)
         }
+        binding.btnMotionLayout.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_motionLayoutSelectorFragment)
+        }
         return binding.root
     }
 }

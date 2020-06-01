@@ -40,4 +40,9 @@
     <string name="test_site">Test Site</string>
     <string name="success_in_test_of">Success in test of %1$s</string>
     <string name="error_in_test_with_code">Success in test of %1$d</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="space_rocket">Space Rocket</string>
+    <string name="launch">Launch</string>
+    <string name="motion_layout">Motion Layout</string>
 </resources>
