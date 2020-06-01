@@ -19,13 +19,13 @@ class BitbucketAuthServiceTest : EndpointTest() {
 
     @Test
     fun login() {
-        val keyAndSecret = "HsRFzLz7NGbaYg2YRs:AccxNmY67CApPPYQ3zV7SF46vU6bYN6J"
+        val keyAndSecret = "Dygmwu3JVVdy5Cu626:bpcfKEGnzYqKPRLhuPVkaAuz4ArQHD6z"
 
         val response = getValue(
             service.login(
                 "Basic ${Base64.getEncoder().encodeToString(keyAndSecret.toByteArray())}",
                 MultipartBody.Builder().setType(MultipartBody.FORM)
-                    .addFormDataPart("username", "CajaDeArenaTests")
+                    .addFormDataPart("username", "CR_O_CDC")
                     .addFormDataPart("password", "Monroe4500")
                     .addFormDataPart("grant_type", "password")
                     .build()

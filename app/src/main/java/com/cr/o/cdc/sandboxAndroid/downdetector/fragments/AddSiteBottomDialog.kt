@@ -9,8 +9,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.sandboxAndroid.databinding.BottomDialogAddSiteBinding
 import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
-import com.cr.o.cdc.sandboxAndroid.downdetector.utils.formatToString
 import com.cr.o.cdc.sandboxAndroid.downdetector.vm.AddSiteViewModel
+import com.cr.o.cdc.sandboxAndroid.formatToString
 import com.cr.o.cdc.sandboxAndroid.getInput
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import javax.inject.Inject

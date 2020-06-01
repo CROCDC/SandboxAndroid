@@ -32,6 +32,12 @@
         <action
             android:id="@+id/action_homeFragment_to_sitesListFragment"
             app:destination="@id/sitesListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_workspacesFragment"
+            app:destination="@id/workspacesFragment" />
     </fragment>
     <fragment
         android:id="@+id/pokemonFragment"
@@ -112,4 +118,20 @@
         android:id="@+id/sitesListFragment"
         android:name="com.cr.o.cdc.sandboxAndroid.downdetector.fragments.SitesListFragment"
         tools:layout="@layout/fragment_sites_list" />
+    <fragment
+        android:id="@+id/workspacesFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.bitbucket.ui.WorkspacesFragment"
+        tools:layout="@layout/fragment_workspaces">
+        <action
+            android:id="@+id/action_workspacesFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.bitbucket.ui.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_workspacesFragment"
+            app:destination="@id/workspacesFragment" />
+    </fragment>
 </navigation>

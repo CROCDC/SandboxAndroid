@@ -73,8 +73,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="@string/down_detector"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_bitbucket"
             app:layout_constraintTop_toBottomOf="@id/btn_whatsapp_utils" />
+
+        <Button
+            android:id="@+id/btn_bitbucket"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/bitbucket"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_down_detector" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

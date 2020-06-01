@@ -1,6 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.bitbucket.di
 
 import androidx.lifecycle.ViewModel
+import com.cr.o.cdc.sandboxAndroid.bitbucket.vm.LoginViewModel
 import com.cr.o.cdc.sandboxAndroid.bitbucket.vm.WorkspacesViewModel
 import com.cr.o.cdc.sandboxAndroid.di.ViewModelKey
 import dagger.Binds
@@ -15,4 +16,8 @@ abstract class ViewModelModuleBitbucket {
     @ViewModelKey(WorkspacesViewModel::class)
     abstract fun bindWorkspacesViewModel(workspacesViewModel: WorkspacesViewModel): ViewModel
 
+    @Binds
+    @IntoMap
+    @ViewModelKey(LoginViewModel::class)
+    abstract fun bindLoginViewModel(loginViewModel: LoginViewModel): ViewModel
 }

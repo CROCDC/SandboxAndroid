@@ -40,11 +40,13 @@
     <string name="test_site">Test Site</string>
     <string name="success_in_test_of">Success in test of %1$s</string>
     <string name="error_in_test_with_code">Success in test of %1$d</string>
-    <string name="save">Save</string>
     <string name="login">Login</string>
     <string name="key">Key</string>
     <string name="secret">Secret</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="workspaces">Workspaces</string>
+    <string name="bitbucket">Bitbucket</string>
+    <string name="error">Cuchame una cosita, toma nota aca hubo un error. Pero no se si fuiste vos yo o el server, asi que primero revisa los inputs y si no es eso pegame un llamado, disculpa las molestias !!!</string>
+    <string name="logout">Logout</string>
 </resources>

@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
+import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.bitbucket.vm.WorkspacesViewModel
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentWorkspacesBinding
 import com.cr.o.cdc.sandboxAndroid.di.Injectable
@@ -29,12 +31,6 @@ class WorkspacesFragment : Fragment() {
     ): View? {
         binding = FragmentWorkspacesBinding.inflate(inflater, container, false)
 
-        return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
         viewModel =
             ViewModelProviders.of(this, viewModelFactory).get(WorkspacesViewModel::class.java)
 
@@ -43,5 +39,13 @@ class WorkspacesFragment : Fragment() {
         viewModel.workspaces.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it.data)
         })
+
+        binding.btnLogout.setOnClickListener {
+            viewModel.logout()
+            findNavController().navigate(R.id.action_workspacesFragment_to_loginFragment)
+        }
+
+        return binding.root
     }
+
 }

@@ -3,6 +3,7 @@ package com.cr.o.cdc.sandboxAndroid.utils
 import android.content.SharedPreferences
 
 class DummySharedPreferences(private val accessToken: String) : SharedPreferences {
+
     override fun contains(key: String?): Boolean {
         TODO("Not yet implemented")
     }

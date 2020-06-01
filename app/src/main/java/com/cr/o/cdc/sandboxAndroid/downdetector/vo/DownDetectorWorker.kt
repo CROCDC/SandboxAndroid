@@ -7,9 +7,9 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.SandBoxApp
+import com.cr.o.cdc.sandboxAndroid.createNotification
 import com.cr.o.cdc.sandboxAndroid.downdetector.model.PingResponse
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesRepository
-import com.cr.o.cdc.sandboxAndroid.downdetector.utils.createNotification
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 

@@ -25,6 +25,7 @@ import javax.inject.Singleton
         ServiceModule::class,
         WorkerModule::class,
         ViewModelModule::class,
+        FragmentBuildersModule::class,
         FragmentBuildersModuleBitbucket::class,
         FragmentBuildersModuleCoronavirus::class,
         FragmentBuildersModuleWhatsappUtils::class,
