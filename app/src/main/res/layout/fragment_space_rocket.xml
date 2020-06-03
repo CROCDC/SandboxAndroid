@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/fragment_space_rocket_scene"
-    app:showPaths="true">
+    app:layoutDescription="@xml/fragment_space_rocket_scene">
 
     <ImageView
         android:id="@+id/img_moon"
