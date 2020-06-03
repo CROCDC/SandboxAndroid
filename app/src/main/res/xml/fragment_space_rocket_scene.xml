@@ -3,7 +3,6 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
-
         motion:constraintSetEnd="@+id/end_in_moon"
         motion:constraintSetStart="@+id/start"
         motion:duration="5000"
@@ -26,22 +25,22 @@
                 motion:keyPositionType="parentRelative"
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startVertical"
-                motion:percentX="0.25"
-                motion:percentY="0.100" />
+                motion:percentX="0.3"
+                motion:percentY="0.13" />
             <KeyPosition
                 motion:framePosition="60"
                 motion:keyPositionType="parentRelative"
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startHorizontal"
                 motion:percentX="0.506"
-                motion:percentY="0.02" />
+                motion:percentY="0.022" />
             <KeyPosition
                 motion:framePosition="80"
                 motion:keyPositionType="parentRelative"
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startVertical"
-                motion:percentX="0.741"
-                motion:percentY="0.115" />
+                motion:percentX="0.71"
+                motion:percentY="0.131" />
         </KeyFrameSet>
     </Transition>
 
