@@ -25,7 +25,7 @@
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startVertical"
                 motion:percentX="1.114"
-                motion:percentY="-0.166" />
+                motion:percentY="-0.143" />
             <KeyPosition
                 motion:framePosition="60"
                 motion:keyPositionType="pathRelative"
@@ -38,7 +38,7 @@
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startVertical"
                 motion:percentX="1.114"
-                motion:percentY="0.166" />
+                motion:percentY="0.143" />
         </KeyFrameSet>
     </Transition>
 
