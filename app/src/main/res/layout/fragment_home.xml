@@ -82,7 +82,7 @@
             android:layout_height="0dp"
             android:text="@string/motion_layout"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_down_detector"></Button>
+            app:layout_constraintTop_toBottomOf="@id/btn_down_detector" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

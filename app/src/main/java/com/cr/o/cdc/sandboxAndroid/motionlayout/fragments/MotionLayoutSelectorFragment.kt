@@ -28,5 +28,4 @@ class MotionLayoutSelectorFragment : Fragment() {
 
         return binding.root
     }
-
 }

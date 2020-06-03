@@ -19,7 +19,7 @@ android {
     androidExtensions {
         experimental = true
     }
-    dataBinding.enabled = true
+    buildFeatures.dataBinding = true
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -33,12 +33,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                includeCompileClasspath true
-            }
-        }
     }
     buildTypes {
         release {
