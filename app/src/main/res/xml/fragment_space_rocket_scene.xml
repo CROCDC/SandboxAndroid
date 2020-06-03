@@ -3,13 +3,46 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
+
         motion:constraintSetEnd="@+id/end_in_moon"
         motion:constraintSetStart="@+id/start"
-        motion:duration="2000"
-        motion:motionInterpolator="linear">
+        motion:duration="5000"
+        motion:motionInterpolator="linear"
+        motion:pathMotionArc="startVertical">
         <OnClick
             motion:clickAction="transitionToEnd"
             motion:targetId="@id/btn_launch" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="20"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/img_space_rocket"
+                motion:pathMotionArc="startHorizontal"
+                motion:percentX="0.503"
+                motion:percentY="0.212" />
+            <KeyPosition
+                motion:framePosition="40"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/img_space_rocket"
+                motion:pathMotionArc="startVertical"
+                motion:percentX="0.25"
+                motion:percentY="0.100" />
+            <KeyPosition
+                motion:framePosition="60"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/img_space_rocket"
+                motion:pathMotionArc="startHorizontal"
+                motion:percentX="0.506"
+                motion:percentY="0.02" />
+            <KeyPosition
+                motion:framePosition="80"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/img_space_rocket"
+                motion:pathMotionArc="startVertical"
+                motion:percentX="0.741"
+                motion:percentY="0.115" />
+        </KeyFrameSet>
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
@@ -27,28 +60,11 @@
             android:id="@+id/img_space_rocket"
             android:layout_width="64dp"
             android:layout_height="64dp"
+            motion:layout_constraintBottom_toBottomOf="@id/img_moon"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="@id/img_moon" />
     </ConstraintSet>
 
-    <Transition
-        motion:autoTransition="animateToEnd"
-        motion:constraintSetEnd="@id/end_circle"
-        motion:constraintSetStart="@id/end_in_moon"
-        motion:duration="2000"
-        motion:pathMotionArc="startHorizontal">
-
-    </Transition>
-
-    <ConstraintSet android:id="@+id/end_circle">
-        <Constraint
-            android:id="@+id/img_space_rocket"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            motion:layout_constraintBottom_toBottomOf="@id/img_moon"
-            motion:layout_constraintEnd_toStartOf="@id/img_moon"
-            motion:layout_constraintTop_toTopOf="@id/img_moon" />
-    </ConstraintSet>
 
 </MotionScene>
