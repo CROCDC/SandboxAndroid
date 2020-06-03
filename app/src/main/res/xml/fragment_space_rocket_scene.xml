@@ -13,12 +13,30 @@
             motion:targetId="@id/btn_launch" />
 
         <KeyFrameSet>
+            <KeyAttribute
+                android:rotation="0"
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="15"
+                motion:motionTarget="@+id/img_space_rocket" />
+            <KeyAttribute
+                android:rotation="-60"
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="20"
+                motion:motionTarget="@+id/img_space_rocket" />
             <KeyPosition
                 motion:framePosition="20"
                 motion:keyPositionType="pathRelative"
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startHorizontal"
                 motion:percentX="0.997" />
+            <KeyAttribute
+                android:rotation="20"
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="40"
+                motion:motionTarget="@+id/img_space_rocket" />
             <KeyPosition
                 motion:framePosition="40"
                 motion:keyPositionType="pathRelative"
@@ -26,12 +44,24 @@
                 motion:pathMotionArc="startVertical"
                 motion:percentX="1.114"
                 motion:percentY="-0.143" />
+            <KeyAttribute
+                android:rotation="80"
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="60"
+                motion:motionTarget="@+id/img_space_rocket" />
             <KeyPosition
                 motion:framePosition="60"
                 motion:keyPositionType="pathRelative"
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startHorizontal"
                 motion:percentX="1.257" />
+            <KeyAttribute
+                android:rotation="160"
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="80"
+                motion:motionTarget="@+id/img_space_rocket" />
             <KeyPosition
                 motion:framePosition="80"
                 motion:keyPositionType="pathRelative"
@@ -39,6 +69,12 @@
                 motion:pathMotionArc="startVertical"
                 motion:percentX="1.114"
                 motion:percentY="0.143" />
+            <KeyAttribute
+                android:rotation="270"
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/img_space_rocket" />
         </KeyFrameSet>
     </Transition>
 
