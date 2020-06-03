@@ -9,38 +9,36 @@
         motion:motionInterpolator="linear"
         motion:pathMotionArc="startVertical">
         <OnClick
-            motion:clickAction="transitionToEnd"
+            motion:clickAction="toggle"
             motion:targetId="@id/btn_launch" />
 
         <KeyFrameSet>
             <KeyPosition
                 motion:framePosition="20"
-                motion:keyPositionType="parentRelative"
+                motion:keyPositionType="pathRelative"
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startHorizontal"
-                motion:percentX="0.503"
-                motion:percentY="0.212" />
+                motion:percentX="0.997" />
             <KeyPosition
                 motion:framePosition="40"
-                motion:keyPositionType="parentRelative"
+                motion:keyPositionType="pathRelative"
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startVertical"
-                motion:percentX="0.3"
-                motion:percentY="0.13" />
+                motion:percentX="1.114"
+                motion:percentY="-0.166" />
             <KeyPosition
                 motion:framePosition="60"
-                motion:keyPositionType="parentRelative"
+                motion:keyPositionType="pathRelative"
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startHorizontal"
-                motion:percentX="0.506"
-                motion:percentY="0.022" />
+                motion:percentX="1.257" />
             <KeyPosition
                 motion:framePosition="80"
-                motion:keyPositionType="parentRelative"
+                motion:keyPositionType="pathRelative"
                 motion:motionTarget="@+id/img_space_rocket"
                 motion:pathMotionArc="startVertical"
-                motion:percentX="0.71"
-                motion:percentY="0.131" />
+                motion:percentX="1.114"
+                motion:percentY="0.166" />
         </KeyFrameSet>
     </Transition>
 
