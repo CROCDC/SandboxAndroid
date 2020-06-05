@@ -17,7 +17,7 @@
                 android:rotation="0"
                 android:scaleX="1"
                 android:scaleY="1"
-                motion:framePosition="15"
+                motion:framePosition="16"
                 motion:motionTarget="@+id/img_space_rocket" />
             <KeyAttribute
                 android:rotation="-60"
@@ -98,6 +98,5 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="@id/img_moon" />
     </ConstraintSet>
-
 
 </MotionScene>
