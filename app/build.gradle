@@ -94,8 +94,8 @@ dependencies {
     androidTestImplementation "androidx.test:core:$androidx_test"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso"
-    implementation "androidx.test.espresso:espresso-accessibility:$espresso"
-    implementation "androidx.test.espresso:espresso-intents:$espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-accessibility:$espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$espresso"
     androidTestImplementation "io.mockk:mockk-android:$mockk"
     debugImplementation "androidx.fragment:fragment-testing:$fragment"
 
