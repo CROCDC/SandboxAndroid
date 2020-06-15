@@ -8,35 +8,37 @@ class SitesDataSourceTest {
 
     private val dataSource = SitesDataSource()
 
+    //TODO
+
     @Test
     fun `assertPingReturnPingResponsePingMalformedURLExceptionWith www palabras com ar`() {
         assertEquals(
-            dataSource.ping("www.palabras.com.ar")::class,
-            PingResponse.PingError::class
+            PingResponse.PingError::class,
+            dataSource.ping("www.palabras.com.ar")::class
         )
     }
 
     @Test
     fun `assertPingReturnPingResponsePingIOException https www sdsdsdsd com ar`() {
         assertEquals(
-            dataSource.ping("https://www.sdsdsdsd.com.ar")::class,
-            PingResponse.PingError::class
+            PingResponse.PingError::class,
+            dataSource.ping("https://www.sdsdsdsd.com.ar")::class
         )
     }
 
     @Test
     fun `assertPingReturnPingResponsePingSuccess https api prod wabicasa com graphiql`() {
         assertEquals(
-            dataSource.ping("https://api.prod.wabicasa.com/graphiql")::class,
-            PingResponse.PingSuccess::class
+            PingResponse.PingSuccess::class,
+            dataSource.ping("https://api.prod.wabicasa.com/graphiql")::class
         )
     }
 
     @Test
     fun `assertPingReturnPingResponsePingError https api qa yopago app graphiql`() {
         assertEquals(
-            dataSource.ping("https://api.qa.yopago.app/graphiql")::class,
-            PingResponse.PingError::class
+            PingResponse.PingError::class,
+            dataSource.ping("https://api.qa.yopago.app/graphiql")::class
         )
     }
 }
