@@ -6,25 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentSitesListBinding
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.downdetector.model.PingResponse
 import com.cr.o.cdc.sandboxAndroid.downdetector.ui.SiteAdapter
 import com.cr.o.cdc.sandboxAndroid.downdetector.vm.SitesListViewModel
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SitesListFragment : Fragment(), SiteAdapter.SiteAdapterListener {
 
     private lateinit var binding: FragmentSitesListBinding
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    private lateinit var viewModel: SitesListViewModel
+    private val viewModel: SitesListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,9 +39,6 @@ class SitesListFragment : Fragment(), SiteAdapter.SiteAdapterListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        viewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(SitesListViewModel::class.java)
 
         val adapter = SiteAdapter(this)
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.cr.o.cdc.sandboxAndroid.R
@@ -16,7 +17,7 @@ class WhatsappBotFragment : Fragment() {
 
     private lateinit var binding: FragmentWhatsappBotBinding
 
-    private lateinit var viewModel: WhatsappBotViewModel
+    private val viewModel: WhatsappBotViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

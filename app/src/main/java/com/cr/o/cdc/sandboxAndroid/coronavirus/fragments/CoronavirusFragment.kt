@@ -5,16 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.coronavirus.ui.CountryStatsAdapter
 import com.cr.o.cdc.sandboxAndroid.coronavirus.vm.CoronavirusViewModel
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentCoronavirusBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CoronavirusFragment : Fragment() {
 
-    private lateinit var viewModel: CoronavirusViewModel
+    private val viewModel: CoronavirusViewModel by viewModels()
 
     private lateinit var binding: FragmentCoronavirusBinding
 

@@ -5,8 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.rnc.model.Place
 import com.cr.o.cdc.sandboxAndroid.rnc.vm.RNCViewModel
@@ -16,14 +15,10 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.clustering.ClusterManager
-import javax.inject.Inject
 
 class RNCFragment : Fragment(), OnMapReadyCallback {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    private lateinit var viewModel: RNCViewModel
+    private val viewModel: RNCViewModel by viewModels()
 
     private lateinit var clusterManager: ClusterManager<Place>
 

@@ -7,17 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.cr.o.cdc.networking.StatusResult
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentRecipesBinding
 import com.cr.o.cdc.sandboxAndroid.pagination.ui.RecipeAdapter
 import com.cr.o.cdc.sandboxAndroid.pagination.vm.RecipeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RecipesFragment : Fragment() {
 
     private lateinit var binding: FragmentRecipesBinding
 
-    private lateinit var viewModel: RecipeViewModel
+    private val viewModel: RecipeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

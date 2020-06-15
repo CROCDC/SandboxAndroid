@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentAddWhatsappMessageBotBinding
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageBot
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.vm.AddWhatsappMessageBotViewModel
 
 class AddWhatsappMessageBotFragment : Fragment() {
 
-    private lateinit var viewModel: AddWhatsappMessageBotViewModel
+    private val viewModel: AddWhatsappMessageBotViewModel by viewModels()
 
     private lateinit var binding: FragmentAddWhatsappMessageBotBinding
 

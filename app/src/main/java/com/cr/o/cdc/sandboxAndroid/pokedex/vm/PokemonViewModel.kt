@@ -1,10 +1,13 @@
 package com.cr.o.cdc.sandboxAndroid.pokedex.vm
 
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.cr.o.cdc.networking.NetworkResource
+import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.Pokemon
 import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonRepository
-import javax.inject.Inject
 
-class PokemonViewModel @Inject constructor(repository: PokemonRepository) : ViewModel() {
+class PokemonViewModel @ViewModelInject constructor(repository: PokemonRepository) : ViewModel() {
 
-    val pokemons = repository.pokemons(100)
+    val pokemons: LiveData<NetworkResource<List<Pokemon>>> = repository.pokemons(100)
 }

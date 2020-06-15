@@ -1,14 +1,15 @@
 package com.cr.o.cdc.sandboxAndroid.coronavirus.vm
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusRepository
-import javax.inject.Inject
 
-class SearchViewModel @Inject constructor(repository: CoronavirusRepository) : ViewModel() {
+class SearchViewModel @ViewModelInject constructor(repository: CoronavirusRepository) :
+    ViewModel() {
 
     private val search: MutableLiveData<String> = MutableLiveData<String>()
 

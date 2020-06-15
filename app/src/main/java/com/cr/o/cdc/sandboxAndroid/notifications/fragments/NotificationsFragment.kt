@@ -13,18 +13,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentNotificationsBinding
 import com.cr.o.cdc.sandboxAndroid.notifications.vm.NotificationsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class NotificationsFragment : Fragment() {
 
     private lateinit var broadcastReceiver: BroadcastReceiver
 
     private lateinit var binding: FragmentNotificationsBinding
 
-    private lateinit var viewModel: NotificationsViewModel
+    private val viewModel: NotificationsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

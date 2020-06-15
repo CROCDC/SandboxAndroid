@@ -1,11 +1,13 @@
 package com.cr.o.cdc.sandboxAndroid.whatsapputils.vm
 
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessage
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.repos.WhatsappMessagesRepository
-import javax.inject.Inject
 
-class WhatsappMessagesViewModel @Inject constructor(repository: WhatsappMessagesRepository) :
+class WhatsappMessagesViewModel @ViewModelInject constructor(repository: WhatsappMessagesRepository) :
     ViewModel() {
 
-    val whatsappMessages = repository.loadWhatsappMessages()
+    val whatsappMessages: LiveData<List<WhatsappMessage>> = repository.loadWhatsappMessages()
 }

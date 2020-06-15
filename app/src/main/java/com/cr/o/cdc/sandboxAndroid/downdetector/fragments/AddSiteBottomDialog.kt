@@ -4,18 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.cr.o.cdc.sandboxAndroid.databinding.BottomDialogAddSiteBinding
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.downdetector.utils.formatToString
 import com.cr.o.cdc.sandboxAndroid.downdetector.vm.AddSiteViewModel
 import com.cr.o.cdc.sandboxAndroid.getInput
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddSiteBottomDialog : BottomSheetDialogFragment() {
 
     private lateinit var binding: BottomDialogAddSiteBinding
 
-    private lateinit var viewModel: AddSiteViewModel
+    private val viewModel: AddSiteViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
