@@ -11,14 +11,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentSitesListBinding
-import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.downdetector.model.PingResponse
 import com.cr.o.cdc.sandboxAndroid.downdetector.ui.SiteAdapter
 import com.cr.o.cdc.sandboxAndroid.downdetector.vm.SitesListViewModel
 import javax.inject.Inject
 
-@Injectable
 class SitesListFragment : Fragment(), SiteAdapter.SiteAdapterListener {
 
     private lateinit var binding: FragmentSitesListBinding

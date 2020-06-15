@@ -6,23 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentWhatsappBotBinding
-import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.ui.WhatsappMessagesBotAdapter
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.vm.WhatsappBotViewModel
-import javax.inject.Inject
 
-@Injectable
 class WhatsappBotFragment : Fragment() {
 
     private lateinit var binding: FragmentWhatsappBotBinding
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var viewModel: WhatsappBotViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,9 +30,8 @@ class WhatsappBotFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val vm = ViewModelProviders.of(this, viewModelFactory).get(WhatsappBotViewModel::class.java)
 
-        vm.isEnabled.observe(viewLifecycleOwner, Observer {
+        viewModel.isEnabled.observe(viewLifecycleOwner, Observer {
             binding.btnWhatsappBot.setText(
                 if (it) {
                     R.string.active
@@ -50,12 +43,12 @@ class WhatsappBotFragment : Fragment() {
 
         val adapter = WhatsappMessagesBotAdapter()
         binding.recyclerWhatsappBotMessages.adapter = adapter
-        vm.whatsappBotMessages.observe(viewLifecycleOwner, Observer {
+        viewModel.whatsappBotMessages.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
 
         binding.btnWhatsappBot.setOnClickListener {
-            vm.modify()
+            viewModel.modify()
         }
 
         binding.btnAdd.setOnClickListener {

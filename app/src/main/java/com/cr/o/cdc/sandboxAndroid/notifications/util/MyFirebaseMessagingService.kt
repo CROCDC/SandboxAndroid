@@ -9,18 +9,12 @@ import com.google.firebase.messaging.RemoteMessage
 import com.pubnub.api.PNConfiguration
 import com.pubnub.api.PubNub
 import com.pubnub.api.enums.PNPushType
-import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     @Inject
     lateinit var pushToken: PushToken
-
-    override fun onCreate() {
-        super.onCreate()
-        AndroidInjection.inject(this)
-    }
 
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)

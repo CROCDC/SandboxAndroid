@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import com.cr.o.cdc.sandboxAndroid.rnc.model.Place
 import com.cr.o.cdc.sandboxAndroid.rnc.vm.RNCViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -19,7 +18,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.clustering.ClusterManager
 import javax.inject.Inject
 
-@Injectable
 class RNCFragment : Fragment(), OnMapReadyCallback {
 
     @Inject
@@ -47,7 +45,6 @@ class RNCFragment : Fragment(), OnMapReadyCallback {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(RNCViewModel::class.java)
 
         (childFragmentManager.fragments.find {
             it::class.java == SupportMapFragment::class.java

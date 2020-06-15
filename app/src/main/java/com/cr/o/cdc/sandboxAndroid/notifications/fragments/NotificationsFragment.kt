@@ -14,15 +14,10 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentNotificationsBinding
-import com.cr.o.cdc.sandboxAndroid.di.Injectable
 import com.cr.o.cdc.sandboxAndroid.notifications.vm.NotificationsViewModel
-import javax.inject.Inject
 
-@Injectable
 class NotificationsFragment : Fragment() {
 
     private lateinit var broadcastReceiver: BroadcastReceiver
@@ -30,9 +25,6 @@ class NotificationsFragment : Fragment() {
     private lateinit var binding: FragmentNotificationsBinding
 
     private lateinit var viewModel: NotificationsViewModel
-
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,8 +38,6 @@ class NotificationsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(NotificationsViewModel::class.java)
 
         broadcastReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {

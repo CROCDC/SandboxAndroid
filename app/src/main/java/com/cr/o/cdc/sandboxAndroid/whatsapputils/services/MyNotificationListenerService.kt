@@ -9,7 +9,6 @@ import androidx.core.app.RemoteInput
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessage
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.repos.WhatsappMessagesRepository
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.vo.WhatsappConfig
-import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 class MyNotificationListenerService : NotificationListenerService() {
@@ -19,11 +18,6 @@ class MyNotificationListenerService : NotificationListenerService() {
 
     @Inject
     lateinit var whatsappConfig: WhatsappConfig
-
-    override fun onCreate() {
-        super.onCreate()
-        AndroidInjection.inject(this)
-    }
 
     override fun onNotificationPosted(sbn: StatusBarNotification) {
         super.onNotificationPosted(sbn)

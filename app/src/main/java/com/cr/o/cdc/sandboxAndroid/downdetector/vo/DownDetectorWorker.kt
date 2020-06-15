@@ -10,15 +10,10 @@ import com.cr.o.cdc.sandboxAndroid.SandBoxApp
 import com.cr.o.cdc.sandboxAndroid.downdetector.model.PingResponse
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesRepository
 import com.cr.o.cdc.sandboxAndroid.downdetector.utils.createNotification
-import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
 class DownDetectorWorker(context: Context, workerParams: WorkerParameters) :
     Worker(context, workerParams) {
-
-    init {
-        (context.applicationContext as HasAndroidInjector).androidInjector().inject(this)
-    }
 
     @Inject
     lateinit var repository: SitesRepository
