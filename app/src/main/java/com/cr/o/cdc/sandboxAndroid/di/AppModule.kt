@@ -37,14 +37,6 @@ class AppModule {
         .addCallAdapterFactory(LiveDataCallAdapterFactory())
 
     @Provides
-    fun provideCoronavirusService(
-        retrofitBuilder: Retrofit.Builder,
-        @ApplicationContext appContext: Context
-    ): CoronavirusService =
-        retrofitBuilder.baseUrl(appContext.resources.getString(R.string.coronavirus_api)).build()
-            .create(CoronavirusService::class.java)
-
-    @Provides
     fun provideRecipeService(
         retrofitBuilder: Retrofit.Builder,
         @ApplicationContext appContext: Context

@@ -1,55 +1,34 @@
 package com.cr.o.cdc.sandboxAndroid.coronavirus.fragments
 
-import androidx.fragment.app.testing.launchFragmentInContainer
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import com.cr.o.cdc.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
-import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
-import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
-import com.cr.o.cdc.sandboxAndroid.di.AppModule
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
+import com.cr.o.cdc.sandboxAndroid.utils.FragmentTest
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertTrue
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
-import retrofit2.Response
 
-class CoronavirusFragmentTest {
+@UninstallModules(CoronavirusModule::class)
+@HiltAndroidTest
+class CoronavirusFragmentTest : FragmentTest() {
 
-    // todo problem with repository
+    @get:Rule
+    var hiltRule = HiltAndroidRule(this)
+
     @Before
     fun init() {
-        AppModule.setCoronavirusService(object : CoronavirusService {
-            override fun getCasesByCountry(): LiveData<NetworkResponse<CasesByCountry>> =
-                MutableLiveData(
-                    NetworkResponse.create(
-                        Response.success(
-                            CasesByCountry(
-                                listOf(
-                                    CountryStat(
-                                        "country1",
-                                        "100",
-                                        "100"
-                                    ),
-                                    CountryStat(
-                                        "country2",
-                                        "100",
-                                        "100"
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-        })
+        hiltRule.inject()
     }
 
     @Test
     fun testRecyclerView() {
-        launchFragmentInContainer<CoronavirusFragment>()
+        launchFragmentInHiltContainer<CoronavirusFragment>()
 
         Thread.sleep(300)
 

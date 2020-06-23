@@ -34,7 +34,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.cr.o.cdc.sandboxAndroid.CustomTestRunner"
     }
     buildTypes {
         release {
@@ -64,7 +64,11 @@ android {
 
     }
 
+} 
+hilt {
+    enableTransformForLocalTests = true
 }
+
 apollo {
     generateKotlinModels.set(true)
 }
@@ -148,6 +152,7 @@ dependencies {
 
     implementation "com.squareup.picasso:picasso:$picasso"
     implementation "androidx.work:work-runtime-ktx:$work"
+    androidTestImplementation "androidx.work:work-testing:$work"
 
     implementation "androidx.test.uiautomator:uiautomator:$uiautomator"
 
@@ -158,5 +163,11 @@ dependencies {
 
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
     kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha01'
+
+    implementation 'androidx.hilt:hilt-work:1.0.0-alpha01'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha01'
+
+    androidTestImplementation "com.google.dagger:hilt-android-testing:2.28-alpha"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:2.28-alpha"
 
 }
