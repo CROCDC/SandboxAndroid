@@ -27,7 +27,7 @@ class ExtensionsTest {
     }
 
     @Test
-    fun mapGetValueIfNotEquals__with_value_null() {
+    fun mapGetValueIfNotEquals_with_value_null() {
         assertEquals(1, getCountOfChangesLiveData(mutableLiveDataNull.mapGetValueIfNotEquals {
             "$it camilo"
         }, 5) {
@@ -67,6 +67,44 @@ class ExtensionsTest {
             }, 5) {
                 mutableLiveDataNotNull.value = "hola"
                 mutableLiveDataNotNull.value = "hola"
+            })
+    }
+
+    @Test
+    fun mapGetValueIfNotEqualsAndNotNull_with_value_not_null_and_null() {
+        assertEquals(
+            1,
+            getCountOfChangesLiveData(mutableLiveDataNotNull.mapGetValueIfNotEqualsAndNotNull {
+                "$it camilo"
+            }, 5) {
+                mutableLiveDataNotNull.value = "hola"
+                mutableLiveDataNotNull.value = null
+            })
+    }
+
+    @Test
+    fun mapGetValueIfNotEqualsAndNotNull_with_value_not_null_and_null_and_not_null_same_values() {
+        assertEquals(
+            1,
+            getCountOfChangesLiveData(mutableLiveDataNotNull.mapGetValueIfNotEqualsAndNotNull {
+                "$it camilo"
+            }, 5) {
+                mutableLiveDataNotNull.value = "hola"
+                mutableLiveDataNotNull.value = null
+                mutableLiveDataNotNull.value = "hola"
+            })
+    }
+
+    @Test
+    fun mapGetValueIfNotEqualsAndNotNull_with_value_not_null_and_null_and_not_null_diferent_values() {
+        assertEquals(
+            2,
+            getCountOfChangesLiveData(mutableLiveDataNotNull.mapGetValueIfNotEqualsAndNotNull {
+                "$it camilo"
+            }, 5) {
+                mutableLiveDataNotNull.value = "hola"
+                mutableLiveDataNotNull.value = null
+                mutableLiveDataNotNull.value = "hola 2"
             })
     }
 
