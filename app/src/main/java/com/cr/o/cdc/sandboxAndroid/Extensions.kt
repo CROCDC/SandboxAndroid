@@ -5,7 +5,9 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import com.apollographql.apollo.ApolloCall
 import com.apollographql.apollo.ApolloQueryCall
 import com.apollographql.apollo.api.Response
@@ -46,3 +48,24 @@ fun ImageView.loadFromUrl(
 }
 
 fun EditText.getInput(): String = this.text.toString()
+
+fun <X, Y> LiveData<X>.map(body: (X) -> Y): LiveData<Y> {
+    return Transformations.map(this, body)
+}
+
+fun <X, Y> LiveData<X>.mapGetValueIfNotEqualsAndNotNull(body: (X) -> Y): LiveData<Y> =
+    MediatorLiveData<Y>().apply {
+        this.addSource(this@mapGetValueIfNotEqualsAndNotNull) {
+            setValueIfNotEquals(it?.let(body))
+        }
+    }
+
+fun <T> MutableLiveData<T>.setValueIfNotEquals(newValue: T?) {
+    if (value != newValue) {
+        value = newValue
+    }
+}
+
+fun <X, Y> LiveData<X>.mapGetValueIfNotEquals(body: (X) -> Y): LiveData<Y> {
+    return Transformations.map(Transformations.distinctUntilChanged(this), body)
+}
