@@ -9,9 +9,6 @@ import org.junit.Test
 
 class RatingBrokenOfGsonTest : DBTest() {
 
-    @get:Rule
-    val instantTaskExecutorRule = InstantTaskExecutorRule()
-
     @Test
     fun ratingRoomTestWithValStars() {
         db.ratingDao().save(RatingBrokenOfGson.rate1)
