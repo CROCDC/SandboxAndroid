@@ -7,6 +7,8 @@ abstract class FragmentTest {
 
     @Rule
     @JvmField
-    var disableAnimationsRule =
-        DisableAnimationsRule()
+    var disableAnimationsRule = DisableAnimationsRule()
+
+    val fakeNavController = FakeNavController()
+
 }
