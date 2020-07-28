@@ -20,6 +20,8 @@ abstract class FragmentTest {
     @JvmField
     var disableAnimationsRule = DisableAnimationsRule()
 
+    val fakeNavController = FakeNavController()
+
     inline fun <reified T : Fragment> launchFragmentInHiltContainer(
         fragmentArgs: Bundle? = null,
         @StyleRes themeResId: Int = R.style.FragmentScenarioEmptyFragmentActivityTheme,
@@ -46,4 +48,5 @@ abstract class FragmentTest {
             fragment.action()
         }
     }
+
 }

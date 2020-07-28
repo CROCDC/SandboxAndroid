@@ -57,14 +57,16 @@ fun <X, Y> LiveData<X>.map(body: (X) -> Y): LiveData<Y> {
     return Transformations.map(this, body)
 }
 
-fun <X, Y> LiveData<X>.mapGetValueIfNotEqualsAndNotNull(body: (X) -> Y): LiveData<Y> {
-    val result = MediatorLiveData<Y>()
-    result.addSource(this) { result.setValueIfNotEquals(it?.let(body)) }
-    return result
-}
+fun <X, Y> LiveData<X>.mapGetValueIfNotEqualsAndNotNull(body: (X) -> Y): LiveData<Y> =
+    MediatorLiveData<Y>().apply {
+        this.addSource(this@mapGetValueIfNotEqualsAndNotNull) {
+            it?.let { setValueIfNotEquals(body.invoke(it)) }
+        }
+    }
 
 fun <T> MutableLiveData<T>.setValueIfNotEquals(newValue: T?) {
     if (value != newValue) {
         value = newValue
     }
 }
+
