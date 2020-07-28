@@ -69,5 +69,4 @@ class ExtensionsTest {
                 mutableLiveDataNotNull.value = "hola"
             })
     }
-
 }

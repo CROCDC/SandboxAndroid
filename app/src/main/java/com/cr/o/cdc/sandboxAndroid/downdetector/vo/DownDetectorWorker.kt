@@ -19,7 +19,6 @@ class DownDetectorWorker @WorkerInject constructor(
     private val notificationManager: NotificationManagerCompat
 ) : Worker(context, workerParams) {
 
-
     override fun doWork(): Result {
 
         val address = checkNotNull(inputData.getString(ARG_ADDRESS_SITE))

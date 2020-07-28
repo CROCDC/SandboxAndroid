@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.cr.o.cdc.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
-import com.cr.o.cdc.sandboxAndroid.di.AppModule
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.AppModule
 import com.cr.o.cdc.sandboxAndroid.utils.RepositoryTest
 import com.cr.o.cdc.sharedtest.getValueOfList
 import com.cr.o.cdc.sharedtest.makeRandomInstance

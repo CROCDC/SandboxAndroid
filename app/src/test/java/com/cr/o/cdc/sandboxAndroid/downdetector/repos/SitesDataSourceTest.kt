@@ -8,7 +8,7 @@ class SitesDataSourceTest {
 
     private val dataSource = SitesDataSource()
 
-    //TODO
+    // TODO
 
     @Test
     fun `assertPingReturnPingResponsePingMalformedURLExceptionWith www palabras com ar`() {

@@ -9,10 +9,12 @@ import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.platform.app.InstrumentationRegistry
 import com.cr.o.cdc.sandboxAndroid.MainActivity
 import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
+import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertTrue
 import kotlinx.android.parcel.Parcelize
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -25,6 +27,14 @@ class ParcelingTest {
     @Rule
     @JvmField
     val activityTestRule = IntentsTestRule(MainActivity::class.java, true, false)
+
+    @get:Rule
+    var hiltRule = HiltAndroidRule(this)
+
+    @Before
+    fun init() {
+        hiltRule.inject()
+    }
 
     @Test
     fun parcelingWithAnnotation() {

@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.fake
+package com.cr.o.cdc.sandboxAndroid.coronavirus.fake
 
 import androidx.lifecycle.LiveData
 import com.cr.o.cdc.networking.NetworkResponse
@@ -7,7 +7,6 @@ import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
 
 class FakeCoronavirusService : CoronavirusService {
     override fun getCasesByCountry(): LiveData<NetworkResponse<CasesByCountry>> {
-        return MockFactory.getCasesByCountry().mutableLiveDataInNetworkResponse()
+        return MockFactoryCoronavirus.getCasesByCountry().mutableLiveDataInNetworkResponse()
     }
-
 }

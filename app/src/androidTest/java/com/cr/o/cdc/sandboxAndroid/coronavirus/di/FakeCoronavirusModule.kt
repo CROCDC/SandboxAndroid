@@ -1,17 +1,15 @@
-package com.cr.o.cdc.sandboxAndroid.di
+package com.cr.o.cdc.sandboxAndroid.coronavirus.di
 
 import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
-import com.cr.o.cdc.sandboxAndroid.fake.FakeCoronavirusService
-import dagger.Binds
+import com.cr.o.cdc.sandboxAndroid.coronavirus.fake.FakeCoronavirusService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
-import javax.inject.Singleton
 
 @InstallIn(ApplicationComponent::class)
 @Module
-object FakeServiceModule {
+object FakeCoronavirusModule {
 
     @Provides
     fun provideCoronavirusService(): CoronavirusService = FakeCoronavirusService()

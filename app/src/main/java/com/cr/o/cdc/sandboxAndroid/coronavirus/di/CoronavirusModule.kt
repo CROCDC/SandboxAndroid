@@ -23,5 +23,4 @@ class CoronavirusModule {
     ): CoronavirusService =
         retrofitBuilder.baseUrl(appContext.resources.getString(R.string.coronavirus_api)).build()
             .create(CoronavirusService::class.java)
-
 }

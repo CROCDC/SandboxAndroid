@@ -22,7 +22,6 @@ import org.junit.Test
 @UninstallModules(CoronavirusModule::class)
 class WhyUseEvents {
 
-
     @Test
     fun whyInFragments() {
         val scenario = launchFragment<MainFragment>()
@@ -36,7 +35,6 @@ class WhyUseEvents {
         scenario.onFragment {
             assertEquals(2, it.viewModel.changes)
         }
-
     }
 
     class MainFragment : Fragment() {
@@ -46,7 +44,6 @@ class WhyUseEvents {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             viewModel = ViewModelProviders.of(this, null).get(DummyViewModel::class.java)
-
         }
 
         override fun onCreateView(
@@ -85,7 +82,6 @@ class WhyUseEvents {
             super.onCreate(savedInstanceState)
             viewModel =
                 ViewModelProviders.of(parentFragment!!, null).get(DummyViewModel::class.java)
-
         }
 
         override fun onCreateView(

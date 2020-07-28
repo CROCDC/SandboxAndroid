@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.di
+package com.cr.o.cdc.sandboxAndroid.coronavirus.di
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -9,7 +9,6 @@ import com.apollographql.apollo.ApolloClient
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
-import com.cr.o.cdc.sandboxAndroid.coronavirus.repos.CoronavirusService
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSource
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
