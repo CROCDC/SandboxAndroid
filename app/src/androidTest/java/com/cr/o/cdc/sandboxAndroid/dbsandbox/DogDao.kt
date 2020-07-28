@@ -19,4 +19,7 @@ interface DogDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun save(dog: Dog)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun saveAll(dogs: List<Dog>)
 }

@@ -21,6 +21,31 @@ class DbSandbox : DBTest() {
     }
 
     @Test
+    fun saveSameValueList() {
+        val dogs = listOf(Dog("Leo"), Dog("Enzo"))
+        dao.saveAll(dogs)
+
+        val count = getCountOfChangesLiveData(dao.loadAll(), 5) {
+            dao.saveAll(dogs)
+        }
+
+        assertEquals(2, count)
+    }
+
+    /*when save empty list in room, the livedata not change */
+    @Test
+    fun saveListEmpty() {
+        val dogs = listOf(Dog("Leo"), Dog("Enzo"))
+        dao.saveAll(dogs)
+
+        val count = getCountOfChangesLiveData(dao.loadAll(), 5) {
+            dao.saveAll(listOf())
+        }
+
+        assertEquals(1, count)
+    }
+
+    @Test
     fun saveSameValueInTransaction() {
         val dog = Dog("Leo")
         dao.save(dog)

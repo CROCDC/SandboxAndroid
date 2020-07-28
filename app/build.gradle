@@ -89,6 +89,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$recyclerview"
     implementation "androidx.fragment:fragment-ktx:$fragment"
 
+    androidTestImplementation "androidx.test.ext:truth:$androidx_test"
     androidTestImplementation "androidx.test:runner:$androidx_test"
     androidTestImplementation "androidx.test:rules:$androidx_test"
     androidTestImplementation "androidx.test:core:$androidx_test"
