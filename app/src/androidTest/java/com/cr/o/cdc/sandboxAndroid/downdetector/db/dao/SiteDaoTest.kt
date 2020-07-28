@@ -37,7 +37,10 @@ class SiteDaoTest : DBTest() {
     fun setErrorOfSite() {
         dao.siteNotWorking(1, site.address, "error")
 
-        assertEquals(dao.find(site.address), site.copy(cantErrors = 1, isWorking = false))
+        assertEquals(
+            dao.find(site.address),
+            site.copy(cantErrors = 1, isWorking = false, lastErrorMessage = "error")
+        )
     }
 
     @Test
