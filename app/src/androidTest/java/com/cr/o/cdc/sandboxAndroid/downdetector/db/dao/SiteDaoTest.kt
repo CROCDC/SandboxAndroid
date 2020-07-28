@@ -1,12 +1,17 @@
 package com.cr.o.cdc.sandboxAndroid.downdetector.db.dao
 
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
 import com.cr.o.cdc.sharedtest.getValueLiveData
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertEquals
 import org.junit.Before
 import org.junit.Test
 
+@HiltAndroidTest
+@UninstallModules(CoronavirusModule::class)
 class SiteDaoTest : DBTest() {
 
     private val dao = db.siteDao()

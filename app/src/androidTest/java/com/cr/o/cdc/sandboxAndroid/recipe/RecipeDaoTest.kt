@@ -1,14 +1,19 @@
 package com.cr.o.cdc.sandboxAndroid.recipe
 
 import androidx.paging.toLiveData
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
 import com.cr.o.cdc.sandboxAndroid.pagination.db.model.InfoSearchRecipe
 import com.cr.o.cdc.sandboxAndroid.pagination.db.model.Recipe
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
 import com.cr.o.cdc.sharedtest.getValueLiveData
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
+@HiltAndroidTest
+@UninstallModules(CoronavirusModule::class)
 class RecipeDaoTest : DBTest() {
 
     private val dao = db.recipeDao()

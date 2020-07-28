@@ -4,14 +4,19 @@ import PokemonsQuery
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.cr.o.cdc.networking.NetworkResponse
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
 import com.cr.o.cdc.sandboxAndroid.di.AppModule
 import com.cr.o.cdc.sandboxAndroid.utils.RepositoryTest
 import com.cr.o.cdc.sharedtest.getValueOfList
 import com.cr.o.cdc.sharedtest.makeRandomInstance
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 import retrofit2.Response
 
+@HiltAndroidTest
+@UninstallModules(CoronavirusModule::class)
 class PokemonRepositoryTest : RepositoryTest() {
 
     private val pokemonsData: List<PokemonsQuery.Pokemon> = listOf(

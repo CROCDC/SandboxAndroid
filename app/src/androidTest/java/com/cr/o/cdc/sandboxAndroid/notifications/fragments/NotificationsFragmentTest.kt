@@ -7,13 +7,18 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
 import com.cr.o.cdc.sandboxAndroid.R
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
 import com.cr.o.cdc.sandboxAndroid.editAndApply
 import com.cr.o.cdc.sandboxAndroid.utils.FragmentTest
 import com.cr.o.cdc.sharedtest.getMessage
 import com.cr.o.cdc.sharedtest.sharedPreferences
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
+@HiltAndroidTest
+@UninstallModules(CoronavirusModule::class)
 class NotificationsFragmentTest : FragmentTest() {
 
     @Test

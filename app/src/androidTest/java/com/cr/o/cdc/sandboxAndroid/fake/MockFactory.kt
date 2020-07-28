@@ -15,6 +15,6 @@ object MockFactory {
 
 }
 
-fun <T : Any> T.mutableLiveDatainNetworkResponse() =
+fun <T : Any> T.mutableLiveDataInNetworkResponse() =
     MutableLiveData(NetworkResponse.create(Response.success(this)))
 

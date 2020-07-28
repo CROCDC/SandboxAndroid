@@ -1,11 +1,16 @@
 package com.cr.o.cdc.sandboxAndroid.sandbox.locale
 
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 import java.text.NumberFormat
 import java.util.Currency
 import java.util.Locale
 
+@HiltAndroidTest
+@UninstallModules(CoronavirusModule::class)
 class LocaleTest {
 
     @Test

@@ -8,11 +8,16 @@ import android.os.Parcelable
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.platform.app.InstrumentationRegistry
 import com.cr.o.cdc.sandboxAndroid.MainActivity
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertTrue
 import kotlinx.android.parcel.Parcelize
 import org.junit.Rule
 import org.junit.Test
 
+@HiltAndroidTest
+@UninstallModules(CoronavirusModule::class)
 class ParcelingTest {
 
     private val context: Context = InstrumentationRegistry.getInstrumentation().targetContext

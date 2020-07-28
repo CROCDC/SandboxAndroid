@@ -1,6 +1,9 @@
 package com.cr.o.cdc.sandboxAndroid.sandbox.time
 
 import android.text.format.DateFormat
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
@@ -11,6 +14,8 @@ import java.util.Date
 import java.util.GregorianCalendar
 import java.util.Locale
 
+@HiltAndroidTest
+@UninstallModules(CoronavirusModule::class)
 class TimeSandbox {
 
     // 11 Mar 2020

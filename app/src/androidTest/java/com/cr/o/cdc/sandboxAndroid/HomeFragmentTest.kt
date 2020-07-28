@@ -7,10 +7,15 @@ import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.UninstallModules
 import io.mockk.mockk
 import io.mockk.verify
 import org.junit.Test
 
+@HiltAndroidTest
+@UninstallModules(CoronavirusModule::class)
 class HomeFragmentTest {
 
     @Test

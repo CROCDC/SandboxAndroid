@@ -1,12 +1,17 @@
 package com.cr.o.cdc.sandboxAndroid.dbsandbox
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
 import com.cr.o.cdc.sharedtest.RatingBrokenOfGson
 import com.cr.o.cdc.sharedtest.getCountOfChangesLiveData
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertTrue
 import org.junit.Rule
 import org.junit.Test
 
+@HiltAndroidTest
+@UninstallModules(CoronavirusModule::class)
 class RatingBrokenOfGsonTest : DBTest() {
 
     @get:Rule
