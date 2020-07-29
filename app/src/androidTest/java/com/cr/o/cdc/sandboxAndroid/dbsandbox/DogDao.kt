@@ -10,7 +10,6 @@ import com.cr.o.cdc.sharedtest.Dog
 @Dao
 interface DogDao {
 
-
     @Query("SELECT * FROM dog")
     fun loadAll(): LiveData<List<Dog>>
 

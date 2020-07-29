@@ -6,7 +6,7 @@ import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageBot
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.repos.WhatsappMessagesRepository
 
 class AddWhatsappMessageBotViewModel @ViewModelInject constructor(
-    val repository: WhatsappMessagesRepository
+    private val repository: WhatsappMessagesRepository
 ) : ViewModel() {
 
     fun add(whatsappMessageBot: WhatsappMessageBot) {

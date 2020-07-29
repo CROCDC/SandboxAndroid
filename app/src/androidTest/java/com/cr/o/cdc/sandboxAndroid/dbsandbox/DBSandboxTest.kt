@@ -1,19 +1,19 @@
 package com.cr.o.cdc.sandboxAndroid.dbsandbox
 
-import com.cr.o.cdc.sharedtest.Dog
+import com.cr.o.cdc.sandboxAndroid.dbsandbox.fake.MockFactoryDBSandbox
 import com.cr.o.cdc.sharedtest.getCountOfChangesLiveData
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
-class DbSandbox : DBTest() {
+class DBSandboxTest : DBSandboxTestUtils() {
     private val dao = db.dogDao()
 
     @Test
     fun saveSameValue() {
-        val dog = Dog("Leo")
+        val dog = MockFactoryDBSandbox.getDog()
         dao.save(dog)
 
-        val count = getCountOfChangesLiveData(dao.load("Leo"), 5) {
+        val count = getCountOfChangesLiveData(dao.load(dog.name), 5) {
             dao.save(dog)
         }
 
@@ -22,7 +22,7 @@ class DbSandbox : DBTest() {
 
     @Test
     fun saveSameValueList() {
-        val dogs = listOf(Dog("Leo"), Dog("Enzo"))
+        val dogs = MockFactoryDBSandbox.getListOfDogs()
         dao.saveAll(dogs)
 
         val count = getCountOfChangesLiveData(dao.loadAll(), 5) {
@@ -35,7 +35,7 @@ class DbSandbox : DBTest() {
     /*when save empty list in room, the livedata not change */
     @Test
     fun saveListEmpty() {
-        val dogs = listOf(Dog("Leo"), Dog("Enzo"))
+        val dogs = MockFactoryDBSandbox.getListOfDogs()
         dao.saveAll(dogs)
 
         val count = getCountOfChangesLiveData(dao.loadAll(), 5) {
@@ -47,10 +47,10 @@ class DbSandbox : DBTest() {
 
     @Test
     fun saveSameValueInTransaction() {
-        val dog = Dog("Leo")
+        val dog = MockFactoryDBSandbox.getDog()
         dao.save(dog)
 
-        val count = getCountOfChangesLiveData(dao.load("Leo"), 5) {
+        val count = getCountOfChangesLiveData(dao.load(dog.name), 5) {
             db.runInTransaction {
                 dao.save(dog)
             }

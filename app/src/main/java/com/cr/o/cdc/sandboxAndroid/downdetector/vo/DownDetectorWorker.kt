@@ -1,7 +1,6 @@
 package com.cr.o.cdc.sandboxAndroid.downdetector.vo
 
 import android.content.Context
-import android.util.Log
 import androidx.core.app.NotificationManagerCompat
 import androidx.hilt.Assisted
 import androidx.hilt.work.WorkerInject

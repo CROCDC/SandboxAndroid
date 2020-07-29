@@ -8,10 +8,19 @@ import org.junit.Test
 
 class RatingBrokenOfGsonParseTest {
 
+    private val json = "{\n" +
+            "  \"data\": {\n" +
+            "    \"rating\": {\n" +
+            "      \"id\": \"1\",\n" +
+            "      \"score\": \"FIVE\"\n" +
+            "    }\n" +
+            "  }\n" +
+            "}"
+
     @Test
     fun parseRatingBrokenWithSimpleWSParser() {
         val rating = SimpleWSParser(RatingBrokenOfGson::class.java, "rating").parserResponse(
-            RatingBrokenOfGson.json
+            json
         )
 
         assertTrue(rating?.stars == 0.0F)
@@ -20,7 +29,7 @@ class RatingBrokenOfGsonParseTest {
     @Test
     fun parseRatingWithSimpleWSParser() {
         val rating = SimpleWSParser(Rating::class.java, "rating").parserResponse(
-            RatingBrokenOfGson.json
+            json
         )
 
         assertTrue(rating?.getStars() == 5F)

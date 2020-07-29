@@ -12,7 +12,7 @@ object MockFactoryCoronavirus {
 
     fun getCasesByCountry(): CasesByCountry = CasesByCountry(listOf(getCountryStat()))
 
-    fun getCountryStat(): CountryStat = CountryStat("Inviable", "100", "50")
+    private fun getCountryStat(): CountryStat = CountryStat("Inviable", "100", "50")
 }
 
 fun <T : Any> T.mutableLiveDataInNetworkResponse() =

@@ -11,7 +11,7 @@ import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.databinding.ListItemSiteBinding
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 
-class SiteAdapter(val listener: SiteAdapterListener) :
+class SiteAdapter(private val listener: SiteAdapterListener) :
     ListAdapter<Site, SiteAdapter.ViewHolder>(CallBack) {
 
     interface SiteAdapterListener {

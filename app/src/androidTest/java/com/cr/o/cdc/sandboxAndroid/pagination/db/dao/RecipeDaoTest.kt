@@ -1,9 +1,8 @@
-package com.cr.o.cdc.sandboxAndroid.recipe
+package com.cr.o.cdc.sandboxAndroid.pagination.db.dao
 
 import androidx.paging.toLiveData
 import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
-import com.cr.o.cdc.sandboxAndroid.pagination.db.model.InfoSearchRecipe
-import com.cr.o.cdc.sandboxAndroid.pagination.db.model.Recipe
+import com.cr.o.cdc.sandboxAndroid.pagination.fake.MockFactoryPagination
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
 import com.cr.o.cdc.sharedtest.getValueLiveData
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -18,10 +17,7 @@ class RecipeDaoTest : DBTest() {
 
     private val dao = db.recipeDao()
 
-    private val recipes = listOf(
-        Recipe("1", "label"),
-        Recipe("2", "label")
-    )
+    private val recipes = MockFactoryPagination.getListOfRecipes()
 
     @Test
     fun saveAll() {
@@ -32,24 +28,18 @@ class RecipeDaoTest : DBTest() {
     fun loadRecipe() {
         dao.saveAll(recipes)
 
-        val recipe1 = getValueLiveData(dao.loadRecipe("1"), 2)
-        val recipe2 = getValueLiveData(dao.loadRecipe("2"), 2)
+        val recipe1 = getValueLiveData(dao.loadRecipe(recipes[0].uri), 2)
         assertEquals(recipe1?.uri, "1")
-        assertEquals(recipe2?.uri, "2")
     }
 
     @Test
     fun delete() {
         dao.saveOffSet(recipes.map {
-            InfoSearchRecipe(
-                it.uri,
-                0,
-                "search"
-            )
+            MockFactoryPagination.getInfoSearchRecipe(it.uri)
         })
         dao.saveAll(recipes)
 
-        assertTrue(getValueLiveData(dao.loadPaged("search").toLiveData(5), 2)?.size == 2)
+        assertTrue(getValueLiveData(dao.loadPaged("search").toLiveData(5), 2)?.size == recipes.size)
 
         dao.delete("search")
 
@@ -59,11 +49,7 @@ class RecipeDaoTest : DBTest() {
     @Test
     fun saveOffSet() {
         dao.saveOffSet(recipes.map {
-            InfoSearchRecipe(
-                it.uri,
-                0,
-                "search"
-            )
+            MockFactoryPagination.getInfoSearchRecipe(it.uri)
         })
     }
 
@@ -71,15 +57,11 @@ class RecipeDaoTest : DBTest() {
     fun loadPaged() {
         dao.saveOffSet(
             recipes.map {
-                InfoSearchRecipe(
-                    it.uri,
-                    0,
-                    "search"
-                )
+                MockFactoryPagination.getInfoSearchRecipe(it.uri)
             }
         )
         dao.saveAll(recipes)
 
-        assertTrue(getValueLiveData(dao.loadPaged("search").toLiveData(5), 2)?.size == 2)
+        assertTrue(getValueLiveData(dao.loadPaged("search").toLiveData(5), 2)?.size == recipes.size)
     }
 }

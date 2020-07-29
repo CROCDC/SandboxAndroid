@@ -69,4 +69,3 @@ fun <T> MutableLiveData<T>.setValueIfNotEquals(newValue: T?) {
         value = newValue
     }
 }
-

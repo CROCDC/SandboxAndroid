@@ -1,7 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.downdetector.db.dao
 
 import com.cr.o.cdc.sandboxAndroid.coronavirus.di.CoronavirusModule
-import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
+import com.cr.o.cdc.sandboxAndroid.downdetector.fake.MockFactoryDownDetector
 import com.cr.o.cdc.sandboxAndroid.utils.DBTest
 import com.cr.o.cdc.sharedtest.getValueLiveData
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -16,7 +16,7 @@ class SiteDaoTest : DBTest() {
 
     private val dao = db.siteDao()
 
-    private val site = Site("address", "name", true, 20, 0, null, null, null, null)
+    private val site = MockFactoryDownDetector.getSite()
 
     @Before
     fun saveSite() {

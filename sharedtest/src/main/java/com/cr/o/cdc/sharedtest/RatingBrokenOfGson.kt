@@ -21,18 +21,5 @@ data class RatingBrokenOfGson(
         else -> 0f
     }
 
-    companion object {
-        val rate1 = RatingBrokenOfGson("1", "FIVE")
-        val rate2 = RatingBrokenOfGson("2", "FOUR")
-
-        const val json = "{\n" +
-                "  \"data\": {\n" +
-                "    \"rating\": {\n" +
-                "      \"id\": \"1\",\n" +
-                "      \"score\": \"FIVE\"\n" +
-                "    }\n" +
-                "  }\n" +
-                "}"
-    }
 }
 

@@ -6,15 +6,15 @@ import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Rule
 
-abstract class DBTest {
+abstract class DBSandboxTestUtils {
 
     private val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    val db = Room
-        .inMemoryDatabaseBuilder(context, DBSandBoxTest::class.java)
+    val db: DBSandBox = Room
+        .inMemoryDatabaseBuilder(context, DBSandBox::class.java)
         .allowMainThreadQueries()
         .fallbackToDestructiveMigration()
         .build()

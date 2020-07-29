@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.dbsandbox
+package com.cr.o.cdc.sandboxAndroid.sandbox.random
 
 import android.content.Context
 import android.content.Intent
@@ -42,7 +42,8 @@ class ParcelingTest {
         try {
             activityTestRule.launchActivity(Intent(context, MainActivity::class.java).apply {
                 putExtra(
-                    "ParcelingClassTestWithAnnotation", ParcelingClassTestWithAnnotation(
+                    "ParcelingClassTestWithAnnotation",
+                    ParcelingClassTestWithAnnotation(
                         Pair("name", Bundle().apply {
                             putExtra("ID", "ID")
                         })
@@ -59,7 +60,8 @@ class ParcelingTest {
     fun parcelingWithoutAnnotation() {
         activityTestRule.launchActivity(Intent(context, MainActivity::class.java).apply {
             putExtra(
-                "ParcelingClassTest", ParcelingClassTest(
+                "ParcelingClassTest",
+                ParcelingClassTest(
                     Pair("name", Bundle().apply {
                         putExtra("ID", "ID")
                     })
@@ -72,7 +74,8 @@ class ParcelingTest {
     fun parcelingWithAnnotationWithoutBundle() {
         activityTestRule.launchActivity(Intent(context, MainActivity::class.java).apply {
             putExtra(
-                "ParcelingClassTestWithAnnotation", ParcelingClassTestWithAnnotationWithoutBundle(
+                "ParcelingClassTestWithAnnotation",
+                ParcelingClassTestWithAnnotationWithoutBundle(
                     Pair("name", "name2")
                 )
             )

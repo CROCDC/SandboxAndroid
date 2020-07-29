@@ -9,6 +9,8 @@ import org.junit.Test
 
 class ExtensionsTest {
 
+    private val seconds: Long = 1
+
     private val mutableLiveDataNotNull = MutableLiveData("hola")
     private val mutableLiveDataNull = MutableLiveData<String>(null)
 
@@ -20,7 +22,7 @@ class ExtensionsTest {
     fun mapGetValueIfNotEquals_with_value_not_null() {
         assertEquals(1, getCountOfChangesLiveData(mutableLiveDataNotNull.mapGetValueIfNotEquals {
             "$it camilo"
-        }, 5) {
+        }, seconds) {
             mutableLiveDataNotNull.value = "hola"
             mutableLiveDataNotNull.value = "hola"
         })
@@ -30,7 +32,7 @@ class ExtensionsTest {
     fun mapGetValueIfNotEquals_with_value_null() {
         assertEquals(1, getCountOfChangesLiveData(mutableLiveDataNull.mapGetValueIfNotEquals {
             "$it camilo"
-        }, 5) {
+        }, seconds) {
             mutableLiveDataNull.value = null
             mutableLiveDataNull.value = null
         })
@@ -40,7 +42,7 @@ class ExtensionsTest {
     fun map_with_value_not_null() {
         assertEquals(3, getCountOfChangesLiveData(mutableLiveDataNotNull.map {
             "$it camilo"
-        }, 5) {
+        }, seconds) {
             mutableLiveDataNotNull.value = "hola"
             mutableLiveDataNotNull.value = "hola"
         })
@@ -52,7 +54,7 @@ class ExtensionsTest {
             0,
             getCountOfChangesLiveData(mutableLiveDataNull.mapGetValueIfNotEqualsAndNotNull {
                 "$it camilo"
-            }, 5) {
+            }, seconds) {
                 mutableLiveDataNull.value = null
                 mutableLiveDataNull.value = null
             })
@@ -64,7 +66,7 @@ class ExtensionsTest {
             1,
             getCountOfChangesLiveData(mutableLiveDataNotNull.mapGetValueIfNotEqualsAndNotNull {
                 "$it camilo"
-            }, 5) {
+            }, seconds) {
                 mutableLiveDataNotNull.value = "hola"
                 mutableLiveDataNotNull.value = "hola"
             })
@@ -76,7 +78,7 @@ class ExtensionsTest {
             1,
             getCountOfChangesLiveData(mutableLiveDataNotNull.mapGetValueIfNotEqualsAndNotNull {
                 "$it camilo"
-            }, 5) {
+            }, seconds) {
                 mutableLiveDataNotNull.value = "hola"
                 mutableLiveDataNotNull.value = null
             })
@@ -88,7 +90,7 @@ class ExtensionsTest {
             1,
             getCountOfChangesLiveData(mutableLiveDataNotNull.mapGetValueIfNotEqualsAndNotNull {
                 "$it camilo"
-            }, 5) {
+            }, seconds) {
                 mutableLiveDataNotNull.value = "hola"
                 mutableLiveDataNotNull.value = null
                 mutableLiveDataNotNull.value = "hola"
@@ -96,16 +98,15 @@ class ExtensionsTest {
     }
 
     @Test
-    fun mapGetValueIfNotEqualsAndNotNull_with_value_not_null_and_null_and_not_null_diferent_values() {
+    fun mapGetValueIfNotEqualsAndNotNull_with_value_not_null_and_null_and_not_null_n_same_values() {
         assertEquals(
             2,
             getCountOfChangesLiveData(mutableLiveDataNotNull.mapGetValueIfNotEqualsAndNotNull {
                 "$it camilo"
-            }, 5) {
+            }, seconds) {
                 mutableLiveDataNotNull.value = "hola"
                 mutableLiveDataNotNull.value = null
                 mutableLiveDataNotNull.value = "hola 2"
             })
     }
-
 }
