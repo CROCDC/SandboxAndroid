@@ -23,8 +23,6 @@ class DownDetectorWorker @WorkerInject constructor(
 
         val address = checkNotNull(inputData.getString(ARG_ADDRESS_SITE))
 
-        Log.e("CROCDC", "ping to $address")
-
         when (repository.pingSite(address)) {
             !is PingResponse.PingSuccess -> {
                 notificationManager.notify(

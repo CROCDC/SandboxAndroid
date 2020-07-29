@@ -2,7 +2,6 @@ package com.cr.o.cdc.sandboxAndroid.notifications.fragments
 
 import android.content.Intent
 import android.widget.TextView
-import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
@@ -12,19 +11,30 @@ import com.cr.o.cdc.sandboxAndroid.editAndApply
 import com.cr.o.cdc.sandboxAndroid.utils.FragmentTest
 import com.cr.o.cdc.sharedtest.getMessage
 import com.cr.o.cdc.sharedtest.sharedPreferences
+import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
 import junit.framework.TestCase.assertTrue
+import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 
 @HiltAndroidTest
 @UninstallModules(CoronavirusModule::class)
 class NotificationsFragmentTest : FragmentTest() {
 
+    @get:Rule
+    var hiltRule = HiltAndroidRule(this)
+
+    @Before
+    fun init() {
+        hiltRule.inject()
+    }
+
     @Test
     fun assertBroadcastReceiverSetTextTxtMsgNotifications() {
-        launchFragmentInContainer<NotificationsFragment>().onFragment {
-            LocalBroadcastManager.getInstance(it.requireContext()).sendBroadcast(
+        launchFragmentInHiltContainer<NotificationsFragment> {
+            LocalBroadcastManager.getInstance(requireContext()).sendBroadcast(
                 Intent(NotificationsFragment.BROADCAST_RECEIVER).apply {
                     putExtra(NotificationsFragment.EXTRA_MSG_NOTIFICATION, "message")
                 })
@@ -37,8 +47,8 @@ class NotificationsFragmentTest : FragmentTest() {
 
     @Test
     fun assertPushTokenSetText() {
-        launchFragmentInContainer<NotificationsFragment>().onFragment {
-            it.context?.sharedPreferences()?.editAndApply {
+        launchFragmentInHiltContainer<NotificationsFragment> {
+            context?.sharedPreferences()?.editAndApply {
                 putString("push_token", "message")
             }
         }

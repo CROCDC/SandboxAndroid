@@ -27,12 +27,6 @@ class DownDetectorWorkerTest {
 
     private val context: Context = ApplicationProvider.getApplicationContext()
 
-    @Inject
-    lateinit var repository: SitesRepository
-
-    @Inject
-    lateinit var notificationManager: NotificationManagerCompat
-
     @Before
     fun init() {
         hiltRule.inject()
