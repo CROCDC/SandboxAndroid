@@ -6,5 +6,6 @@ import androidx.room.PrimaryKey
 @Entity
 data class Dog(
     @PrimaryKey
-    val name: String
+    val name: String,
+    val age: Int
 )

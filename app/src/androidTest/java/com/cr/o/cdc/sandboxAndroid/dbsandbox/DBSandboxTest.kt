@@ -2,6 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.dbsandbox
 
 import com.cr.o.cdc.sandboxAndroid.dbsandbox.fake.MockFactoryDBSandbox
 import com.cr.o.cdc.sharedtest.getCountOfChangesLiveData
+import com.cr.o.cdc.sharedtest.getValueLiveData
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
@@ -57,5 +58,54 @@ class DBSandboxTest : DBSandboxTestUtils() {
         }
 
         assertEquals(2, count)
+    }
+
+    @Test
+    fun replaceChangeOrderOfList() {
+        val listOfDogs = MockFactoryDBSandbox.getListOfDogs()
+
+        db.runInTransaction {
+            dao.saveAll(listOfDogs)
+            dao.save(MockFactoryDBSandbox.getDog())
+        }
+
+        val list = getValueLiveData(dao.loadAll(), 5)
+
+        assertEquals(listOfDogs, list?.reversed())
+    }
+
+    @Test
+    fun updateNotChangeOrderOfList() {
+        val listOfDogs = MockFactoryDBSandbox.getListOfDogs()
+
+        db.runInTransaction {
+            dao.saveAll(listOfDogs)
+            dao.update(MockFactoryDBSandbox.getDog())
+        }
+
+        val list = getValueLiveData(dao.loadAll(), 5)
+
+        assertEquals(listOfDogs, list)
+    }
+
+    @Test
+    fun updateWithoutSaveBefore() {
+        val dog = MockFactoryDBSandbox.getDog()
+        dao.update(dog)
+
+        val dbDog = getValueLiveData(dao.load(dog.name), 5)
+
+        assertEquals(dog, dbDog)
+    }
+
+    @Test
+    fun innerJoinExample() {
+        val dog = MockFactoryDBSandbox.getDog()
+        dao.save(dog)
+        dao.saveDogHouse(MockFactoryDBSandbox.getDogHouse())
+
+        val dogs = dao.getDogsByPosition(PositionDogHouse.CABA.hashCode())
+
+        assertEquals(dog, dogs.first())
     }
 }

@@ -41,8 +41,30 @@ fun <T> getValueLiveData(
     return data
 }
 
-fun getMessage(id: String) = "la view con el id $id no tenia el texto esperado"
 
+@Throws(InterruptedException::class)
+fun <T> getValueLiveDataValueCanBeNull(
+    liveData: LiveData<T>,
+    seconds: Long,
+    executeFunWhenObserve: () -> Unit? = {}
+): T? {
+    var data: T? = null
+    val latch = CountDownLatch(1)
+    val observer = object : Observer<T> {
+        override fun onChanged(o: T) {
+            data = o
+            latch.countDown()
+            liveData.removeObserver(this)
+
+        }
+    }
+    liveData.observeForever(observer)
+    executeFunWhenObserve.invoke()
+    latch.await(seconds, TimeUnit.SECONDS)
+    return data
+}
+
+fun getMessage(id: String) = "la view con el id $id no tenia el texto esperado"
 
 @Throws(InterruptedException::class)
 fun <T> getCountOfChangesLiveData(

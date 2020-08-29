@@ -6,7 +6,7 @@ import com.cr.o.cdc.sharedtest.Dog
 import com.cr.o.cdc.sharedtest.RatingBrokenOfGson
 
 @Database(
-    entities = [RatingBrokenOfGson::class, Dog::class],
+    entities = [RatingBrokenOfGson::class, Dog::class, DogHouse::class],
     version = 1
 )
 

@@ -1,7 +1,10 @@
 package com.cr.o.cdc.sandboxAndroid
 
+import android.content.Context
+import android.text.SpannableString
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
+import androidx.test.platform.app.InstrumentationRegistry
 import com.cr.o.cdc.sharedtest.getCountOfChangesLiveData
 import junit.framework.TestCase.assertEquals
 import org.junit.Rule
@@ -17,6 +20,8 @@ class ExtensionsTest {
     @Rule
     @JvmField
     var instantTaskExecutorRule = InstantTaskExecutorRule()
+
+    private val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
 
     @Test
     fun mapGetValueIfNotEquals_with_value_not_null() {
@@ -108,5 +113,15 @@ class ExtensionsTest {
                 mutableLiveDataNotNull.value = null
                 mutableLiveDataNotNull.value = "hola 2"
             })
+    }
+
+    @Test
+    fun getFontFamily() {
+        SpannableString("Hola").setFontFamily(
+            context,
+            0,
+            1,
+            2
+        )
     }
 }
