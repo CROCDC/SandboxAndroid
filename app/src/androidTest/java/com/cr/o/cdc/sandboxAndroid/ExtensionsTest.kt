@@ -114,14 +114,4 @@ class ExtensionsTest {
                 mutableLiveDataNotNull.value = "hola 2"
             })
     }
-
-    @Test
-    fun getFontFamily() {
-        SpannableString("Hola").setFontFamily(
-            context,
-            0,
-            1,
-            2
-        )
-    }
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="string">Español Mexico</string>
+    <string name="string_default_es_es_MX">es-MX</string>
+    <string name="string_default_es_es_MX_es_DO">es-MX</string>
+</resources>
