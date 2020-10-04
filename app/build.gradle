@@ -166,5 +166,6 @@ dependencies {
 
     androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
     kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
 }

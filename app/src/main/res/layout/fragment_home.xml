@@ -81,8 +81,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="@string/motion_layout"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_preguntados_helper"
             app:layout_constraintTop_toBottomOf="@id/btn_down_detector" />
+
+        <Button
+            android:id="@+id/btn_preguntados_helper"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/green_00C803"
+            android:text="@string/preguntados_helper"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_motion_layout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

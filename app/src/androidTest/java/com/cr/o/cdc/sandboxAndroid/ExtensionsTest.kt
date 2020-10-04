@@ -1,7 +1,6 @@
 package com.cr.o.cdc.sandboxAndroid
 
 import android.content.Context
-import android.text.SpannableString
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.test.platform.app.InstrumentationRegistry

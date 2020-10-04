@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.coronavirus.di
+package com.cr.o.cdc.sandboxAndroid
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -8,15 +8,16 @@ import androidx.work.WorkManager
 import com.apollographql.apollo.ApolloClient
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
-import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSource
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSourceProvider
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
 import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.preguntadoshelper.db.model.PreguntadosQuestion
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.RNCDataSource
 import com.cr.o.cdc.sandboxAndroid.rnc.repos.RNCDataSourceProvider
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,6 +26,8 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.IOException
+import java.io.InputStream
 
 @Module
 @InstallIn(ApplicationComponent::class)
@@ -48,7 +51,22 @@ class AppModule {
         .databaseBuilder(appContext, SandBoxDB::class.java, SandBoxDB.DATABASE_NAME)
         .allowMainThreadQueries()
         .fallbackToDestructiveMigration()
-        .build()
+        .build().also {
+            try {
+                val inputStream: InputStream = appContext.assets.open("questions.json")
+                val size: Int = inputStream.available()
+                val buffer = ByteArray(size)
+                inputStream.read(buffer)
+                inputStream.close()
+                it.preguntadosDao().saveAll(
+                    Gson().fromJson(
+                        String(buffer, Charsets.UTF_8),
+                        object : TypeToken<List<PreguntadosQuestion>>() {}.type
+                    )
+                )
+            } catch (ex: IOException) {
+            }
+        }
 
     @Provides
     fun providePokemonDataSource(apolloClient: ApolloClient): PokemonDataSourceProvider =

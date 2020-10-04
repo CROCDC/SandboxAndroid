@@ -43,4 +43,9 @@
     <string name="space_rocket">Space Rocket</string>
     <string name="launch">Launch</string>
     <string name="motion_layout">Motion Layout</string>
+    <string name="questions_list">Questions List</string>
+    <string name="preguntados_helper">Preguntados Helper</string>
+    <string name="start">Start</string>
+    <string name="config">Config</string>
+    <string name="waiting">Waiting</string>
 </resources>

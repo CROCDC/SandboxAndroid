@@ -6,7 +6,7 @@ import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeBoundaryCallback
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeResource
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
+import com.cr.o.cdc.sandboxAndroid.SandBoxDB
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

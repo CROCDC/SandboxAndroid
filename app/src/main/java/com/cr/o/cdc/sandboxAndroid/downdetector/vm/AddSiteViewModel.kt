@@ -7,7 +7,7 @@ import androidx.work.WorkManager
 import androidx.work.workDataOf
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesRepository
-import com.cr.o.cdc.sandboxAndroid.downdetector.vo.DownDetectorWorker
+import com.cr.o.cdc.sandboxAndroid.downdetector.service.DownDetectorWorker
 import java.util.concurrent.TimeUnit
 
 data class AddSiteViewModel @ViewModelInject constructor(

@@ -44,6 +44,9 @@ class HomeFragment : Fragment() {
         binding.btnMotionLayout.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_motionLayoutSelectorFragment)
         }
+        binding.btnPreguntadosHelper.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_preguntadosHelperFragment)
+        }
         return binding.root
     }
 }

@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.whatsapputils.services
+package com.cr.o.cdc.sandboxAndroid.services
 
 import android.app.PendingIntent
 import android.content.Intent

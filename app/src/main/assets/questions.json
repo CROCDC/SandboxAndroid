@@ -1,0 +1,3750 @@
+[
+  {
+    "questionTitle": "¿Quién escribió \u0027Azazel\u0027?",
+    "answer": "Isaac Asimov"
+  },
+  {
+    "questionTitle": "¿En qué isla vivía Otelo?",
+    "answer": "Creta"
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre del primer gran poema épico de la literatura inglesa?",
+    "answer": "Beowulf"
+  },
+  {
+    "questionTitle": "¿Quién pintó \u0027Mujer mirando por la ventana\u0027?",
+    "answer": "Salvador Dalí"
+  },
+  {
+    "questionTitle": "¿En qué ciudad nació el pintor y escultor Joan Miro?",
+    "answer": "Barcelona"
+  },
+  {
+    "questionTitle": "¿De qué género es la obra \u0027Luces de Bohemia\u0027?",
+    "answer": "Teatro"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes personajes no aparece en la portada del álbum Sgt. Pepper\u0027s Lonely Hearts Club Band, de la banda británica The Beatles?",
+    "answer": "Bob Marley"
+  },
+  {
+    "questionTitle": "¿Cuál es el baile popular de Aragón?",
+    "answer": "Jota"
+  },
+  {
+    "questionTitle": "¿En qué año se suicidó Van Gogh?",
+    "answer": "1890"
+  },
+  {
+    "questionTitle": "¿Cuál es el baile típico de Galicia?",
+    "answer": "Muiñeira"
+  },
+  {
+    "questionTitle": "¿Quién escribió La Divina Comedia?",
+    "answer": "Dante Alighieri "
+  },
+  {
+    "questionTitle": "¿Cuántas cuerdas suele tener un bajo eléctrico?",
+    "answer": "Cuatro"
+  },
+  {
+    "questionTitle": "¿Quién escribió \"El Ejército Negro\"?",
+    "answer": "Santiago García-Clairac"
+  },
+  {
+    "questionTitle": "¿Cuál de las siguientes obras fue escrita por Wolfgang Amadeus Mozart?",
+    "answer": "Réquiem"
+  },
+  {
+    "questionTitle": "¿Para qué sirve la paleta?",
+    "answer": "Para mezclar pinturas"
+  },
+  {
+    "questionTitle": "¿Quién escribió el poema romano, Las Metamorfosis?",
+    "answer": "Ovidio"
+  },
+  {
+    "questionTitle": "¿Qué ruta se hace en honor al poeta Miguel Hernández?",
+    "answer": "La senda del poeta"
+  },
+  {
+    "questionTitle": "¿Qué personaje femenino protagoniza el libro de Dan Brown \"La Conspiración\"?",
+    "answer": "Rachel Sexton"
+  },
+  {
+    "questionTitle": "¿Según el cuento de \"el principito\" cuál fue el séptimo planeta que visitó?",
+    "answer": "El planeta tierra"
+  },
+  {
+    "questionTitle": "¿Qué tendencia musical es la que más incursiona en Jamaica?",
+    "answer": "Reggae"
+  },
+  {
+    "questionTitle": "¿Cuál es la famosa cueva que se narra el Quijote?",
+    "answer": "Montesinos"
+  },
+  {
+    "questionTitle": "¿Qué usamos para diluir los colores de las acuarelas?",
+    "answer": "Agua"
+  },
+  {
+    "questionTitle": "¿Cuántos anillos fueron creados por Sauron para los Señores Enanos en el Señor de los Anillos?",
+    "answer": "7"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el padre que devora a su hijo en una obra de Francisco de Goya?",
+    "answer": "Saturno"
+  },
+  {
+    "questionTitle": "¿Cuál de las siguientes palabras es esdrújula?",
+    "answer": "Metálico"
+  },
+  {
+    "questionTitle": "¿Quién escribió la novela \"El Código Da Vinci\"?",
+    "answer": "Dan Brown"
+  },
+  {
+    "questionTitle": "¿Cuál de las siguientes obras fue escrita por Gabriel García Márquez?",
+    "answer": "El coronel no tiene quién le escriba"
+  },
+  {
+    "questionTitle": "¿Cuál es la obra cumbre en la literatura española escrita por Fernando de Rojas?",
+    "answer": "La Celestina"
+  },
+  {
+    "questionTitle": "¿Cuál de estos pintores hace pinturas con forma geométricas?",
+    "answer": "Picasso"
+  },
+  {
+    "questionTitle": "¿Cuál de estos libros no fue escrito por Haruki Murakami?",
+    "answer": "La devoción del sospechoso X "
+  },
+  {
+    "questionTitle": "¿Quién escribió \"Romancero Gitano\"?",
+    "answer": "Federico García Lorca"
+  },
+  {
+    "questionTitle": "¿Con qué cualidad describirías a Tom Sawyer?",
+    "answer": "Travieso"
+  },
+  {
+    "questionTitle": "¿A qué familia de instrumentos pertenece la guitarra, el violín y el bajo?",
+    "answer": "Cuerdas"
+  },
+  {
+    "questionTitle": "¿Cuál compositor de música clásica era zurdo?",
+    "answer": "Beethoven"
+  },
+  {
+    "questionTitle": "¿Cuántos dedos tiene por lo general una caricatura?",
+    "answer": "Cuatro"
+  },
+  {
+    "questionTitle": "¿Quiénes eran los \"Tres tenores\"?",
+    "answer": "Carreras, Pavarotti, Domingo"
+  },
+  {
+    "questionTitle": "¿Quién pintó \"La Sagrada Familia del Cordero\"?",
+    "answer": "Rafael Sanzio"
+  },
+  {
+    "questionTitle": "¿Cuál de las siguientes pertenece a las 7 maravillas del mundo antiguo?",
+    "answer": "Todas son correctas"
+  },
+  {
+    "questionTitle": "¿Qué nota musical hay entre re y fa?",
+    "answer": "Mi"
+  },
+  {
+    "questionTitle": "¿Qué instrumento tocaba Zeta Bosio en Soda Stereo?",
+    "answer": "Bajo"
+  },
+  {
+    "questionTitle": "¿Cómo se llama al conjunto de 5 líneas y 4 espacios que se usa para componer música?",
+    "answer": "Pentagrama"
+  },
+  {
+    "questionTitle": "¿Qué parte del cuerpo se cortó Vicent Van Gogh",
+    "answer": "? Oreja"
+  },
+  {
+    "questionTitle": "¿Quién escribió \"Platero y yo\"?",
+    "answer": "Juan Ramón Jiménez"
+  },
+  {
+    "questionTitle": "¿Quién pintó \"La Anunciación\"?",
+    "answer": "Jan de Beer"
+  },
+  {
+    "questionTitle": "¿Quién pintó la obra mundialmente conocida con el nombre de \"Mona Lisa\" o \"Gioconda\"?",
+    "answer": "Leonardo Da Vinci"
+  },
+  {
+    "questionTitle": "¿Cuál de ellos es un adverbio de lugar?",
+    "answer": "Ahí"
+  },
+  {
+    "questionTitle": "¿Cuál de estos poemas escribió Mario Benedetti?",
+    "answer": "Todas las anteriores"
+  },
+  {
+    "questionTitle": "Amor con amor se paga...",
+    "answer": "Y lo demás con dinero"
+  },
+  {
+    "questionTitle": "¿Qué libro de Gabriel García Márquez es considerado una de las obras más famosas de la literatura mundial?",
+    "answer": "Cien años de soledad"
+  },
+  {
+    "questionTitle": "¿Qué tenía Salvador Dalí de característico?",
+    "answer": "El bigote"
+  },
+  {
+    "questionTitle": "¿Quién es Laura Gallego García?",
+    "answer": "Una escritora"
+  },
+  {
+    "questionTitle": "¿Quién es al autor de \"La guerra del fin del mundo\"?",
+    "answer": "Mario Vargas Llosa"
+  },
+  {
+    "questionTitle": "¿Cuál es la técnica usada en dibujo a base de carboncillo?",
+    "answer": "Mancha "
+  },
+  {
+    "questionTitle": "¿Quién es el autor de la obra: Viaje al centro de la Tierra?",
+    "answer": "Julio Verne"
+  },
+  {
+    "questionTitle": "¿Cuál de las siguientes obras no pertenece a Edgar Allan Poe?",
+    "answer": "El monte de las ánimas "
+  },
+  {
+    "questionTitle": "Más vale pájaro en mano...",
+    "answer": "que cien volando"
+  },
+  {
+    "questionTitle": "¿Dónde se encontraba el cuadro \"El Grito\"?",
+    "answer": "Francia"
+  },
+  {
+    "questionTitle": "¿A qué ciudad vasca dedicó un cuadro Pablo Picasso?",
+    "answer": "Guernica"
+  },
+  {
+    "questionTitle": "¿Qué importante pieza de arte fue robada y guardada debajo de una cama hasta que se devolvió al Museo Louvre?",
+    "answer": "Mona Lisa"
+  },
+  {
+    "questionTitle": "¿Quién escribió la novela \"Contagio\"?",
+    "answer": "Robin Cook"
+  },
+  {
+    "questionTitle": "¿Cuál de estos artistas se destacó por su estilo impresionista?",
+    "answer": "Monet"
+  },
+  {
+    "questionTitle": "¿Cuál de éstas es obra de García Lorca?",
+    "answer": "El maleficio de la mariposa"
+  },
+  {
+    "questionTitle": "¿Cuál de estas obras de Gabriel García Márquez ha sido llevada al cine?",
+    "answer": "Todas las anteriores"
+  },
+  {
+    "questionTitle": "¿Dónde estudió Antoni Gaudí?",
+    "answer": "Barcelona"
+  },
+  {
+    "questionTitle": "¿Cuál es la tesitura más alta de voz masculina?",
+    "answer": "Contratenor"
+  },
+  {
+    "questionTitle": "¿Quién escribió \"El cuervo\"?",
+    "answer": "Edgar Allan Poe"
+  },
+  {
+    "questionTitle": "¿Qué autor utilizó en uno de sus poemas el verso de Bécquer \"donde habite el olvido allí estará mi tumba\"?",
+    "answer": "Neruda"
+  },
+  {
+    "questionTitle": "¿A qué se dedicaban los siete enanitos?",
+    "answer": "Eran mineros"
+  },
+  {
+    "questionTitle": "¿Cuál es el estilo de la catedral de Burgos?",
+    "answer": "Gótico"
+  },
+  {
+    "questionTitle": "¿Cuál es el autor del libro \"Inés del alma mía\"?",
+    "answer": "Isabel Allende"
+  },
+  {
+    "questionTitle": "¿Quién es el autor de Rimas y Leyendas?",
+    "answer": "Gustavo Adolfo Bécquer"
+  },
+  {
+    "questionTitle": "¿Qué canción le dedicó Bob Marley a Rita Marley?",
+    "answer": "Milkshake \u0026 potato chips "
+  },
+  {
+    "questionTitle": "Perro que ladra...",
+    "answer": "No muerde"
+  },
+  {
+    "questionTitle": "¿Qué afición artística tenía Hitler?",
+    "answer": "Pintura"
+  },
+  {
+    "questionTitle": "¿En qué país nació el escritor Jorge Luís Borges?",
+    "answer": "Argentina"
+  },
+  {
+    "questionTitle": "¿En qué novela el protagonista es un asesino en serie con un sentido del olfato increíblemente desarrollado?",
+    "answer": "El Perfume "
+  },
+  {
+    "questionTitle": "¿De quién es la obra \"El Alcalde de Zalamea\" representada por los vecinos de la localidad pacense de Zalamea de la Serena\"?",
+    "answer": "Calderón de la Barca "
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes libros fue escrito por Stephen King?",
+    "answer": "Insomnia"
+  },
+  {
+    "questionTitle": "¿Quién pintó \u0027La muerte de Lucrecia\u0027?",
+    "answer": "Eduardo Rosales"
+  },
+  {
+    "questionTitle": "¿De qué país es la caricatura \"Condorito\"?",
+    "answer": "Chile"
+  },
+  {
+    "questionTitle": "¿En qué ciudad se encuentra el museo Guggenheim?",
+    "answer": "Bilbao"
+  },
+  {
+    "questionTitle": "¿A qué corriente pertenece Garcilaso de la Vega?",
+    "answer": "Renacimiento"
+  },
+  {
+    "questionTitle": "¿Quién fue un humanista, filósofo, filólogo y teólogo holandés?",
+    "answer": "Erasmo de Róterdam"
+  },
+  {
+    "questionTitle": "¿Cómo se señalan las rimas en los versos de arte mayor?",
+    "answer": "Mayúsculas"
+  },
+  {
+    "questionTitle": "¿Quién es el autor de \"Mazurca para dos muertos\"?",
+    "answer": "Camilo José Cela"
+  },
+  {
+    "questionTitle": "¿Quién escribió \"Orgullo y Prejuicio\"?",
+    "answer": "Jane Austen"
+  },
+  {
+    "questionTitle": "¿De qué nacionalidad es el pintor Gustav Klimt?",
+    "answer": "Austriaco"
+  },
+  {
+    "questionTitle": "¿Quién es el autor de la frase \"Es tan corto el amor, y es tan largo el olvido\"?",
+    "answer": "Pablo Neruda"
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba el padre de Hilde MØller Knag en \"el mundo de Sofía\"?",
+    "answer": "Albert Knag"
+  },
+  {
+    "questionTitle": "¿Qué perdió el soldadito de plomo?",
+    "answer": "Una pierna"
+  },
+  {
+    "questionTitle": "¿Cuál es la obra fundamental de Kant?",
+    "answer": "Crítica de la razón pura"
+  },
+  {
+    "questionTitle": "¿Cuál fue el primer filósofo del que se tiene alguna noticia?",
+    "answer": "Tales de Mileto "
+  },
+  {
+    "questionTitle": "¿Qué estaba demasiado verde para la zorra de la fábula de La Fontaine?",
+    "answer": "Uvas"
+  },
+  {
+    "questionTitle": "Caminante no hay camino, se hace...",
+    "answer": "camino al andar"
+  },
+  {
+    "questionTitle": "¿A qué movimiento artístico perteneció el pintor francés Eugène Delacroix?",
+    "answer": "Romanticismo"
+  },
+  {
+    "questionTitle": "¿De qué novela de Jane Austen es protagonista el personaje de Elizabeth Bennet?",
+    "answer": "Orgullo y Prejuicio"
+  },
+  {
+    "questionTitle": "¿Cuántos \u0027gritos\u0027 pintó Munch?",
+    "answer": "Cuatro"
+  },
+  {
+    "questionTitle": "¿En qué museo se encuentra \u0027El jardín de las delicias\u0027?",
+    "answer": "El Prado"
+  },
+  {
+    "questionTitle": "¿Qué técnica utiliza Goya en \u0027Los desastres de la Guerra\u0027?",
+    "answer": "Aguafuerte"
+  },
+  {
+    "questionTitle": "¿Quién escribió \u0027El Diario de Ana Frank\u0027?",
+    "answer": "Ana Frank"
+  },
+  {
+    "questionTitle": "El que a buen árbol se arrima...",
+    "answer": "buena sombra le cobija"
+  },
+  {
+    "questionTitle": "¿Qué era lo primero que iba a comprar la Lechera con el dinero que obtuviera de la leche?",
+    "answer": "Huevos"
+  },
+  {
+    "questionTitle": "¿Quién escribió \"El Conde de Montecristo\"?",
+    "answer": "Alexandre Dumas"
+  },
+  {
+    "questionTitle": "¿A partir de cuántas sílabas se considera verso de arte mayor?",
+    "answer": "9"
+  },
+  {
+    "questionTitle": "¿En qué país nació Jorge Luis Borges?",
+    "answer": "Argentina"
+  },
+  {
+    "questionTitle": "El andaluz es un dialecto del...",
+    "answer": "Castellano"
+  },
+  {
+    "questionTitle": "¿Qué nombre genérico recibe una estatua en la que se representa a una persona sentada?",
+    "answer": "Sedente"
+  },
+  {
+    "questionTitle": "¿Quién escribió \"Crítica de la razón pura\"?",
+    "answer": "Inmanuel Kant"
+  },
+  {
+    "questionTitle": "¿Qué obra NO pertenece a Shakespeare?",
+    "answer": "La Divina Comedia"
+  },
+  {
+    "questionTitle": "¿Quién de estos artistas pintó \"Los relojes derretidos\"?",
+    "answer": "Dalí"
+  },
+  {
+    "questionTitle": "¿Dónde nació el pintor Alejandro Obregón?",
+    "answer": "España"
+  },
+  {
+    "questionTitle": "¿Qué color consigues mezclando todos los colores del CMYK?",
+    "answer": "Negro"
+  },
+  {
+    "questionTitle": "¿Quién escribió Oliver Twist?",
+    "answer": "Charles Dickens"
+  },
+  {
+    "questionTitle": "¿Quién dijo la frase \"no soy lo suficientemente joven como para saberlo todo\"?",
+    "answer": "Oscar Wilde"
+  },
+  {
+    "questionTitle": "¿En qué ciudad se encuentra el David de Miguel Ángel?",
+    "answer": "Florencia "
+  },
+  {
+    "questionTitle": "¿Quién pintó el cuadro La Persistencia de la Memoria?",
+    "answer": "Dalí"
+  },
+  {
+    "questionTitle": "¿Qué obra está realizada en soporte de cartón?",
+    "answer": "El Grito de Munch"
+  },
+  {
+    "questionTitle": "¿Cuál era la \u0027Ciudad de las Siete Puertas de Homero\u0027?",
+    "answer": "Tebas"
+  },
+  {
+    "questionTitle": "¿Cuál era el nombre del capitán que intentó dar caza a Moby Dick?",
+    "answer": "Ahab"
+  },
+  {
+    "questionTitle": "Gabriel García Márquez se caracteriza por narrar en un mundo:",
+    "answer": "Real Maravilloso "
+  },
+  {
+    "questionTitle": "¿Quién escribió \"Dos años de vacaciones\"?",
+    "answer": "Julio Verne"
+  },
+  {
+    "questionTitle": "¿Quién era la diosa de la sabiduría en la mitología griega?",
+    "answer": "Atenea"
+  },
+  {
+    "questionTitle": "¿De qué muere Jean Valjean en la novela \u0027Los Miserables\u0027?",
+    "answer": "De viejo"
+  },
+  {
+    "questionTitle": "¿De qué estaba hecha la casa que se encontraron Hansel y Gretel?",
+    "answer": "Chocolate"
+  },
+  {
+    "questionTitle": "¿Quién escribió la novela \"100 años de Soledad\"?",
+    "answer": "Gabriel García Márquez "
+  },
+  {
+    "questionTitle": "¿Quién escribió \u0027Mujercitas\u0027?",
+    "answer": "Louisa May Alcott"
+  },
+  {
+    "questionTitle": "¿Quién es el autor de \"Las aventuras de Alicia en el País de las Maravillas?",
+    "answer": "Lewis Carroll"
+  },
+  {
+    "questionTitle": "¿Quién es el autor de \"Las Cuatro Estaciones\"?",
+    "answer": "Antonio Vivaldi"
+  },
+  {
+    "questionTitle": "¿De qué nacionalidad era Leonardo Da Vinci?",
+    "answer": "Italiano"
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre del conde de Montecristo?",
+    "answer": "Edmon Dantès"
+  },
+  {
+    "questionTitle": "Más vale tarde...",
+    "answer": "que nunca"
+  },
+  {
+    "questionTitle": "En mitología griega, ¿quién traslada a los muertos hacia el inframundo?",
+    "answer": "Caronte"
+  },
+  {
+    "questionTitle": "¿De qué color es el Caballo de Santiago?",
+    "answer": "Blanco "
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre dado a la epopeya escrita en la Edad Media?",
+    "answer": "Cantar de gesta "
+  },
+  {
+    "questionTitle": "¿Cómo se denominan las primeras novelas andaluzas?",
+    "answer": "Moriscas"
+  },
+  {
+    "questionTitle": "¿Cuál es el siglo más importante para el arte barroco en España?",
+    "answer": "XVII"
+  },
+  {
+    "questionTitle": "¿Cuál es la ciudad europea sede del prestigioso Teatro Negro?",
+    "answer": "Praga"
+  },
+  {
+    "questionTitle": "¿De qué tipo de arte es la escultura Apolo de Belvedere?",
+    "answer": "Arte Griego"
+  },
+  {
+    "questionTitle": "¿Con qué animal apostó la libre a que llegaba antes que él, el en cuento de La Fontaine?",
+    "answer": "Tortuga"
+  },
+  {
+    "questionTitle": "¿Dónde nació Clarín?",
+    "answer": "Zamora"
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre de Picasso?",
+    "answer": "Pablo"
+  },
+  {
+    "questionTitle": "¿Qué es \u0027El País\u0027?",
+    "answer": "Periódico"
+  },
+  {
+    "questionTitle": "En una palabra, el movimiento literario Romanticismo se define con:",
+    "answer": "Sentimientos"
+  },
+  {
+    "questionTitle": "Harry Potter fue escrita por...",
+    "answer": "JK Rowling"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el escudero de Don Quijote?",
+    "answer": "Sancho Panza"
+  },
+  {
+    "questionTitle": "¿Qué plantas pintaba Monet?",
+    "answer": "Nenúfares "
+  },
+  {
+    "questionTitle": "¿Quién escribió el ensayo feminista \u0027El segundo sexo\u0027?",
+    "answer": "Simone de Beauvoir "
+  },
+  {
+    "questionTitle": "¿En qué año apareció por primera vez el personaje Astérix?",
+    "answer": "1959"
+  },
+  {
+    "questionTitle": "¿Cuál de estos es uno de los temas centrales de la obra \"Otelo\"?",
+    "answer": "Celos"
+  },
+  {
+    "questionTitle": "¿Quién fue el arquitecto creador de la catedral de Brasilia?",
+    "answer": "Oscar Niemeyer"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la estrofa de cinco versos de arte menor?",
+    "answer": "Quintilla"
+  },
+  {
+    "questionTitle": "¿Cuál de estos cuentos fue escrito por Julio Cortázar?",
+    "answer": "Casa Tomada"
+  },
+  {
+    "questionTitle": "Se queda más solo que...",
+    "answer": "la una"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes instrumentos no es de viento metal?",
+    "answer": "Flauta travesera "
+  },
+  {
+    "questionTitle": "Es Mejor Morir de Pie...",
+    "answer": "Que Vivir de Rodillas"
+  },
+  {
+    "questionTitle": "¿Quién \u0027El triunfo de David\u0027?",
+    "answer": "Nicolas Poussin"
+  },
+  {
+    "questionTitle": "¿Quién fue uno de los escritores más destacados de la época del romanticismo?",
+    "answer": "Adolfo Becquer"
+  },
+  {
+    "questionTitle": "¿Cómo es Obélix?",
+    "answer": "Gordo"
+  },
+  {
+    "questionTitle": "¿Con quién pasó más hambre el Lazarillo de Tormes?",
+    "answer": "El clérigo"
+  },
+  {
+    "questionTitle": "¿Qué poeta escribió \u0027Mi bufón\u0027?",
+    "answer": "Antonio Machado"
+  },
+  {
+    "questionTitle": "¿Tira la piedra...?",
+    "answer": "Y esconde la mano"
+  },
+  {
+    "questionTitle": "¿Cómo se denomina a la poesía popular creada durante la Edad Media por los juglares?",
+    "answer": "Mester de juglaría"
+  },
+  {
+    "questionTitle": "¿Quién escribió la obra \"Trabajo asalariado y capital\"?",
+    "answer": "Karl Marx"
+  },
+  {
+    "questionTitle": "¿De qué época artística es el pintor Bartolomé Esteban Murillo?",
+    "answer": "Barroco"
+  },
+  {
+    "questionTitle": "¿En qué ciudad nórdica está situada la acción de la trilogía Millenium, del escritor Stieg Larsson?",
+    "answer": "Estocolmo"
+  },
+  {
+    "questionTitle": "¿De qué material era el escarabajo del cuento de Edgard Allan Poe?",
+    "answer": "Oro"
+  },
+  {
+    "questionTitle": "¿Cómo despertó el príncipe a la Bella Durmiente?",
+    "answer": "Besándola"
+  },
+  {
+    "questionTitle": "¿Quién pinto \u0027La Gioconda\u0027?",
+    "answer": "Leonardo Da Vinci "
+  },
+  {
+    "questionTitle": "¿A qué edad alcanzan la madurez las crías de elefante?",
+    "answer": "12-15 años"
+  },
+  {
+    "questionTitle": "¿Cuántas células de esperma fabrican los testículos de un hombre al día?",
+    "answer": "10 millones"
+  },
+  {
+    "questionTitle": "¿Qué nombre tiene el portátil más ligero, en peso, de Apple?",
+    "answer": "MacBook Air"
+  },
+  {
+    "questionTitle": "¿Cómo llaman los dentistas a \u0027matar un nervio\u0027?",
+    "answer": "Endodoncia"
+  },
+  {
+    "questionTitle": "¿Quienes fundaron la marca Apple?",
+    "answer": "S.Jobs y S.Wozniak"
+  },
+  {
+    "questionTitle": "¿Cuál de las siguientes enfermedades es muy común en los mayores por la disminución de la densidad de los huesos?",
+    "answer": "Osteoporosis"
+  },
+  {
+    "questionTitle": "¿Qué parte del cuerpo tiene 27 huesos y 35 músculos?",
+    "answer": "Mano"
+  },
+  {
+    "questionTitle": "¿Cuál de estos animales es endémico de Colombia?",
+    "answer": "Titi gris"
+  },
+  {
+    "questionTitle": "¿En matemáticas, ¿qué es 3,14 ?",
+    "answer": "Pi"
+  },
+  {
+    "questionTitle": "¿Qué animal puede correr sobre el agua?",
+    "answer": "Lagarto basilisco"
+  },
+  {
+    "questionTitle": "¿Por qué vía parenteral se obtiene una biodisponibilidad del 100 por cien del fármaco?",
+    "answer": "Intravenosa"
+  },
+  {
+    "questionTitle": "¿Cuál es la fórmula química del ácido clorhídrico?",
+    "answer": "HCl"
+  },
+  {
+    "questionTitle": "¿Qué estudia la topografía?",
+    "answer": "La representación gráfica de la superficie de la Tierra "
+  },
+  {
+    "questionTitle": "¿A cuántas personas podría matar un solo gramo de veneno de la cobra?",
+    "answer": "150"
+  },
+  {
+    "questionTitle": "¿Qué órgano es el encargado de fabricar insulina?",
+    "answer": "Páncreas"
+  },
+  {
+    "questionTitle": "¿Qué número equivale al 16 en hexadecimal?",
+    "answer": "10"
+  },
+  {
+    "questionTitle": "¿Cuántas vertebras forman la columna vertebral humana?",
+    "answer": "33"
+  },
+  {
+    "questionTitle": "¿Qué compañía multinacional compró al sistema de mensajería WhatsApp?",
+    "answer": "Facebook"
+  },
+  {
+    "questionTitle": "¿Cómo se llaman los vasos sanguíneos más finos?",
+    "answer": "Capilares"
+  },
+  {
+    "questionTitle": "¿Cómo se denomina a la nube que se encuentra a nivel de superficie?",
+    "answer": "Niebla"
+  },
+  {
+    "questionTitle": "¿Cuántos millones de años se estima que le restan de vida a nuestro Sol?",
+    "answer": "5500"
+  },
+  {
+    "questionTitle": "¿Cuál es la hormona sexual masculina más importante?",
+    "answer": "Testosterona "
+  },
+  {
+    "questionTitle": "¿Gracias a cuál de tus cinco sentidos puedes descodificar vibraciones en el aire?",
+    "answer": "Oído"
+  },
+  {
+    "questionTitle": "¿De qué sustrato se nutre principalmente el cerebro?",
+    "answer": "Glucosa"
+  },
+  {
+    "questionTitle": "¿Cuánto midió el hombre más alto del mundo (acreditado)?",
+    "answer": "2.72 mts"
+  },
+  {
+    "questionTitle": "¿Qué virus se atacó con la primera vacuna?",
+    "answer": "Viruela"
+  },
+  {
+    "questionTitle": "¿Qué registra un sismógrafo?",
+    "answer": "Temblores de tierra"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el estudio de los alimentos?",
+    "answer": "Bromatología"
+  },
+  {
+    "questionTitle": "¿Con que otro nombre se conoce a la piel?",
+    "answer": "Epidermis"
+  },
+  {
+    "questionTitle": "¿Cuántas patas tienen las arañas?",
+    "answer": "8"
+  },
+  {
+    "questionTitle": "¿Qué es un bacilo?",
+    "answer": "Una bacteria en forma de bastón"
+  },
+  {
+    "questionTitle": "¿Cuál es la hormona que le cambia el tono de voz a los hombres?",
+    "answer": "Testosterona"
+  },
+  {
+    "questionTitle": "¿Qué es la luna?",
+    "answer": "Un satélite"
+  },
+  {
+    "questionTitle": "¿De qué están formadas las estrellas?",
+    "answer": "De hidrógeno y helio"
+  },
+  {
+    "questionTitle": "¿Cuál es el componente principal del chocolate?",
+    "answer": "Cacao"
+  },
+  {
+    "questionTitle": "¿A partir de qué edad, como máximo, empieza a andar un niño de desarrollo normal?",
+    "answer": "18 meses"
+  },
+  {
+    "questionTitle": "¿Qué es un ser unicelular?",
+    "answer": "Un ser vivo de una célula"
+  },
+  {
+    "questionTitle": "¿En qué estado se encuentra el uranio a temperatura ambiente?",
+    "answer": "Sólido"
+  },
+  {
+    "questionTitle": "¿Qué es la filofobia?",
+    "answer": "Temor a enamorarse"
+  },
+  {
+    "questionTitle": "¿Qué símbolo tiene el niobio en la tabla periódica?",
+    "answer": "Nb"
+  },
+  {
+    "questionTitle": "¿Para qué sirven los orificios de las ballenas?",
+    "answer": "Para respirar"
+  },
+  {
+    "questionTitle": "Las \u0027itis\u0027 nos indican que algo está...",
+    "answer": "Inflamado"
+  },
+  {
+    "questionTitle": "¿Cómo se le denomina al periodo de la reproducción humana en la que el placer es culminante en ambos órganos sexuales del hombre y de la mujer?",
+    "answer": "Orgasmo"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la rama de la medicina que estudia las hormonas y las glándulas?",
+    "answer": "Endocrinología"
+  },
+  {
+    "questionTitle": "¿Qué dedo de la mano sólo tiene dos falanges?",
+    "answer": "Pulgar"
+  },
+  {
+    "questionTitle": "¿Qué es la fosfatidiletanolamina?",
+    "answer": "Un fosfolípido"
+  },
+  {
+    "questionTitle": "¿Qué enfermedad se produce por la deficiencia en la producción de la hormona insulina por parte del páncreas?",
+    "answer": "Diabetes"
+  },
+  {
+    "questionTitle": "¿Cuál es el símbolo químico de la plata?",
+    "answer": "Ag"
+  },
+  {
+    "questionTitle": "¿Son lo mismo 20 grados Fahrenheit que 20 grados Celsius?",
+    "answer": "No"
+  },
+  {
+    "questionTitle": "¿Qué vitamina ayuda a la fijación de calcio en los huesos?",
+    "answer": "Vitamina D"
+  },
+  {
+    "questionTitle": "¿Cuál es el símbolo del potasio?",
+    "answer": "K"
+  },
+  {
+    "questionTitle": "¿Qué es la eremofobia?",
+    "answer": "Ninguna es correcta"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes es un gas noble?",
+    "answer": "Neón"
+  },
+  {
+    "questionTitle": "¿Dónde tienen el sentido del gusto las moscas?",
+    "answer": "En las patas"
+  },
+  {
+    "questionTitle": "¿Qué codificación utiliza solamente 0 y 1?",
+    "answer": "Binario"
+  },
+  {
+    "questionTitle": "Calcula: 20 + 100 + 420 \u003d",
+    "answer": "540"
+  },
+  {
+    "questionTitle": "¿Hasta cuántos colores puede tener un perro collie naturalmente?",
+    "answer": "Tres"
+  },
+  {
+    "questionTitle": "¿Cuál es el símbolo químico del hierro?",
+    "answer": "Fe"
+  },
+  {
+    "questionTitle": "¿Qué hormona representa la abreviatura T4?",
+    "answer": "Tiroxina"
+  },
+  {
+    "questionTitle": "¿Qué son las pupilas?",
+    "answer": "Estructura del ojo"
+  },
+  {
+    "questionTitle": "¿Qué animal siempre cae de pie?",
+    "answer": "Gato"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la técnica de cultivo de especies acuáticas vegetales y animales?",
+    "answer": "Acuicultura"
+  },
+  {
+    "questionTitle": "¿Qué es la cotangente de un ángulo (cotg)?",
+    "answer": "cos/sen"
+  },
+  {
+    "questionTitle": "¿A qué parte del corazón le afectan más los infartos?",
+    "answer": "Miocardio"
+  },
+  {
+    "questionTitle": "¿De qué metal suele ser la bola de los bolígrafos?",
+    "answer": "Tungsteno"
+  },
+  {
+    "questionTitle": "¿Quién formuló la teoría de la relatividad general?",
+    "answer": "Albert Einstein"
+  },
+  {
+    "questionTitle": "¿Cómo se conoce comúnmente la planta \"Datura stramonium?",
+    "answer": "Todas son correctas "
+  },
+  {
+    "questionTitle": "¿Cuál es la fórmula del dióxido de carbono?",
+    "answer": "CO2"
+  },
+  {
+    "questionTitle": "¿Cuál de las siguientes actitudes en un gato demuestran su tranquilidad?",
+    "answer": "Ninguna es correcta"
+  },
+  {
+    "questionTitle": "¿Qué es el esternocleidomastoideo?",
+    "answer": "Un músculo"
+  },
+  {
+    "questionTitle": "¿Cómo conocemos comúnmente al compuesto químico H2O2?",
+    "answer": "Agua oxigenada"
+  },
+  {
+    "questionTitle": "¿De qué país proviene del pez dorado?",
+    "answer": "China"
+  },
+  {
+    "questionTitle": "¿Qué ciencia se ocupa del clima?",
+    "answer": "Meteorología"
+  },
+  {
+    "questionTitle": "¿A qué parte del cuerpo afecta la enfermedad de Crohn?",
+    "answer": "Intestino"
+  },
+  {
+    "questionTitle": "Los glóbulos rojos también se llaman...",
+    "answer": "Eritrocitos"
+  },
+  {
+    "questionTitle": "¿Qué es la estrella de mar?",
+    "answer": "Equinodermo"
+  },
+  {
+    "questionTitle": "Si te hacen una angiografía, ¿qué están fotografiando?",
+    "answer": "Los vasos sanguíneos "
+  },
+  {
+    "questionTitle": "¿Qué es la celiaquía?",
+    "answer": "Intolerancia el gluten"
+  },
+  {
+    "questionTitle": "¿Qué sonido hacen las gallinas?",
+    "answer": "Cararean"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la amnesia caracterizada por una incapacidad para recordar los eventos ocurridos después de haber sufrido una lesión cerebral?",
+    "answer": "Amnesia anterógrada"
+  },
+  {
+    "questionTitle": "¿Qué nombre recibe el defecto visual que consiste en que el eje de los ojos no está centrado?",
+    "answer": "Estrabismo"
+  },
+  {
+    "questionTitle": "¿Qué componente de ADN se uno en su estructura con la guanina?",
+    "answer": "Citosina"
+  },
+  {
+    "questionTitle": "¿Cuál es la sustancia deficiente en los diabéticos?",
+    "answer": "Insulina"
+  },
+  {
+    "questionTitle": "¿Cómo se llaman las lesiones en la pared del tubo digestivo?",
+    "answer": "Úlcera"
+  },
+  {
+    "questionTitle": "¿Qué es la queratina?",
+    "answer": "Una proteína"
+  },
+  {
+    "questionTitle": "¿Qué significan las siglas \"www\"?",
+    "answer": "World Wide Web"
+  },
+  {
+    "questionTitle": "¿Cómo se denomina el juramento que realizan los médicos?",
+    "answer": "Hipocrático"
+  },
+  {
+    "questionTitle": "¿Qué es el colesterol?",
+    "answer": "Un lípido"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la torcedura de una articulación en el cuerpo?",
+    "answer": "Esguince"
+  },
+  {
+    "questionTitle": "Si padeces la enfermedad de Crohn o colitis ulcerosa, tienes una enfermedad...",
+    "answer": "Intestinal"
+  },
+  {
+    "questionTitle": "¿Qué tiene más concentración de sal?",
+    "answer": "La orina"
+  },
+  {
+    "questionTitle": "¿Qué enfermedad se caracteriza por repentinos ataques de sueño?",
+    "answer": "Narcolepsia"
+  },
+  {
+    "questionTitle": "¿Qué es el caracol?",
+    "answer": "Molusco"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentran las medusas con veneno mortal?",
+    "answer": "Australia"
+  },
+  {
+    "questionTitle": "¿Dónde tienen las papilas gustativas las moscas?",
+    "answer": "En las patas"
+  },
+  {
+    "questionTitle": "¿De dónde forman parte los axones?",
+    "answer": "Neurona"
+  },
+  {
+    "questionTitle": "¿Cuál es el símbolo químico del fósforo?",
+    "answer": "P"
+  },
+  {
+    "questionTitle": "¿Qué es lo que más lugar ocupa en el cerebro humano?",
+    "answer": "Hemisferios cerebrales "
+  },
+  {
+    "questionTitle": "¿Qué significan las siglas USB?",
+    "answer": "Universal Serial Bus"
+  },
+  {
+    "questionTitle": "¿Cuáles de los siguientes no es un grupo sanguíneo?",
+    "answer": "OO"
+  },
+  {
+    "questionTitle": "¿A qué tienes miedo si sufres de aracnofobia?",
+    "answer": "Arañas"
+  },
+  {
+    "questionTitle": "¿Cuál de estos NO es un musculo del cuerpo?",
+    "answer": "Cruzado"
+  },
+  {
+    "questionTitle": "¿Cómo se llaman las pinzas especiales que se usan en obstetricia para sujetar la cabeza del bebé y hacer tracción sobre ella en los partos difíciles?",
+    "answer": "Forceps"
+  },
+  {
+    "questionTitle": "¿Cómo llamamos a la inflamación de la piel?",
+    "answer": "Dermatitis"
+  },
+  {
+    "questionTitle": "¿Qué droga de las denominadas \u0027blandas\u0027 es útil en el tratamiento del dolor?",
+    "answer": "Marihuana"
+  },
+  {
+    "questionTitle": "¿Cuál es la distribución de Linux más usada?",
+    "answer": "Ubuntu"
+  },
+  {
+    "questionTitle": "¿Cómo llamamos a una lesión térmica o química de los tejidos?",
+    "answer": "Quemadura"
+  },
+  {
+    "questionTitle": "¿Con qué nombre se conoce la energía producida por las partículas en movimiento?",
+    "answer": "Energía Cinética"
+  },
+  {
+    "questionTitle": "¿Quién fue el Inventor de la dinamita?",
+    "answer": "Alfred Nobel"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la arteria principal del cuerpo humano?",
+    "answer": "Aorta"
+  },
+  {
+    "questionTitle": "¿Qué parte del cuerpo humano puede tener un soplo?",
+    "answer": "Corazón"
+  },
+  {
+    "questionTitle": "¿Cuántas Leyes de Mendel hay?",
+    "answer": "3"
+  },
+  {
+    "questionTitle": "¿Cuánto es la raíz cuadrada del 121?",
+    "answer": "11"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la enfermedad por la que una persona cree infundadamente que padece alguna enfermedad grave?",
+    "answer": "Hipocondría"
+  },
+  {
+    "questionTitle": "¿El pulso de qué arteria se usa para comprobar la muerte de una persona?",
+    "answer": "Carótida"
+  },
+  {
+    "questionTitle": "¿Qué es la levadura?",
+    "answer": "Un hongo"
+  },
+  {
+    "questionTitle": "¿A partir de qué nivel de inteligencia se puede considerar que alguien es un genio?",
+    "answer": "140"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el registro gráfico de la activa eléctrica del cerebro?",
+    "answer": "Electroencefalograma"
+  },
+  {
+    "questionTitle": "¿El ciempiés gigante del Amazonas puede medir más de 30 centímetros y cuelga de las cuevas. ¿Qué mamífero volador le resulta fácil cazar?",
+    "answer": "Murciélagos"
+  },
+  {
+    "questionTitle": "¿Qué son los pugs?",
+    "answer": "Una raza de perro"
+  },
+  {
+    "questionTitle": "¿En cuántos lóbulos se divide el pulmón derecho?",
+    "answer": "Tres"
+  },
+  {
+    "questionTitle": "¿Cuál de estas fases NO es una de las fases de la división celular?",
+    "answer": "Rinofase"
+  },
+  {
+    "questionTitle": "¿Quién es considerado el padre de la genética?",
+    "answer": "Gregor Mendel"
+  },
+  {
+    "questionTitle": "¿Cuántos grados Kelvin son 0 grados Celcius?",
+    "answer": "273,15"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes NO forma parte de un ordenador personal?",
+    "answer": "Microondas"
+  },
+  {
+    "questionTitle": "¿Quién fue el inventor de la bombilla?",
+    "answer": "Edison"
+  },
+  {
+    "questionTitle": "¿Por qué compuesto químico está formada la lavandina?",
+    "answer": "Hipoclorito de Sodio "
+  },
+  {
+    "questionTitle": "¿Cómo se conoce el virus del SIDA?",
+    "answer": "VIH"
+  },
+  {
+    "questionTitle": "¿Cuál es el músculo causante del espasmo muscular \"Torticolis\"?",
+    "answer": "Esternocleidomastoideo"
+  },
+  {
+    "questionTitle": "¿Cuál es el componente principal del chocolate?",
+    "answer": "Cacao"
+  },
+  {
+    "questionTitle": "¿Por qué tipo de elementos están formadas las sales binarias?",
+    "answer": "Un metal y un no metal"
+  },
+  {
+    "questionTitle": "¿Qué significan las siglas ADN?",
+    "answer": "Ácido desoxirribonucleico"
+  },
+  {
+    "questionTitle": "¿Qué son los leucocitos?",
+    "answer": "Glóbulos blancos"
+  },
+  {
+    "questionTitle": "¿Cómo se conoce comúnmente al compuesto químico NaCI?",
+    "answer": "Sal"
+  },
+  {
+    "questionTitle": "¿Cuántas alas tiene una pulga?",
+    "answer": "Ninguna "
+  },
+  {
+    "questionTitle": "¿Qué es un bit?",
+    "answer": "La unidad más pequeña de almacenamiento "
+  },
+  {
+    "questionTitle": "¿Qué hay que ponerle a un vidrio para convertirlo en un espejo?",
+    "answer": "Aluminio"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la técnica consistente en descender la temperatura del cuerpo humano por debajo de -190ºC?",
+    "answer": "Criogenización"
+  },
+  {
+    "questionTitle": "¿Qué nervio es el VII par craneal?",
+    "answer": "Nervio facial"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes números es mayor?",
+    "answer": "El número Pi"
+  },
+  {
+    "questionTitle": "¿Dónde se almacena la información genética del ser humano?",
+    "answer": "ADN"
+  },
+  {
+    "questionTitle": "¿Qué estudia el herpetólogo?",
+    "answer": "Reptiles y víboras"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el estado vital en que la persona actúa conforme a estímulos e intereses ajenos, creyendo que le son propios?",
+    "answer": "Alienación"
+  },
+  {
+    "questionTitle": "¿El déficit de qué vitamina produce raquitismo?",
+    "answer": "D"
+  },
+  {
+    "questionTitle": "¿En qué año falleció Steve Jobs?",
+    "answer": "2011"
+  },
+  {
+    "questionTitle": "¿Quién postuló la ley del principio de inercia?",
+    "answer": "Isaac Newton"
+  },
+  {
+    "questionTitle": "¿Cuántas veces se calcula que latirá el corazón a lo largo de toda la vida de una persona?",
+    "answer": "4.000 millones"
+  },
+  {
+    "questionTitle": "¿Cuánto es la raíz cuadrada de 625?",
+    "answer": "25"
+  },
+  {
+    "questionTitle": "¿Cómo se denomina el sulfato de calcio, cuando se usa para escribir?",
+    "answer": "Tiza"
+  },
+  {
+    "questionTitle": "¿Dónde llevan los cocodrilos a sus crías?",
+    "answer": "En la boca"
+  },
+  {
+    "questionTitle": "¿Cuántos colores tenía la primera tarjeta gráfica?",
+    "answer": "2"
+  },
+  {
+    "questionTitle": "¿Qué articulación une el fémur con la tibia?",
+    "answer": "Rodilla"
+  },
+  {
+    "questionTitle": "¿Qué función tienen las manchas de la jirafa?",
+    "answer": "Sacar el calor"
+  },
+  {
+    "questionTitle": "¿Qué hace un procrastinador?",
+    "answer": "Pospone sus actividades"
+  },
+  {
+    "questionTitle": "¿Cuál es el único nervio que no pasa por el tálamo?",
+    "answer": "Nervio Olfativo "
+  },
+  {
+    "questionTitle": "¿Qué sustancia permite realizar la fotosíntesis?",
+    "answer": "Clorofila"
+  },
+  {
+    "questionTitle": "¿Qué son la morfina y la heroína?",
+    "answer": "Opiáceos"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la cresta que hace el labio debajo de la nariz?",
+    "answer": "Surco nasolabial "
+  },
+  {
+    "questionTitle": "¿Qué es el ciclo de krebs?",
+    "answer": "Ciclo del ácido cítrico"
+  },
+  {
+    "questionTitle": "¿Qué órgano del cuerpo es el más dañado por el consumo excesivo de alcohol?",
+    "answer": "Hígado"
+  },
+  {
+    "questionTitle": "¿Qué duración tiene un partido de fútbol que llega a la tanda de penaltis?",
+    "answer": "120 "
+  },
+  {
+    "questionTitle": "¿En cuál de los siguientes deportes se puede tocar el balón con las manos?",
+    "answer": "Baloncesto "
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba la pelota del Mundial de Fútbol 1978?",
+    "answer": "Adidas Tango "
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre de pila del tenista Federer?",
+    "answer": "Roger"
+  },
+  {
+    "questionTitle": "¿Quién es el goleador(es) del mundial 2010?",
+    "answer": "Diego Forlán y Thomas Müller "
+  },
+  {
+    "questionTitle": "¿Cómo se llama Iniesta?",
+    "answer": "Andrés"
+  },
+  {
+    "questionTitle": "¿A qué deporte pertenece la WWE?",
+    "answer": "Lucha libre"
+  },
+  {
+    "questionTitle": "¿En qué país ganó Alemania su primer mundial de fútbol?",
+    "answer": "Suiza"
+  },
+  {
+    "questionTitle": "¿En cuántos mundiales participó la selección de Inglaterra?",
+    "answer": "14"
+  },
+  {
+    "questionTitle": "¿Con qué deporte relacionarías a Aitor Osa?",
+    "answer": "Ciclismo"
+  },
+  {
+    "questionTitle": "¿Quién ganó el mundial de 2010 en Sudáfrica?",
+    "answer": "España"
+  },
+  {
+    "questionTitle": "¿Quién fue el primer jugador que recibió la distinción de \"Mejor Jugador del Siglo\"?",
+    "answer": "Pelé"
+  },
+  {
+    "questionTitle": "¿A qué se denomina hacer un rosco en Tenis?",
+    "answer": "6-0"
+  },
+  {
+    "questionTitle": "¿Qué deporte estamos viendo si el árbitro señala \"falta de rotación\"?",
+    "answer": "Voleibol"
+  },
+  {
+    "questionTitle": "¿Cuál es el salto más alto en caballo?",
+    "answer": "1\u002720 m"
+  },
+  {
+    "questionTitle": "¿Cuántos jugadores componen usualmente un equipo de rugby?",
+    "answer": "15"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el lugar destinado a las carreras de caballos?",
+    "answer": "Hipódromo"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la anotación de un tanto en el fútbol americano?",
+    "answer": "Touchdown"
+  },
+  {
+    "questionTitle": "¿Quién fue el primer equipo en llevar dorsales en la liga Española?",
+    "answer": "Real Madrid"
+  },
+  {
+    "questionTitle": "¿Quién tiene más balones de oro?",
+    "answer": "Lionel Messi"
+  },
+  {
+    "questionTitle": "¿Quién fue el máximo goleador de la UEFA Champions League en 2013?",
+    "answer": "Cristiano Ronaldo"
+  },
+  {
+    "questionTitle": "¿Quién es \u0027O Rei\u0027?",
+    "answer": "Pelé"
+  },
+  {
+    "questionTitle": "En voleibol, ¿hasta cuántos toques se le puede dar a la pelota antes de pasarla al campo rival?",
+    "answer": "Tres"
+  },
+  {
+    "questionTitle": "¿De qué nacionalidad es el futbolista Zlatan Ibrahimovic?",
+    "answer": "Sueca"
+  },
+  {
+    "questionTitle": "Estilo de atletismo en el que los corredores llevan un testigo:",
+    "answer": "Relevo"
+  },
+  {
+    "questionTitle": "¿En qué año se fundó el FC Barcelona?",
+    "answer": "1899"
+  },
+  {
+    "questionTitle": "¿De qué equipo procedía Louis Van Gaal antes de entrenar al Barça?",
+    "answer": "Ajax"
+  },
+  {
+    "questionTitle": "Evgenia Kanaeva es la \u0027reina\u0027 de...",
+    "answer": "Gimnasia rítmica"
+  },
+  {
+    "questionTitle": "¿Cuántas Copas del Mundo de Fútbol ha ganado la selección de Italia?",
+    "answer": "Cuatro"
+  },
+  {
+    "questionTitle": "¿Cuántos tiempos tiene un partido de baloncesto?",
+    "answer": "4"
+  },
+  {
+    "questionTitle": "¿Qué equipo de baloncesto ha sido campeón de la NBA en 2012 y 2013?",
+    "answer": "Miami Heat"
+  },
+  {
+    "questionTitle": "¿Quién acaba 2013 como número 1 de la ATP?",
+    "answer": "Nadal"
+  },
+  {
+    "questionTitle": "¿En qué año se fundó el FC Barcelona?",
+    "answer": "1899 "
+  },
+  {
+    "questionTitle": "¿Qué boxeador se negó a ir a Vietnam diciendo \u0027Yo no tengo ningún problema con los Viet Cong\u0027 y \u0027Ningún Viet Cong me ha llamado negrata\u0027?",
+    "answer": "Muhammad Ali"
+  },
+  {
+    "questionTitle": "¿En qué equipo juega Cristiano Ronaldo?",
+    "answer": "Real Madrid"
+  },
+  {
+    "questionTitle": "¿Dónde nació el mítico portero español Ricardo Zamora?",
+    "answer": "Barcelona"
+  },
+  {
+    "questionTitle": "¿Cuándo ganó el \u0027pichichi\u0027 Juanito?",
+    "answer": "1984"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el estadio del Deportivo Alavés?",
+    "answer": "Mendizorroza"
+  },
+  {
+    "questionTitle": "¿Cuál fue el único club español donde jugó El Piojo López?",
+    "answer": "Valencia CF"
+  },
+  {
+    "questionTitle": "¿En qué país nació Martina Hingis?",
+    "answer": "Checoslovaquia"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la cuerda que une el tobillo del surfero con su tabla?",
+    "answer": "Invento"
+  },
+  {
+    "questionTitle": "¿En qué deporte olímpico conlleva la expulsión salpicar deliberadamente la cara de un oponente o hundirlo en el agua cuando no tiene la pelota?",
+    "answer": "Waterpolo"
+  },
+  {
+    "questionTitle": "¿En qué año se inauguró el Camp Nou?",
+    "answer": "1957"
+  },
+  {
+    "questionTitle": "¿Qué equipo ha sido mayor número de veces Campeón de España?",
+    "answer": "Real Madrid"
+  },
+  {
+    "questionTitle": "¿Cuántos Grand Slam tiene Roger Federer?",
+    "answer": "17"
+  },
+  {
+    "questionTitle": "¿De qué tipo eran las 3 medallas conseguidas por Usain Bolt en los Juegos Olímpicos en Londres 2012?",
+    "answer": "Oro"
+  },
+  {
+    "questionTitle": "¿Qué tenista masculino logró la medalla de oro en los Juegos Olímpicos de Pekín 2008?",
+    "answer": "Rafael Nadal"
+  },
+  {
+    "questionTitle": "¿Cuál de estas posiciones no representa a un jugador de Baseball?",
+    "answer": "Fullback"
+  },
+  {
+    "questionTitle": "¿Quién ganó la Eurocopa 2000?",
+    "answer": "Francia"
+  },
+  {
+    "questionTitle": "¿Cuál de estos partidos de la Liga Española se considera un clásico?",
+    "answer": "Barça vs Madrid"
+  },
+  {
+    "questionTitle": "¿Cuántos anillos de la NBA tiene Shaquille O\u0027Neal?",
+    "answer": "Cuatro"
+  },
+  {
+    "questionTitle": "¿Cuánto dura un partido de béisbol?",
+    "answer": "No es por tiempo "
+  },
+  {
+    "questionTitle": "¿Cuántos jugadores hay en un equipo de béisbol?",
+    "answer": "Nueve"
+  },
+  {
+    "questionTitle": "¿Qué país logró la medalla de oro de Voleibol masculina en Pekín 2008?",
+    "answer": "EE.UU"
+  },
+  {
+    "questionTitle": "¿De qué federación dependen los saltadores de trampolín?",
+    "answer": "Natación"
+  },
+  {
+    "questionTitle": "¿Cuál de estos eventos no forma parte del triatlón \u0027hombres de hierro\u0027?",
+    "answer": "Carreras a caballo"
+  },
+  {
+    "questionTitle": "¿En qué deporte destacó Magic Johnson?",
+    "answer": "Baloncesto"
+  },
+  {
+    "questionTitle": "¿Quién fundó la Copa Davis?",
+    "answer": "Davis"
+  },
+  {
+    "questionTitle": "¿Qué animal se puede cazar en la modalidad de \u0027Caza menor\u0027?",
+    "answer": "Perdiz"
+  },
+  {
+    "questionTitle": "¿Con qué deporte relacionarías a Emanuel Ginóbili?",
+    "answer": "Baloncesto "
+  },
+  {
+    "questionTitle": "¿Qué selección eliminó a España en el mundial de Sudáfrica 2010?",
+    "answer": "No fue eliminada"
+  },
+  {
+    "questionTitle": "¿Qué entrenador es famoso por \u0027meter el dedo en el ojo\u0027?",
+    "answer": "José Mourinho"
+  },
+  {
+    "questionTitle": "¿Qué país ha ganado más Eurocopas seguidas?",
+    "answer": "España"
+  },
+  {
+    "questionTitle": "¿Cuántas medallas consiguió Mireia Belmonte en Londres 2012?",
+    "answer": "Dos"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el estadio del Villareal C.F.?",
+    "answer": "El Madrigal"
+  },
+  {
+    "questionTitle": "¿Quién es el jugador de tenis que más veces ha ganado el torneo Roland Garros?",
+    "answer": "Rafael Nadal "
+  },
+  {
+    "questionTitle": "¿Qué país ganó más medallas en Londres 2012?",
+    "answer": "Estados Unidos"
+  },
+  {
+    "questionTitle": "¿En qué ciudad nació Ayrton Senna, tres veces campeón de Fórmula 1?",
+    "answer": "Sao Paulo, Brasil"
+  },
+  {
+    "questionTitle": "¿Qué equipo de fútbol americano debe su nombre a un poema del escritor norteamericano Edgar Allan Poe?",
+    "answer": "Ravens de Baltimore"
+  },
+  {
+    "questionTitle": "¿A qué deporte le corresponde el \"córner corto\"?",
+    "answer": "Hockey sobre Césped"
+  },
+  {
+    "questionTitle": "¿Quién es el cancerbero de un equipo?",
+    "answer": "Portero"
+  },
+  {
+    "questionTitle": "¿Qué se levanta para hacer un \u0027caballito\u0027 con la bici?",
+    "answer": "Rueda delantera "
+  },
+  {
+    "questionTitle": "¿Qué deporte es controlado internacionalmente por el IJF?",
+    "answer": "Judo"
+  },
+  {
+    "questionTitle": "¿Quién es el fichaje más caro de un jugador español hasta 2013?",
+    "answer": "Fernando Torres"
+  },
+  {
+    "questionTitle": "¿A qué país pertenece el equipo europeo Arsenal?",
+    "answer": "Inglaterra"
+  },
+  {
+    "questionTitle": "¿Qué tipo de medallas consiguió Mireia Belmonte en Londes 2012?",
+    "answer": "Plata"
+  },
+  {
+    "questionTitle": "¿Cuál es el único equipo de fútbol que ha ganado un sextete?",
+    "answer": "F.C. Barcelona "
+  },
+  {
+    "questionTitle": "¿Cuántos anillos de la NBA ganó Michael Jordan con los Chicago Bulls?",
+    "answer": "Seis"
+  },
+  {
+    "questionTitle": "¿Quién marcó el gol de falta en la final de Champions disputada entre el Barcelona y el Sampdoria en 1992?",
+    "answer": "Koeman"
+  },
+  {
+    "questionTitle": "¿De qué color es el cinturón que indica la mayor clasificación y que visten los maestros de kárate?",
+    "answer": "Negro"
+  },
+  {
+    "questionTitle": "¿Cuánto dura un partido de rugby?",
+    "answer": "80 min"
+  },
+  {
+    "questionTitle": "¿Cuántas jugadoras participan en un juego de volleyball?",
+    "answer": "6"
+  },
+  {
+    "questionTitle": "¿Qué futbolista portó una playera debajo de su jersey con la leyenda \"I Belong to Jesus\"?",
+    "answer": "Ricardo Kaká"
+  },
+  {
+    "questionTitle": "¿En qué equipo de fútbol español jugó \"El Piojo\" López?",
+    "answer": "Valencia CF "
+  },
+  {
+    "questionTitle": "¿Qué entrenador de origen argentino es conocido como el \"cholo\"?",
+    "answer": "Diego Pablo Simeone"
+  },
+  {
+    "questionTitle": "¿Dónde nació el tenista español Rafael Nadal?",
+    "answer": "Mallorca"
+  },
+  {
+    "questionTitle": "¿En qué deporte destacó Julio César Chávez?",
+    "answer": "Boxeo"
+  },
+  {
+    "questionTitle": "En los Juego Olímpicos de Invierno se compite en luge. ¿Qué es luge?",
+    "answer": "Un trineo"
+  },
+  {
+    "questionTitle": "¿Qué país llama a su selección nacional de fútbol los \u0027Reggae Boyz?",
+    "answer": "Jamaica"
+  },
+  {
+    "questionTitle": "¿Qué significan las siglas ACB?",
+    "answer": "Asociación de Clubes de Baloncesto "
+  },
+  {
+    "questionTitle": "¿Qué deporte practica Rafael Nadal a nivel profesional?",
+    "answer": "Tenis"
+  },
+  {
+    "questionTitle": "¿Qué deporte practicaba Giacomo Agostini?",
+    "answer": "Motociclismo"
+  },
+  {
+    "questionTitle": "¿Qué equipo no disputó la Eurocopa 2012?",
+    "answer": "Macedonia"
+  },
+  {
+    "questionTitle": "¿De qué ciudad es el Chelsea Football Club?",
+    "answer": "Londres"
+  },
+  {
+    "questionTitle": "¿Cuál de estos clubes de fútbol no ha ganado la Champions League?",
+    "answer": "Arsenal"
+  },
+  {
+    "questionTitle": "¿De qué país es la selección nacional llamada \u0027Diables Rouges\u0027 en francés o \u0027Rode Diuvels\u0027 en flamenco, que significa los Diablos Rojos en español?",
+    "answer": "Bélgica"
+  },
+  {
+    "questionTitle": "¿Qué equipo de la NBA ha ganado más campeonatos?",
+    "answer": "Boston Celtics "
+  },
+  {
+    "questionTitle": "¿Qué entrenador no ha ganado nunca un Mundial de fútbol?",
+    "answer": "Cruyff"
+  },
+  {
+    "questionTitle": "¿Con qué deporte relacionarías a Christian Mayer?",
+    "answer": "Ninguna es correcta "
+  },
+  {
+    "questionTitle": "¿Qué equipo de Segunda B llegó a la semifinal de la Copa del Rey 2011/2012?",
+    "answer": "Mirandés"
+  },
+  {
+    "questionTitle": "¿Cuál es el equipo de fútbol más famoso de la ciudad italiana de Turín?",
+    "answer": "Juventus"
+  },
+  {
+    "questionTitle": "¿Quién fue el \u0027Pichichi\u0027 de la liga española 2010/2011?",
+    "answer": "Cristiano Ronaldo"
+  },
+  {
+    "questionTitle": "¿En qué club se formó Alfredo Di Stefano?",
+    "answer": "River Plate"
+  },
+  {
+    "questionTitle": "¿En qué año debutó como entrenador Pep Guardiola en el FC Barcelona?",
+    "answer": "2008"
+  },
+  {
+    "questionTitle": "¿En qué mundial de fútbol ocurrió del famoso cabezazo de Zidane a Materazzi?",
+    "answer": "Alemania 2006"
+  },
+  {
+    "questionTitle": "¿Qué jugador fue expulsado del mundial de 1994 por doping positivo?",
+    "answer": "Maradona"
+  },
+  {
+    "questionTitle": "¿Cuál de estas no es una prueba de decathlon?",
+    "answer": "Maratón"
+  },
+  {
+    "questionTitle": "¿A qué jugador apodan con \"el chicharito\"?",
+    "answer": "Javier Hernández"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes corredores de la Fórmula 1 falleció en 1994?",
+    "answer": "Ayrton Senna"
+  },
+  {
+    "questionTitle": "¿A qué edad debutó Iker Casillas en el Real Madrid?",
+    "answer": "17"
+  },
+  {
+    "questionTitle": "¿Qué futbolista ha vestido más veces la \u0027Roja\u0027?",
+    "answer": "Iker Casillas"
+  },
+  {
+    "questionTitle": "¿En qué deporte puedes hacer una \"tacada\"?",
+    "answer": "Billar"
+  },
+  {
+    "questionTitle": "¿Qué selección ganó la Copa Mundial de Fútbol Francia 98?",
+    "answer": "Francia"
+  },
+  {
+    "questionTitle": "En golf, ¿cuántos metros mide una yarda?",
+    "answer": "0,914 metros"
+  },
+  {
+    "questionTitle": "¿En qué ciudad del Mediterráneo tuvieron lugar las ediciones de la America\u0027s Cup 2011 y 2012?",
+    "answer": "Valencia"
+  },
+  {
+    "questionTitle": "¿Dónde nació el lateral Roberto Carlos?",
+    "answer": "Brasil"
+  },
+  {
+    "questionTitle": "¿Cuál es el único balón de Oro nacido en España?",
+    "answer": "Luis Suárez"
+  },
+  {
+    "questionTitle": "¿Qué equipo de rugby hace una conocida danza antes de cada partido?",
+    "answer": "All Blacks"
+  },
+  {
+    "questionTitle": "¿Dónde se llevó a cabo el mundial de fútbol de 1962?",
+    "answer": "Chile"
+  },
+  {
+    "questionTitle": "¿A qué compositor griego se debe la partitura original del himno de los Juegos Olímpicos?",
+    "answer": "Spirou Samara"
+  },
+  {
+    "questionTitle": "¿Qué marca de raqueta usa Roger Federer?",
+    "answer": "Wilson"
+  },
+  {
+    "questionTitle": "¿Cuántos jugadores tiene un equipo de futbol en el campo de juego?",
+    "answer": "11"
+  },
+  {
+    "questionTitle": "¿Quién le metió el dedo en el ojo a Tito Vilanova en la Supercopa de España de fútbol 2011?",
+    "answer": "José Mourinho"
+  },
+  {
+    "questionTitle": "¿En qué deporte al aire libre gana el jugador que al final tiene los puntos más bajos?",
+    "answer": "Golf"
+  },
+  {
+    "questionTitle": "¿Qué transporta un caddie en golf?",
+    "answer": "Los palos"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el estadio del Bayern de Múnich?",
+    "answer": "Allianz Arena"
+  },
+  {
+    "questionTitle": "¿Qué piloto de carreras murió en 2011?",
+    "answer": "Marco Simoncelli"
+  },
+  {
+    "questionTitle": "¿Cuál es el deporte nacional de Japón?",
+    "answer": "Sumo"
+  },
+  {
+    "questionTitle": "¿Quién marcó el gol que le dio al Real Madrid su novena copa de Europa?",
+    "answer": "Zidane"
+  },
+  {
+    "questionTitle": "¿Con qué se premiaba a los campeones olímpicos de la antigüedad?",
+    "answer": "Corona de laurel"
+  },
+  {
+    "questionTitle": "¿En qué año se fundó el Real Madrid?",
+    "answer": "1902"
+  },
+  {
+    "questionTitle": "¿Cuántos anillos de la NBA ganó Michael Jordan?",
+    "answer": "6"
+  },
+  {
+    "questionTitle": "¿En qué año se fundó la Real Sociedad de Fútbol?",
+    "answer": "1909"
+  },
+  {
+    "questionTitle": "¿Cuántos \u0027three peat\u0027 (tres anillos NBA consecutivos) tiene Michael Jordan?",
+    "answer": "Dos"
+  },
+  {
+    "questionTitle": "¿Quién tiene el récord mundial de atletismo en 100m lisos en 9,58 segundos?",
+    "answer": "Usain Bolt"
+  },
+  {
+    "questionTitle": "Además del Real Madrid y F.C. Barcelona. ¿Algún otro equipo jugó todas las temporadas de la Liga Española en Primera División?",
+    "answer": "Athletic Club"
+  },
+  {
+    "questionTitle": "El FC Barcelona se fundó mediante un anuncio. ¿Dónde se publicó?",
+    "answer": "En una revista "
+  },
+  {
+    "questionTitle": "¿Dónde serán los Juegos Olímpicos en 2016?",
+    "answer": "Río de Janeiro"
+  },
+  {
+    "questionTitle": "¿Cuál es el piloto de Fórmula 1 más joven en ganar 4 títulos mundiales?",
+    "answer": "Sebastián Vettel"
+  },
+  {
+    "questionTitle": "¿Qué estadio de fútbol español fue el primero en tener asientos para los aficionados?",
+    "answer": "Vicente Calderón"
+  },
+  {
+    "questionTitle": "¿Qué tirada necesitas en el parchís para sacar una ficha de casa?",
+    "answer": "5"
+  },
+  {
+    "questionTitle": "¿Qué deporte profesional se relaciona con las siglas MLB?",
+    "answer": "Baseball"
+  },
+  {
+    "questionTitle": "¿Qué revista concedía el Balón de Oro?",
+    "answer": "France Football"
+  },
+  {
+    "questionTitle": "¿Qué fichaje del F.C. Barcelona ha sido el más barato y a la vez el más rentable de la historia?",
+    "answer": "Lionel Messi"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el palo utilizado en hockey?",
+    "answer": "Stick"
+  },
+  {
+    "questionTitle": "Si juegas en la NFL, ¿qué deporte practicas?",
+    "answer": "Fútbol americano"
+  },
+  {
+    "questionTitle": "¿Qué equipo de liga española tiene el mayor número de ligas ganadas?",
+    "answer": "Real Madrid"
+  },
+  {
+    "questionTitle": "¿Qué piloto de Fórmula 1 tiene el apodo de \"Hombre de hielo\"?",
+    "answer": "Kimi Raikkönen "
+  },
+  {
+    "questionTitle": "¿Quién marcó el gol que le dio a España su primer Mundial de fútbol?",
+    "answer": "Andrés Iniesta"
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba la mascota del mundial Sudáfrica 2010?",
+    "answer": "Zakumi"
+  },
+  {
+    "questionTitle": "¿Cuántos anillos ganó Michael Jordan durante su carrera profesional?",
+    "answer": "6"
+  },
+  {
+    "questionTitle": "¿De qué colores es la camiseta del Atlético de Madrid?",
+    "answer": "Rojo y blanco "
+  },
+  {
+    "questionTitle": "¿En qué club de Italia jugó Diego Maradona?",
+    "answer": "Napoli"
+  },
+  {
+    "questionTitle": "¿Cuál es la última prueba de decathlon?",
+    "answer": "1500 metros"
+  },
+  {
+    "questionTitle": "¿En qué equipo recaló Raúl González después de abandonar el Real Madrid?",
+    "answer": "Schalke 04"
+  },
+  {
+    "questionTitle": "¿Quién era Jay-Jay?",
+    "answer": "Un avioncito"
+  },
+  {
+    "questionTitle": "¿Qué capitán pirata es una mezcla de criaturas del mar y forma humana en las películas de Piratas del Caribe?",
+    "answer": "Davy Jones"
+  },
+  {
+    "questionTitle": "¿Quién es el creador del talent show \"The X Factor\"?",
+    "answer": "Simon Cowell "
+  },
+  {
+    "questionTitle": "¿Cómo se llama el personaje del videojuego Grand Theft Auto IV?",
+    "answer": "Niko"
+  },
+  {
+    "questionTitle": "¿Qué fruta es la casa de Bob Esponja?",
+    "answer": "Una piña"
+  },
+  {
+    "questionTitle": "¿Quién es el marido de la actriz Angelina Jolie?",
+    "answer": "Brad Pitt"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la actriz que interpreta a una pequeña vampira en \"Entrevista con el vampiro\"?",
+    "answer": "Kirsten Dunst"
+  },
+  {
+    "questionTitle": "¿En el juego preguntados, de qué color es el muñeco de arte?",
+    "answer": "Rojo"
+  },
+  {
+    "questionTitle": "¿En la serie Los Simpson de qué color son las perlas de Lisa?",
+    "answer": "Blancas"
+  },
+  {
+    "questionTitle": "¿Quién dirigió la película \"La Diligencia\"?",
+    "answer": "John Ford"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el vocalista de los Guns \"N\" Roses?",
+    "answer": "Axl Rose"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el juguete que es un cubo de colores el cual giran sus partes?",
+    "answer": "Rubik"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el gremlin bueno de la película \"Gremlins\"?",
+    "answer": "Gizmo"
+  },
+  {
+    "questionTitle": "¿Cuál fue la primera película de Disney?",
+    "answer": "Blancanieves"
+  },
+  {
+    "questionTitle": "¿En qué año se estrenó la película de Disney \"Pinocho\"?",
+    "answer": "1940"
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre real del cantante Bruno Mars?",
+    "answer": "Peter Gene Hernández "
+  },
+  {
+    "questionTitle": "¿De quién es la canción \"Cosas que suenan a triste\"?",
+    "answer": "Maldita Nerea "
+  },
+  {
+    "questionTitle": "¿Cómo se llama el programa de la Sexta presentado por Antonio García, en el que se revisa la actualidad?",
+    "answer": "Al Rojo Vivo"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el cangrejo de la película \"La sirenita\" de Walt Disney?",
+    "answer": "Sebastián"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el personaje de la mejor amiga de Mia Thermopolis en la película \"El Diario de la Princesa\"?",
+    "answer": "Lilly"
+  },
+  {
+    "questionTitle": "¿Qué famoso personaje animado sacaba inventos del futuro de su bolsillo mágico?",
+    "answer": "Doraemon"
+  },
+  {
+    "questionTitle": "¿Cuántas veces hay que nombrar a Beetlejuice para que aparezca?",
+    "answer": "3"
+  },
+  {
+    "questionTitle": "¿Quién presenta el concurso \u0027Ahora Caigo\u0027?",
+    "answer": "Arturo Valls"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes juegos es de los creadores de Preguntados?",
+    "answer": "Apalabrados"
+  },
+  {
+    "questionTitle": "¿Qué pedía el Espantapájaros al Mago de Oz en la película del mismo nombre?",
+    "answer": "Un cerebro"
+  },
+  {
+    "questionTitle": "¿Cuál de éstas películas es del director danés Lars Von Trier?",
+    "answer": "Dogville"
+  },
+  {
+    "questionTitle": "¿Quién se convirtió en el mejor amigo de Woody en la película Toy Story?",
+    "answer": "Buzz Lightyear"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el cantante de la banda \u0027Avenged Sevenfold\u0027?",
+    "answer": "M. Shadows "
+  },
+  {
+    "questionTitle": "¿Cuál de estos villanos NO es enemigo de Batman?",
+    "answer": "Magento"
+  },
+  {
+    "questionTitle": "¿Quién es la artista más joven en ganar un premio Country?",
+    "answer": "Taylor Swift"
+  },
+  {
+    "questionTitle": "¿De dónde es la cantante Rihanna?",
+    "answer": "Barbados"
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba la hermanita menor de los protagonistas de la serie \"Drake y Josh\"?",
+    "answer": "Megan"
+  },
+  {
+    "questionTitle": "¿Cuál de estas películas NO fue dirigida por Alfred Hitchcock?",
+    "answer": "Todas fueron dirigidas por Hitchcock"
+  },
+  {
+    "questionTitle": "¿En qué programa sale Sheldon Cooper?",
+    "answer": "The Big Bang Theory"
+  },
+  {
+    "questionTitle": "¿Quién es el primer super saiyajin que se convierte en dios?",
+    "answer": "Goku"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el hijo mayor de David y Victoria Beckham?",
+    "answer": "Brooklyn Joseph"
+  },
+  {
+    "questionTitle": "¿Cuál de estas expresiones no es creación de Chiquito de la Calzada?",
+    "answer": "Poti-poti"
+  },
+  {
+    "questionTitle": "¿Qué canal tiene una serie de baile adolescente?",
+    "answer": "Disney Channel"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la cuarta película de Harry Potter?",
+    "answer": "El cáliz de fuego "
+  },
+  {
+    "questionTitle": "¿Qué tortuga llevaba el pañuelo azul en \u0027Las tortugas ninja\u0027?",
+    "answer": "Leonardo"
+  },
+  {
+    "questionTitle": "¿Qué grupo musical cantaba \"Mamma Mía\"?",
+    "answer": "ABBA"
+  },
+  {
+    "questionTitle": "¿Qué significa \"Valar Morghulis\" en la saga de \"Juego de Tronos\"?",
+    "answer": "Todos los hombres deben morir"
+  },
+  {
+    "questionTitle": "¿De qué país es la gimnasta Aliya Mustafina?",
+    "answer": "Rusia"
+  },
+  {
+    "questionTitle": "¿A qué grupo pertenece Pete Townshend?",
+    "answer": "The Who"
+  },
+  {
+    "questionTitle": "¿Cómo se dice en música el golpe dado por un cuerpo contra otro cuerpo?",
+    "answer": "Percusión"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la madre del hijo del futbolista Gerard Piqué?",
+    "answer": "Shakira"
+  },
+  {
+    "questionTitle": "¿Qué es el Jpop?",
+    "answer": "Pop japonés"
+  },
+  {
+    "questionTitle": "¿Qué película no ha dirigido Quentin Tarantino?",
+    "answer": "From Dusk \u0027Til Dawn "
+  },
+  {
+    "questionTitle": "¿A qué marca pertenece la colonia \u0027One Million\u0027?",
+    "answer": "Paco Rabanne"
+  },
+  {
+    "questionTitle": "¿Cuántos jugadores hay en un equipo de Quidditch?",
+    "answer": "Siete"
+  },
+  {
+    "questionTitle": "¿A qué se le llama \u0027manga\u0027?",
+    "answer": "Al cómic japonés"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el crítico culinario de Ratatouille?",
+    "answer": "Ego"
+  },
+  {
+    "questionTitle": "¿De quién es el disco \u0027Yo, mi, me contigo\u0027?",
+    "answer": "Joaquín Sabina"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el hermano de Phineas, que no habla mucho?",
+    "answer": "Ferb"
+  },
+  {
+    "questionTitle": "¿Qué personaje cómico interpreta Rowan Atkison?",
+    "answer": "Mr. Bean "
+  },
+  {
+    "questionTitle": "¿Cómo se llama el hermano menor de Mario Bros?",
+    "answer": "Luigi"
+  },
+  {
+    "questionTitle": "¿Qué palabra se utiliza para el horario de mayor audiencia en la TV?",
+    "answer": "Prime time"
+  },
+  {
+    "questionTitle": "¿En qué año murió Marilyn Monroe?",
+    "answer": "1962"
+  },
+  {
+    "questionTitle": "¿Cuál de estas películas no fue protagonizada por Brad Pitt?",
+    "answer": "Michael Clayton"
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba el papá de Simba en la película El Rey León?",
+    "answer": "Mufasa"
+  },
+  {
+    "questionTitle": "¿De qué nacionalidad es la cantante Belinda?",
+    "answer": "Mexicana"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la nave en la que viajan los protagonistas de la película \"Matrix\"?",
+    "answer": "Nabucodonosor"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el Teletubbies que no es Tinky Winky, Po o Dipsy?",
+    "answer": "Laa-laa"
+  },
+  {
+    "questionTitle": "¿De qué juego son las siglas WOW?",
+    "answer": "World of Warcraft"
+  },
+  {
+    "questionTitle": "¿Cuál de las siguientes películas NO fue dirigida por el holandés Paul Verhoeven?",
+    "answer": "Terminator"
+  },
+  {
+    "questionTitle": "¿En cuál de estas bandas el cantante toca guitarra?",
+    "answer": "Fall Out Boy"
+  },
+  {
+    "questionTitle": "¿Con qué canción saltó a la fama del grupo Hombres G?",
+    "answer": "Sufre mamón "
+  },
+  {
+    "questionTitle": "¿Qué grupo de música inglés soltó un globo con forma de cerdo en la estación eléctrica de Londres?",
+    "answer": "Pink Floyd"
+  },
+  {
+    "questionTitle": "¿Qué icono tiene la aplicación Instagram?",
+    "answer": "Una cámara de fotos"
+  },
+  {
+    "questionTitle": "¿Cuál es el apodo de Maite en \"La que se avecina\"?",
+    "answer": "La cuqui"
+  },
+  {
+    "questionTitle": "¿En qué país nació Benicio del Toro?",
+    "answer": "Puerto Rico"
+  },
+  {
+    "questionTitle": "¿Cuántas películas de \"El juego del Miedo hay (al 2014)?",
+    "answer": "7"
+  },
+  {
+    "questionTitle": "¿Quién canta la canción \"Firework\"?",
+    "answer": "Katy Perry"
+  },
+  {
+    "questionTitle": "¿En qué saga de videojuegos aparece la entrega \"Ocarina Of Time\"?",
+    "answer": "Legend of Zelda"
+  },
+  {
+    "questionTitle": "¿A qué cantante acompañaban Los Trogloditas?",
+    "answer": "Loquillo"
+  },
+  {
+    "questionTitle": "¿Cuántos discos de estudio hizo Queen con Freddie Mercury?",
+    "answer": "16"
+  },
+  {
+    "questionTitle": "¿Qué actor interpretó Michael Corleone en El Padrino?",
+    "answer": "Al Pacino"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el amigo inseparable de \"Dora la Exploradora\"?",
+    "answer": "Botas"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la hija de Bella Swan en la Saga Crepúsculo?",
+    "answer": "Renesme"
+  },
+  {
+    "questionTitle": "¿De cuántas partes se compone la saga de \"El Padrino\"?",
+    "answer": "3"
+  },
+  {
+    "questionTitle": "¿Qué miembro de la nave \"Enterprise\" es el responsable del teletransporte en Star Trek?",
+    "answer": "Scotty"
+  },
+  {
+    "questionTitle": "¿En qué serie es Barney Stinson uno de los protagonistas?",
+    "answer": "How I Met Your Mother "
+  },
+  {
+    "questionTitle": "¿Quién de ellos no perteneció a la primera banda de Guns and Roses?",
+    "answer": "John Lennon"
+  },
+  {
+    "questionTitle": "¿Cuál de las siguientes actrices ha aparecido en las tres temporadas de American Horror Story?",
+    "answer": "Jessica Lange"
+  },
+  {
+    "questionTitle": "¿Dónde luchaban Starsky y Hutch contra el crimen?",
+    "answer": "Los Ángeles"
+  },
+  {
+    "questionTitle": "¿En qué año nació Michael Jackson?",
+    "answer": "1958"
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba el perro de Luke Skywalker?",
+    "answer": "No tenía"
+  },
+  {
+    "questionTitle": "¿En cuál de estos grupos no canta una mujer?",
+    "answer": "Smashing Pumpkins "
+  },
+  {
+    "questionTitle": "¿Quién vive en una piña debajo del mar?",
+    "answer": "Bob Esponja"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el hijo de Shakira y Piqué?",
+    "answer": "Milan"
+  },
+  {
+    "questionTitle": "¿En qué año se fundó Twitter?",
+    "answer": "2006"
+  },
+  {
+    "questionTitle": "¿Qué movimiento llegó en 1970 con la canción \"Anarchy in the U.K.\" a su punto culminante?",
+    "answer": "Punk"
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre del actor que interpreta a Harry Potter?",
+    "answer": "Daniel"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes actores no actúa en \"La Que Se Avecina\"?",
+    "answer": "Llum Barrera"
+  },
+  {
+    "questionTitle": "¿Quién es el actor vampiro protagonista de la saga \"Crepúsculo\"?",
+    "answer": "Robert Pattinson"
+  },
+  {
+    "questionTitle": "¿Qué personaje Disney baja por un río con una canoa?",
+    "answer": "Pocahontas"
+  },
+  {
+    "questionTitle": "¿En qué película se dice \u0027La vida es como una caja de bombones, nunca sabes qué te va a tocar\u0027?",
+    "answer": "Forrest Gump"
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba el panadero de Barrio Sésamo?",
+    "answer": "Chema"
+  },
+  {
+    "questionTitle": "¿Cuál de estos jugadores aparece en la tapa del videojuego FIFA 2013?",
+    "answer": "Lionel Messi"
+  },
+  {
+    "questionTitle": "¿Quién lleva un bolsillo mágico?",
+    "answer": "Doraemon"
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba el cantante de Queen?",
+    "answer": "Freddie Mercury"
+  },
+  {
+    "questionTitle": "¿Cuántas categorías tiene el juego \"Preguntados?",
+    "answer": "6"
+  },
+  {
+    "questionTitle": "¿Quién es Alan en \"Dos Hombres y Medio?",
+    "answer": "El hermano de Charlie"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el ayudante de Iron Man?",
+    "answer": "Jarvis"
+  },
+  {
+    "questionTitle": "¿En cuál de estos juegos el terreno tiene hongos, flores, bombas de DDT, y como enemigos y arañas, mariquitas y otros insectos?",
+    "answer": "Millipede"
+  },
+  {
+    "questionTitle": "¿Cuántos años tenía Mozart al morir?",
+    "answer": "35"
+  },
+  {
+    "questionTitle": "¿Cuál de estas películas ganó el Óscar a la mejor película?",
+    "answer": "Patton"
+  },
+  {
+    "questionTitle": "¿Cuál es la última película por la que el director Terrence Malick ganó la Palma de Oro en el Festival de Cannes?",
+    "answer": "El árbol de la vida "
+  },
+  {
+    "questionTitle": "¿Dónde nació John Lennon?",
+    "answer": "Liverpool"
+  },
+  {
+    "questionTitle": "¿Qué quería comerse Alf?",
+    "answer": "Al gato"
+  },
+  {
+    "questionTitle": "¿Cuáles son los nombres de \"Los Tres Chiflados\"?",
+    "answer": "Moe, Larry y Curly "
+  },
+  {
+    "questionTitle": "¿Cuál es la cantante que publicó en 2008 el album \"Hard Candy\"?",
+    "answer": "Madonna"
+  },
+  {
+    "questionTitle": "¿Cómo es conocida mundialmente la cantante Beyonce?",
+    "answer": "Queen B"
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba el primer gato de Los Simpsons?",
+    "answer": "Bola de nieve"
+  },
+  {
+    "questionTitle": "¿Quién resulta ser el príncipe mestizo en la sexta película de Harry Potter?",
+    "answer": "Severus Snape"
+  },
+  {
+    "questionTitle": "¿Qué cantante estuvo saliendo con Selena Gómez?",
+    "answer": "Justin Bieber"
+  },
+  {
+    "questionTitle": "¿De qué planeta son originarios los ewoks del universo de \"La Guerra de las Galaxias\"?",
+    "answer": "Endor"
+  },
+  {
+    "questionTitle": "¿De quién es la canción \u0027Master of Puppets\u0027?",
+    "answer": "Metallica"
+  },
+  {
+    "questionTitle": "¿Quién ganó \"Artista del Año\" en los American Music Awards 2013?",
+    "answer": "Taylor Swift"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el personaje malvado de Aladdin?",
+    "answer": "Jafar"
+  },
+  {
+    "questionTitle": "¿Quién de los siguientes actores salía en la película \u0027El otro lado de la cama\u0027?",
+    "answer": "Natalia Verbeke"
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre de la canción de la película \"Titanic\"?",
+    "answer": "My heart will go on "
+  },
+  {
+    "questionTitle": "¿De qué color era Clifford, el perro gigante?",
+    "answer": "Rojo"
+  },
+  {
+    "questionTitle": "¿Qué es Assasin\u0027s Creed?",
+    "answer": "Un videojuego"
+  },
+  {
+    "questionTitle": "¿Por qué película obtuvo Sofía Loren un Oscar?",
+    "answer": "Dos mujeres"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el disco que lanzó Katy Perry en el 2013?",
+    "answer": "PRISM"
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre real de Lady Gaga?",
+    "answer": "Stefani Germanotta"
+  },
+  {
+    "questionTitle": "¿Quién es Justin Bieber?",
+    "answer": "Un cantante"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el actor que interpreta a Michael en la película \"El padrino\"?",
+    "answer": "Al Pacino"
+  },
+  {
+    "questionTitle": "¿Cómo se llaman los acompañantes de Frank de la Jungla?",
+    "answer": "Santi y Nacho "
+  },
+  {
+    "questionTitle": "¿Quién presentaba el programa \u0027Crónicas Marcianas\u0027?",
+    "answer": "Javier Sardá "
+  },
+  {
+    "questionTitle": "¿Cuál es la nacionalidad de la cantante Shakira?",
+    "answer": "Colombiana"
+  },
+  {
+    "questionTitle": "¿Qué personaje histórico interpreta Daniel Day-Lewis en una película de Steven Spielberg?",
+    "answer": "Abraham Lincoln "
+  },
+  {
+    "questionTitle": "¿En qué año se fundó The Walt Disney Company?",
+    "answer": "1923"
+  },
+  {
+    "questionTitle": "¿A qué familia pertenece Dobby, el elfo doméstico en la historia de Harry Potter?",
+    "answer": "Malfoy"
+  },
+  {
+    "questionTitle": "¿Qué actor protagonizó la película \"Grease\"?",
+    "answer": "John Travolta"
+  },
+  {
+    "questionTitle": "¿Qué famoso actor norteamericano fue el primer marido de Lauren Bacall?",
+    "answer": "Humphrey Bogart"
+  },
+  {
+    "questionTitle": "¿Quién se hizo famoso, gracias a su frase \"que hay de nuevo viejo\"?",
+    "answer": "Bugs bunny"
+  },
+  {
+    "questionTitle": "¿Qué cantante hizo una aparición en el medio tiempo del Superbowl 2014?",
+    "answer": "Bruno Mars"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la princesa de Disney conocida como \"La Sirenita”?",
+    "answer": "Ariel"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la bebé de Los Simpsons?",
+    "answer": "Maggie"
+  },
+  {
+    "questionTitle": "¿De dónde proviene el reggae?",
+    "answer": "Jamaica"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el primer hijo de Goku de Dragon Ball?",
+    "answer": "Gohan"
+  },
+  {
+    "questionTitle": "¿Cuántos capítulos tiene la serie de televisión \u0027Friends?",
+    "answer": "236"
+  },
+  {
+    "questionTitle": "¿Con qué grupo comenzó a tener éxito Eric Clapton?",
+    "answer": "The Yardbirds "
+  },
+  {
+    "questionTitle": "¿Quién protagonizo la película \"Descubriendo nunca jamás\"?",
+    "answer": "Johnny Deep"
+  },
+  {
+    "questionTitle": "¿Dónde se celebra el festival de música \" Alhambra Sound \"?",
+    "answer": "Granada"
+  },
+  {
+    "questionTitle": "¿Quién es Mario Casas?",
+    "answer": "Un actor"
+  },
+  {
+    "questionTitle": "¿Alrededor de qué ciudad se encontraba la \u0027Ruta del Bakalao\u0027?",
+    "answer": "Valencia"
+  },
+  {
+    "questionTitle": "¿Qué integrante de The Beatles falleció en 2001?",
+    "answer": "George Harrison "
+  },
+  {
+    "questionTitle": "¿A qué se dedica el personaje Ted Mosby de \u0027Como conocí a vuestra madre?",
+    "answer": "Arquitecto"
+  },
+  {
+    "questionTitle": "¿Quién es el profesor del colegio Hogwarts que se convierte en Hombre lobo?",
+    "answer": "Remus Lupin"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el pájaro símbolo de los Juegos del Hambre?",
+    "answer": "Sinsajo"
+  },
+  {
+    "questionTitle": "¿Cuál fue el primer festival de rock gratuito en durar más de 3 días en 1969?",
+    "answer": "Woodstock"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el personaje de \u0027Hellraiser\u0027 que tiene clavos en la cara?",
+    "answer": "Pinhead"
+  },
+  {
+    "questionTitle": "¿En que banda canta Anthony Kiedis?",
+    "answer": "Red Hot Chili Peppers"
+  },
+  {
+    "questionTitle": "¿De qué famosa película de Disney es el personaje Jafar?",
+    "answer": "Aladdin"
+  },
+  {
+    "questionTitle": "¿Cuál es la famosa película de Audrey Hepburn donde salía una conocida joyería?",
+    "answer": "Desayuno con Diamantes"
+  },
+  {
+    "questionTitle": "¿Cuándo comenzó a emitirse Gran Hermano en España?",
+    "answer": "2000 "
+  },
+  {
+    "questionTitle": "¿Qué actriz hace un desnudo de su brazo en \u0027Gilda \u0027?",
+    "answer": "Rita Hayworth "
+  },
+  {
+    "questionTitle": "¿Cuál es el área urbana más poblada de la India?",
+    "answer": "Bombay"
+  },
+  {
+    "questionTitle": "¿En qué provincia se encuentra Elche?",
+    "answer": "Alicante"
+  },
+  {
+    "questionTitle": "¿Cuál es la moneda oficial de Costa Rica?",
+    "answer": "Colón costarricense"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes países no es una isla?",
+    "answer": "Todos son islas"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra la isla de Koh Samui?",
+    "answer": "Tailandia"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Uruguay?",
+    "answer": "Montevideo"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra el río Nilo?",
+    "answer": "En África"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra la villa portuaria más antigua de Francia?",
+    "answer": "Marseille"
+  },
+  {
+    "questionTitle": "¿De dónde es el queso D.O. Idiazábal?",
+    "answer": "Gipuzkoa"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el presidente de la República de Ecuador?",
+    "answer": "Rafael Correa"
+  },
+  {
+    "questionTitle": "¿Cuál es el sexto país más grande el mundo?",
+    "answer": "Australia"
+  },
+  {
+    "questionTitle": "¿En qué ciudad se encuentra el museo San Telmo?",
+    "answer": "Donostia"
+  },
+  {
+    "questionTitle": "¿Cuál es el idioma tradicional en Bulgaria?",
+    "answer": "Búlgaro"
+  },
+  {
+    "questionTitle": "¿Cómo se le conoce a los habitantes de Málaga?",
+    "answer": "Boquerones "
+  },
+  {
+    "questionTitle": "¿A qué isla pertenece la ciudad de Honolulu?",
+    "answer": "Hawai"
+  },
+  {
+    "questionTitle": "¿Cuál de estos países NO se encuentra ubicado en sudamérica?",
+    "answer": "Haiti"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra Panamá?",
+    "answer": "América Central"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes países tiene al subterráneo como uno de sus sistemas de transporte?",
+    "answer": "Argelia"
+  },
+  {
+    "questionTitle": "¿En qué país del sur América se habla portugués?",
+    "answer": "Brasil"
+  },
+  {
+    "questionTitle": "¿En qué país es típico el flamenco?",
+    "answer": "España"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes países considera a la vaca como un animal sagrado?",
+    "answer": "India"
+  },
+  {
+    "questionTitle": "¿Cuántas estrellas tiene la bandera de China?",
+    "answer": "5"
+  },
+  {
+    "questionTitle": "¿Qué ciudad se conoce como \"Ciudad Condal\"?",
+    "answer": "Barcelona"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes países NO tiene una bandera de color azul, rojo y amarillo?",
+    "answer": "Perú"
+  },
+  {
+    "questionTitle": "¿Cuál estado se rige por una teocracia?",
+    "answer": "El Vaticano"
+  },
+  {
+    "questionTitle": "¿En qué país se encuentra la ciudad de Atenas?",
+    "answer": "Grecia"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra la región de Medio Oriente?",
+    "answer": "Entre Siria y la frontera Irán-Afganistán "
+  },
+  {
+    "questionTitle": "¿Qué país es considerado \"el país de los mil lagos\"?",
+    "answer": "Finlandia"
+  },
+  {
+    "questionTitle": "¿En qué país está Poitiers?",
+    "answer": "Francia"
+  },
+  {
+    "questionTitle": "¿Cuál de estos países no es un país tropical?",
+    "answer": "Croacia"
+  },
+  {
+    "questionTitle": "¿Qué país es famoso por su \"October Fest\"?",
+    "answer": "Alemania"
+  },
+  {
+    "questionTitle": "¿En qué país se encuentra \u0027Cochabamba\u0027?",
+    "answer": "Bolivia"
+  },
+  {
+    "questionTitle": "¿Dónde queda el país de Perú?",
+    "answer": "Sudamérica"
+  },
+  {
+    "questionTitle": "¿Cuál es el idioma predominante en América?",
+    "answer": "Español "
+  },
+  {
+    "questionTitle": "¿En qué país europeo se encuentra la ciudad de Salisbury?",
+    "answer": "Inglaterra"
+  },
+  {
+    "questionTitle": "¿Qué país no tiene costas?",
+    "answer": "Bolivia"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes países no es de Europa?",
+    "answer": "Nigeria"
+  },
+  {
+    "questionTitle": "¿Con qué provincia no limita el País Vasco?",
+    "answer": "Zaragoza"
+  },
+  {
+    "questionTitle": "¿En qué país se encuentra Oslo?",
+    "answer": "Noruega"
+  },
+  {
+    "questionTitle": "¿En qué país asiático se encuentra el tempo de Borobudur?",
+    "answer": "Indonesia"
+  },
+  {
+    "questionTitle": "¿Cómo se les dice a los nacidos en Cuba?",
+    "answer": "Cubano"
+  },
+  {
+    "questionTitle": "¿En qué país se encuentra la ciudad de Eindhoven?",
+    "answer": "Holanda"
+  },
+  {
+    "questionTitle": "¿Cuál de estos ríos desemboca en el Mar Mediterráneo?",
+    "answer": "Ebro"
+  },
+  {
+    "questionTitle": "¿Cuál es el gentilicio de la provincia de Huelva (España)?",
+    "answer": "Onubense"
+  },
+  {
+    "questionTitle": "¿De qué ciudad viene el equipo de fútbol Juventus?",
+    "answer": "Turín"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra la Cochinchina?",
+    "answer": "Vietnam"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra Irak?",
+    "answer": "Asia"
+  },
+  {
+    "questionTitle": "¿Cómo se les llama a los habitantes de Huelva?",
+    "answer": "Onubenses"
+  },
+  {
+    "questionTitle": "¿A qué continente pertenece Islandia?",
+    "answer": "Europa"
+  },
+  {
+    "questionTitle": "¿Dónde tuvo lugar la Expo 2008?",
+    "answer": "Zaragoza"
+  },
+  {
+    "questionTitle": "¿Qué país es el mayor productor de leche del mundo?",
+    "answer": "India"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Madagascar?",
+    "answer": "Antananarivo"
+  },
+  {
+    "questionTitle": "¿En qué hemisferio está Groenlandia?",
+    "answer": "Norte "
+  },
+  {
+    "questionTitle": "¿Qué país tiene más territorio en la Amazonía?",
+    "answer": "Brasil"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Croacia?",
+    "answer": "Zagreb"
+  },
+  {
+    "questionTitle": "¿En qué país se celebra la tomatina?",
+    "answer": "España"
+  },
+  {
+    "questionTitle": "¿A qué continente pertenece Mongolia?",
+    "answer": "Asia"
+  },
+  {
+    "questionTitle": "¿Por cuanta agua está cubierta la Tierra?",
+    "answer": "70,7%"
+  },
+  {
+    "questionTitle": "¿En qué ciudad puedes visitar los jardines y el palacio del Generalife?",
+    "answer": "Granada"
+  },
+  {
+    "questionTitle": "¿En qué continente apareció el Ébola?",
+    "answer": "En África"
+  },
+  {
+    "questionTitle": "¿A qué continente pertenece Ecuador?",
+    "answer": "América"
+  },
+  {
+    "questionTitle": "¿De qué continente es originario el cacao?",
+    "answer": "América "
+  },
+  {
+    "questionTitle": "¿En qué continente se encuentra situado el río Tigris?",
+    "answer": "Asia"
+  },
+  {
+    "questionTitle": "¿Cuáles son los colores de la bandera de Panamá?",
+    "answer": "Rojo, azul y blanco "
+  },
+  {
+    "questionTitle": "¿Qué colores tiene la bandera de Uruguay?",
+    "answer": "Azul, blanco y oro "
+  },
+  {
+    "questionTitle": "¿De qué isla comparten la jurisdicción Francia y España?",
+    "answer": "La isla de los Faisanes "
+  },
+  {
+    "questionTitle": "¿En dónde nace el famoso río Nilo?",
+    "answer": "Lago Victoria"
+  },
+  {
+    "questionTitle": "¿Qué país tiene el código AO?",
+    "answer": "Angola "
+  },
+  {
+    "questionTitle": "¿A qué país pertenece la Isla Margarita?",
+    "answer": "Venezuela"
+  },
+  {
+    "questionTitle": "¿Qué es el Tsingy de Bemaraha de Madagascar?",
+    "answer": "Un bosque de piedras "
+  },
+  {
+    "questionTitle": "¿Cuál es el código internacional para Irak?",
+    "answer": "IQ"
+  },
+  {
+    "questionTitle": "¿A qué ciudad argentina se la llama \u0027La Feliz\u0027?",
+    "answer": "Mar del Plata"
+  },
+  {
+    "questionTitle": "¿Dónde está el Cabo de Gata?",
+    "answer": "España"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra la Cueva del Milodón?",
+    "answer": "Chile"
+  },
+  {
+    "questionTitle": "¿Si pasas sobre el puente de Angostura, qué río estás cruzando?",
+    "answer": "El Orinoco"
+  },
+  {
+    "questionTitle": "¿Con qué países tiene frontera el Líbano?",
+    "answer": "Israel y Siria "
+  },
+  {
+    "questionTitle": "¿Cómo se llama el mar donde se ubica Puerto Rico y Rep. Dominicana?",
+    "answer": "Mar Caribe"
+  },
+  {
+    "questionTitle": "¿Qué colores tiene la bandera de Bosnia y Herzegovina?",
+    "answer": "Azul, amarillo y blanco "
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de la comunidad de Castilla-La Mancha?",
+    "answer": "Toledo"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Nueva Zelanda?",
+    "answer": "Wellington"
+  },
+  {
+    "questionTitle": "¿Con cuál de los siguientes países NO limita Colombia?",
+    "answer": "Guyana"
+  },
+  {
+    "questionTitle": "¿En qué ciudad de Chile se realiza el festival de la Canción más importante de Latinoamérica?",
+    "answer": "Viña del Mar"
+  },
+  {
+    "questionTitle": "¿En qué ciudad se encuentra el distrito de Chamberí?",
+    "answer": "Madrid"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra el enclave arqueológico de Petra, una ciudad excavada y esculpida en la piedra?",
+    "answer": "En Jordania "
+  },
+  {
+    "questionTitle": "¿En qué provincia española está situado el desierto de Tabernas?",
+    "answer": "Almería"
+  },
+  {
+    "questionTitle": "¿Cuál fue la primera capital de Costa Rica?",
+    "answer": "Cartago"
+  },
+  {
+    "questionTitle": "¿En qué provincia de Argentina se encuentra el obelisco?",
+    "answer": "Buenos Aires "
+  },
+  {
+    "questionTitle": "¿Qué volcán destruyó la ciudad italiana de Pompeya?",
+    "answer": "Vesubio"
+  },
+  {
+    "questionTitle": "¿En qué país está la Costa Azul?",
+    "answer": "Francia"
+  },
+  {
+    "questionTitle": "¿A qué país pertenecen las Islas Feroe?",
+    "answer": "Dinamarca"
+  },
+  {
+    "questionTitle": "¿Dónde está el Parque \"Los picos de Europa\"?",
+    "answer": "En la Cordillera Cantábrica "
+  },
+  {
+    "questionTitle": "¿En qué país se ubica el desierto de Atacama?",
+    "answer": "Chile"
+  },
+  {
+    "questionTitle": "¿Qué país no forma parte de la U.E.?",
+    "answer": "Suiza"
+  },
+  {
+    "questionTitle": "¿En qué continente se encuentra el país de Irak?",
+    "answer": "Asia"
+  },
+  {
+    "questionTitle": "¿De dónde es típica la fabada?",
+    "answer": "Asturias"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Noruega?",
+    "answer": "Oslo"
+  },
+  {
+    "questionTitle": "¿Cuál de estas provincias NO tiene costa?",
+    "answer": "Toledo"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Georgia?",
+    "answer": "Tiflis"
+  },
+  {
+    "questionTitle": "¿En qué se dividen los pesos argentinos?",
+    "answer": "En centavos"
+  },
+  {
+    "questionTitle": "¿Qué océano baña el Cuerno de África?",
+    "answer": "El Índico"
+  },
+  {
+    "questionTitle": "¿Con qué objeto se asocia a Italia visualmente?",
+    "answer": "Una bota"
+  },
+  {
+    "questionTitle": "¿Dónde desemboca el río Ebro?",
+    "answer": "Mar Mediterráneo"
+  },
+  {
+    "questionTitle": "¿Dónde está el barrio de Charlottenburg?",
+    "answer": "Berlín"
+  },
+  {
+    "questionTitle": "¿De las siguientes ciudades, en cuál está la Estatua de la Libertad?",
+    "answer": "Nueva York"
+  },
+  {
+    "questionTitle": "¿Cuál de las siguientes es una isla del archipiélago de Cabrera?",
+    "answer": "Conejera"
+  },
+  {
+    "questionTitle": "¿En qué se divide Colombia territorialmente, además de su Distrito Capital?",
+    "answer": "Departamentos"
+  },
+  {
+    "questionTitle": "¿Cuántas islas denominadas \u0027Conejera\u0027 hay en España?",
+    "answer": "Cuatro "
+  },
+  {
+    "questionTitle": "¿En qué país se construyó por primera vez una red de subterráneos en el mundo?",
+    "answer": "Inglaterra"
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba la gran masa de tierra que formaba un solo gran continente?",
+    "answer": "Pangea"
+  },
+  {
+    "questionTitle": "¿Dónde está la torre Eiffel?",
+    "answer": "En París"
+  },
+  {
+    "questionTitle": "¿En qué continente se encuentra Yibuti?",
+    "answer": "África"
+  },
+  {
+    "questionTitle": "¿Desde qué ciudad de España puedes ver el monte llamado Mujer Muerta \"Jebel Musa\"?",
+    "answer": "Ceuta"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes colores es el menos frecuente en las banderas de los países árabes?",
+    "answer": "Amarillo"
+  },
+  {
+    "questionTitle": "¿Cuál de estas ciudades no es de Argentina?",
+    "answer": "Cali"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra el Tribunal de Cuentas de la Unión Europea?",
+    "answer": "Luxemburgo"
+  },
+  {
+    "questionTitle": "¿Cuál es el pico más alto de España?",
+    "answer": "El Teide"
+  },
+  {
+    "questionTitle": "¿De qué país el panda es el animal nacional?",
+    "answer": "China "
+  },
+  {
+    "questionTitle": "¿Cuál es la región de origen de la mortadela?",
+    "answer": "Italia"
+  },
+  {
+    "questionTitle": "¿Cuál es el país de Europa con mayor altitud media?",
+    "answer": "Suiza"
+  },
+  {
+    "questionTitle": "¿A qué país pertenece Gibraltar?",
+    "answer": "Reino Unido"
+  },
+  {
+    "questionTitle": "¿Qué cataratas separan Brasil y Argentina?",
+    "answer": "Cataratas del Iguazú"
+  },
+  {
+    "questionTitle": "¿Dónde queda Panamá?",
+    "answer": "América Central"
+  },
+  {
+    "questionTitle": "¿Cuál es el país de origen de la galletita pretzel?",
+    "answer": "Alemania"
+  },
+  {
+    "questionTitle": "¿Cuál es la ciudad más poblada de Oceanía?",
+    "answer": "Sidney"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital del Sáhara Occidental?",
+    "answer": "El Aaiún"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Finlandia?",
+    "answer": "Helsinki"
+  },
+  {
+    "questionTitle": "¿De qué país es danza nacional la cueca?",
+    "answer": "Chile"
+  },
+  {
+    "questionTitle": "¿De dónde son típicos los espetos?",
+    "answer": "De Málaga"
+  },
+  {
+    "questionTitle": "¿Cuándo es invierno en el hemisferio sur?",
+    "answer": "De Junio a Septiembre"
+  },
+  {
+    "questionTitle": "¿De dónde son típicos los \u0027Castellers\u0027?",
+    "answer": "Catalunya"
+  },
+  {
+    "questionTitle": "¿En qué país se encuentra la mayor cantidad del mundo de oro y diamantes?",
+    "answer": "Sudáfrica"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Gran Canaria?",
+    "answer": "Las Palmas"
+  },
+  {
+    "questionTitle": "¿Cuál es uno de los tragos típicos de Colombia?",
+    "answer": "Aguardiente"
+  },
+  {
+    "questionTitle": "¿Cuál es la mayor atracción turística de Córdoba, España",
+    "answer": "? La Mezquita"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra Mairena de Aljarafe?",
+    "answer": "Sevilla"
+  },
+  {
+    "questionTitle": "¿Qué vía artificial de navegación une al Mar Rojo y el Mar Mediterráneo?",
+    "answer": "El canal de Suez"
+  },
+  {
+    "questionTitle": "¿Cuál de estos es el plato típico de la Comunidad Valenciana?",
+    "answer": "Paella"
+  },
+  {
+    "questionTitle": "¿En qué continente se encuentra España?",
+    "answer": "En Europa"
+  },
+  {
+    "questionTitle": "¿Cuál es la religión mayoritaria en Grecia?",
+    "answer": "Cristianismo Ortodoxo"
+  },
+  {
+    "questionTitle": "¿Dónde está la Tierra del Fuego?",
+    "answer": "Argentina"
+  },
+  {
+    "questionTitle": "¿Cómo es la bandera de Suiza?",
+    "answer": "Fondo rojo y cruz blanca "
+  },
+  {
+    "questionTitle": "¿En qué país latinoamericano está el famoso salar de Uyuni?",
+    "answer": "Bolivia"
+  },
+  {
+    "questionTitle": "¿Cuántos meridianos y paralelos hay en total?",
+    "answer": "Infinitos"
+  },
+  {
+    "questionTitle": "¿Dónde situarías el municipio de Orihuela?",
+    "answer": "Alicante"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentran Los Montes de Toledo?",
+    "answer": "España"
+  },
+  {
+    "questionTitle": "¿Qué país NO formó parte de la extinta Yugoslavia?",
+    "answer": "Polonia"
+  },
+  {
+    "questionTitle": "¿A qué municipio pertenece el cabo de Gata?",
+    "answer": "Níjar"
+  },
+  {
+    "questionTitle": "¿Qué provincias andaluzas limitan con Portugal?",
+    "answer": "Solo Huelva"
+  },
+  {
+    "questionTitle": "¿En qué provincia española está Barbate?",
+    "answer": "Cádiz"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital del estado de Illinois?",
+    "answer": "Springfield"
+  },
+  {
+    "questionTitle": "¿Cuál es la serpiente más venenosa que se conoce?",
+    "answer": "La Mamba Negra"
+  },
+  {
+    "questionTitle": "¿Dónde está el palacio de Versalles?",
+    "answer": "París"
+  },
+  {
+    "questionTitle": "¿Qué localidad andaluza es famosa por sus \u0027molletes\u0027?",
+    "answer": "Antequera"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Corea del Sur?",
+    "answer": "Seúl"
+  },
+  {
+    "questionTitle": "¿Cuál es el océano más grande del mundo?",
+    "answer": "Océano Pacífico"
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre actual del antiguo Imperio Otomano?",
+    "answer": "Turquía"
+  },
+  {
+    "questionTitle": "¿Dónde desemboca el Río Magdalena?",
+    "answer": "En el mar Caribe"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Hungría?",
+    "answer": "Budapest"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Azerbaijan?",
+    "answer": "Bakú"
+  },
+  {
+    "questionTitle": "¿En qué se dividen los pesos argentinos?",
+    "answer": "En centavos"
+  },
+  {
+    "questionTitle": "¿Cuál es la patrona de la ciudad de Zaragoza?",
+    "answer": "Virgen del Pilar"
+  },
+  {
+    "questionTitle": "¿En qué provincia española se encuentran las ruinas romanas de Baelo Claudia?",
+    "answer": "Cádiz"
+  },
+  {
+    "questionTitle": "¿Cuál es el río más caudaloso del mundo?",
+    "answer": "El Amazonas"
+  },
+  {
+    "questionTitle": "¿Cuál es la isla más grande del archipiélago malayo?",
+    "answer": "Nueva Guinea "
+  },
+  {
+    "questionTitle": "¿Qué son Sol, Xi\u0027An y Popayan?",
+    "answer": "Pirámides"
+  },
+  {
+    "questionTitle": "¿En el territorio de qué país viven en la actualidad los dragones de Komodo?",
+    "answer": "Indonesia"
+  },
+  {
+    "questionTitle": "¿En qué isla del archipiélago canario se encuentra el volcán más alto de España?",
+    "answer": "Tenerife"
+  },
+  {
+    "questionTitle": "¿Cuántas comunidades autónomas hay en España?",
+    "answer": "17"
+  },
+  {
+    "questionTitle": "¿Cuál es la capital de Guyana?",
+    "answer": "Georgetown"
+  },
+  {
+    "questionTitle": "¿De dónde son famosos los cogollos?",
+    "answer": "Tudela"
+  },
+  {
+    "questionTitle": "¿Cuál de estos códigos internacionales pertenece a Argentina?",
+    "answer": "AR"
+  },
+  {
+    "questionTitle": "¿Con qué país delimita Turkmenistán?",
+    "answer": "Uzbequistan"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra el barrio de Greenwich?",
+    "answer": "Londres"
+  },
+  {
+    "questionTitle": "¿En qué ciudad está La Alhambra?",
+    "answer": "Granada"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra el monte Vesubio?",
+    "answer": "Italia"
+  },
+  {
+    "questionTitle": "¿Cuáles son los colores de la bandera polaca?",
+    "answer": "Rojo y blanco"
+  },
+  {
+    "questionTitle": "¿Cuál es el segundo municipio más poblado de Cataluña?",
+    "answer": "Hospitalet de Llobregat"
+  },
+  {
+    "questionTitle": "¿Qué civilización antigua tenía faraones como gobernantes?",
+    "answer": "Egipto"
+  },
+  {
+    "questionTitle": "¿Cuál es la comida típica madrileña?",
+    "answer": "El cocido"
+  },
+  {
+    "questionTitle": "¿A qué representan las K de un juego de naipes?",
+    "answer": "A los cuatro grandes reyes"
+  },
+  {
+    "questionTitle": "¿A qué pueblo derrotó Julio César?",
+    "answer": "Todas las respuestas son correctas"
+  },
+  {
+    "questionTitle": "¿Cuándo se produjo la Batalla de Las Piedras?",
+    "answer": "1811"
+  },
+  {
+    "questionTitle": "¿Cuál es la ideología opositora del Comunismo?",
+    "answer": "Capitalismo"
+  },
+  {
+    "questionTitle": "¿En la antigua Grecia, como participaban en los juegos olímpicos?",
+    "answer": "Desnudos"
+  },
+  {
+    "questionTitle": "¿Qué país reconoció Italia a través de los Pactos de Letrán de 1929? La",
+    "answer": "Ciudad del Vaticano"
+  },
+  {
+    "questionTitle": "¿Quién dijo la frase \"miente, miente que algo quedará\"?",
+    "answer": "Joseph Goebbels"
+  },
+  {
+    "questionTitle": "¿Cómo se decía en latín la famosa expresión \"La suerte está echada\"?",
+    "answer": "Alea iacta est"
+  },
+  {
+    "questionTitle": "¿Por cuánto vendió Rusia a Alaska a los Estados Unidos?",
+    "answer": "Alrededor de 7,2 millones de dólares"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el co-fundador de Apple Inc?",
+    "answer": "Stephen Wozniak"
+  },
+  {
+    "questionTitle": "¿Qué le fue devuelto a China el 1º de Julio de 1997?",
+    "answer": "Hong Kong"
+  },
+  {
+    "questionTitle": "¿Qué país comenzó la Segunda Guerra Mundial?",
+    "answer": "Alemania"
+  },
+  {
+    "questionTitle": "¿Cuál fue el nombre que los romanos le dieron a la Gran Bretaña?",
+    "answer": "Britannia"
+  },
+  {
+    "questionTitle": "¿Qué ciudad fue capital de España en el siglo 17?",
+    "answer": "Valladolid"
+  },
+  {
+    "questionTitle": "¿Qué gran líder militar gobernó Francia luego de que sucediera la Revolución Francesa?",
+    "answer": "Napoleón"
+  },
+  {
+    "questionTitle": "¿Cuándo fue la guerra de África?",
+    "answer": "De 1859 a 1860"
+  },
+  {
+    "questionTitle": "¿Cómo pasó a llamarse el Imperio Austríaco tras la revolución de 1848?",
+    "answer": "Imperio Austrohúngaro"
+  },
+  {
+    "questionTitle": "¿Cómo se llamaba el caballo de Alejandro Magno?",
+    "answer": "Bucéfalo"
+  },
+  {
+    "questionTitle": "¿En qué año Francia se convirtió en República?",
+    "answer": "1792"
+  },
+  {
+    "questionTitle": "¿Qué país NO sudamericano estuvo involucrado en la guerra del Pacífico?",
+    "answer": "Inglaterra"
+  },
+  {
+    "questionTitle": "¿Qué país le regaló la Estatua de la Libertad a Nueva York?",
+    "answer": "Francia"
+  },
+  {
+    "questionTitle": "¿Cuándo se viaja por primera vez al espacio?",
+    "answer": "1961"
+  },
+  {
+    "questionTitle": "¿Con qué nombre son conocidos los peleset, uno de los \u0027pueblos del mar\u0027 que invadieron Egipto?",
+    "answer": "Filisteos"
+  },
+  {
+    "questionTitle": "¿A qué diosa está dedicado el Partenón?",
+    "answer": "Atenea"
+  },
+  {
+    "questionTitle": "¿A qué bando se unió Asturias cuando se produjo el levantamiento con el que comenzó la Guerra Civil?",
+    "answer": "Republicano"
+  },
+  {
+    "questionTitle": "¿Qué ciudad quedó partida en dos tras la Segunda Guerra Mundial?",
+    "answer": "Berlín"
+  },
+  {
+    "questionTitle": "¿Cuál fue el faraón que reinó durante 66 años en Egipto?",
+    "answer": "Ramsés II "
+  },
+  {
+    "questionTitle": "¿Quién fue el autor de la frase \"Puedo comprar a todos los hombres del mundo\"?",
+    "answer": "Howard Hughes"
+  },
+  {
+    "questionTitle": "¿Cuántos meses duró la batalla de Stalingrado en la Segunda Guerra Mundial?",
+    "answer": "Seis meses"
+  },
+  {
+    "questionTitle": "Según el Libro Guiness de los récords, ¿cuánto tiempo duró la guerra más corta de la historia?",
+    "answer": "45 minutos"
+  },
+  {
+    "questionTitle": "¿Cómo se llama el burro de Sancho Panza?",
+    "answer": "Rucio"
+  },
+  {
+    "questionTitle": "¿Qué día se celebra la Independencia de República Dominicana?",
+    "answer": "27 de febrero"
+  },
+  {
+    "questionTitle": "¿Qué asociación estadounidense se dedicaba a asesinar a las personas de raza negra?",
+    "answer": "Ku Klux Klan"
+  },
+  {
+    "questionTitle": "¿Quién fue Luís XIV?",
+    "answer": "Rey de Francia"
+  },
+  {
+    "questionTitle": "¿En qué ciudad se promulgó la constitución de 1821?",
+    "answer": "Cádiz"
+  },
+  {
+    "questionTitle": "¿Quién dijo la famosa frase \"La suerte está echada\"?",
+    "answer": "Julio César"
+  },
+  {
+    "questionTitle": "¿Quién fue uno de los promotores de la primera línea regular de ferrocarril de la Península Ibérica?",
+    "answer": "Miquel Biada Bunyol"
+  },
+  {
+    "questionTitle": "¿Qué imperio conquistó Hernán Cortés?",
+    "answer": "El Azteca"
+  },
+  {
+    "questionTitle": "¿Durante los Juicios de Núremberg se juzgó a los dirigentes, colaboradores y responsables de qué regimen?",
+    "answer": "Del nacionalismo alemán"
+  },
+  {
+    "questionTitle": "¿Quién fue el primer rey de Roma, según la tradición romana?",
+    "answer": "Rómulo"
+  },
+  {
+    "questionTitle": "¿Quién fue el primer presidente de los Estados Unidos?",
+    "answer": "George Washington"
+  },
+  {
+    "questionTitle": "¿De qué color eran los permisos de conducir en España en el año 2003?",
+    "answer": "Rosa"
+  },
+  {
+    "questionTitle": "¿Qué significan las siglas RENFE?",
+    "answer": "Red nacional de ferrocarriles españoles"
+  },
+  {
+    "questionTitle": "¿Qué evento marca el fin de la prehistoria?",
+    "answer": "La escritura"
+  },
+  {
+    "questionTitle": "¿A quién mató el anarquista Angiolillo?",
+    "answer": "Cánovas del Castillo"
+  },
+  {
+    "questionTitle": "La fiebre del oro fue un período de migraciones hacia áreas rurales para explorar oro. ¿Dónde se produjo las más famosa?",
+    "answer": "California"
+  },
+  {
+    "questionTitle": "¿Qué explorador, cuyos restos momificados se exhibieron en Perú, fue asesinado por sus propios hombres?",
+    "answer": "Francisco Pizarro"
+  },
+  {
+    "questionTitle": "¿En qué ciudad se encuentra el único faro romano en funcionamiento del mundo?",
+    "answer": "A Coruña"
+  },
+  {
+    "questionTitle": "¿Qué sitio mexicano es considerado una de las Nuevas 7 Maravillas del mundo?",
+    "answer": "Chichen Itza"
+  },
+  {
+    "questionTitle": "¿Quién fue el presidente del gobierno español entre 1983 y 1996?",
+    "answer": "Felipe González"
+  },
+  {
+    "questionTitle": "¿Cuál de estos países no ha invadido nunca el Reino Unido?",
+    "answer": "Bolivia"
+  },
+  {
+    "questionTitle": "La toma de Granada fue en el año...",
+    "answer": "1492"
+  },
+  {
+    "questionTitle": "¿Qué fuerte tomaron las tropas mexicanas en 1836 tras trece días de asedio?",
+    "answer": "El Álamo"
+  },
+  {
+    "questionTitle": "¿En qué período de tiempo se desarrolló la dictadura franquista en España?",
+    "answer": "1939-1975"
+  },
+  {
+    "questionTitle": "¿En qué año fue el último enfrentamiento bélico por las Islas Malvinas entre Argentina e Inglaterra?",
+    "answer": "1982"
+  },
+  {
+    "questionTitle": "¿En qué año sucedió el accidente de Chernóbil?",
+    "answer": "1986"
+  },
+  {
+    "questionTitle": "¿De qué conflicto formó parte la Guerra de Invierno entre Finlandia y la URSS?",
+    "answer": "Segunda Guerra Mundial"
+  },
+  {
+    "questionTitle": "¿En qué ciudad española tuvo lugar el motín de Godoy?",
+    "answer": "Aranjuez"
+  },
+  {
+    "questionTitle": "¿Qué significan las siglas FARC",
+    "answer": "?  Fuerzas Armadas Revolucionarias de Colombia"
+  },
+  {
+    "questionTitle": "¿Cuál fue el primer trayecto en tren en España?",
+    "answer": "Barcelona – Mataró"
+  },
+  {
+    "questionTitle": "¿Durante qué años reinó de forma impuesta en España José Bonaparte?",
+    "answer": "Desde 1808 a 1813"
+  },
+  {
+    "questionTitle": "¿En qué ciudad se proclamó la primera constitución liberal de España en 1812?",
+    "answer": "Cádiz"
+  },
+  {
+    "questionTitle": "¿Qué universidad cumplió 125 años en 2011?",
+    "answer": "Deusto"
+  },
+  {
+    "questionTitle": "¿Según el griego, qué significa el nombre \"Mesopotamia\"?",
+    "answer": "Entre Ríos"
+  },
+  {
+    "questionTitle": "¿Quién recibió en 2009 el Premio Nobel de la Paz?",
+    "answer": "Barack Obama"
+  },
+  {
+    "questionTitle": "¿Cuántos meses duró la Batalla de Moscú, que tuvo lugar durante la Segunda Guerra Mundial?",
+    "answer": "Tres"
+  },
+  {
+    "questionTitle": "¿Qué nombre recibían las mayores circunscripciones políticas y administrativas en la América dominada por España?",
+    "answer": "Virreinato"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la casilla del centinela?",
+    "answer": "Garita"
+  },
+  {
+    "questionTitle": "¿Quién fue Bobby Fischer?",
+    "answer": "Una leyenda del ajedrez"
+  },
+  {
+    "questionTitle": "¿En qué siglo Europa conquistó Australia?",
+    "answer": "XVII"
+  },
+  {
+    "questionTitle": "¿En qué año subió Bismarck al poder?",
+    "answer": "1862"
+  },
+  {
+    "questionTitle": "¿Qué heroína de la Guerra de la Independencia Española murió en Ceuta?",
+    "answer": "Agustina de Aragón"
+  },
+  {
+    "questionTitle": "¿En qué año se perpetró la matanza de My Lai?",
+    "answer": "1968"
+  },
+  {
+    "questionTitle": "¿Quién descubrió América?",
+    "answer": "Cristóbal Colón"
+  },
+  {
+    "questionTitle": "¿En qué año viajó el primer hombre a la luna?",
+    "answer": "1969"
+  },
+  {
+    "questionTitle": "¿Qué otro nombre recibió la Primera Guerra Mundial hasta 1939?",
+    "answer": "La Gran Guerra"
+  },
+  {
+    "questionTitle": "¿Dónde se encuentra actualmente la Dama de Elche?",
+    "answer": "En Madrid"
+  },
+  {
+    "questionTitle": "¿Quién dijo que la diferencia entre la estupidez y la genialidad es que la genialidad tiene límites?",
+    "answer": "Einstein"
+  },
+  {
+    "questionTitle": "¿De qué manera consiguió EEUU el estado de Alaska de manos de Rusia?",
+    "answer": "Lo compró"
+  },
+  {
+    "questionTitle": "¿Cuál es el nombre fenicio de la ciudad de Málaga?",
+    "answer": "Malaka"
+  },
+  {
+    "questionTitle": "¿Qué ciudad fue llamada por los árabes Al-Basit?",
+    "answer": "Albacete"
+  },
+  {
+    "questionTitle": "¿Cuál era el nombre de pila de Lenin?",
+    "answer": "Vladímir "
+  },
+  {
+    "questionTitle": "¿En qué país nació el rey Juan Carlos I?",
+    "answer": "Italia"
+  },
+  {
+    "questionTitle": "¿Cómo era la relación de Juana I La Loca con su marido, Felipe I?",
+    "answer": "Juana sentía unos celos patológicos"
+  },
+  {
+    "questionTitle": "¿Para qué vehículo se necesitó un carné de conducir por primera vez en España?",
+    "answer": "Automóvil"
+  },
+  {
+    "questionTitle": "¿En qué año se proclamó la II República Española?",
+    "answer": "1931"
+  },
+  {
+    "questionTitle": "¿Quién ganó las elecciones presidenciales de la república de México en 2012?",
+    "answer": "Enrique Peña Nieto"
+  },
+  {
+    "questionTitle": "¿Cuántos mandamientos hay en el cristianismo?",
+    "answer": "10"
+  },
+  {
+    "questionTitle": "¿En qué viaje Colón encontró a los Mayas?",
+    "answer": "Cuarto"
+  },
+  {
+    "questionTitle": "¿Dónde vivía Ana Frank?",
+    "answer": "Ámsterdam"
+  },
+  {
+    "questionTitle": "¿Quién conquistó Valencia de los musulmanes?",
+    "answer": "Jaume I"
+  },
+  {
+    "questionTitle": "¿Qué sobrenombre tenía Guillermo I de Inglaterra?",
+    "answer": "El Conquistador"
+  },
+  {
+    "questionTitle": "¿Cuántos colores tiene la bandera española?",
+    "answer": "Dos"
+  },
+  {
+    "questionTitle": "¿Quiénes fueron los Reyes Católicos?",
+    "answer": "Isabel I y Fernando II"
+  },
+  {
+    "questionTitle": "¿En qué país nació el protestantismo?",
+    "answer": "Alemania"
+  },
+  {
+    "questionTitle": "¿Qué motivó la rebelión que dio lugar a la Guerra de la Independencia de EEUU?",
+    "answer": "Impuesto"
+  },
+  {
+    "questionTitle": "¿De qué estaba fabricado originalmente el maquillaje blanco de las Geishas?",
+    "answer": "Plomo"
+  },
+  {
+    "questionTitle": "¿Quién presidia España durante el fallido golpe de estado del 23 de Febrero de 1981?",
+    "answer": "Adolfo Suárez"
+  },
+  {
+    "questionTitle": "¿Quién gobernó Francia desde 1799 a 1815?",
+    "answer": "Napoleón Bonaparte"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la capital del antiguo imperio azteca?",
+    "answer": "Tenochtitlan"
+  },
+  {
+    "questionTitle": "¿Cómo se llama la sustancia que se utiliza en la Iglesia para hacer mucho humo?",
+    "answer": "Incienso"
+  },
+  {
+    "questionTitle": "¿Quién fue galardonado con el premio Nobel de la Paz en 2007?",
+    "answer": "Albert Gore"
+  },
+  {
+    "questionTitle": "¿Dónde surgió la filosofía?",
+    "answer": "Grecia"
+  },
+  {
+    "questionTitle": "¿Quién es el actual presidente de México (2014)?",
+    "answer": "Enrique Peña Nieto"
+  },
+  {
+    "questionTitle": "¿Qué fue Dracón?",
+    "answer": "Legislador"
+  },
+  {
+    "questionTitle": "¿Cuál de los siguientes políticos no ha estado implicado en la trama Gürtel?",
+    "answer": "Mariano Rajoy"
+  },
+  {
+    "questionTitle": "¿Qué país fue dirigido por Stalin?",
+    "answer": "Unión Soviética"
+  },
+  {
+    "questionTitle": "¿En qué partido se organizan hoy los carlistas?",
+    "answer": "Comunión Tradicionalista Carlista"
+  },
+  {
+    "questionTitle": "¿Con qué emperador estuvo casada Cleopatra?",
+    "answer": "Todas son correctas"
+  },
+  {
+    "questionTitle": "¿A qué presidente cesó el rey Alfonso XIII tras las reacciones que sucedieron a la Semana Trágica?",
+    "answer": "Antonio Maura"
+  },
+  {
+    "questionTitle": "¿Cuántos soldados argentinos murieron en la Guerra de las Malvinas?",
+    "answer": "649"
+  },
+  {
+    "questionTitle": "¿Con qué hecho histórico relacionarías al \"hombre del tanque\" o \"rebelde desconocido\"?",
+    "answer": "Protestas de plaza Tian\u0027anmen, Pekín"
+  },
+  {
+    "questionTitle": "¿A qué dirigente latinoamericano mandó callar Juan Carlos de Borbón?",
+    "answer": "Hugo Chávez"
+  },
+  {
+    "questionTitle": "¿Las revueltas de dónde son llamadas Intifadas?",
+    "answer": "Palestina"
+  },
+  {
+    "questionTitle": "¿De qué fue ministro Manuel Fraga durante el franquismo?",
+    "answer": "De Información y Turismo"
+  }
+]

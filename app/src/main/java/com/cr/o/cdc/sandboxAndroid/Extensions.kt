@@ -2,6 +2,7 @@ package com.cr.o.cdc.sandboxAndroid
 
 import android.content.SharedPreferences
 import android.view.View
+import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.lifecycle.LiveData
@@ -68,4 +69,15 @@ fun <T> MutableLiveData<T>.setValueIfNotEquals(newValue: T?) {
     if (value != newValue) {
         value = newValue
     }
+}
+
+fun AccessibilityNodeInfo.childs(): List<AccessibilityNodeInfo> {
+    val childs = arrayListOf<AccessibilityNodeInfo>()
+    for (i in 0..childCount.dec()) {
+        val child = getChild(i)
+        if (child != null) {
+            childs.add(child)
+        }
+    }
+    return childs.toList()
 }

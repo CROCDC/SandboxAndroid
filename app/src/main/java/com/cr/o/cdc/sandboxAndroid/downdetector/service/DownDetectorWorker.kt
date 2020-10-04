@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.downdetector.vo
+package com.cr.o.cdc.sandboxAndroid.downdetector.service
 
 import android.content.Context
 import androidx.core.app.NotificationManagerCompat

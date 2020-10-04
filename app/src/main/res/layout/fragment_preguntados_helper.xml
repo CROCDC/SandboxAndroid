@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="40dp">
+
+        <Button
+            android:id="@+id/btn_questions_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/questions_list"
+            app:layout_constraintBottom_toTopOf="@id/btn_config"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_config"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/config"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_questions_list" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

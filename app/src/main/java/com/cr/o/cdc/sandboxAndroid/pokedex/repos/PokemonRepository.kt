@@ -8,7 +8,7 @@ import com.cr.o.cdc.networking.NetworkResource
 import com.cr.o.cdc.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.Pokemon
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.PokemonMini
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
+import com.cr.o.cdc.sandboxAndroid.SandBoxDB
 import javax.inject.Inject
 
 class PokemonRepository @Inject constructor(

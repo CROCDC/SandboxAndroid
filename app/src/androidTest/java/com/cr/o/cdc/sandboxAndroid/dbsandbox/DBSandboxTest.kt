@@ -95,7 +95,7 @@ class DBSandboxTest : DBSandboxTestUtils() {
 
         val dbDog = getValueLiveData(dao.load(dog.name), 5)
 
-        assertEquals(dog, dbDog)
+        assertEquals(null, dbDog)
     }
 
     @Test

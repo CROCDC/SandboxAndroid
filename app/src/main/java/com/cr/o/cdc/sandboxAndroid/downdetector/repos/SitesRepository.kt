@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.cr.o.cdc.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.downdetector.model.PingResponse
-import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
+import com.cr.o.cdc.sandboxAndroid.SandBoxDB
 import javax.inject.Inject
 
 class SitesRepository @Inject constructor(

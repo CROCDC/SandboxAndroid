@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_homeFragment_to_motionLayoutSelectorFragment"
             app:destination="@id/motionLayoutSelectorFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_preguntadosHelperFragment"
+            app:destination="@id/preguntadosHelperFragment" />
     </fragment>
     <fragment
         android:id="@+id/pokemonFragment"
@@ -126,4 +129,23 @@
         android:id="@+id/spaceRocketFragment"
         android:name="com.cr.o.cdc.sandboxAndroid.motionlayout.fragments.SpaceRocketFragment"
         tools:layout="@layout/fragment_space_rocket" />
+    <fragment
+        android:id="@+id/preguntadosHelperFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.preguntadoshelper.fragments.PreguntadosHelperFragment"
+        tools:layout="@layout/fragment_preguntados_helper">
+        <action
+            android:id="@+id/action_preguntadosHelperFragment_to_preguntadosQuestionListFragment"
+            app:destination="@id/preguntadosQuestionListFragment" />
+        <action
+            android:id="@+id/action_preguntadosHelperFragment_to_preguntadosHelperConfigFragment"
+            app:destination="@id/preguntadosHelperConfigFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/preguntadosQuestionListFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.preguntadoshelper.fragments.PreguntadosQuestionListFragment"
+        tools:layout="@layout/fragment_preguntados_question_list" />
+    <fragment
+        android:id="@+id/preguntadosHelperConfigFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.preguntadoshelper.fragments.PreguntadosHelperConfigFragment"
+        tools:layout="@layout/fragment_preguntados_helper_config" />
 </navigation>
