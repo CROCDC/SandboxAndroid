@@ -70,7 +70,7 @@ fun getMessage(id: String) = "la view con el id $id no tenia el texto esperado"
 fun <T> getCountOfChangesLiveData(
     liveData: LiveData<T>,
     seconds: Long,
-    executeFunWhenObserve: () -> Unit
+    executeFunWhenObserve: (() -> Unit)? = null
 
 ): Int {
     var count = 0
@@ -80,7 +80,7 @@ fun <T> getCountOfChangesLiveData(
     }
 
     Thread.sleep(400)
-    executeFunWhenObserve.invoke()
+    executeFunWhenObserve?.invoke()
     latch.await(seconds, TimeUnit.SECONDS)
     return count
 
