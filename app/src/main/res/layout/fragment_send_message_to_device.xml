@@ -14,11 +14,37 @@
             android:orientation="horizontal"
             android:textColor="@color/white"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@id/input"
+            app:layout_constraintBottom_toTopOf="@id/recycler"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_weight="0.2"
             tools:listitem="@layout/list_item_bluetooth_device"
             tools:text="MAC ADDRESS" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/input"
+            app:layout_constraintEnd_toStartOf="@id/img_add"
+            app:layout_constraintHorizontal_weight="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_mac_adress"
+            app:layout_constraintVertical_weight="0.1"
+            tools:listitem="@layout/list_item_bluetooth_message" />
+
+        <ImageView
+            android:id="@+id/img_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_add_red_rounded"
+            app:layout_constraintBottom_toBottomOf="@id/recycler"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toEndOf="@id/recycler"
+            app:layout_constraintTop_toTopOf="@id/recycler" />
 
         <EditText
             android:id="@+id/input"

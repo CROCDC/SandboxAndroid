@@ -2,10 +2,8 @@ package com.cr.o.cdc.sandboxAndroid.bluetooth.repos
 
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
-import android.bluetooth.BluetoothManager
 import android.bluetooth.BluetoothSocket
-import android.os.Bundle
-import android.os.Handler
+import android.util.Log
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
@@ -16,109 +14,110 @@ import java.util.UUID
  */
 
 
-class BluetoothService(val handler: Handler) {
-
+class BluetoothService(
+    val bluetoothAdapter: BluetoothAdapter
+) {
     private lateinit var connectThread: ConnectThread
 
     private lateinit var connectedThread: ConnectedThread
 
-    private inner class ConnectThread(
-        device: BluetoothDevice,
-        val bluetoothAdapter: BluetoothAdapter?
-    ) : Thread() {
+    private lateinit var bluetoothDevice: BluetoothDevice
 
-        private val mmSocket: BluetoothSocket? by lazy(LazyThreadSafetyMode.NONE) {
+    private var pendingMessage: String? = null
+
+    private inner class ConnectThread(device: BluetoothDevice) : Thread() {
+
+        private val bluetoothSocket: BluetoothSocket? by lazy(LazyThreadSafetyMode.NONE) {
             device.createRfcommSocketToServiceRecord(
-                UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
+                device.takeIf { it.uuids != null }?.uuids?.getOrNull(0)?.uuid
+                    ?: UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
             )
         }
 
         override fun run() {
-            bluetoothAdapter?.cancelDiscovery()
+            bluetoothAdapter.cancelDiscovery()
 
-            mmSocket?.use { socket ->
-                socket.connect()
-                connectedThread = ConnectedThread(socket)
+            try {
+                bluetoothSocket?.use { socket ->
+                    socket.connect()
+                    connectedThread = ConnectedThread(socket)
+                    connectedThread.run()
+                    pendingMessage?.let {
+                        connectedThread.write(it)
+                    }
+                }
+            } catch (e: IOException) {
+
             }
+
         }
 
         fun cancel() {
             try {
-                mmSocket?.close()
+                bluetoothSocket?.close()
             } catch (e: IOException) {
             }
         }
     }
 
     private inner class ConnectedThread(private val mmSocket: BluetoothSocket) : Thread() {
-
-        private val mmInStream: InputStream = mmSocket.inputStream
-        private val mmOutStream: OutputStream = mmSocket.outputStream
-        private val mmBuffer: ByteArray = ByteArray(1024) // mmBuffer store for the stream
-
+        private val mmInStream: InputStream?
+        private val mmOutStream: OutputStream?
         override fun run() {
-            var numBytes: Int // bytes returned from read()
-
-            while (true) {
-                numBytes = try {
-                    mmInStream.read(mmBuffer)
-                } catch (e: IOException) {
-                    break
-                }
-
-                val readMsg = handler.obtainMessage(
-                    MESSAGE_READ, numBytes, -1,
-                    mmBuffer
-                )
-                readMsg.sendToTarget()
-            }
         }
 
-        fun write(bytes: ByteArray) {
+        /* Call this from the main activity to send data to the remote device */
+        fun write(input: String) {
+            val bytes = input.toByteArray() //converts entered String into bytes
             try {
-                mmOutStream.write(bytes)
+                mmOutStream!!.write(bytes)
             } catch (e: IOException) {
-
-                val writeErrorMsg = handler.obtainMessage(MESSAGE_TOAST)
-                val bundle = Bundle().apply {
-                    putString("toast", "Couldn't send data to the other device")
-                }
-                writeErrorMsg.data = bundle
-                handler.sendMessage(writeErrorMsg)
-                return
+                Log.e("Send Error", "Unable to send message", e)
             }
-
-            val writtenMsg = handler.obtainMessage(
-                MESSAGE_WRITE, -1, -1, mmBuffer
-            )
-            writtenMsg.sendToTarget()
         }
 
+        /* Call this from the main activity to shutdown the connection */
         fun cancel() {
             try {
                 mmSocket.close()
             } catch (e: IOException) {
             }
         }
-    }
 
-    fun connect(device: BluetoothDevice, manager: BluetoothManager) {
-        //!manager.getConnectedDevices(GATT).contains(device)
-        if (!::connectThread.isInitialized) {
-            connectThread = ConnectThread(device, manager.adapter)
-            connectThread.run()
+        init {
+            var tmpIn: InputStream? = null
+            var tmpOut: OutputStream? = null
+
+            // Get the input and output streams, using temp objects because
+            // member streams are final
+            try {
+                tmpIn = mmSocket.inputStream
+                tmpOut = mmSocket.outputStream
+            } catch (e: IOException) {
+            }
+            mmInStream = tmpIn
+            mmOutStream = tmpOut
         }
     }
 
-    fun sendMessage(message: String) {
+    fun connect(device: BluetoothDevice) {
+        connectThread = ConnectThread(device)
+        connectThread.start()
+        this.bluetoothDevice = device
+
+    }
+
+    fun sendMessage(message: String, macAddress: String) {
         if (::connectedThread.isInitialized) {
-            connectedThread.write(message.toByteArray())
+            connectedThread.write(message)
+        } else {
+            val device = bluetoothAdapter.bondedDevices?.find { it.address == macAddress }
+            if (device != null) {
+                pendingMessage = message
+                ConnectThread(device).start()
+            } else {
+                //todo return device not connected
+            }
         }
-    }
-
-    companion object {
-        private const val MESSAGE_READ: Int = 0
-        private const val MESSAGE_WRITE: Int = 1
-        private const val MESSAGE_TOAST: Int = 2
     }
 }
