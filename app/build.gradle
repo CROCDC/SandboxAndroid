@@ -12,6 +12,9 @@ apply plugin: 'com.apollographql.android'
 
 apply plugin: 'dagger.hilt.android.plugin'
 
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+
 android {
 
     testOptions {

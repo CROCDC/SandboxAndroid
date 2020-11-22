@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_homeFragment_to_motionLayoutSelectorFragment"
             app:destination="@id/motionLayoutSelectorFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bluetoothDevicesListingFragment"
+            app:destination="@id/bluetoothDevicesListingFragment" />
     </fragment>
     <fragment
         android:id="@+id/pokemonFragment"
@@ -126,4 +129,20 @@
         android:id="@+id/spaceRocketFragment"
         android:name="com.cr.o.cdc.sandboxAndroid.motionlayout.fragments.SpaceRocketFragment"
         tools:layout="@layout/fragment_space_rocket" />
+    <fragment
+        android:id="@+id/bluetoothDevicesListingFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.bluetooth.ui.fragments.BluetoothDevicesListingFragment"
+        tools:layout="@layout/fragment_bluetooth_devices_listing">
+        <action
+            android:id="@+id/action_bluetoothDevicesListingFragment_to_sendMessageToDeviceFragment"
+            app:destination="@id/sendMessageToDeviceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendMessageToDeviceFragment"
+        android:name="com.cr.o.cdc.sandboxAndroid.bluetooth.ui.fragments.SendMessageToDeviceFragment"
+        tools:layout="@layout/fragment_send_message_to_device">
+        <argument
+            android:name="address"
+            app:argType="string" />
+    </fragment>
 </navigation>

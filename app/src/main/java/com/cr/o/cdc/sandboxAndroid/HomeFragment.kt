@@ -44,6 +44,9 @@ class HomeFragment : Fragment() {
         binding.btnMotionLayout.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_motionLayoutSelectorFragment)
         }
+        binding.btnBluetooth.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_bluetoothDevicesListingFragment)
+        }
         return binding.root
     }
 }

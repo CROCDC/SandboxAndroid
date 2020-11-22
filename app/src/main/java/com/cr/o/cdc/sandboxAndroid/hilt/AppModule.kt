@@ -1,4 +1,4 @@
-package com.cr.o.cdc.sandboxAndroid.coronavirus.di
+package com.cr.o.cdc.sandboxAndroid.hilt
 
 import android.content.Context
 import android.content.SharedPreferences
