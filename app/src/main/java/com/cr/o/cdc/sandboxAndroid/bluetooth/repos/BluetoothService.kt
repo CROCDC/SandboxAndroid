@@ -44,7 +44,7 @@ class BluetoothService {
                     }
                 }
             } catch (e: IOException) {
-                Log.e("Cami", e.toString())
+                ConnectThread(adapter)
             }
 
         }
