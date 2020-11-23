@@ -2,7 +2,6 @@ package com.cr.o.cdc.sandboxAndroid.bluetooth.repos
 
 import android.bluetooth.BluetoothDevice
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.cr.o.cdc.sandboxAndroid.bluetooth.model.BluetoothConnection
@@ -27,8 +26,8 @@ class MyBluetoothService(context: Context) {
         config.bufferSize = 1024
         config.characterDelimiter = '\n'
         config.deviceName = "SandBox"
-        config.callListenersInMainThread = true
-        config.uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb") // Required
+        config.callListenersInMainThread = false
+        config.uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb")
         BluetoothService.init(config)
     }
 
@@ -39,19 +38,27 @@ class MyBluetoothService(context: Context) {
         service.setOnScanCallback(object : BluetoothService.OnBluetoothScanCallback {
             override fun onDeviceDiscovered(device: BluetoothDevice, rssi: Int) {
                 val list = (result.value?.devices ?: setOf()).plus(device)
-                result.value = result.value?.copy(devices = list) ?: BluetoothScan(
-                    true,
-                    list
+                result.postValue(
+                    result.value?.copy(devices = list) ?: BluetoothScan(
+                        true,
+                        list
+                    )
                 )
             }
 
             override fun onStartScan() {
-                result.value = result.value?.copy(isScanning = true) ?: BluetoothScan(true, setOf())
+                result.postValue(
+                    result.value?.copy(isScanning = true) ?: BluetoothScan(
+                        true,
+                        setOf()
+                    )
+                )
             }
 
             override fun onStopScan() {
-                result.value =
+                result.postValue(
                     result.value?.copy(isScanning = false) ?: BluetoothScan(false, setOf())
+                )
             }
         })
         service.startScan()
@@ -68,26 +75,29 @@ class MyBluetoothService(context: Context) {
             }
 
             override fun onStatusChange(status: BluetoothStatus) {
-                result.value =
+                result.postValue(
                     result.value?.copy(status = status) ?: BluetoothConnection(null, status, null)
+                )
             }
 
             override fun onDeviceName(deviceName: String) {
-                result.value =
+                result.postValue(
                     result.value?.copy(deviceName = deviceName) ?: BluetoothConnection(
                         null,
                         null,
                         deviceName
                     )
+                )
             }
 
             override fun onToast(message: String) {
-                result.value =
+                result.postValue(
                     result.value?.copy(message = message) ?: BluetoothConnection(
                         message,
                         null,
                         null
                     )
+                )
             }
 
             override fun onDataWrite(buffer: ByteArray) {
