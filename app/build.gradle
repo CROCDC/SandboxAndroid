@@ -169,5 +169,6 @@ dependencies {
 
     androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
     kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "com.github.douglasjunior.AndroidBluetoothLibrary:BluetoothClassicLibrary:0.3.5"
 
 }

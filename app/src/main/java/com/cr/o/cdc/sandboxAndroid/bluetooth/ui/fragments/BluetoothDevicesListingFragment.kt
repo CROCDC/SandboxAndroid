@@ -1,27 +1,22 @@
 package com.cr.o.cdc.sandboxAndroid.bluetooth.ui.fragments
 
 import android.bluetooth.BluetoothDevice
-import android.bluetooth.BluetoothDevice.ACTION_FOUND
-import android.bluetooth.BluetoothDevice.EXTRA_DEVICE
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.bluetooth.ui.adapters.BluetoothDeviceAdapter
-import com.cr.o.cdc.sandboxAndroid.bluetooth.util.getBluetoothAdapter
-import com.cr.o.cdc.sandboxAndroid.bluetooth.util.getBluetoothManager
 import com.cr.o.cdc.sandboxAndroid.bluetooth.vm.BluetoothDevicesListingViewModel
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentBluetoothDevicesListingBinding
+import com.github.douglasjunior.bluetoothclassiclibrary.BluetoothStatus
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -34,23 +29,12 @@ class BluetoothDevicesListingFragment : Fragment() {
 
     private lateinit var adapter: BluetoothDeviceAdapter
 
-    private val receiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            intent.takeIf { intent.action == ACTION_FOUND }
-                ?.getParcelableExtra<BluetoothDevice?>(EXTRA_DEVICE)?.let {
-                    viewModel.addDevice(it)
-                }
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentBluetoothDevicesListingBinding.inflate(inflater, container, false)
-
-        scan()
 
         return binding.root
     }
@@ -61,8 +45,18 @@ class BluetoothDevicesListingFragment : Fragment() {
         adapter = BluetoothDeviceAdapter(
             object : BluetoothDeviceAdapter.BluetoothDeviceAdapterListener {
                 override fun connect(bluetoothDevice: BluetoothDevice) {
-                    requireContext().getBluetoothAdapter()
-                        ?.let { viewModel.connect(bluetoothDevice, it) }
+                    viewModel.connect(bluetoothDevice).observe(viewLifecycleOwner, Observer {
+                        Toast.makeText(
+                            requireContext(), when (it.status) {
+                                BluetoothStatus.CONNECTED -> requireContext().getString(
+                                    R.string.connected_to,
+                                    it.deviceName
+                                )
+                                BluetoothStatus.CONNECTING -> requireContext().getString(R.string.connecting)
+                                else ->requireContext().getString(R.string.fail_connection)
+                            }, Toast.LENGTH_LONG
+                        ).show()
+                    })
                 }
 
                 override fun sendMessage(bluetoothDevice: BluetoothDevice) {
@@ -81,16 +75,16 @@ class BluetoothDevicesListingFragment : Fragment() {
                 android.Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ) {
-            scan()
+            viewModel.startScan().observe(viewLifecycleOwner, Observer {
+                adapter.submitList(it.devices.toList())
+            })
         } else {
             requestPermissions(
                 arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
                 ACCESS_FINE_LOCATION_CODE
             )
         }
-        viewModel.devices.observe(viewLifecycleOwner, Observer {
-            adapter.submitList(it.toList())
-        })
+
     }
 
     override fun onRequestPermissionsResult(
@@ -101,20 +95,11 @@ class BluetoothDevicesListingFragment : Fragment() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (ACCESS_FINE_LOCATION_CODE == requestCode) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                scan()
+                viewModel.startScan().observe(viewLifecycleOwner, Observer {
+                    adapter.submitList(it.devices.toList())
+                })
             }
         }
-    }
-
-    private fun scan() {
-        requireContext().getBluetoothManager()?.adapter?.startDiscovery()
-        requireContext().registerReceiver(receiver, IntentFilter(ACTION_FOUND))
-
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        requireContext().unregisterReceiver(receiver)
     }
 
     companion object {

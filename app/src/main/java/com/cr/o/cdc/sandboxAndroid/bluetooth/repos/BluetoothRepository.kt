@@ -1,10 +1,13 @@
 package com.cr.o.cdc.sandboxAndroid.bluetooth.repos
 
-import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
+import android.content.Context
 import androidx.lifecycle.LiveData
 import com.cr.o.cdc.sandboxAndroid.bluetooth.db.model.BluetoothMessage
+import com.cr.o.cdc.sandboxAndroid.bluetooth.model.BluetoothConnection
+import com.cr.o.cdc.sandboxAndroid.bluetooth.model.BluetoothScan
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -13,17 +16,19 @@ import javax.inject.Singleton
  */
 @Singleton
 class BluetoothRepository @Inject constructor(
-    private val db: SandBoxDB
+    private val db: SandBoxDB,
+    @ApplicationContext context: Context
 ) {
 
-    private val bluetoothService: BluetoothService = BluetoothService()
+    private val myBluetoothService: MyBluetoothService = MyBluetoothService(context)
 
-    fun connect(device: BluetoothDevice, adapter: BluetoothAdapter) {
-        bluetoothService.connect(device, adapter)
-    }
+    fun startScan(): LiveData<BluetoothScan> = myBluetoothService.startScan()
 
-    fun sendMessage(message: String, macAddress: String, adapter: BluetoothAdapter) {
-        bluetoothService.sendMessage(message, macAddress, adapter)
+    fun connect(device: BluetoothDevice): LiveData<BluetoothConnection> =
+        myBluetoothService.connect(device)
+
+    fun sendMessage(message: String) {
+        myBluetoothService.write(message)
     }
 
     fun addBluetoothMessage(message: String) {

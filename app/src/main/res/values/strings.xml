@@ -48,4 +48,7 @@
     <string name="bluetooth">Bluetooth</string>
     <string name="connect">Conectar</string>
     <string name="send">Enviar</string>
+    <string name="connected_to">Connected to %1$s</string>
+    <string name="connecting">Connecting</string>
+    <string name="fail_connection">Fail connection</string>
 </resources>
