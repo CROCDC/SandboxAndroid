@@ -48,25 +48,23 @@ class BluetoothDevicesListingFragment : Fragment() {
                     viewModel.connect(bluetoothDevice).observe(viewLifecycleOwner, Observer {
                         Toast.makeText(
                             requireContext(), when (it.status) {
-                                BluetoothStatus.CONNECTED -> requireContext().getString(
-                                    R.string.connected_to,
-                                    it.deviceName
-                                )
+                                BluetoothStatus.CONNECTED -> {
+                                    findNavController().navigate(
+                                        BluetoothDevicesListingFragmentDirections
+                                            .actionBluetoothDevicesListingFragmentToSendMessageToDeviceFragment(
+                                                bluetoothDevice.address
+                                            )
+                                    )
+                                    requireContext().getString(
+                                        R.string.connected_to,
+                                        it.deviceName
+                                    )
+                                }
                                 BluetoothStatus.CONNECTING -> requireContext().getString(R.string.connecting)
-                                else ->requireContext().getString(R.string.fail_connection)
-                            }, Toast.LENGTH_LONG
+                                else -> requireContext().getString(R.string.fail_connection)
+                            }, Toast.LENGTH_SHORT
                         ).show()
                     })
-                }
-
-                override fun sendMessage(bluetoothDevice: BluetoothDevice) {
-                    findNavController().navigate(
-                        BluetoothDevicesListingFragmentDirections
-                            .actionBluetoothDevicesListingFragmentToSendMessageToDeviceFragment(
-                                bluetoothDevice.address
-                            )
-                    )
-
                 }
             })
         binding.recycler.adapter = adapter

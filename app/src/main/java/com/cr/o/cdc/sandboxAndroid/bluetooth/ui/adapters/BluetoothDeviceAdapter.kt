@@ -17,7 +17,6 @@ class BluetoothDeviceAdapter(private val listener: BluetoothDeviceAdapterListene
 
     interface BluetoothDeviceAdapterListener {
         fun connect(bluetoothDevice: BluetoothDevice)
-        fun sendMessage(bluetoothDevice: BluetoothDevice)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
@@ -47,9 +46,6 @@ class BluetoothDeviceAdapter(private val listener: BluetoothDeviceAdapterListene
 
             binding.btnConnect.setOnClickListener {
                 listener.connect(bluetoothDevice)
-            }
-            binding.txtMacAdress.setOnClickListener {
-                listener.sendMessage(bluetoothDevice)
             }
         }
     }
