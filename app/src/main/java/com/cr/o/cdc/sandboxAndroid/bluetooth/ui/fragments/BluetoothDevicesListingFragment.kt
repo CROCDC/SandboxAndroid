@@ -18,6 +18,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.cr.o.cdc.sandboxAndroid.bluetooth.ui.adapters.BluetoothDeviceAdapter
+import com.cr.o.cdc.sandboxAndroid.bluetooth.util.getBluetoothAdapter
 import com.cr.o.cdc.sandboxAndroid.bluetooth.util.getBluetoothManager
 import com.cr.o.cdc.sandboxAndroid.bluetooth.vm.BluetoothDevicesListingViewModel
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentBluetoothDevicesListingBinding
@@ -60,8 +61,8 @@ class BluetoothDevicesListingFragment : Fragment() {
         adapter = BluetoothDeviceAdapter(
             object : BluetoothDeviceAdapter.BluetoothDeviceAdapterListener {
                 override fun connect(bluetoothDevice: BluetoothDevice) {
-                    val bluetoothManager = requireContext().getBluetoothManager()
-                    bluetoothManager?.let { viewModel.connect(bluetoothDevice) }
+                    requireContext().getBluetoothAdapter()
+                        ?.let { viewModel.connect(bluetoothDevice, it) }
                 }
 
                 override fun sendMessage(bluetoothDevice: BluetoothDevice) {

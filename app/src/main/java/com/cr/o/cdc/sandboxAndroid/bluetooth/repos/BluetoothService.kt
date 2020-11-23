@@ -13,10 +13,7 @@ import java.util.UUID
  * Created by Cami on 11/21/20.
  */
 
-
-class BluetoothService(
-    val bluetoothAdapter: BluetoothAdapter
-) {
+class BluetoothService {
     private lateinit var connectThread: ConnectThread
 
     private lateinit var connectedThread: ConnectedThread
@@ -25,17 +22,17 @@ class BluetoothService(
 
     private var pendingMessage: String? = null
 
-    private inner class ConnectThread(device: BluetoothDevice) : Thread() {
+    private inner class ConnectThread(private val adapter: BluetoothAdapter) : Thread() {
 
         private val bluetoothSocket: BluetoothSocket? by lazy(LazyThreadSafetyMode.NONE) {
-            device.createRfcommSocketToServiceRecord(
-                device.takeIf { it.uuids != null }?.uuids?.getOrNull(0)?.uuid
+            bluetoothDevice.createRfcommSocketToServiceRecord(
+                bluetoothDevice.takeIf { it.uuids != null }?.uuids?.getOrNull(0)?.uuid
                     ?: UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
             )
         }
 
         override fun run() {
-            bluetoothAdapter.cancelDiscovery()
+            adapter.cancelDiscovery()
 
             try {
                 bluetoothSocket?.use { socket ->
@@ -47,7 +44,7 @@ class BluetoothService(
                     }
                 }
             } catch (e: IOException) {
-
+                Log.e("Cami", e.toString())
             }
 
         }
@@ -60,7 +57,9 @@ class BluetoothService(
         }
     }
 
-    private inner class ConnectedThread(private val mmSocket: BluetoothSocket) : Thread() {
+    private inner class ConnectedThread(
+        private val mmSocket: BluetoothSocket
+    ) : Thread() {
         private val mmInStream: InputStream?
         private val mmOutStream: OutputStream?
         override fun run() {
@@ -72,7 +71,7 @@ class BluetoothService(
             try {
                 mmOutStream!!.write(bytes)
             } catch (e: IOException) {
-                Log.e("Send Error", "Unable to send message", e)
+                //todo handle
             }
         }
 
@@ -94,30 +93,35 @@ class BluetoothService(
                 tmpIn = mmSocket.inputStream
                 tmpOut = mmSocket.outputStream
             } catch (e: IOException) {
+                Log.e("Cami", e.toString())
             }
             mmInStream = tmpIn
             mmOutStream = tmpOut
         }
+
+        fun isConnected() = mmSocket.isConnected
     }
 
-    fun connect(device: BluetoothDevice) {
-        connectThread = ConnectThread(device)
-        connectThread.start()
+    fun connect(device: BluetoothDevice, adapter: BluetoothAdapter) {
         this.bluetoothDevice = device
-
+        connectThread = ConnectThread(adapter)
+        connectThread.start()
     }
 
-    fun sendMessage(message: String, macAddress: String) {
-        if (::connectedThread.isInitialized) {
+    fun sendMessage(message: String, macAddress: String, adapter: BluetoothAdapter) {
+        if (::connectedThread.isInitialized && connectedThread.isConnected()) {
             connectedThread.write(message)
         } else {
-            val device = bluetoothAdapter.bondedDevices?.find { it.address == macAddress }
+            val device = adapter.bondedDevices?.find { it.address == macAddress }
             if (device != null) {
+                this.bluetoothDevice = device
                 pendingMessage = message
-                ConnectThread(device).start()
+                connectThread = ConnectThread(adapter)
+                connectThread.start()
             } else {
                 //todo return device not connected
             }
         }
     }
+
 }

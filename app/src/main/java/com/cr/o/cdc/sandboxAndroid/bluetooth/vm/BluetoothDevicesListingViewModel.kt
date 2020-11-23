@@ -1,5 +1,6 @@
 package com.cr.o.cdc.sandboxAndroid.bluetooth.vm
 
+import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
@@ -22,12 +23,12 @@ class BluetoothDevicesListingViewModel @ViewModelInject constructor(private val 
         _devices.value = (_devices.value ?: setOf()).plus(bluetoothDevice)
     }
 
-    fun connect(device: BluetoothDevice) {
-        repository.connect(device)
+    fun connect(device: BluetoothDevice, adapter: BluetoothAdapter) {
+        repository.connect(device, adapter)
     }
 
-    fun sendMessage(message: String, macAddress: String) {
-        repository.sendMessage(message, macAddress)
+    fun sendMessage(message: String, macAddress: String, adapter: BluetoothAdapter) {
+        repository.sendMessage(message, macAddress, adapter)
     }
 
     fun addBluetoothMessage(message: String) {

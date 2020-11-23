@@ -1,5 +1,6 @@
 package com.cr.o.cdc.sandboxAndroid.bluetooth.util
 
+import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
 import android.content.Context
 import androidx.core.content.ContextCompat
@@ -13,3 +14,5 @@ fun Context.getBluetoothManager(): BluetoothManager? =
         this,
         BluetoothManager::class.java
     )
+
+fun Context.getBluetoothAdapter(): BluetoothAdapter? = getBluetoothManager()?.adapter

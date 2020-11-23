@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import com.cr.o.cdc.sandboxAndroid.TextInputDialog
 import com.cr.o.cdc.sandboxAndroid.bluetooth.db.model.BluetoothMessage
 import com.cr.o.cdc.sandboxAndroid.bluetooth.ui.adapters.BluetoothMessageAdapter
+import com.cr.o.cdc.sandboxAndroid.bluetooth.util.getBluetoothAdapter
 import com.cr.o.cdc.sandboxAndroid.bluetooth.vm.BluetoothDevicesListingViewModel
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentSendMessageToDeviceBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,12 +38,22 @@ class SendMessageToDeviceFragment : Fragment(), TextInputDialog.TextInputDialogL
         binding.txtMacAdress.text = macAddress
 
         binding.btnSend.setOnClickListener {
-            viewModel.sendMessage(binding.input.text.toString(), macAddress)
+            requireContext().getBluetoothAdapter()?.let { bluetoothAdapter ->
+                viewModel.sendMessage(
+                    binding.input.text.toString(), macAddress,
+                    bluetoothAdapter
+                )
+            }
         }
         adapter = BluetoothMessageAdapter(object :
             BluetoothMessageAdapter.BluetoothMessageAdapterListener {
             override fun select(bluetoothMessage: BluetoothMessage) {
-                viewModel.sendMessage(bluetoothMessage.message, macAddress)
+                requireContext().getBluetoothAdapter()?.let {
+                    viewModel.sendMessage(
+                        bluetoothMessage.message, macAddress,
+                        it
+                    )
+                }
             }
         })
 
