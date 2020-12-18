@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.cr.o.cdc.networking.StatusResult
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.StatusResult
 import com.cr.o.cdc.sandboxAndroid.databinding.FragmentRecipesBinding
 import com.cr.o.cdc.sandboxAndroid.pagination.ui.RecipeAdapter
 import com.cr.o.cdc.sandboxAndroid.pagination.vm.RecipeViewModel

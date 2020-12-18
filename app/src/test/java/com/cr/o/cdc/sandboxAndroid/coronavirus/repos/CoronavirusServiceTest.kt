@@ -1,9 +1,8 @@
 package com.cr.o.cdc.sandboxAndroid.coronavirus.repos
 
-import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
-import com.cr.o.cdc.networking.SuccessResponse
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.LiveDataCallAdapterFactory
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.SuccessResponse
 import com.cr.o.cdc.sandboxAndroid.utils.EndpointTest
-import com.cr.o.cdc.sharedtest.getValue
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 import retrofit2.Retrofit

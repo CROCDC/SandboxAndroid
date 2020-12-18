@@ -6,8 +6,9 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.room.Room
 import androidx.work.WorkManager
 import com.apollographql.apollo.ApolloClient
-import com.cr.o.cdc.networking.AppExecutors
-import com.cr.o.cdc.networking.LiveDataCallAdapterFactory
+import com.cr.o.cdc.sandboxAndroid.BuildConfig
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.AppExecutors
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSource
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSourceProvider
@@ -65,8 +66,8 @@ class AppModule {
     fun provideMapDataSourceProvider(): RNCDataSourceProvider = RNCDataSource()
 
     @Provides
-    fun provideApolloClient(@ApplicationContext appContext: Context): ApolloClient =
-        ApolloClient.builder().serverUrl(appContext.resources.getString(R.string.pokemon_api))
+    fun provideApolloClient(): ApolloClient =
+        ApolloClient.builder().serverUrl(BuildConfig.URL_API_POKEMON)
             .okHttpClient(OkHttpClient.Builder().build()).build()
 
     @Provides

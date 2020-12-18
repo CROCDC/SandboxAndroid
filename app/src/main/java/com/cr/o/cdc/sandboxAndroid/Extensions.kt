@@ -12,7 +12,7 @@ import com.apollographql.apollo.ApolloCall
 import com.apollographql.apollo.ApolloQueryCall
 import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.exception.ApolloException
-import com.cr.o.cdc.networking.NetworkResponse
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkResponse
 import com.squareup.picasso.Picasso
 
 inline fun SharedPreferences.editAndApply(

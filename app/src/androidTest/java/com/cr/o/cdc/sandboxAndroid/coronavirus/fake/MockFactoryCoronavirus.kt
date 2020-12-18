@@ -1,7 +1,7 @@
 package com.cr.o.cdc.sandboxAndroid.coronavirus.fake
 
 import androidx.lifecycle.MutableLiveData
-import com.cr.o.cdc.networking.NetworkResponse
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
 import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
 import retrofit2.Response

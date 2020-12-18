@@ -55,11 +55,11 @@ android {
     buildTypes {
         debug {
             testCoverageEnabled true
-            buildConfigField("String", "URL_SERVER", "\"https://graphql-pokemon.now.sh/graphql\"")
+            buildConfigField("String", "URL_API_POKEMON", "\"https://graphql-pokemon2.vercel.app/\"")
 
         }
         release {
-            buildConfigField("String", "URL_SERVER", "\"https://graphql-pokemon.now.sh/graphql\"")
+            buildConfigField("String", "URL_API_POKEMON", "\"https://graphql-pokemon2.vercel.app/\"")
         }
 
     }
@@ -78,9 +78,6 @@ configurations.all {
 }
 
 dependencies {
-    implementation project(':networking')
-
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     androidTestImplementation project(':sharedtest')
     testImplementation project(':sharedtest')
 

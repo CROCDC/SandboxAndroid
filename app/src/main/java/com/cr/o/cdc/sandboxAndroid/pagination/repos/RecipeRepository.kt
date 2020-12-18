@@ -2,7 +2,7 @@ package com.cr.o.cdc.sandboxAndroid.pagination.repos
 
 import android.content.Context
 import androidx.paging.toLiveData
-import com.cr.o.cdc.networking.AppExecutors
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeBoundaryCallback
 import com.cr.o.cdc.sandboxAndroid.pagination.vo.PagedRecipeResource

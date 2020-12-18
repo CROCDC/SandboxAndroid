@@ -3,7 +3,7 @@ package com.cr.o.cdc.sandboxAndroid.pagination.vo
 import androidx.annotation.MainThread
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PagedList
-import com.cr.o.cdc.networking.StatusResult
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.StatusResult
 import com.cr.o.cdc.sandboxAndroid.pagination.db.dao.RecipeDao
 import com.cr.o.cdc.sandboxAndroid.pagination.db.model.InfoSearchRecipe
 import com.cr.o.cdc.sandboxAndroid.pagination.db.model.PagedRecipe

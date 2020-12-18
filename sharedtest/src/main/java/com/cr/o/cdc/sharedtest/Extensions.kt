@@ -6,9 +6,6 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import com.cr.o.cdc.networking.ErrorResponse
-import com.cr.o.cdc.networking.NetworkResponse
-import com.cr.o.cdc.networking.SuccessResponse
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 
@@ -84,23 +81,4 @@ fun <T> getCountOfChangesLiveData(
     latch.await(seconds, TimeUnit.SECONDS)
     return count
 
-}
-
-fun <T> getValue(liveData: LiveData<NetworkResponse<T>>): NetworkResponse<T>? {
-    var response: NetworkResponse<T>? = null
-    val latch = CountDownLatch(1)
-    liveData.observeForever {
-        when (it) {
-            is SuccessResponse -> {
-                response = it
-                latch.countDown()
-            }
-            is ErrorResponse -> {
-                latch.countDown()
-                throw Exception("Error in request")
-            }
-        }
-    }
-    latch.await(20, TimeUnit.SECONDS)
-    return response
 }

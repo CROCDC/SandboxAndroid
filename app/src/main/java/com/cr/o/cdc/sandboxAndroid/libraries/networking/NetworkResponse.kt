@@ -1,4 +1,4 @@
-package com.cr.o.cdc.networking
+package com.cr.o.cdc.sandboxAndroid.libraries.networking
 
 import com.apollographql.apollo.api.Response as ApolloR
 import retrofit2.Response as RetrofitR

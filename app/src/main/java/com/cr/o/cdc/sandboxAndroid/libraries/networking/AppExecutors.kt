@@ -1,4 +1,4 @@
-package com.cr.o.cdc.networking
+package com.cr.o.cdc.sandboxAndroid.libraries.networking
 
 import android.os.Handler
 import android.os.Looper

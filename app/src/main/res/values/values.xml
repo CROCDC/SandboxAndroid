@@ -4,5 +4,4 @@
     <string name="recipes_app_id">41ce6696</string>
     <string name="recipes_api_key">416e06f4fa1b46dacd17ca14a1d563c9</string>
     <string name="coronavirus_api">https://coronavirus-monitor.p.rapidapi.com/coronavirus/</string>
-    <string name="pokemon_api">https://graphql-pokemon.now.sh/</string>
 </resources>

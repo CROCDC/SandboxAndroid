@@ -2,10 +2,10 @@ package com.cr.o.cdc.sandboxAndroid.pokedex.repos
 
 import PokemonsQuery
 import androidx.lifecycle.LiveData
-import com.cr.o.cdc.networking.AppExecutors
-import com.cr.o.cdc.networking.NetworkBoundResource
-import com.cr.o.cdc.networking.NetworkResource
-import com.cr.o.cdc.networking.NetworkResponse
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.AppExecutors
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkBoundResource
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkResource
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.Pokemon
 import com.cr.o.cdc.sandboxAndroid.pokedex.db.model.PokemonMini
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
