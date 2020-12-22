@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
     <string name="string">Español Neutro</string>
-    <string name="string_default_es_es_es_ES">es-ES</string>
+    <string name="string_default__es__es_ES">Español Neutro</string>
 
 </resources>

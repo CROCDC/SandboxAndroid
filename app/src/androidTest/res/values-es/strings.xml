@@ -1,6 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
     <string name="string">Español Neutro</string>
-    <string name="string_default_es_es_MX">es</string>
-    <string name="string_default_es_es_MX_es_DO">es</string>
-    <string name="string_default_es_es_es_ES">es</string>
+    <string name="string_default__es__es_MX">Español Neutro</string>
+    <string name="string_default__es__es_MX__es_DO">Español Neutro</string>
+    <string name="string_default__es__es_ES">Español Neutro</string>
+    <string name="string_default__es__es_AR">Español Neutro</string>
+    <string name="string_default__es__es_MX__es__UY">Español Neutro</string>
 </resources>

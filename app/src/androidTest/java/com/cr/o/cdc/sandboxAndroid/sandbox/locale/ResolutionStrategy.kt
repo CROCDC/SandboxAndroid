@@ -12,73 +12,99 @@ class ResolutionStrategy {
     private lateinit var resources: Resources
 
     @Test
-    fun `locale-en-return_default`() {
-        setLocale("en")
+    fun `string-locale_en-return_STRING_DEFAULT`() {
+        setLocale(LANGUAGE_TAG_ENGLISH)
         assertEquals(STRING_DEFAULT, resources.getString(R.string.string))
     }
 
     @Test
-    fun `locale-es-AR-return_Argentina`() {
-        setLocale("es-AR")
+    fun `string-locale_es_AR-return_STRING_ARGENTINA`() {
+        setLocale(LANGUAGE_TAG_ARGENTINA)
         assertEquals(STRING_ARGENTINA, resources.getString(R.string.string))
     }
 
     @Test
-    fun `locale-es-return_Espanol_Neutro`() {
+    fun `string-locale_es-return_STRING_ESPANOL_NEUTRO`() {
         setLocale(LANGUAGE_TAG_ESPANOL_NEUTRO)
         assertEquals(STRING_ESPANOL_NEUTRO, resources.getString(R.string.string))
     }
 
     @Test
-    fun `locale-es-MX-return_Espanol_Mexico`() {
+    fun `string-locale_es_MX-return_STRING_MEXICO`() {
         setLocale(LANGUAGE_TAG_MEXICO)
         assertEquals(STRING_MEXICO, resources.getString(R.string.string))
     }
 
     @Test
-    fun `locale-es-DO-return_Espanol_Republica_Dominicana`() {
+    fun `string-locale_es_DO-return_STRING_REPUBLICA_DOMINICANA`() {
         setLocale(LANGUAGE_TAG_REPUBLICA_DOMINICANA)
         assertEquals(STRING_REPUBLICA_DOMINICANA, resources.getString(R.string.string))
     }
 
     @Test
-    fun `string_default_es_es_MX_locale-es-DO-return_Espanol_Mexico`() {
+    fun `string_default__es__es_MX-locale_es_DO-return_STRING_MEXICO`() {
         setLocale(LANGUAGE_TAG_REPUBLICA_DOMINICANA)
-        assertEquals(LANGUAGE_TAG_MEXICO, resources.getString(R.string.string_default_es_es_MX))
-    }
-
-    @Test
-    fun `string_default_es_es_MX_locale-es-AR-return_Espanol_Mexico`() {
-        setLocale(LANGUAGE_TAG_ARGENTINA)
-        assertEquals(LANGUAGE_TAG_MEXICO, resources.getString(R.string.string_default_es_es_MX))
-    }
-
-    @Test
-    fun `string_default_es_es_MX_es_DO_locale-es-AR-return_Espanol_Mexico`() {
-        setLocale(LANGUAGE_TAG_ARGENTINA)
         assertEquals(
-            LANGUAGE_TAG_MEXICO,
-            resources.getString(R.string.string_default_es_es_MX_es_DO)
+            STRING_MEXICO,
+            resources.getString(R.string.string_default__es__es_MX)
         )
     }
 
     @Test
-    fun `string_default_es_es_es_ES_locales-es-AR-return-Espanol_Neutro`() {
+    fun `string_default__es__es_MX-locale_es_AR-return_STRING_MEXICO`() {
         setLocale(LANGUAGE_TAG_ARGENTINA)
         assertEquals(
-            LANGUAGE_TAG_ESPANOL_NEUTRO,
-            resources.getString(R.string.string_default_es_es_es_ES)
+            STRING_MEXICO,
+            resources.getString(R.string.string_default__es__es_MX)
         )
     }
 
     @Test
-    fun `string_default_es_es_es_ES_locales-es-ES-return-Espanol_Espana`() {
+    fun `string_default__es__es_MX__es_DO-locale_es_AR-return_STRING_MEXICO`() {
+        setLocale(LANGUAGE_TAG_ARGENTINA)
+        assertEquals(
+            STRING_MEXICO,
+            resources.getString(R.string.string_default__es__es_MX__es_DO)
+        )
+    }
+
+    @Test
+    fun `string_default__es__es_ES-locale_es_AR-return_STRING_ESPANOL_NEUTRO`() {
+        setLocale(LANGUAGE_TAG_ARGENTINA)
+        assertEquals(
+            STRING_ESPANOL_NEUTRO,
+            resources.getString(R.string.string_default__es__es_ES)
+        )
+    }
+
+    @Test
+    fun `string_default__es__es_ES-locale_es_ES-return_STRING_ESPANOL_NEUTRO`() {
         setLocale(LANGUAGE_TAG_ESPANOL_ESPANA)
         assertEquals(
-            LANGUAGE_TAG_ESPANOL_ESPANA,
-            resources.getString(R.string.string_default_es_es_es_ES)
+            STRING_ESPANOL_NEUTRO,
+            resources.getString(R.string.string_default__es__es_ES)
         )
     }
+
+    @Test
+    fun `string-locale_es_UY-return_STRING_URUGUAY`() {
+        setLocale(LANGUAGE_TAG_URUGUAY)
+        assertEquals(
+            STRING_URUGUAY,
+            resources.getString(R.string.string)
+        )
+    }
+
+    @Test
+    fun `string_default__es__es_MX-locale_es_UY-return_STRING_MEXICO`() {
+        setLocale(LANGUAGE_TAG_URUGUAY)
+        assertEquals(
+            STRING_MEXICO,
+            resources.getString(R.string.string_default__es__es_MX)
+        )
+    }
+
+
 
     private fun setLocale(languageTag: String) {
         val context = InstrumentationRegistry.getInstrumentation().context
@@ -93,11 +119,14 @@ class ResolutionStrategy {
         private const val STRING_ESPANOL_NEUTRO = "Español Neutro"
         private const val STRING_MEXICO = "Español Mexico"
         private const val STRING_REPUBLICA_DOMINICANA = "Español Republica Domininica"
+        private const val STRING_URUGUAY = "Español Uruguay"
 
+        private const val LANGUAGE_TAG_ENGLISH = "en"
         private const val LANGUAGE_TAG_ESPANOL_ESPANA = "es-ES"
         private const val LANGUAGE_TAG_ESPANOL_NEUTRO = "es"
         private const val LANGUAGE_TAG_MEXICO = "es-MX"
         private const val LANGUAGE_TAG_REPUBLICA_DOMINICANA = "es-DO"
         private const val LANGUAGE_TAG_ARGENTINA = "es-AR"
+        private const val LANGUAGE_TAG_URUGUAY = "es-UY"
     }
 }

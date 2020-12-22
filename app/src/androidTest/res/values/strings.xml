@@ -1,6 +1,7 @@
 <resources>
     <string name="string">English Default</string>
-    <string name="string_default_es_es_MX">en</string>
-    <string name="string_default_es_es_MX_es_DO">en</string>
-    <string name="string_default_es_es_es_ES">en</string>
+    <string name="string_default__es__es_MX">English Default</string>
+    <string name="string_default__es__es_MX__es_DO">English Default</string>
+    <string name="string_default__es__es_ES">English Default</string>
+    <string name="string_default__es__es_AR">English Default</string>
 </resources>

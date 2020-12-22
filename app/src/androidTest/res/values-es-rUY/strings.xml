@@ -1,0 +1,3 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
+    <string name="string">Español Uruguay</string>
+</resources>
