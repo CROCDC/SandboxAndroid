@@ -1,8 +1,8 @@
 package com.cr.o.cdc.sandboxAndroid.libraries.networking
 
+import com.apollographql.apollo.exception.ApolloException
 import com.apollographql.apollo.api.Response as ApolloR
 import retrofit2.Response as RetrofitR
-import com.apollographql.apollo.exception.ApolloException
 
 
 sealed class NetworkResponse<T> {

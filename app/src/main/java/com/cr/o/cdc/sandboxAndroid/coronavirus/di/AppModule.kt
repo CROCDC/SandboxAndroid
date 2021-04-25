@@ -7,11 +7,11 @@ import androidx.room.Room
 import androidx.work.WorkManager
 import com.apollographql.apollo.ApolloClient
 import com.cr.o.cdc.sandboxAndroid.BuildConfig
-import com.cr.o.cdc.sandboxAndroid.libraries.networking.AppExecutors
-import com.cr.o.cdc.sandboxAndroid.libraries.networking.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.R
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSource
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesDataSourceProvider
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.AppExecutors
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.LiveDataCallAdapterFactory
 import com.cr.o.cdc.sandboxAndroid.pagination.repos.RecipeService
 import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSource
 import com.cr.o.cdc.sandboxAndroid.pokedex.repos.PokemonDataSourceProvider
@@ -21,14 +21,14 @@ import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 class AppModule {
 
     @Provides

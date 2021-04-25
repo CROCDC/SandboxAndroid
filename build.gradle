@@ -37,8 +37,9 @@ buildscript {
     ext.apollo_support = "1.0.0"
     ext.work = "2.4.0"
     ext.gson = "2.8.0"
-    ext.hilt_version = "2.28-alpha"
-    ext.hilt_lifecycle = "1.0.0-alpha02"
+    ext.hilt_version = "2.35"
+    ext.hilt_compiler = "1.0.0-alpha02"
+    ext.hilt_lifecycle = "1.0.0-beta01"
 
     repositories {
         google()

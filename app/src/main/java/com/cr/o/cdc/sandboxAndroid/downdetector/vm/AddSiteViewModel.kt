@@ -1,6 +1,5 @@
 package com.cr.o.cdc.sandboxAndroid.downdetector.vm
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
@@ -8,9 +7,12 @@ import androidx.work.workDataOf
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesRepository
 import com.cr.o.cdc.sandboxAndroid.downdetector.vo.DownDetectorWorker
+import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
-data class AddSiteViewModel @ViewModelInject constructor(
+@HiltViewModel
+data class AddSiteViewModel @Inject constructor(
     private val repository: SitesRepository,
     private val workManager: WorkManager
 ) : ViewModel() {

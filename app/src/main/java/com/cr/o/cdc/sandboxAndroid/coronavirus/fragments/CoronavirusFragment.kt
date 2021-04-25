@@ -25,7 +25,7 @@ class CoronavirusFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCoronavirusBinding.inflate(inflater, container, false)
 
         binding.txtSearch.setOnClickListener {
@@ -34,9 +34,7 @@ class CoronavirusFragment : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val adapter = CountryStatsAdapter()
 
         binding.recycler.adapter = adapter

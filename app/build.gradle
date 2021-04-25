@@ -157,8 +157,7 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle"
-    kapt "androidx.hilt:hilt-compiler:$hilt_lifecycle"
+    kapt "androidx.hilt:hilt-compiler:$hilt_compiler"
     implementation "androidx.hilt:hilt-work:$hilt_lifecycle"
 
     androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"

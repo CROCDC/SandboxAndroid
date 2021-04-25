@@ -1,11 +1,13 @@
 package com.cr.o.cdc.sandboxAndroid.whatsapputils.vm
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageBot
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.repos.WhatsappMessagesRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class AddWhatsappMessageBotViewModel @ViewModelInject constructor(
+@HiltViewModel
+class AddWhatsappMessageBotViewModel @Inject constructor(
     private val repository: WhatsappMessagesRepository
 ) : ViewModel() {
 

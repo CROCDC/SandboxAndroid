@@ -3,8 +3,8 @@ package com.cr.o.cdc.sandboxAndroid.pokedex.repos
 import PokemonsQuery
 import androidx.lifecycle.LiveData
 import com.apollographql.apollo.ApolloClient
-import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.execute
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkResponse
 
 class PokemonDataSource(private val apolloClient: ApolloClient) : PokemonDataSourceProvider {
 

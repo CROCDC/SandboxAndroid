@@ -1,12 +1,12 @@
 package com.cr.o.cdc.sandboxAndroid.coronavirus.repos
 
 import androidx.lifecycle.LiveData
+import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
+import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
 import com.cr.o.cdc.sandboxAndroid.libraries.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkBoundResource
 import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkResource
 import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkResponse
-import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
-import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import javax.inject.Inject
 

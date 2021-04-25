@@ -2,9 +2,9 @@ package com.cr.o.cdc.sandboxAndroid.downdetector.repos
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.cr.o.cdc.sandboxAndroid.libraries.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.downdetector.model.PingResponse
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.AppExecutors
 import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.SandBoxDB
 import javax.inject.Inject
 

@@ -1,6 +1,5 @@
 package com.cr.o.cdc.sandboxAndroid.downdetector.vm
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,10 +10,13 @@ import com.cr.o.cdc.sandboxAndroid.downdetector.db.model.Site
 import com.cr.o.cdc.sandboxAndroid.downdetector.model.PingResponse
 import com.cr.o.cdc.sandboxAndroid.downdetector.repos.SitesRepository
 import com.cr.o.cdc.sandboxAndroid.downdetector.vo.DownDetectorWorker
+import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.UUID
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
-class SitesListViewModel @ViewModelInject constructor(
+@HiltViewModel
+class SitesListViewModel @Inject constructor(
     private val sitesRepository: SitesRepository,
     private val workManager: WorkManager
 ) : ViewModel() {

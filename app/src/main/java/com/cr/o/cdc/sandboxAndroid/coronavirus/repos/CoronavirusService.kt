@@ -1,8 +1,8 @@
 package com.cr.o.cdc.sandboxAndroid.coronavirus.repos
 
 import androidx.lifecycle.LiveData
-import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkResponse
 import com.cr.o.cdc.sandboxAndroid.coronavirus.model.CasesByCountry
+import com.cr.o.cdc.sandboxAndroid.libraries.networking.NetworkResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
 
