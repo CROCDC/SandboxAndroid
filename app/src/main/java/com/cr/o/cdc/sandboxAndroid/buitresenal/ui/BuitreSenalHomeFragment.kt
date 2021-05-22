@@ -26,7 +26,7 @@ class BuitreSenalHomeFragment : Fragment() {
                         )
                         appendQueryParameter(
                             "redirect_uri",
-                            "https://buitresenal.000webhostapp.com"
+                            "https://buitresenal.000webhostapp.com/success.html"
                         )
                         appendQueryParameter(
                             "scope",
