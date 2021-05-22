@@ -43,4 +43,7 @@
     <string name="space_rocket">Space Rocket</string>
     <string name="launch">Launch</string>
     <string name="motion_layout">Motion Layout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buitre_senal">Buitre señal</string>
 </resources>

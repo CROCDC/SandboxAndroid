@@ -14,7 +14,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.btnCoronavirus.setOnClickListener {
@@ -43,6 +43,9 @@ class HomeFragment : Fragment() {
         }
         binding.btnMotionLayout.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_motionLayoutSelectorFragment)
+        }
+        binding.btnBuitreSenal.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_buitreSenalHomeFragment)
         }
         return binding.root
     }
