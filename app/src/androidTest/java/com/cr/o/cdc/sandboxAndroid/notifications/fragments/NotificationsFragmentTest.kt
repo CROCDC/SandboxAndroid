@@ -33,7 +33,7 @@ class NotificationsFragmentTest : FragmentTest() {
 
     @Test
     fun assertBroadcastReceiverSetTextTxtMsgNotifications() {
-        launchFragmentInHiltContainer<NotificationsFragment> {
+        launchFragmentInHiltContainer<NotificationsFragment>() {
             LocalBroadcastManager.getInstance(requireContext()).sendBroadcast(
                 Intent(NotificationsFragment.BROADCAST_RECEIVER).apply {
                     putExtra(NotificationsFragment.EXTRA_MSG_NOTIFICATION, "message")
@@ -47,7 +47,7 @@ class NotificationsFragmentTest : FragmentTest() {
 
     @Test
     fun assertPushTokenSetText() {
-        launchFragmentInHiltContainer<NotificationsFragment> {
+        launchFragmentInHiltContainer<NotificationsFragment>() {
             context?.sharedPreferences()?.editAndApply {
                 putString("push_token", "message")
             }

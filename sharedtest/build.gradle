@@ -35,7 +35,7 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$lifecycle_extensions"
 
     implementation "junit:junit:$junit"
-    implementation "android.arch.core:core-testing:$arch_core_testing"
+    implementation "android.arch.core:core-testing:$core_testing"
     implementation "androidx.test:core:$androidx_test"
 
 }

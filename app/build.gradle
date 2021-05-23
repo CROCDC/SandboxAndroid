@@ -21,7 +21,8 @@ android {
     androidExtensions {
         experimental = true
     }
-    buildFeatures.dataBinding = true
+
+    buildFeatures.viewBinding = true
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -107,13 +108,15 @@ dependencies {
     testImplementation "androidx.test:rules:$androidx_test"
     testImplementation "androidx.test:core:$androidx_test"
 
-    testImplementation "android.arch.core:core-testing:$arch_core_testing"
-    androidTestImplementation "android.arch.core:core-testing:$arch_core_testing"
+    testImplementation "android.arch.core:core-testing:$core_testing"
+    androidTestImplementation "android.arch.core:core-testing:$core_testing"
 
     testImplementation "junit:junit:$junit"
     testImplementation "io.mockk:mockk:$mockk"
 
-    implementation "com.apollographql.apollo:apollo-runtime:$apollo"
+    implementation "com.apollographql.apollo:apollo-runtime:$apollo_runtime"
+    implementation "com.apollographql.apollo:apollo-android-support:$apollo_support"
+
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
 
     testImplementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
@@ -144,9 +147,6 @@ dependencies {
     implementation "com.google.android.gms:play-services-maps:$maps_utils"
 
     implementation "com.jakewharton.threetenabp:threetenabp:$threetenabp"
-
-    implementation "com.apollographql.apollo:apollo-runtime:$apollo_runtime"
-    implementation "com.apollographql.apollo:apollo-android-support:$apollo_support"
 
     implementation "com.squareup.picasso:picasso:$picasso"
     implementation "androidx.work:work-runtime-ktx:$work"

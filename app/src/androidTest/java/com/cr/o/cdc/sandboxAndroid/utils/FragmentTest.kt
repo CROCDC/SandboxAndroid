@@ -6,10 +6,9 @@ import android.os.Bundle
 import androidx.annotation.StyleRes
 import androidx.core.util.Preconditions
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.testing.FragmentScenario
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
-import com.cr.o.cdc.sandboxAndroid.MainActivity
+import com.cr.o.cdc.sandboxAndroid.HiltActivity
 import com.cr.o.cdc.sandboxAndroid.R
 import org.junit.Rule
 
@@ -24,17 +23,16 @@ abstract class FragmentTest {
 
     inline fun <reified T : Fragment> launchFragmentInHiltContainer(
         fragmentArgs: Bundle? = null,
-        @StyleRes themeResId: Int = R.style.FragmentScenarioEmptyFragmentActivityTheme,
         crossinline action: Fragment.() -> Unit = {}
     ) {
         val startActivityIntent = Intent.makeMainActivity(
             ComponentName(
                 ApplicationProvider.getApplicationContext(),
-                MainActivity::class.java
+                HiltActivity::class.java
             )
-        ).putExtra(FragmentScenario.EmptyFragmentActivity.THEME_EXTRAS_BUNDLE_KEY, themeResId)
+        )
 
-        ActivityScenario.launch<MainActivity>(startActivityIntent).onActivity { activity ->
+        ActivityScenario.launch<HiltActivity>(startActivityIntent).onActivity { activity ->
             val fragment: Fragment = activity.supportFragmentManager.fragmentFactory.instantiate(
                 Preconditions.checkNotNull(T::class.java.classLoader),
                 T::class.java.name
