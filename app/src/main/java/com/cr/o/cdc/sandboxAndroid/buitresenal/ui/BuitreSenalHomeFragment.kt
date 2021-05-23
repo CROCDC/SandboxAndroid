@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.cr.o.cdc.sandboxAndroid.R
+import com.cr.o.cdc.sandboxAndroid.buitresenal.util.InstagramApiInfo
 
 class BuitreSenalHomeFragment : Fragment() {
 
@@ -17,25 +18,15 @@ class BuitreSenalHomeFragment : Fragment() {
     ): View? {
         startActivity(
             Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://api.instagram.com/oauth/authorize")
+                data = Uri.parse("${InstagramApiInfo.API_URL}/oauth/authorize")
                     .buildUpon()
                     .apply {
+                        appendQueryParameter("client_id", InstagramApiInfo.CLIENT_ID)
                         appendQueryParameter(
-                            "client_id",
-                            "486452559260516"
+                            "redirect_uri", InstagramApiInfo.REDIRECT_URI
                         )
-                        appendQueryParameter(
-                            "redirect_uri",
-                            "https://buitresenal.000webhostapp.com/success.html"
-                        )
-                        appendQueryParameter(
-                            "scope",
-                            "user_profile,user_media"
-                        )
-                        appendQueryParameter(
-                            "response_type",
-                            "code"
-                        )
+                        appendQueryParameter("scope", InstagramApiInfo.SCOPE)
+                        appendQueryParameter("response_type", InstagramApiInfo.RESPONSE_TYPE)
                     }
                     .build()
             }

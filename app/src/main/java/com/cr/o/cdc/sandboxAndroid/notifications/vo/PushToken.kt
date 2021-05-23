@@ -39,6 +39,7 @@ class PushToken @Inject constructor(private val sharedPreferences: SharedPrefere
         }
     }
 
+    // todo delete
     fun addPush() {
         sharedPreferences.editAndApply {
             putInt(

@@ -3,6 +3,8 @@ package com.cr.o.cdc.sandboxAndroid.whatsapputils.db
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.cr.o.cdc.sandboxAndroid.buitresenal.db.dao.InstagramUserDao
+import com.cr.o.cdc.sandboxAndroid.buitresenal.db.model.InstagramUser
 import com.cr.o.cdc.sandboxAndroid.coronavirus.db.dao.CountryStatDao
 import com.cr.o.cdc.sandboxAndroid.coronavirus.db.model.CountryStat
 import com.cr.o.cdc.sandboxAndroid.downdetector.db.dao.SiteDao
@@ -23,8 +25,9 @@ import com.cr.o.cdc.sandboxAndroid.whatsapputils.db.model.WhatsappMessageBot
 @Database(
     entities = [
         Recipe::class, InfoSearchRecipe::class, WhatsappMessage::class, WhatsappMessageBot::class,
-        WhatsappMessageAutoReply::class, CountryStat::class, Pokemon::class, Site::class],
-    version = 7
+        WhatsappMessageAutoReply::class, CountryStat::class, Pokemon::class, Site::class,
+        InstagramUser::class],
+    version = 1
 )
 @TypeConverters(ConverterPokedex::class)
 abstract class SandBoxDB : RoomDatabase() {
@@ -42,6 +45,8 @@ abstract class SandBoxDB : RoomDatabase() {
     abstract fun pokemonDao(): PokemonDao
 
     abstract fun siteDao(): SiteDao
+
+    abstract fun instagramUserDaoUserDao(): InstagramUserDao
 
     companion object {
         const val DATABASE_NAME = "sandbox"
